@@ -1,0 +1,27 @@
+---
+import { t } from "../i18n/i18n";
+import ticket from '../data/ticket.json';
+import { type StoreType } from './store'
+
+interface Props {
+	store: StoreType;
+}
+const { store } = Astro.props;
+const lang = (Astro.locals as any).lang;
+const url = ticket.store.url;
+let linkName =''
+if (store.status === "open") {
+    linkName = t('store_is_open');
+} else if (store.status === "closed") {
+    linkName = t('store_is_soldout');
+} else if ((store.open_date as any)[lang]) {
+    linkName = t('store_opens_on', (store.open_date as any)[lang]);
+} else {
+    linkName = t('store_not_open');
+}
+---
+<a class="snc-btn disabled"
+    href={url} target="_blank"
+    onclick="var w=window.open('https://www.billetweb.fr/shop.php?event=snowcamp-2023&popup=1', 'Reserver', 'width=650, height=600, top=100, left=100, toolbar=no, resizable=yes, scrollbars=yes, status=no'); w.focus(); return false;"
+    ><span>{linkName</span></a>
+

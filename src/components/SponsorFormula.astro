@@ -1,0 +1,40 @@
+---
+import { t } from "../i18n/i18n";
+import { type SponsorType } from "./sponsor";
+
+interface Props {
+	sponsor: SponsorType;
+  cssClass: string;
+}
+const { sponsor, cssClass } = Astro.props;
+---
+<div class={'single ' + cssClass} >
+  <div class="single-top">
+    <h2 class="title">{sponsor.title}</h2>
+    <h4 class="price">{sponsor.price}</h4>
+    <p>{t('sponsor_limit',sponsor.number)}</p>
+  </div>
+  <div class="single-bottom">
+    <ul class="list-unstyled list">
+      {sponsor.places.conferences ?
+      <li><i class="fa fa-check" aria-hidden="true"></i> {t('sponsor_places_conferences', sponsor.places.conferences)}</li>
+      : ''}
+      {sponsor.places.booth ?
+      <li><i class="fa fa-check" aria-hidden="true"></i> {t('sponsor_places_booth', sponsor.places.booth)}</li>
+      : ''}
+      {sponsor.booth_area ?
+      <li><i class="fa fa-check" aria-hidden="true"></i> {t('sponsor_booth_area', sponsor.booth_area)}</li>
+      : ''}
+      <li><i class="fa fa-check" aria-hidden="true"></i> {t('sponsor_logo_website')}</li>
+      <li><i class="fa fa-check" aria-hidden="true"></i> {t('sponsor_logo_billposting')}</li>
+      { sponsor.places && sponsor.places.speakers_dinner ? 
+      <li><i class="fa fa-check" aria-hidden="true"></i> {t('sponsor_places_speakers_dinner', sponsor.places.speakers_dinner)}</li>
+      : ''}
+      <li><i class="fa fa-check" aria-hidden="true"></i> {t('snowcamp_logo_usage')}</li>
+    </ul>
+    <div class="sponsors-form">
+      <a href="{{ $prospectus | safeHTMLAttr }}" target="_blank">{t('sponsorship_prospectus')}</a>
+    </div>
+    <a class="snc-btn" href="mailto:team@snowcamp.io"><span>{t('contact_us')}</span></a>
+  </div>
+</div>

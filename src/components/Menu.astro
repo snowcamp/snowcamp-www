@@ -1,0 +1,80 @@
+---
+import { t } from "../i18n/i18n";
+import cfp from '../data/cfp.json';
+
+const lang = (Astro.locals as any).lang;
+const path = (Astro.locals as any).path;
+const path_fr = path.indexOf('/en/') < 0 ? '/fr'+path : path.replace('/en/','/fr/');
+const path_en = path.replace('/fr/','/');
+---
+<header>
+  <div id="snc-header" class="snc-header menu">
+    <div class="snc-header-inner">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <nav class="navbar navbar-default snc-navbar">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <div class="navbar-brand snc-logo">
+                      <a href={'/'+lang+'/'} class="snc-scroll">
+                        <img src="/img/alpes-snow-full-illustration.webp" alt="Logo">
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="expand navbar-expand" id="menu">
+                    <ul class="nav navbar-nav snc-nav">
+                      <li class="dropdown">
+                        <a href="#" class="snc-scroll dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true"
+                           aria-expanded="false">Snowcamp <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a class="page-scroll" href={'/'+lang+'/snowcamp/#what'}>
+                            {t("what_is_this")}</a></li>
+                          <li><a class="page-scroll" href={'/'+lang+'/organisation/'}>Organisation</a></li>
+                          <li><a class="page-scroll" href={'/'+lang+'/previous-editions/'}>{t("past_editions")}</a></li>
+                        </ul>
+                      </li>
+                      { cfp.status !== "published" ? 
+                      <li><a class="page-scroll" href={'/'+lang+'/#program'}>{t("program_translation" )}</a></li>
+                      :
+                      <li><a class="page-scroll" href={'/'+lang+'/#program'}>{t("schedule_translation")}</a></li>
+                      }
+                      <li class="dropdown">
+                        <a href="#snc-sponsors" class="snc-scroll dropdown-toggle" data-toggle="dropdown"
+                           role="button" aria-haspopup="true"
+                           aria-expanded="false">Sponsors <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a class="page-scroll" href={'/'+lang+'/#sponsors'}>{ t("our_sponsors")}</a></li>
+                          <li><a href={'/'+lang+'/sponsors/'}> {t("become_sponsor")} </a></li>
+                        </ul>
+                      </li>
+                      <li><a class="page-scroll" href={'/'+lang+'/#venue'}> {t("venue")} </a></li>
+                      <li><a href={'/'+lang+'/tickets/'}>{t("tickets")}</a></li>
+                      <li><a href="https://www.youtube.com/channel/UCvRA5NSOfGOPet90fdV7uuw/videos" target="_blank">{t("videos")}</a></li>
+                      <li><a href={'/'+lang+'/coc/'}>{t("coc")}</a></li>
+                      { lang == "fr" ?
+                          <li>
+                            <a href={path_en}>
+                              <img class="snc-flag" src="/img/gb.svg" alt="Switch to English">&nbsp;
+                            </a>
+                          </li>
+                      :
+                          <li>
+                            <a href={path_fr}>
+                              <img class="snc-flag" src="/img/fr.svg" alt="Switch to French">&nbsp;
+                            </a>
+                          </li>
+                      }
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  

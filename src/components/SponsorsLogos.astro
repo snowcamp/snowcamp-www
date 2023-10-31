@@ -1,0 +1,29 @@
+---
+import { type Sponsor } from "./sponsor";
+
+export interface Props {
+	sponsors: Sponsor[];
+  sponsor_title: string;
+  column_number: number;
+}
+const { sponsors, sponsor_title, column_number } = Astro.props;
+const lang = (Astro.locals as any).lang;
+---
+<div class="row">
+  <div class="col-xs-12">
+    <h3 class="sponsored-heading " set:html={sponsor_title}></h3>
+  </div>
+</div>
+<div class="sponsors-area">
+  { sponsors.map((sponsor,i) => 
+    <span>
+      {i % column_number === 0 ? <div class="row"></div> : ''}
+      <div class="single">
+        <a href={(sponsor.url as any)[lang]} target="_blank"
+            data-placement="top" data-toggle="tooltip" data-html="true"
+            data-original-title={(sponsor.description as any)[lang]}>
+          <img src={'/'+sponsor.logo} alt={sponsor.name}/></a>
+      </div>
+    </span>
+  ) }
+</div>

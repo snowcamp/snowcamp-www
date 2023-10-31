@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import StorePackages from "../components/StorePackages.astro";
+import StoreStatus from "../components/StoreStatus.astro";
+import { t } from "../i18n/i18n";
+---
+<Layout title={t('store_title')}>
+  <section>
+  <div id="snc-ticket" class="snc-ticket">
+    <div class="snc-inner">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <div class="snc-heading-area snc-heading-brand">
+              <h2 class="snc-heading ">
+                <span class="back-heading"><i class="fa fa-ticket" aria-hidden="true"></i></span>
+                <span class="heading dark-background">{t('store_title')}</span>
+              </h2>
+              <p class="text dark-background" set:html={t('store_desc')}></p>
+              <StoreStatus></StoreStatus>
+              <p style="margin-top: 30px">
+                <a href="https://www.billetweb.fr/shop.php?event=snowcamp-2023"
+				   onclick="var w=window.open('https://www.billetweb.fr/shop.php?event=snowcamp-2023&popup=1', 'Reserver', 'width=650, height=600, top=100, left=100, toolbar=no, resizable=yes, scrollbars=yes, status=no'); w.focus(); return false;">
+                  <img style="width:400px;" src="https://www.billetweb.fr/images/buttons/billetterie_blanc.png">
+                </a>
+			  </p>
+            </div>
+          </div>
+        </div>
+        <StorePackages></StorePackages>
+      </div>
+    </div>
+  </div>
+</section>
+</Layout>

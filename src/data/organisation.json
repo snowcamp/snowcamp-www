@@ -1,0 +1,72 @@
+{
+ "organizers": [
+    {
+      "name": "Ludovic Poitou",
+      "img": "ludovic.jpg",
+      "twitter": "LudoMP",
+      "linkedin": "ludovicp",
+      "github": "ludomp"
+    },
+    {
+      "name": "Maha Alsayasneh",
+      "img": "maha.jpeg",
+      "twitter": "MahaALSayasneh",
+      "linkedin": "maha-alsayasneh-6aa34a57",
+      "github": "alsayasneh"
+    },
+    {
+      "name": "Michel Barret",
+      "img": "michel.jpg",
+      "twitter": "barmic42",
+      "linkedin": "michel-barret-23a39a27",
+      "github": "barmic"
+    },
+    {
+      "name": "Miguel Moquillon",
+      "img": "miguel.jpg",
+      "twitter": "migmoq",
+      "linkedin": "miguel-moquillon-b8a1aa3",
+      "github": "mmoqui"
+    },
+    {
+      "name": "Ouiame Talbi",
+      "img": "ouiame.png",
+      "linkedin": "ouiame-talbi"
+    },
+    {
+      "name": "Pierrick Rassat",
+      "img": "pierrick.jpg",
+      "twitter": "kraiss7",
+      "linkedin": "pierrick-rassat-7002b691",
+      "github": "kraiss"
+    },
+    {
+      "name": "Sébastien Chassande-Barrioz",
+      "img": "sebastien.jpg",
+      "twitter": "SnowCampIO",
+      "linkedin": "sébastien-chassande-barrioz-aa6a623",
+      "github": "schassande"
+    },
+    {
+      "name": "Willy Malvault",
+      "img": "willy.png",
+      "twitter": "malvaultw",
+      "linkedin": "willy-malvault-aa584814",
+      "github": "vlamy"
+    },
+    {
+      "name": "Yannick Chiron",
+      "img": "yannick.jpg",
+      "twitter": "Ldoppea",
+      "linkedin": "yannickchiron",
+      "github": "Ldoppea"
+    },
+    {
+      "name": "Yohan Lasorsa",
+      "img": "yohan.jpeg",
+      "twitter": "sinedied",
+      "linkedin": "yohanlasorsa",
+      "github": "sinedied"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "store": {
+    "url": "https://www.billetweb.fr/shop.php?event=snowcamp-2024",
+    "early": {
+      "title": "Early Birds",
+      "price_conf": 42,
+      "price_univ": 100,
+      "possible_status": ["not_open", "open", "closed", "deactivated"],
+      "status": "deactivated", 
+      "open_date": {
+        "default": "unknown",
+        "fr": "16 Octobre à 11h",
+        "en": "16th of October at 11am"
+      }
+    },
+    "classic": {
+      "title": "Standard",
+      "price_conf": 65,
+      "price_univ": 155,
+      "possible_status": ["not_open", "open", "closed", "deactivated"],
+      "status": "not_open",
+      "open_date": {
+        "default": "unknown",
+        "fr": "20 Novembre à 11h00",
+        "en": "20th of November at 11am (Paris)"
+      }
+    }
+  }
+}

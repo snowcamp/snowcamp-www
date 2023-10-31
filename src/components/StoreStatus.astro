@@ -1,0 +1,32 @@
+---
+import { t } from "../i18n/i18n";
+import ticket from '../data/ticket.json';
+
+const lang = (Astro.locals as any).lang;
+const store = ticket.store;
+const early_birds = store.early
+const early_birds_status = early_birds.status;
+const classic = ticket.store.classic;
+const classic_status = classic.status
+
+let storeStatus = '';
+if (early_birds_status === "closed" && classic_status === "closed") {
+  storeStatus = t('store_is_soldout');
+} else if ((early_birds_status === "closed" || classic_status === "deactivated")  &&  (classic_status === "not_open" || classic_status === "open")) {
+  storeStatus = t('store_classic_dates', (classic.open_date as any)[lang]);
+} else if (early_birds_status === "open" || classic_status === "open") {
+  storeStatus = t('store_is_open');
+} else if (early_birds_status === "not_open" && (early_birds.open_date as any)[lang]) {
+  storeStatus = t('store_early_birds_open', (early_birds.open_date as any)[lang]);
+} else {
+  storeStatus = t('store_not_open');
+}
+---
+<p class="text dark-background emph">{storeStatus}</p>
+{store.url && (early_birds_status === "open" || classic_status === "open") ? 
+<p>
+  <a href={store.url} target="_blank">
+    <i class="fa fa-hand-o-right" aria-hidden="true"><span> <b>{t('store_here')}</b></span></i>
+  </a>
+</p>
+: ''}

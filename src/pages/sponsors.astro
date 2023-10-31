@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SponsorFormula from '../components/SponsorFormula.astro';
+import sponsors from '../data/sponsors.json';
+import { t } from "../i18n/i18n";
+---
+<Layout title="Snowcamp">
+<section>
+  <div id="snc-sponsors" class="snc-ticket">
+    <div class="snc-inner">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <div class="snc-heading-area snc-heading-brand">
+              <h2 class="snc-heading ">
+                <span class="back-heading"><i class="fa fa-users" aria-hidden="true"></i></span>
+                <span class="heading dark-background">{t('become_sponsor')}</span>
+              </h2>
+              <span set:html={t('sponsor_desc')}></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-6">
+              <SponsorFormula sponsor={sponsors.sponsorship.type.etoile} cssClass="active"></SponsorFormula>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+              <SponsorFormula sponsor={sponsors.sponsorship.type.flocon} cssClass=""></SponsorFormula>
+            </div>
+        </div>    
+      </div>
+    </div>
+  </div>
+</section>
+</Layout>

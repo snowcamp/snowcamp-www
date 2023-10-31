@@ -1,0 +1,22 @@
+
+{
+  "possible_status": [ "not_open", "opens_soon", "open", "closed", "published"],
+  "status": "opens_soon", 
+  "url": "https://conference-hall.io/public/event/Bq5k5rbMXGynAls6PjRB",
+  "year": 2024,
+  "sched_url": "https://snowcamp2024.sched.com/",
+  "dates": {
+    "open_date": {
+      "fr": "1er Septembre 2023",
+      "en": "1st of September 2023"
+    },
+    "close_date": {
+      "fr": "15 Octobre 2023",
+      "en": "15th of October 2023"
+    },
+    "notification_date": {
+      "fr": "Début Novembre 2023",
+      "en": "Beginning November 2023"
+    }
+  }
+}
