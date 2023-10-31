@@ -3,16 +3,38 @@
 This project is the source project of the Snowcamp web site. The web site is written with the Astro technology.
 It is a static web site. The web site is available under two languages : english and french.
 
-## Structure
+## Getting started
 
-## Building
+You need NodeJS 18+.
+
+On the first install, download dependencies
+
+```sh
+npm install
+```
 
 It is highly advised to use VSCode editor because it includes Astro plugin.
 In dev mode, simply run the server by the following command:
+
 ```sh
 npm run dev
 ```
+
 Then open the web page [ http://localhost:4321/](http://localhost:4321/)
+
+## Project Structure
+
+| Directory          | Description                                              |
+|--------------------|----------------------------------------------------------|
+| dist               | Output directory                                         |
+| public             | Static content of the web site. Copied strictly.         |
+| src                | Dynamic sources of the web site                          |
+| src/pages          | The web pages of the web site                            |
+| src/layouts        | The layouts of the web pages                             |
+| src/components     | The components used in the web pages                     |
+| src/data           | The data of the web site                                 |
+| src/i18n           | The text translation in 'en' and 'fr' of the text        |
+| src/styles         | The style of the web site based on LESS                  |
 
 ## 🧞 Commands
 
