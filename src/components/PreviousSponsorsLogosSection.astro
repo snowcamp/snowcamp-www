@@ -1,0 +1,48 @@
+---
+// {{ $sponsors := .previous_edition.sponsors }}
+import { t } from "../i18n/i18n";
+import SponsorsLogos from "./SponsorsLogos.astro";
+export interface Props {
+  year: number;
+  previousSponsors: any;
+}
+const { year, previousSponsors } = Astro.props;
+---
+<section>
+  <div class="snc-sponsors" style="margin-top: 100px;">
+    <div class="snc-inner-bg">
+      <div class="past-snc-inner">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 text-center">
+              <div class="snc-sponsors-heading-area">
+                <h2 class="snc-heading">
+                  <span class="back-heading"><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+                  <span class="heading">Sponsors {year}</span>
+                </h2>
+                <p class="text">
+                  {t('previous_sponsors_thanks', year)}
+                </p>
+              </div>
+            </div>
+          </div>
+          { previousSponsors.sponsors.chamois && previousSponsors.sponsors.chamois.length ?
+            <SponsorsLogos sponsors={previousSponsors.sponsors.chamois} column_number={3} sponsor_title={t('sponsor_chamois')}></SponsorsLogos>
+          : ''}
+          { previousSponsors.sponsors.etoile && previousSponsors.sponsors.etoile.length ?
+            <SponsorsLogos sponsors={previousSponsors.sponsors.etoile} column_number={4} sponsor_title={t('sponsor_etoile')}></SponsorsLogos>
+          : ''}
+          { previousSponsors.sponsors.meetgreet && previousSponsors.sponsors.meetgreet.length ?
+            <SponsorsLogos sponsors={previousSponsors.sponsors.meetgreet} column_number={4} sponsor_title={t('sponsor_meetgreet')}></SponsorsLogos>
+          : ''}
+          { previousSponsors.sponsors.flocon && previousSponsors.sponsors.flocon.length ?
+            <SponsorsLogos sponsors={previousSponsors.sponsors.flocon} column_number={4} sponsor_title={t('sponsor_flocon')}></SponsorsLogos>
+          : ''}
+          { previousSponsors.sponsors.partners && previousSponsors.sponsors.partners ?
+            <SponsorsLogos sponsors={previousSponsors.sponsors.partners} column_number={3} sponsor_title={t('partners')}></SponsorsLogos>
+          : ''}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

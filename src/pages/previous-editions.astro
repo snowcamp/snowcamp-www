@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { t } from "../i18n/i18n";
+import PreviousSponsorsLogosSection from '../components/PreviousSponsorsLogosSection.astro';
+import sponsors2023 from '../data/previous_editions_2023.json';
+import sponsors2022 from '../data/previous_editions_2022.json';
+import sponsors2020 from '../data/previous_editions_2020.json';
+import sponsors2019 from '../data/previous_editions_2019.json';
+import sponsors2018 from '../data/previous_editions_2018.json';
+import sponsors2017 from '../data/previous_editions_2017.json';
+import sponsors2016 from '../data/previous_editions_2016.json';
+---
+<Layout title={t('past_editions')}>
+    <PreviousSponsorsLogosSection year={2023} previousSponsors={sponsors2023}></PreviousSponsorsLogosSection>
+    <PreviousSponsorsLogosSection year={2022} previousSponsors={sponsors2022}></PreviousSponsorsLogosSection>
+    <PreviousSponsorsLogosSection year={2020} previousSponsors={sponsors2020}></PreviousSponsorsLogosSection>
+    <PreviousSponsorsLogosSection year={2019} previousSponsors={sponsors2019}></PreviousSponsorsLogosSection>
+    <PreviousSponsorsLogosSection year={2018} previousSponsors={sponsors2018}></PreviousSponsorsLogosSection>
+    <PreviousSponsorsLogosSection year={2017} previousSponsors={sponsors2017}></PreviousSponsorsLogosSection>
+    <PreviousSponsorsLogosSection year={2016} previousSponsors={sponsors2016}></PreviousSponsorsLogosSection>
+</Layout>

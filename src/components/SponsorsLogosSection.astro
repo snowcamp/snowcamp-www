@@ -30,22 +30,22 @@ const sponsors_year = sponsors.display === 'previous' ? edition.previous_edition
                 </div>
               </div>
             </div>
-            {sponsors.chamois.length ?
+            {sponsors.chamois && sponsors.chamois.length ?
               <SponsorsLogos sponsors={sponsors.chamois} column_number={3} sponsor_title={t('sponsor_chamois')}></SponsorsLogos>
             : ''}
-            { sponsors.etoile.length ?
+            { sponsors.etoile && sponsors.etoile.length ?
               <SponsorsLogos sponsors={sponsors.etoile} column_number={3} sponsor_title={t('sponsor_etoile')}></SponsorsLogos>
             : ''}
-            {sponsors.meetgreet.length ?
+            {sponsors.meetgreet && sponsors.meetgreet.length ?
               <SponsorsLogos sponsors={sponsors.meetgreet} column_number={3} sponsor_title={t('sponsor_meetgreet')}></SponsorsLogos>
             : ''}
-            {sponsors.flocon.length ?
+            {sponsors.flocon && sponsors.flocon.length ?
               <SponsorsLogos sponsors={sponsors.flocon} column_number={3} sponsor_title={t('sponsor_flocon')}></SponsorsLogos>
             : ''}
             <div class="sponsors-btn-area">
               <a class="snc-btn snc-btn-big" href={'/'+lang+'/sponsors/index.html'}><span>{t('become_sponsor')}</span></a>
             </div>
-            {sponsors.partners ?
+            {sponsors.partners && sponsors.partners.length ?
               <SponsorsLogos sponsors={sponsors.partners} column_number={3} sponsor_title={t('partners')}></SponsorsLogos>
             : ''}
           </div> <!-- Container -->
