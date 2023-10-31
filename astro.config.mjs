@@ -8,7 +8,7 @@ export const locales = {
 };
 
 export default defineConfig({
-  site: 'https://snowcamp.io',
+  site: 'https://snowcamp-www.github.io',
   trailingSlash: "always",
   build: { format: "directory" },
   integrations: [
