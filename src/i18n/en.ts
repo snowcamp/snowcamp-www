@@ -12,6 +12,7 @@ export function init() {
     i18n.become_sponsor = 'Become a sponsor';
     i18n.our_sponsors = 'Our sponsors';
     i18n.past_editions = 'Past editions';
+    i18n.venue = 'Venue';
     i18n.tickets = 'Tickets';
     i18n.videos = 'Videos';
     i18n.coc = 'CoC';
