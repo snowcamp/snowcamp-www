@@ -31,8 +31,10 @@
 .snc-header .snc-toggle i {
   font-size: 26px
 }
-.snc-header .navbar-nav >  li {
-  margin: 0 5px;
+.snc-header .navbar-nav {
+  & > li:not(:last-child) {
+    margin-right: 20px;
+  }
 }
 .snc-header .navbar-nav li li {
   min-width: 170px;
@@ -80,6 +82,8 @@
 }
 
 .snc-header .snc-navbar {
+  --bs-navbar-padding-y: 0;
+  --bs-navbar-padding-x: 0;
   margin-bottom: 0;
   border: none;
   background: 0 0;
@@ -87,11 +91,14 @@
 }
 
 .snc-header .snc-navbar .snc-nav {
-  position: relative;
   -webkit-animation-name: fadeInRight;
   animation-name: fadeInRight;
   transform-origin: center;
-  float: right
+}
+
+.navbar-expand .navbar-nav .dropdown-menu {
+  position: absolute;
+  top: 44px
 }
 
 .snc-header .snc-navbar .snc-nav li a {
