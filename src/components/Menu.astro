@@ -35,7 +35,7 @@ const path_en = path.replace('/fr/','/');
                           <li><a class="page-scroll" href={'/'+lang+'/previous-editions/'}>{t("past_editions")}</a></li>
                         </ul>
                       </li>
-                      { cfp.status !== "published" ? 
+                      { cfp.status !== "published" ?
                       <li><a class="page-scroll" href={'/'+lang+'/#program'}>{t("program_translation" )}</a></li>
                       :
                       <li><a class="page-scroll" href={'/'+lang+'/#program'}>{t("schedule_translation")}</a></li>
@@ -76,4 +76,3 @@ const path_en = path.replace('/fr/','/');
       </div>
     </div>
   </header>
-  

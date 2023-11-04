@@ -20,3 +20,6 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 src/astro_tmp_pages_*
+
+# IDE
+.idea
