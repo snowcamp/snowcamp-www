@@ -23,15 +23,6 @@ $(document).ready(function () {
     }
   }, 0);
 
-  // Scrolling
-  $(window).scroll(function () {
-    if ($(".navbar").offset().top > 50) {
-      $(".navbar-fixed-top").addClass("top-nav-collapse");
-    } else {
-      $(".navbar-fixed-top").removeClass("top-nav-collapse");
-    }
-  });
-
   $(function () {
     $(document).on('click', 'a.page-scroll', function (event) {
       var $anchor = $(this);
@@ -43,7 +34,6 @@ $(document).ready(function () {
         scrollTop: $(href).offset().top
       }, 1500, 'easeInOutExpo');
 
-      $(".navbar-collapse.collapse.in").removeClass("in");
       event.preventDefault();
     });
   });
