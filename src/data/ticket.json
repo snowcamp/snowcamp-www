@@ -18,7 +18,7 @@
       "price_conf": 65,
       "price_univ": 155,
       "possible_status": ["not_open", "open", "closed", "deactivated"],
-      "status": "not_open",
+      "status": "closed",
       "open_date": {
         "default": "unknown",
         "fr": "20 Novembre à 11h00",
