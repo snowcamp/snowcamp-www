@@ -10,7 +10,7 @@ const classic = ticket.store.classic;
 const classic_status = classic.status
 
 let storeStatus = '';
-if (early_birds_status === "closed" && classic_status === "closed") {
+if ((early_birds_status === "closed" || early_birds_status === "deactivated") && classic_status === "closed") {
   storeStatus = t('store_is_soldout');
 } else if ((early_birds_status === "closed" || classic_status === "deactivated")  &&  (classic_status === "not_open" || classic_status === "open")) {
   storeStatus = t('store_classic_dates', (classic.open_date as any)[lang]);
