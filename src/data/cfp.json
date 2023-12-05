@@ -1,7 +1,7 @@
 
 {
   "possible_status": [ "not_open", "opens_soon", "open", "closed", "published"],
-  "status": "opens_soon", 
+  "status": "closed", 
   "url": "https://conference-hall.io/public/event/Bq5k5rbMXGynAls6PjRB",
   "year": 2024,
   "sched_url": "https://snowcamp2024.sched.com/",
