@@ -5,6 +5,7 @@ import { t } from "../i18n/i18n";
 import SponsorsLogos from './SponsorsLogos.astro';
 
 const lang = (Astro.locals as any).lang;
+const url_prefix = lang === 'fr' ? '' : '/' + lang;
 const sponsors_year = sponsors.display === 'previous' ? edition.previous_edition_year : edition.year
 ---
     <div id="sponsors" class="snc-sponsors">
@@ -43,7 +44,7 @@ const sponsors_year = sponsors.display === 'previous' ? edition.previous_edition
               <SponsorsLogos sponsors={sponsors.flocon} column_number={3} sponsor_title={t('sponsor_flocon')}></SponsorsLogos>
             : ''}
             <div class="sponsors-btn-area">
-              <a class="snc-btn snc-btn-big" href={'/'+lang+'/sponsors/index.html'}><span>{t('become_sponsor')}</span></a>
+              <a class="snc-btn snc-btn-big" href={url_prefix+'/sponsors/index.html'}><span>{t('become_sponsor')}</span></a>
             </div>
             {sponsors.partners && sponsors.partners.length ?
               <SponsorsLogos sponsors={sponsors.partners} column_number={3} sponsor_title={t('partners')}></SponsorsLogos>

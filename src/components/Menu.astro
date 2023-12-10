@@ -4,12 +4,13 @@ import cfp from '../data/cfp.json';
 
 const lang = (Astro.locals as any).lang;
 const path = (Astro.locals as any).path;
+const url_prefix = lang === 'fr' ? '' : '/' + lang;
 const path_en = path.indexOf('/fr/') < 0 ? '/en'+path : path.replace('/fr/','/en/');
 const path_fr = path.replace('/en/','/');
 ---
 <header>
   <nav id="snc-header" class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href={'/'+lang+'/'}>
+    <a class="navbar-brand" href={url_prefix+'/'}>
       <img src="/img/alpes-snow-full-illustration.webp" alt="Logo">
     </a>
 
@@ -20,27 +21,27 @@ const path_fr = path.replace('/en/','/');
             Snowcamp <span class="caret"></span>
           </a>
           <div class="dropdown-menu" aria-labelledby="navSnowcampDropdown">
-            <a class="dropdown-item" href={'/'+lang+'/snowcamp/#what'}>{t("what_is_this")}</a>
-            <a class="dropdown-item" href={'/'+lang+'/organisation/'}>Organisation</a>
-            <a class="dropdown-item" href={'/'+lang+'/previous-editions/'}>{t("past_editions")}</a>
+            <a class="dropdown-item" href={url_prefix+'/snowcamp/#what'}>{t("what_is_this")}</a>
+            <a class="dropdown-item" href={url_prefix+'/organisation/'}>Organisation</a>
+            <a class="dropdown-item" href={url_prefix+'/previous-editions/'}>{t("past_editions")}</a>
           </div>
         </li>
-        <li class="nav-item"><a class="nav-link" href={'/'+lang+'/#program'}>
+        <li class="nav-item"><a class="nav-link" href={url_prefix+'/#program'}>
           { cfp.status !== "published" ? t("program_translation") : t("schedule_translation") }
         </a></li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href={'/'+lang+'/#sponsors'} id="navSponsorsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href={url_prefix+'/#sponsors'} id="navSponsorsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Sponsors <span class="caret"></span>
           </a>
           <div class="dropdown-menu" aria-labelledby="navSponsorsDropdown">
-            <a class="dropdown-item" href={'/'+lang+'/#sponsors'}>{t("our_sponsors")}</a>
-            <a class="dropdown-item" href={'/'+lang+'/sponsors/'}> {t("become_sponsor")} </a>
+            <a class="dropdown-item" href={url_prefix+'/#sponsors'}>{t("our_sponsors")}</a>
+            <a class="dropdown-item" href={url_prefix+'/sponsors/'}> {t("become_sponsor")} </a>
           </div>
         </li>
-        <li class="nav-item"><a class="nav-link" href={'/'+lang+'/#venue'}> {t("venue")} </a></li>
-        <li class="nav-item"><a class="nav-link" href={'/'+lang+'/tickets/'}>{t("tickets")}</a></li>
+        <li class="nav-item"><a class="nav-link" href={url_prefix+'/#venue'}> {t("venue")} </a></li>
+        <li class="nav-item"><a class="nav-link" href={url_prefix+'/tickets/'}>{t("tickets")}</a></li>
         <li class="nav-item"><a class="nav-link" href="https://www.youtube.com/channel/UCvRA5NSOfGOPet90fdV7uuw/videos" target="_blank">{t("videos")}</a></li>
-        <li class="nav-item"><a class="nav-link" href={'/'+lang+'/coc/'}>{t("coc")}</a></li>
+        <li class="nav-item"><a class="nav-link" href={url_prefix+'/coc/'}>{t("coc")}</a></li>
         <li class="nav-item"><a class="nav-link" href={lang == "fr" ? path_en : path_fr}>
           { lang == "fr" ?
               <img class="snc-flag" src="/img/gb.svg" alt="Switch to English">
