@@ -36,7 +36,9 @@ jobs:
         with:
           name: github-pages
       - name: Untar
-        run: tar xf artifact.tar -C ./public/
+        run: |
+          mkdir public
+          tar xf artifact.tar -C public/
 #      - name: Deploy
 #        uses: peaceiris/actions-gh-pages@v3.7.3
 #        with:
