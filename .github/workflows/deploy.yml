@@ -30,10 +30,23 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+      - name: Download Artecfact
+        uses: actions/download-artifact@v3
+        with:
+          name: github-pages
+          path: ./public
+#      - name: Deploy
+#        uses: peaceiris/actions-gh-pages@v3.7.3
+#        with:
+#          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+#          external_repository: snowcamp/snowcamp.github.io
+#          publish_branch: master
+#          publish_dir: ./public
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3.7.3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY_DRAFT }}
+          external_repository: Ldoppea/draft-snowcamp
+          publish_branch: master
+          publish_dir: ./public
