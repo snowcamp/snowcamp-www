@@ -3,7 +3,7 @@ import { init as fr_init } from "./fr";
 
 export const i18nconfig = {
     i18n: {} as any,
-    defaultLanguage: 'en',
+    defaultLanguage: 'fr',
     supportedLanguages: ['en', 'fr']
 }
 export async function initConfig(lang: string) {

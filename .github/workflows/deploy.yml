@@ -39,17 +39,17 @@ jobs:
         run: |
           mkdir public
           tar xf artifact.tar -C public/
-#      - name: Deploy
-#        uses: peaceiris/actions-gh-pages@v3.7.3
-#        with:
-#          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-#          external_repository: snowcamp/snowcamp.github.io
-#          publish_branch: master
-#          publish_dir: ./public
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY_DRAFT }}
-          external_repository: Ldoppea/draft-snowcamp
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: snowcamp/snowcamp.github.io
           publish_branch: master
           publish_dir: ./public
+#      - name: Deploy
+#        uses: peaceiris/actions-gh-pages@v3.7.3
+#        with:
+#          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY_DRAFT }}
+#          external_repository: Ldoppea/draft-snowcamp
+#          publish_branch: master
+#          publish_dir: ./public

@@ -4,8 +4,8 @@ import cfp from '../data/cfp.json';
 
 const lang = (Astro.locals as any).lang;
 const path = (Astro.locals as any).path;
-const path_fr = path.indexOf('/en/') < 0 ? '/fr'+path : path.replace('/en/','/fr/');
-const path_en = path.replace('/fr/','/');
+const path_en = path.indexOf('/fr/') < 0 ? '/en'+path : path.replace('/fr/','/en/');
+const path_fr = path.replace('/en/','/');
 ---
 <header>
   <nav id="snc-header" class="navbar navbar-expand-lg">
