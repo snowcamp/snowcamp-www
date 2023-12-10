@@ -128,12 +128,18 @@ export function init() {
         En retour, nous vous offrons une grande visibilité, sur le web mais aussi lors de l'événement. C'est
         l'occasion idéale pour rencontrer les développeurs grenoblois, montrer vos produits et services, et
         vous faire connaître.
-      </p>
-      <p class="text dark-background">
-        L'ouverture du sponsoring a lieu le ${sponsors.sponsorship.open_datetime.fr}
-        <br>via <a href="${sponsors.sponsorship.subscribe_link}">ce formulaire d'inscription</a>.
       </p>`;
-    i18n.store_package_title = (title:string, days: number) => `${title} - Pack ${days} days`;
+    i18n.sponsor_status_not_open = `<p class="text dark-background">
+      L'ouverture du sponsoring aura lieu le ${sponsors.sponsorship.open_datetime.fr}</a>.
+      </p>`;
+    i18n.sponsor_status_open = `<p class="text dark-background">
+      La campagne de sponsoring est ouverte depuis le ${sponsors.sponsorship.open_datetime.fr}. 
+      <br>Vous pouvez vous enregistrer via <a href="${sponsors.sponsorship.subscribe_link}">ce formulaire d'inscription</a>.
+    </p>`;
+    i18n.sponsor_status_closed = `<p class="text dark-background">
+      La campagne de sponsoring est fermée</a>.
+    </p>`;
+  i18n.store_package_title = (title:string, days: number) => `${title} - Pack ${days} days`;
     i18n.store_package_universities_plus_confs = 'Universités + Conférences';
     i18n.store_package_confs_only = 'Conférences seulement';
     i18n.store_access_universities = 'Accès aux Universités';

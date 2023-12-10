@@ -125,11 +125,16 @@ export function init() {
         It's the perfect opportunity to meet developers from Grenoble,
         demonstrate your products and services, and to make yourself known.
       </p>
-      <p class="text dark-background">
-        Sponsoring campaign opens the ${sponsors.sponsorship.open_datetime.en}.
-        <br>Use <a href="${sponsors.sponsorship.subscribe_link}">form to subscribe</a>
       </p>`;
-
+    i18n.sponsor_status_not_open = `<p class="text dark-background">
+      Sponsoring campaign will open at ${sponsors.sponsorship.open_datetime.fr}</a>.</p>`;
+    i18n.sponsor_status_open = `<p class="text dark-background">
+      Sponsoring campaign is open since the ${sponsors.sponsorship.open_datetime.en}. 
+      <br>You can register with the following online form <a href="${sponsors.sponsorship.subscribe_link}"></a>.
+      </p>`;
+    i18n.sponsor_status_closed = `<p class="text dark-background">
+      Sponsoring campaign is closed</a>.
+      </p>`;
     i18n.store_package_title = (title:string, days: number) => `${title} - Package ${days} days`;
     i18n.store_package_universities_plus_confs = 'Universities + Conferences';
     i18n.store_package_confs_only = 'Conferences only';

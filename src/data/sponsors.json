@@ -5,6 +5,8 @@
       "fr": "20 juin 2023 à 11h00",
       "en": "20th of June 2023 at 11:00am"
     },
+    "subscription_status_values": "[not_open|open|closed]",
+    "subscription_status": "open",
     "subscribe_link" : "https://bit.ly/3yfPHi2",
     "type": {
       "flocon": {

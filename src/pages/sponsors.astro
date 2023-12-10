@@ -17,6 +17,7 @@ import { t } from "../i18n/i18n";
                 <span class="heading dark-background">{t('become_sponsor')}</span>
               </h2>
               <span set:html={t('sponsor_desc')}></span>
+              <span set:html={t('sponsor_status_'+sponsors.sponsorship.subscription_status)}></span>
             </div>
           </div>
         </div>

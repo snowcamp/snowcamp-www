@@ -1,12 +1,14 @@
 ---
 import { t } from "../i18n/i18n";
 import { type SponsorType } from "./sponsor";
+import sponsors from '../data/sponsors.json';
 
 interface Props {
 	sponsor: SponsorType;
   cssClass: string;
 }
 const { sponsor, cssClass } = Astro.props;
+
 ---
 <div class={'single ' + cssClass} >
   <div class="single-top">
@@ -33,7 +35,7 @@ const { sponsor, cssClass } = Astro.props;
       <li><i class="fa fa-check" aria-hidden="true"></i> {t('snowcamp_logo_usage')}</li>
     </ul>
     <div class="sponsors-form">
-      <a href="{{ $prospectus | safeHTMLAttr }}" target="_blank">{t('sponsorship_prospectus')}</a>
+      <a href={sponsors.sponsorship.prospectus} target="_blank">{t('sponsorship_prospectus')}</a>
     </div>
     <a class="snc-btn" href="mailto:team@snowcamp.io"><span>{t('contact_us')}</span></a>
   </div>
