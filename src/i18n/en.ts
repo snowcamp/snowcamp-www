@@ -73,7 +73,7 @@ export function init() {
     i18n.schedule_desc = 'The schedule can be found here: ';
 
     i18n.venue_title = 'Venue';
-    i18n.venue_desc = 'The schedule can be found here:';
+    i18n.venue_desc = 'The schedule can be found here: ';
     i18n.venue_location = `Universities and conferences will take place at
       <a href="http://www.congres-wtcgrenoble.com/en target="_blank"><strong>"WTC World Trade Center Grenoble"</strong></a>,
       a conference center in Grenoble center.`;

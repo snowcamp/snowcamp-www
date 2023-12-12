@@ -74,7 +74,7 @@ export function init() {
     i18n.cfp_notifications = 'Notifications';
 
     i18n.schedule_title = 'Agenda';
-    i18n.schedule_desc = 'L\'agenda de SnowCamp peut être consulté à ce lien :';
+    i18n.schedule_desc = 'L\'agenda de SnowCamp peut être consulté à ce lien : ';
 
     i18n.venue_title = 'Venir';
     i18n.venue_desc = 'SnowCamp se déroulera au Centre de Congrès du WTC (World Trade Center) de Grenoble à la fois pour les Universités et les Conférences.';
