@@ -1,5 +1,10 @@
 {
- "organizers": [
+  "organizers": [
+    {
+      "name": "Charles Curtit",
+      "img": "charles.jpg",
+      "linkedin": "charles-curtit-9a8451194"
+    },
     {
       "name": "Ludovic Poitou",
       "img": "ludovic.jpg",
@@ -13,6 +18,11 @@
       "twitter": "MahaALSayasneh",
       "linkedin": "maha-alsayasneh-6aa34a57",
       "github": "alsayasneh"
+    },
+    {
+      "name": "Mathieu Poissard",
+      "img": "mathieu.png",
+      "linkedin": "mathieu-poissard-769800b8"
     },
     {
       "name": "Michel Barret",
