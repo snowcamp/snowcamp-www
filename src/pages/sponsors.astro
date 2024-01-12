@@ -9,6 +9,7 @@ import { t } from "../i18n/i18n";
   <div id="snc-sponsors" class="snc-ticket">
     <div class="snc-inner">
       <div class="container">
+
         <div class="row">
           <div class="col-xs-12 text-center">
             <div class="snc-heading-area snc-heading-brand">
@@ -16,8 +17,9 @@ import { t } from "../i18n/i18n";
                 <span class="back-heading"><i class="fa fa-users" aria-hidden="true"></i></span>
                 <span class="heading dark-background">{t('become_sponsor')}</span>
               </h2>
-              <span set:html={t('sponsor_desc')}></span>
-              <span set:html={t('sponsor_status_'+sponsors.sponsorship.subscription_status)}></span>
+              <div set:html={t('sponsor_desc')}></div>
+              <div set:html={t('sponsor_status_'+sponsors.sponsorship.subscription_status)} style="margin-top:20px;"></div>
+              <div set:html={t('sponsor_notice')} style="margin-top:20px;"></div>              
             </div>
           </div>
         </div>
@@ -28,7 +30,37 @@ import { t } from "../i18n/i18n";
             <div class="col-xs-12 col-sm-6 col-md-6">
               <SponsorFormula sponsor={sponsors.sponsorship.type.flocon} cssClass=""></SponsorFormula>
             </div>
+        </div>
+
+
+        <div id="plan"></div>
+        <div class="row" style="margin-top: 80px;">
+          <div class="col-xs-12 text-center">
+            <h2 class="snc-heading ">
+              <span class="back-heading"><i class="fa fa-users" aria-hidden="true"></i></span>
+              <span class="heading dark-background">{t('sponsor_plan_title')}</span>
+            </h2>
+            <div class="snc-heading-area snc-heading-brand">
+              <img src="/img/sponsors_plan_stands.png">
+            </div>
+          </div>
+        </div>
+
+
+        <div id="beers"></div>
+        <div class="row" style="margin-top: 80px;">
+          <div class="col-xs-12 text-center">
+            <div class="snc-heading-area snc-heading-brand">
+              <h2 class="snc-heading ">
+                <span class="back-heading"><i class="fa fa-users" aria-hidden="true"></i></span>
+                <span class="heading dark-background">{t('sponsor_meetgreet_title')}</span>
+              </h2>
+              <div class="text dark-background" style="text-align: left;" set:html={t('sponsor_meetgreet_desc')}>
+              </div>
+            </div>    
+          </div>    
         </div>    
+
       </div>
     </div>
   </div>

@@ -3,6 +3,7 @@ export interface SponsorType {
   price: string;
   number: number;
   booth_area?: string;
+  kakemono: boolean;
   places: {
     conferences: number;
     booth?: number;

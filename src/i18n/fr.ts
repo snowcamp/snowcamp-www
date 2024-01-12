@@ -106,10 +106,11 @@ export function init() {
     i18n.sponsor_thanks_previous_year = (year:number) => `Ils nous ont accordé leur confiance pour préparer ensemble l'édition ${year}.
       <br/>Un grand merci à nos sponsors !`;
     i18n.sponsor_limit = (num: number) => num > 1 ? `Limité à ${num} sponsors` : `Limité à ${num} sponsor`;
-    i18n.sponsor_places_conferences = (num: number) => `Entrées offertes pour participer aux sessions (${num} entrées)`;
-    i18n.sponsor_places_booth = (num: number) => `Entrées offertes sur l’espace sponsor uniquement (${num } entrées)`;
-    i18n.sponsor_places_speakers_dinner = (num: number) => `Places pour le <em>speakers dinner</em>, ${num} personnes`;
+    i18n.sponsor_places_conferences = (num: number) => `${num} entrées offertes pour participer aux sessions`;
+    i18n.sponsor_places_booth = (num: number) => `${num } entrées offertes sur l'espace sponsor uniquement`;
+    i18n.sponsor_places_speakers_dinner = (num: number) => `${num} place pour le speakers dinner`;
     i18n.sponsor_booth_area = (area: string) => `Stand dans le hall d'exposition (${area})`;
+    i18n.sponsor_kakemono = 'Un kakémono (max 1m x 2m50)';
     i18n.sponsor_logo_pass = 'Logo sur badges portés par les participants';
     i18n.sponsor_logo_website = 'Logo sur notre site web du SnowCamp';
     i18n.sponsor_logo_billposting  = 'Affichage de votre logo sur le lieu de la conférence';
@@ -134,12 +135,131 @@ export function init() {
       </p>`;
     i18n.sponsor_status_open = `<p class="text dark-background">
       La campagne de sponsoring est ouverte depuis le ${sponsors.sponsorship.open_datetime.fr}. 
-      <br>Vous pouvez vous enregistrer via <a href="${sponsors.sponsorship.subscribe_link}">ce formulaire d'inscription</a>.
+      Vous pouvez vous enregistrer via <a href="${sponsors.sponsorship.subscribe_link}">ce formulaire d'inscription</a>.
     </p>`;
     i18n.sponsor_status_closed = `<p class="text dark-background">
       La campagne de sponsoring est fermée</a>.
     </p>`;
-  i18n.store_package_title = (title:string, days: number) => `${title} - Pack ${days} days`;
+    i18n.sponsor_notice = `<p class="text dark-background">Notice: A partir de la réception de la facture par le sponsor, 
+      le sponsor a 90 jours pour réaliser l'entièreté des démarches administratives d'inscription et réaliser le paiement. 
+      Si ce délai n'est pas respecté par un sponsor, l'organisation du Snowcamp se donne le droit d'annuler le contrat avec
+      ce sponsoring pour laisser la place à un autre sponsor.</p>`;
+    i18n.sponsor_plan_title = 'Le plan des stands'
+    i18n.sponsor_meetgreet_title = 'La bière au Meet & Greet';
+    i18n.sponsor_meetgreet_desc = `Pour le moment convivial du Meet & Greet, le Jeudi de 16h50 à 18h, un des sponsors Etoile peut prendre en charge la distribution de la bière.
+    <br>Le principe :
+      <br> - Distribuer de la bière sur son stand pendant le créneau du Meet & Greet seulement (pas durant les 2 jours)
+      <br> - Il s'agit de distribuer de la bière à la pression (pas de bouteille ou de canette). Il faut donc prévoir une tireuse, des fûts de bière et des écocup pour 600 personnes
+      <br> - L'avantage pour le sponsor est d'assurer du passage sur son stand :-).
+      <br> - La contrepartie est bien sûr d'organiser cela : logistique, distribution de la bière, frais de location de la tireuse, achat des fûts, location des ecocup ...`;
+
+    i18n.sponsor_guide_title = `Guide du sponsor`;
+
+    i18n.sponsor_guide_place_title ='Les places';
+    i18n.sponsor_guide_place_content =`Les places liées au sponsoring doivent être retirées par le sponsor au moyen 
+      d'une url de connexion et d'un code fourni par l'organisation du Snowcamp vers la mi-novembre. Via ce lien vous
+      pourrez entrer les informations de chaque participant : nom, prénom, email, type de repas (végétarien ou normal).
+      <br>Le retrait des places doit être réalisé impérativement avant le <b>31 décembre</b> précédent la 
+      conférence. Passé ce délais les places "conference" ne seront plus récupérable par le sponsor. Elles 
+      seront mis en vente au public.                
+      <br>Il existe 2 types de places :<ul>
+        <li>Place <b>conférence</b>: Elle donne le droit d'accéder à la conférence le jeudi et le vendredi
+            et permet d'assister aux talks/schuss durant les 2 jours.</li>
+        <li>Place <b>stand</b>: Elle donne le droit d'accéder à la conférence le jeudi et le vendredi mais
+            seulement au hall des sponsors (contenant les stands), l'atrium du WTC. Elle ne permet pas 
+            d'accéder aux présentations (talk/schuss).</li>
+      </ul>`;
+
+    i18n.sponsor_guide_place_sharing_title ='Partage de place';
+    i18n.sponsor_guide_place_sharing_content =`Le billet d'une place que vous obtenez lors de l'inscription permet d'obtenir un badge le jeudi matin lors de l'accueil. 
+      Chaque billet est nominatif. Et normalement, il ne peut être cédé. Cependant, nous tolérons que des entreprises 
+      pratiquent le partage de badge entre leurs employés sur les 2 jours. Ainsi pour chaque billet/place, il vous est possible d'envoyer une personne le jeudi et une autre le vendredi. 
+      Le badge sera nécessaire pour rentrer le vendredi matin. La transmission du badge entre la personne du jeudi 
+      et celle du vendredi doit être gérée de votre côté. Nous ne distribuons pas deux badges pour un même billet. 
+      Lors de son arrivée le vendredi, la personne pourra coller une étiquette afin de mettre son nom sur le badge.
+      A noter que la préférence de repas (normal ou végé) sera celle indiquée dans la plateforme billetweb au 31 décembre.
+      Au delà de cette date, nous procédons à la commande auprès de notre traiteur (et à l'impression des badges). 
+      Veillez donc à faire un choix compatible avec les 2 personnes partageant le badge.`;
+
+    i18n.sponsor_guide_booth_etoile_title='Le stand ETOILE';
+    i18n.sponsor_guide_booth_etoile_content=`Le stand Etoile fait 9m² (3m x 3m). Il est tracé au sol. Il contient par 
+      défault: 1 table, 2 chaises, une arrivée électrique et 1 claustra métallique d'affichage (163 cmH x 83 cm L).
+      La hauteur maximal du stand ne doit pas dépasser 2m40. La charge au sol des produits ne doit pas excéder 500kg / m2.
+      <br>Aucun affichage direct sur les murs, cloisons et piliers du centre de congrès n'est autorisé, prévoir 
+      obligatoirement un support si besoin, en plus du claustra fourni.`;
+
+    i18n.sponsor_guide_booth_etoile_what_title=`Ce qu'il est possible de faire sur le stand`;
+    i18n.sponsor_guide_booth_etoile_what_content=`Il n'y a pas de liste définissant ce qui est interdit ou ce qui 
+      est autorisé. L'équipe d'organisation du Snowcamp est à solliciter pour tout ce qui peut sortir de l'ordinaire
+      d'un stand d'une conférence.
+      <br>Concernant la nourriture, il y a 3 préoccupations :<ol>
+        <li>L'hygiène: La nourriture doit être manipulée de manière hygiénique.</li>
+        <li>La propreté: Vous devez rendre l'emplacement de votre stand dans un état correct afin qu'il ne 
+            nécessite pas un surcroît de nettoyage inhabituel.</li>
+        <li>La cuisson: Faire cuire peut être une source de problème : risque de feu, surcharge d'électricité. 
+            Donc un appareillage au gaz n'est pas accepté. En revanche un appareil pour réchauffer des crêpes
+            est acceptable.</li>
+      </ol>`;
+
+    i18n.sponsor_guide_booth_etoile_material_title=`Matériel à louer`;
+    i18n.sponsor_guide_booth_etoile_material_content=`Il est possible de commander du matériel supplémentaire auprès du 
+      WTC mais via l'organisation du Snowcamp. Le catalogue est disponible <a target="_" href="/catalogue_WTC.pdf">ici</a>. Le demande de 
+      matériel doit être adressée à l'équipe d'organisation du Snowcamp qui vous transmettra les tarifs. 
+      Une facture sera émise qui devra être réglée au plus tard 7j AVANT le début de la conférence. L'absence
+      de paiement dans le délais fixé impliquera la non fourniture du matériel demandé.`;
+
+    i18n.sponsor_guide_booth_etoile_install_title=`(De)Installation du stand`;
+    i18n.sponsor_guide_booth_etoile_install_content=`L'installation du stand peut s'opérer le mercredi après-midi (14h-17h30)
+      du démarrage du Snowcamp. Les stands devront être démontés pour le vendredi 18h au plus tard. Le WTC comporte un monte 
+      charge et un ascenseur. L'accès au monte-charge se fait par la rue de la Frise, entre le World Trade Center
+      Grenoble et l'Ecole Supérieure de Commerce.`;
+
+    i18n.sponsor_guide_booth_etoile_delivery_title=`Livraison de matériel`;
+    i18n.sponsor_guide_booth_etoile_delivery_content=`<p>La livraison des colis et matériels devra se faire à partir mardi 30 janvier, de 8h30 à 16h30
+          et au plus tard mercredi 31 janvier avant 16h30. Tous les colis livrés devront porter
+          l'adresse suivante :
+      </p>
+          <p style="margin-left:  50px;">SNOWCAMP
+          <br>Nom de la société exposante + contact
+          <br>Centre de congrès du WTC Grenoble 1er étage
+          <br>5 - 7, place Robert Schuman
+          <br>38000 GRENOBLE</p>
+      <p>Les livreurs devront déposer les colis sur le lieu de l'exposition, qui se trouve au 1er étage
+          du bâtiment, accessible par monte-charge et ascenseur, sinon, les colis seront refusés. Les livreurs 
+          doivent être AUTONOMES pour assurer leurs prestations :</p>
+          <ul>
+          <li>soit disposer du matériel adéquat (hayon, transpalette spécifique, élévateur, ...)</li>
+          <li>soit disposer d'un effectif suffisant</li>
+          </ul>
+      <p>Aucune manutention ne sera apportée par l'équipe du Centre de congrès.
+          Un transpalette Jungheinrich, modèle AM 22, est à disposition libre le temps de la livraison.
+          Toute livraison ne pouvant être assurée en totale autonomie devra être solutionnée
+          indépendamment du Centre de congrès.
+          Les colis devront tous être repris à l'issue du démontage.
+          Les horaires de livraison et d'enlèvement des colis se font entre 8h30 et 16h30
+          uniquement.</p>
+      <p>Pour les colis ne pouvant être repris le jour du démontage, ils pourront être conservés sur
+          le centre de congrès jusqu'au lundi 30 janvier à 16h30. Il devront être bien emballés et
+          porter une adresse de retour lisible afin d'être repris par votre transporteur. La
+          responsabilité du centre de congrès ne peut être engagée sur leur destruction ou
+          disparition. Merci de bien indiquer sur vos colis lisiblement vos coordonnées complètes
+          pour éviter des pertes.</p>`;
+
+    i18n.sponsor_guide_booth_etoile_wifi_title=`Connexion wifi`;
+    i18n.sponsor_guide_booth_etoile_wifi_content=`<p>L'ensemble des espaces du centre de congrès est équipée de bornes Wifi.
+          Matériel compatible : ordinateur, assistant personnel (PDA) et tout matériel certifié wifi 802.11a/b/g :</p>
+          <p style="margin-left:  50px;">
+              Nom du réseau : ESPACE-CONGRES
+              <br>Le code d'accès vous sera communiqué ultérieurement
+          </p>`;
+
+    i18n.sponsor_guide_media_kit_title='Kit de communication';
+    i18n.sponsor_guide_media_kit_content=`Un <a href="/media_kit.pdf">kit de communication</a> est disponible pour vous aider dans la communication à propos du Snowcamp.
+    <br>Vous pouvez utiliser notre logo: <a href="/img/logo/snowcamp.svg">format vectoriel</a>, <a href="/img/logo/SnowCampLogo500x500.png">format PNG</a>`;
+
+
+
+    i18n.store_package_title = (title:string, days: number) => `${title} - Pack ${days} days`;
     i18n.store_package_universities_plus_confs = 'Universités + Conférences';
     i18n.store_package_confs_only = 'Conférences seulement';
     i18n.store_access_universities = 'Accès aux Universités';

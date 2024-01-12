@@ -33,7 +33,10 @@ const { sponsor, cssClass } = Astro.props;
       <li><i class="fa fa-check" aria-hidden="true"></i> {t('sponsor_places_speakers_dinner', sponsor.places.speakers_dinner)}</li>
       : ''}
       <li><i class="fa fa-check" aria-hidden="true"></i> {t('snowcamp_logo_usage')}</li>
-    </ul>
+      {sponsor.kakemono ?
+        <li><i class="fa fa-check" aria-hidden="true"></i> {t('sponsor_kakemono')}</li>
+      : ''}
+      </ul>
     <div class="sponsors-form">
       <a href={sponsors.sponsorship.prospectus} target="_blank">{t('sponsorship_prospectus')}</a>
     </div>
