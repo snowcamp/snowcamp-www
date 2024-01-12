@@ -7,10 +7,12 @@
   "sched_url": "https://snowcamp2024.sched.com/",
   "dates": {
     "open_date": {
+      "date": "01/09/2023",
       "fr": "1er Septembre 2023",
       "en": "1st of September 2023"
     },
     "close_date": {
+      "date": "15/10/2023",
       "fr": "15 Octobre 2023",
       "en": "15th of October 2023"
     },

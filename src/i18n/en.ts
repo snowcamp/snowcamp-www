@@ -101,10 +101,11 @@ export function init() {
     i18n.sponsor_thanks_previous_year = (year: number) => `They placed their trust to prepare the edition ${year} <span> 
       </span>together.<br/>Many thanks to our sponsors!`;
     i18n.sponsor_limit = (num: number) => num > 1 ? `Limited to ${num} sponsors` : `Limited to ${num} sponsor`;
-    i18n.sponsor_places_conferences = (num: number) => `Free tickets to attend the sessions (${num} free tickets)`;
-    i18n.sponsor_places_booth = (num: number) => `Free tickets for the sponsors space only (${num } free tickets)`;
-    i18n.sponsor_places_speakers_dinner = (num: number) => `Places for the <em>speakers dinner</em> (${num} persons)`;
+    i18n.sponsor_places_conferences = (num: number) => `${num} free tickets to attend the sessions`;
+    i18n.sponsor_places_booth = (num: number) => `${num} free tickets for the sponsors space only`;
+    i18n.sponsor_places_speakers_dinner = (num: number) => `${num} place for the speakers dinner`;
     i18n.sponsor_booth_area = (area: string) => `Booth in the exhibition hall (${area})`;
+    i18n.sponsor_kakemono = '1 kakémono (max 1m x 2m50)';
     i18n.sponsor_logo_pass = 'Your logo on the attendees pass';
     i18n.sponsor_logo_website = 'Your logo on the SnowCamp website';
     i18n.sponsor_logo_billposting  = 'Your logo visible on the location of the conference';
@@ -126,15 +127,100 @@ export function init() {
         demonstrate your products and services, and to make yourself known.
       </p>
       </p>`;
+    i18n.sponsor_notice = `<p class="text dark-background">Notice: Upon receipt of the invoice by the sponsor, 
+      the sponsor has 90 days to complete all administrative registration procedures and make the payment. 
+      If this deadline is not adhered to by a sponsor, the Snowcamp organization reserves the right to cancel 
+      the contract with that sponsor to make way for another sponsor.</p>`;
+    i18n.sponsor_plan_title = 'Plan of booths'
+    i18n.sponsor_meetgreet_title = 'Beer at Meet & Greet';
+    i18n.sponsor_meetgreet_desc = `For the friendly Meet & Greet moment, the Thursday from 4:50 PM to 6:00 PM, 
+      one of the Etoile sponsors can take care of distributing beer.
+      <br>The idea:
+      <br> - Distribute beer at their booth only during the Meet & Greet time slot (not during the 2 days).
+      <br> - The distribution involves draft beer (no bottles or cans). Therefore, a tap, beer kegs, and eco-cups for 600 people need to be arranged.
+      <br> - The benefit for the sponsor is to ensure traffic to their booth :-).
+      <br> - The counterpart, of course, is to organize this: logistics, beer distribution, rental fees for the tap, purchase of kegs, rental of eco-cups...`;
     i18n.sponsor_status_not_open = `<p class="text dark-background">
       Sponsoring campaign will open at ${sponsors.sponsorship.open_datetime.fr}</a>.</p>`;
     i18n.sponsor_status_open = `<p class="text dark-background">
       Sponsoring campaign is open since the ${sponsors.sponsorship.open_datetime.en}. 
-      <br>You can register with the following online form <a href="${sponsors.sponsorship.subscribe_link}"></a>.
+      <br>You can register with the following  <a href="${sponsors.sponsorship.subscribe_link}">online form</a>.
       </p>`;
     i18n.sponsor_status_closed = `<p class="text dark-background">
       Sponsoring campaign is closed</a>.
       </p>`;
+    i18n.sponsor_guide_title = `Sponsor guide`;
+    i18n.sponsor_guide_place_title ='Tickets';
+    i18n.sponsor_guide_place_content =`The sponsorship-related tickets must be claimed by the sponsor 
+      through a login URL and a code provided by the Snowcamp organization around mid-November. 
+      Through this link, you can enter the information for each participant: name, first name, email, and 
+      meal preference (vegetarian or regular).
+      <br>The ticket retrieval must be completed no later than December 31st before the conference. After 
+      this deadline, the "conference" tickets will no longer be retrievable by the sponsor and will be made 
+      available for public purchase.
+      <br>There are two types of tickets:<ul>
+        <li>Conference Ticket: Grants access to the conference on Thursday and Friday and allows attendance 
+        at talks/schuss during both days.</li>
+        <li>Stand Ticket: Grants access to the conference on Thursday and Friday but only to the sponsors' hall
+        (containing the booths), the atrium of the WTC. It does not allow access to presentations (talks/schuss).</li>
+      </ul>`;
+
+    i18n.sponsor_guide_place_sharing_title ='Ticket sharing';
+    i18n.sponsor_guide_place_sharing_content =`The ticket for a single seat obtained during registration allows you 
+    to receive a badge on Thursday morning during the welcome session. Each ticket is personalized and typically cannot 
+    be transferred. However, we tolerate companies sharing badges among their employees over the 2 days. Thus, for each
+    ticket/seat, it is possible for you to send one person on Thursday and another on Friday.
+    <br>The badge will be necessary for entry on Friday morning. The transfer of the badge between the person on Thursday
+    and the one on Friday must be managed on your end. We do not distribute two badges for a single ticket. Upon arrival
+    on Friday, the person can affix a label to put their name on the badge.
+    <br>Please note that the meal preference (regular or vegetarian) will be the one indicated in the Billetweb platform 
+    by December 31st. Beyond this date, we proceed with the order from our caterer (and the printing of badges). 
+    Therefore, ensure that the choice is compatible with the preferences of both individuals sharing the badge.`;
+  
+    i18n.sponsor_guide_booth_etoile_title='The booth ETOILE';
+    i18n.sponsor_guide_booth_etoile_content=`The Star booth is 9m² (3m x 3m). It is marked on the ground. By default,
+      it includes: 1 table, 2 chairs, an electrical outlet, and a metal display screen (163 cmH x 83 cm L). The maximum 
+      height of the booth should not exceed 2m40. The ground load of the products should not exceed 500kg/m2. <br>No direct
+      display on the walls, partitions, and pillars of the congress center is allowed. It is mandatory to provide additional
+      support if needed, in addition to the provided display screen.`;
+
+    i18n.sponsor_guide_booth_etoile_what_title=`Content of the booth`;
+    i18n.sponsor_guide_booth_etoile_what_content=`There is no list defining what is prohibited or allowed. The Snowcamp 
+    organizing team should be contacted for anything that may deviate from the norm of a conference booth.
+    <br>Regarding food, there are three concerns:<ol>
+      <li>Hygiene: Food must be handled in a hygienic manner.</li>
+      <li>Cleanliness: You must leave your booth location in a proper state so that it does not require an unusual amount
+      of cleaning.</li>
+      <li>Cooking: Cooking can be a source of problems, such as the risk of fire or electrical overload. Therefore, gas
+      appliances are not accepted. However, an appliance for warming up crepes is acceptable.</li>
+    </ol>`;
+
+    i18n.sponsor_guide_booth_etoile_material_title=`Rent material`;
+    i18n.sponsor_guide_booth_etoile_material_content=`It is possible to order additional equipment through the 
+      WTC, but it must be done through the Snowcamp organization. The catalog is available 
+      <a target="_" href="/catalog_WTC.pdf">here</a>. The request for equipment should be addressed to the Snowcamp 
+      organizing team, who will provide you with the pricing. An invoice will be issued and must be settled no later 
+      than 7 days BEFORE the start of the conference. Failure to make the payment within the specified period will 
+      result in the non-provision of the requested equipment.`;
+
+    i18n.sponsor_guide_booth_etoile_install_title=`(Un)Installation of the booth`;
+    i18n.sponsor_guide_booth_etoile_install_content=`The booth setup can take place on Wednesday afternoon 
+      (2:00 PM to 5:30 PM) starting from the beginning of Snowcamp. The booths must be dismantled no later than Friday 
+      at 6:00 PM. The WTC has a freight elevator and a regular elevator. Access to the freight elevator is through Rue 
+      de la Frise, between the World Trade Center Grenoble and Grenoble Ecole Management.`;
+  
+    i18n.sponsor_guide_booth_etoile_wifi_title=`Wifi`;
+    i18n.sponsor_guide_booth_etoile_wifi_content=`<p>The entire congress center is equipped with WiFi access points. 
+      Compatible devices include computers, personal digital assistants (PDAs), and any equipment certified for 
+      WiFi 802.11a/b/g:
+      <p style="margin-left:  50px;">Network Name: ESPACE-CONGRES
+      <br>The access code will be provided to you later.
+      </p>`;
+  
+    i18n.sponsor_guide_media_kit_title='Kit de communication';
+    i18n.sponsor_guide_media_kit_content=`A <a href="/media_kit.pdf">communication kit</a> is available to assist you in promoting Snowcamp.
+    <br>You can use our logo: <a href="/img/logo/snowcamp.svg">vector format</a>, <a href="/img/logo/SnowCampLogo500x500.png">PNG format</a>.`;
+  
     i18n.store_package_title = (title:string, days: number) => `${title} - Package ${days} days`;
     i18n.store_package_universities_plus_confs = 'Universities + Conferences';
     i18n.store_package_confs_only = 'Conferences only';

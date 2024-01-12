@@ -31,6 +31,9 @@ const { sponsor } = Astro.props;
       {sponsor.places && sponsor.places.speakers_dinner &&
       <li><i class="fa fa-check" aria-hidden="true"></i> {t('sponsor_places_speakers_dinner', sponsor.places.speakers_dinner)}</li>
       }
+      {sponsor.kakemono &&
+      <li><i class="fa fa-check" aria-hidden="true"></i> {t('sponsor_kakemono')}</li>
+      }
       <li><i class="fa fa-check" aria-hidden="true"></i> {t('snowcamp_logo_usage')}</li>
     </ul>
     <div class="sponsors-form">
