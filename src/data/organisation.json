@@ -16,7 +16,7 @@
       { "name": "Michel Barret"              , "editions": [false, false, false,  true,  true,  true,  true,  true], "honnor": false},
       { "name": "Miguel Moquillon"           , "editions": [ true,  true,  true,  true,  true,  true,  true,  true], "honnor": false},
       { "name": "Ouiame Talbi"               , "editions": [false, false, false, false, false, false, false,  true], "honnor": false},
-      { "name": "Pierrick Rassat"            , "editions": [false, false, false, false, false, false,  true,  true], "honnor": false},
+      { "name": "Pierrick Rassat"            , "editions": [false, false, false, false, false, true,  true,  true], "honnor": false},
       { "name": "Remy Sanlaville"            , "editions": [false,  true,  true,  true,  true, false, false, false], "honnor": false},
       { "name": "Sébastien Chassande-Barrioz", "editions": [false, false, false,  true,  true,  true,  true,  true], "honnor": false},
       { "name": "Sylvain Bauza"              , "editions": [false,  true, false, false, false, false, false, false], "honnor": false},
