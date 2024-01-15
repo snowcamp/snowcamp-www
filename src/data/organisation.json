@@ -1,4 +1,45 @@
 {
+  "past" : {
+    "editions":                                            [ 2016,  2017,  2018,  2019,  2020,  2022,  2023,  2024],
+    "organizers": [
+      { "name": "Charles Curtit"             , "editions": [false, false, false, false, false, false, false,  true], "honnor": false},
+      { "name": "Cédric Tran-Xuan"           , "editions": [false,  true,  true,  true,  true,  true,  true, false], "honnor":  true},
+      { "name": "Clément Escoffier"          , "editions": [ true,  true,  true,  true, false, false, false, false], "honnor": false},
+      { "name": "Emmanuel Hugonnet"          , "editions": [ true,  true,  true,  true, false, false, false, false], "honnor": false},
+      { "name": "Johann"                     , "editions": [false, false, false, false,  true, false, false, false], "honnor": false},
+      { "name": "Julien"                     , "editions": [false, false, false, false, false, false,  true, false], "honnor": false},
+      { "name": "Lorie Piscichio"            , "editions": [false,  true,  true,  true,  true,  true, false, false], "honnor":  true},
+      { "name": "Ludovic Poitou"             , "editions": [false,  true,  true,  true,  true,  true,  true,  true], "honnor": false},
+      { "name": "Maha"                       , "editions": [false, false, false, false, false, false,  true, false], "honnor": false},
+      { "name": "Mathieu Poissard"           , "editions": [false, false, false, false, false, false, false,  true], "honnor": false},
+      { "name": "Maxime"                     , "editions": [false, false, false,  true,  true, false, false, false], "honnor": false},
+      { "name": "Michel Barret"              , "editions": [false, false, false,  true,  true,  true,  true,  true], "honnor": false},
+      { "name": "Miguel Moquillon"           , "editions": [ true,  true,  true,  true,  true,  true,  true,  true], "honnor": false},
+      { "name": "Ouiame Talbi"               , "editions": [false, false, false, false, false, false, false,  true], "honnor": false},
+      { "name": "Pierrick Rassat"            , "editions": [false, false, false, false, false, false,  true,  true], "honnor": false},
+      { "name": "Remy Sanlaville"            , "editions": [false,  true,  true,  true,  true, false, false, false], "honnor": false},
+      { "name": "Sébastien Chassande-Barrioz", "editions": [false, false, false,  true,  true,  true,  true,  true], "honnor": false},
+      { "name": "Sylvain Bauza"              , "editions": [false,  true, false, false, false, false, false, false], "honnor": false},
+      { "name": "Virginie Pageaud"           , "editions": [false, false, false, false, false, false, false,  true], "honnor": false},
+      { "name": "Willy Malvault"             , "editions": [false, false, false, false, false, false,  true,  true], "honnor": false},
+      { "name": "Yannick Chiron"             , "editions": [false, false, false,  true,  true,  true,  true,  true], "honnor": false},
+      { "name": "Yohan Lasorsa"              , "editions": [false, false, false, false, false,  true,  true,  true], "honnor": false}
+    ]
+  },
+  "roles": [
+    { "name":"Sponsors",                  "description":"Communication, recrutement, facturation, places"},
+    { "name":"Lieu de conférence",        "description":"Réservation, logistique"},
+    { "name":"CFP",                       "description":"Definition des tracks, organisation votes, planning"},
+    { "name":"Tremplin",                  "description":""},
+    { "name":"Speakers et des keynoters", "description":"Communication, remboursement frais keynoters, demandes"},
+    { "name":"Billets",                   "description":"outils, ventes, réclamation, badges"},
+    { "name":"Restauration",              "description":"Traiteur, speaker diner"},
+    { "name":"Unconference",              "description":"bus, location, forfait, accompagnement"},
+    { "name":"Communication",             "description":"mail, LinkedIn, Twitter"},
+    { "name":"Réviseur de track du CFP",  "description":"Vote pour les talks d'une track"},
+    { "name":"Gilet blanc",               "description":"Bénévoles le jour J"},
+    { "name":"Photographe",               "description":"Photographe le jour J"}    
+  ],
   "organizers": [
     {
       "name": "Charles Curtit",
