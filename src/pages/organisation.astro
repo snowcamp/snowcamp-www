@@ -2,7 +2,41 @@
 import Layout from '../layouts/Layout.astro';
 import { t } from "../i18n/i18n";
 import Orgas from '../components/Orgas.astro';
+import organisation from '../data/organisation.json';
+
+const organizers = organisation.past.organizers.map(orga => { 
+	return { ...orga, total: orga.editions.filter(o => o).length };
+});
+const total_editions = organizers.map(o => o.editions).reduce((prev,cur) => prev.map((p,idx) => (p + (cur[idx] ? 1 : 0))), organisation.past.editions.map(e => 0));
 ---
+<style>
+	.role {
+	}
+	.rolecontent {
+		margin: 10px;
+		padding: 10px;
+		border: 1px solid orange;
+		background-color: #f9f9f9;
+		text-align: center;
+		display: inline-block;
+		vertical-align: middle;
+		width: 100%;
+	}
+	.role .rolecontent:hover {
+		background-color: #dc4e41;
+		color: #f9f9f9;
+	}
+	.role .description {
+    	display: none;
+	}
+	.role:hover .name {
+		text-decoration: underline;
+	}
+	.role:hover .description {
+		line-height: 3.9rem;
+		display: block;
+	}
+</style>
 <Layout title={t('organisation_title')}>
 	<section>
 		<div id="snc-organisation" class="snc-ticket">
@@ -18,8 +52,75 @@ import Orgas from '../components/Orgas.astro';
 								<p class="text dark-background" set:html={ t('organisation_desc') }></p>
 							</div>
 						</div>
+						<Orgas></Orgas>
 					</div>
-					<Orgas></Orgas>
+				</div>
+			</div>
+		</div>
+		<div class="snc-snowcamp-page">
+			<div class="snc-inner">
+			  <div class="container">
+					<div class="row">
+						<h2>Historique des organisateurs</h2>
+						<table border="1" style="padding: 20px; margin: 10px auto;text-align: center;">
+							<tr>
+								<th></th>
+								{ organisation.past.editions.map(d => (
+								<th style="padding: 10px;text-align: center;">{d}</th>
+								))}
+								<th style="padding: 10px;">Total</th>
+							</tr>
+							<tr>
+								<td style="padding: 10px;text-align: right;">Total</td>
+								{ total_editions.map(t => (
+								<td>{t}</td>
+								))}
+							</tr>
+							{ organizers.map(orga => (
+							<tr>
+								<th style="padding: 10px;text-align: left;">{orga.name}</th>
+								{ orga.editions.map(va => (
+								<td style="padding: 5px; font-size: 1.5em;">{va ? '*' :''}</td>
+								))}
+								<td style="padding: 10px;">{orga.total}</td>
+							</tr>
+							))}
+						</table>
+					</div>
+
+					<div class="row">
+						<br><br>
+						<h2 style="margin-top: 30px;">Les différents rôles</h2>
+						<div style="margin-left: 30px;">
+							Les différents rôles de l'organisation du snowcamp sont:
+						</div>
+						{ organisation.roles.map(role => (
+							<div class="col-xs-12 col-sm-6 col-md-4 role">
+								<div class="rolecontent">
+									<div class="name">{role.name}</div>
+									<div class="description">{role.description}</div>
+								</div>
+							</div>
+						))}
+						<div style="margin-left: 30px;">
+							Il est souhaité de répartir les différents rôles sur l'ensemble de l'équipe d'organisation, de nommer un backup sur chaque rôle et d'éviter de cumuler trop de rôles.
+							<br>En plus des ces rôles d'organisation de la conférence, il y a un président, un trésorier et un secrétaire comme pour toute association.
+						</div>
+					</div>
+
+					<h2 style="margin-top: 30px;">Les principaux postes de dépenses/Recette.</h2>
+					<div style="margin-left: 30px;">
+						
+						<br>
+						<div style="text-align: center; margin: 20px auto">
+							<img src="/img/repartition_recettes.png" width="50%" style="vertical-align: top; min-width: 400px;">
+							<img src="/img/repartition_depenses.png" width="50%" style="vertical-align: top; min-width: 400px;">
+						</div>
+						<p>Le budget du snowcamp est d'environ 80 000€ et est en principe à l'équilibre chaque année. Il n'y a pas 
+						vocation à faire des bénéfices. Lorsqu'il y a un excedent budgétaire, il est reversé à des associations pour 
+						la défense de l'environnement.</p>
+					</div>
+
 				</div>
 			</div>
 		</div>
