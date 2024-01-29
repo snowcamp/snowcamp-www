@@ -167,6 +167,18 @@
         "fr": "Sopra Steria, l un des leaders européens du conseil, des services numériques et de l édition de logiciels, aide ses clients à mener leur transformation digitale et à obtenir des bénéfices concrets et durables. Il apporte une réponse globale aux enjeux de compétitivité des grandes entreprises et organisations, combinant une connaissance approfondie des secteurs d activité et des technologies innovantes à une approche résolument collaborative. Sopra Steria place l humain au centre de son action et s engage auprès de ses clients à tirer le meilleur parti du digital pour construire un avenir positif.",
         "en": "Sopra Steria, l un des leaders européens du conseil, des services numériques et de l édition de logiciels, aide ses clients à mener leur transformation digitale et à obtenir des bénéfices concrets et durables. Il apporte une réponse globale aux enjeux de compétitivité des grandes entreprises et organisations, combinant une connaissance approfondie des secteurs d activité et des technologies innovantes à une approche résolument collaborative. Sopra Steria place l humain au centre de son action et s engage auprès de ses clients à tirer le meilleur parti du digital pour construire un avenir positif."
       }
+    },
+    {
+      "name": "Salesforce",
+      "logo": "img/sponsors/2018/salesforce.png",
+      "url": {
+        "fr": "https://engineering.salesforce.com/",
+        "en": "https://engineering.salesforce.com/"
+      },
+      "description": {
+        "fr": "We opened our first European office in Ireland in 2000, just one year after we founded Salesforce. Today, we are the global leader in Customer Relationship Management (CRM) and have offices in 13 European countries. Our employees are building relationships with our customers, creating powerful technologies and volunteering in our communities across the region. From Spain to Sweden, from Ireland to Italy, we bring companies of every size and industry together with their customers.",
+        "en": "We opened our first European office in Ireland in 2000, just one year after we founded Salesforce. Today, we are the global leader in Customer Relationship Management (CRM) and have offices in 13 European countries. Our employees are building relationships with our customers, creating powerful technologies and volunteering in our communities across the region. From Spain to Sweden, from Ireland to Italy, we bring companies of every size and industry together with their customers."
+      }
     }
   ],
   "flocon": [
