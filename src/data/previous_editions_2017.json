@@ -23,7 +23,7 @@
     "chamois": [
       {
         "name": "BeeBuzziness",
-        "logo": "img/sponsors/2017/beebuzziness.png",
+        "logo": "img/sponsors/beebuzziness.2017.png",
         "url": {
           "fr": "http://beebuzziness.com/",
           "en": "http://beebuzziness.com/"
@@ -37,7 +37,7 @@
     "etoile": [
       {
         "name": "ForgeRock",
-        "logo": "img/sponsors/2017/forgerock.png",
+        "logo": "img/sponsors/forgerock.2017.png",
         "url": {
           "fr": "https://www.forgerock.com/",
           "en": "https://www.forgerock.com/"
@@ -49,7 +49,7 @@
       },
       {
         "name": "mgm",
-        "logo": "img/sponsors/2017/mgm.png",
+        "logo": "img/sponsors/mgm.2017.png",
         "url": {
           "fr": "https://live.mgm-tp.com/en/",
           "en": "https://live.mgm-tp.com/en/"
@@ -61,7 +61,7 @@
       },
       {
         "name": "Kaizen Solutions",
-        "logo": "img/sponsors/2018/kaizen.png",
+        "logo": "img/sponsors/kaizen.2018.png",
         "url": {
           "fr": "https://kaizen-solutions.net/",
           "en": "https://kaizen-solutions.net/"
@@ -73,7 +73,7 @@
       },
       {
         "name": "Streamdata.io",
-        "logo": "img/sponsors/2017/streamdataio.png",
+        "logo": "img/sponsors/streamdataio.2016.png",
         "url": {
           "fr": "https://streamdata.io/",
           "en": "https://streamdata.io/"
@@ -85,7 +85,7 @@
       },
       {
         "name": "Sogilis",
-        "logo": "img/sponsors/2017/squarescale.png",
+        "logo": "img/sponsors/squarescale.2017.png",
         "url": {
           "fr": "http://sogilis.com/",
           "en": "http://sogilis.com/"
@@ -99,7 +99,7 @@
     "flocon": [
       {
         "name": "Elastic",
-        "logo": "img/sponsors/2017/elastic.png",
+        "logo": "img/sponsors/elastic.2016.png",
         "url": {
           "fr": "https://www.elastic.co/",
           "en": "https://www.elastic.co/"
@@ -111,7 +111,7 @@
       },
       {
         "name": "GitHub",
-        "logo": "img/sponsors/2017/github.png",
+        "logo": "img/sponsors/github.2017.png",
         "url": {
           "fr": "https://github.com/",
           "en": "https://github.com/"
@@ -123,7 +123,7 @@
       },
       {
         "name": "Michelin",
-        "logo": "img/sponsors/2017/michelin.png",
+        "logo": "img/sponsors/michelin.2017.png",
         "url": {
           "fr": "http://www.michelin.com/",
           "en": "http://www.michelin.com/"
@@ -135,7 +135,7 @@
       },
       {
         "name": "Algoo",
-        "logo": "img/sponsors/2017/algoo.png",
+        "logo": "img/sponsors/algoo.2017.png",
         "url": {
           "fr": "https://www.algoo.fr/",
           "en": "https://www.algoo.fr/"

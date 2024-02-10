@@ -38,7 +38,7 @@
   "etoile": [
     {
       "name": "Moodys",
-      "logo": "img/sponsors/2023/moodys.webp",
+      "logo": "img/sponsors/moodys.2023.webp",
       "url": {
         "fr": "https://www.moodysanalytics.com",
         "en": "https://www.moodysanalytics.com"
@@ -50,7 +50,7 @@
     },
     {
       "name": "Viseo",
-      "logo": "img/sponsors/2022/viseo.png",
+      "logo": "img/sponsors/viseo.2022.png",
       "url": {
         "fr": "http://www.viseo.com/fr",
         "en": "http://www.viseo.com/en"
@@ -62,7 +62,7 @@
     },
     {
       "name": "Open",
-      "logo": "img/sponsors/2024/open.png",
+      "logo": "img/sponsors/open.2024.png",
       "url": {
         "fr": "https://www.open.global/",
         "en": "https://www.open.global/"
@@ -74,7 +74,7 @@
     },
     {
       "name": "ATOS",
-      "logo": "img/sponsors/2024/atos.png",
+      "logo": "img/sponsors/atos.2024.png",
       "url": {
         "fr": "https://atos.net/fr/",
         "en": "https://atos.net/"
@@ -86,7 +86,7 @@
     },
     {
       "name": "Kaizen",
-      "logo": "img/sponsors/2018/kaizen.png",
+      "logo": "img/sponsors/kaizen.2018.png",
       "url": {
         "fr": "https://kaizen-solutions.net/",
         "en": "https://kaizen-solutions.net/"
@@ -98,7 +98,7 @@
     },
     {
       "name": "Elastic",
-      "logo": "img/sponsors/2017/elastic.png",
+      "logo": "img/sponsors/elastic.2016.png",
       "url": {
         "fr": "https://www.elastic.co/fr/",
         "en": "https://www.elastic.co"
@@ -110,7 +110,7 @@
     },
     {
       "name": "Criteo",
-      "logo": "img/sponsors/2023/crite.png",
+      "logo": "img/sponsors/crite.2023.png",
       "url": {
         "fr": "https://www.criteo.com/",
         "en": "https://www.criteo.com/"
@@ -122,7 +122,7 @@
     },
     {
       "name": "Norsys",
-      "logo": "img/sponsors/2018/norsys.png",
+      "logo": "img/sponsors/norsys.2018.png",
       "url": {
         "fr": "https://www.norsys.fr/",
         "en": "https://www.norsys.fr/"
@@ -134,7 +134,7 @@
     },
     {
       "name": "CGI",
-      "logo": "img/sponsors/2022/cgi.jpg",
+      "logo": "img/sponsors/cgi.2022.jpg",
       "url": {
         "fr": "https://www.cgi.com/fr",
         "en": "https://www.cgi.com/en"
@@ -146,7 +146,7 @@
     },
     {
       "name": "Thales",
-      "logo": "img/sponsors/2023/thales.jpg",
+      "logo": "img/sponsors/thales.2023.jpg",
       "url": {
         "fr": "https://www.thalesgroup.com/",
         "en": "https://www.thalesgroup.com/en"
@@ -158,7 +158,7 @@
     },
     {
       "name": "Sopra Steria",
-      "logo": "img/sponsors/2018/sopra-steria.png",
+      "logo": "img/sponsors/sopra-steria.2018.png",
       "url": {
         "fr": "https://www.soprasteria.com/fr/",
         "en": "https://www.soprasteria.com/en/"
@@ -170,7 +170,7 @@
     },
     {
       "name": "Salesforce",
-      "logo": "img/sponsors/2018/salesforce.png",
+      "logo": "img/sponsors/salesforce.2018.png",
       "url": {
         "fr": "https://engineering.salesforce.com/",
         "en": "https://engineering.salesforce.com/"
@@ -184,7 +184,7 @@
   "flocon": [
     {
       "name": "Slate Digital",
-      "logo": "img/sponsors/2024/slatedigital.png",
+      "logo": "img/sponsors/slatedigital.2024.png",
       "url": {
         "fr": "https://slatedigital.com",
         "en": "https://slatedigital.com"
@@ -196,7 +196,7 @@
     },
     {
       "name": "KLS Group",
-      "logo": "img/sponsors/2023/klsgroup.webp",
+      "logo": "img/sponsors/klsgroup.2020.png",
       "url": {
         "fr": "https://www.kls-group.fr",
         "en": "https://www.kls-group.fr"
@@ -208,7 +208,7 @@
     },
     {
       "name": "AViSTO",
-      "logo": "img/sponsors/2022/avisto.png",
+      "logo": "img/sponsors/avisto.2020.png",
       "url": {
         "fr": "https://www.avisto.com",
         "en": "https://www.avisto.com"
@@ -220,7 +220,7 @@
     },
     {
       "name": "Collaboration Better The World",
-      "logo": "img/sponsors/2024/cbtw.png",
+      "logo": "img/sponsors/cbtw.2024.png",
       "url": {
         "fr": "https://positivethinking.tech/fr/",
         "en": "https://positivethinking.tech/"
@@ -232,7 +232,7 @@
     },
     {
       "name": "Zenika",
-      "logo": "img/sponsors/2023/zenika.png",
+      "logo": "img/sponsors/zenika.2023.png",
       "url": {
         "fr": "https://www.zenika.com/",
         "en": "https://www.zenika.com/"
@@ -244,7 +244,7 @@
     },
     {
       "name": "BonitaSoft",
-      "logo": "img/sponsors/2024/bonita.png",
+      "logo": "img/sponsors/bonita.2024.png",
       "url": {
         "fr": "https://www.bonitasoft.com/",
         "en": "https://www.bonitasoft.com/"
@@ -256,7 +256,7 @@
     },
     {
       "name": "Kelkoo Group",
-      "logo": "img/sponsors/2022/kelkoogroup.png",
+      "logo": "img/sponsors/kelkoogroup.2019.png",
       "url": {
         "fr": "https://www.kelkoogroup.com/fr/",
         "en": "https://www.kelkoogroup.com/"

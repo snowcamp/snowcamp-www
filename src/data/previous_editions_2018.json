@@ -13,7 +13,7 @@
     "etoile": [
       {
         "name": "ForgeRock",
-        "logo": "img/sponsors/2018/forgerock.png",
+        "logo": "img/sponsors/forgerock.2017.png",
         "url": {
           "fr": "https://www.forgerock.com/",
           "en": "https://www.forgerock.com/"
@@ -25,7 +25,7 @@
       },
       {
         "name": "Kaizen Solutions",
-        "logo": "img/sponsors/2018/kaizen.png",
+        "logo": "img/sponsors/kaizen.2018.png",
         "url": {
           "fr": "https://kaizen-solutions.net/",
           "en": "https://kaizen-solutions.net/"
@@ -37,7 +37,7 @@
       },
       {
         "name": "Lunatech",
-        "logo": "img/sponsors/2018/lunatech-logo.png",
+        "logo": "img/sponsors/lunatech-logo.2018.png",
         "url": {
           "fr": "http://lunatech.com/fr/",
           "en": "http://lunatech.com/"
@@ -49,7 +49,7 @@
       },
       {
         "name": "Norsys",
-        "logo": "img/sponsors/2018/norsys.png",
+        "logo": "img/sponsors/norsys.2018.png",
         "url": {
           "fr": "http://www.norsys.fr/",
           "en": "http://www.norsys.fr/"
@@ -61,7 +61,7 @@
       },
       {
         "name": "Sopra Steria",
-        "logo": "img/sponsors/2018/sopra-steria.png",
+        "logo": "img/sponsors/sopra-steria.2018.png",
         "url": {
           "fr": "https://www.soprasteria.com/fr/home",
           "en": "https://www.soprasteria.com/en/home"
@@ -73,7 +73,7 @@
       },
       {
         "name": "BeeBuzziness",
-        "logo": "img/sponsors/2018/beebuzziness.png",
+        "logo": "img/sponsors/beebuzziness.2017.png",
         "url": {
           "fr": "http://beebuzziness.com/",
           "en": "http://beebuzziness.com/"
@@ -85,7 +85,7 @@
       },
       {
         "name": "Viseo",
-        "logo": "img/sponsors/2018/viseo.png",
+        "logo": "img/sponsors/viseo.2018.png",
         "url": {
           "fr": "http://www.viseo.com/fr",
           "en": "http://www.viseo.com/en"
@@ -97,7 +97,7 @@
       },
       {
         "name": "Red Hat",
-        "logo": "img/sponsors/2018/redhat.png",
+        "logo": "img/sponsors/redhat.2016.png",
         "url": {
           "fr": "https://www.redhat.com/fr",
           "en": "https://www.redhat.com/en"
@@ -111,7 +111,7 @@
     "flocon": [
       {
         "name": "Tuleap",
-        "logo": "img/sponsors/2018/tuleap.png",
+        "logo": "img/sponsors/tuleap.2018.png",
         "url": {
           "fr": "https://www.tuleap.org/",
           "en": "https://www.tuleap.org/"
@@ -123,7 +123,7 @@
       },
       {
         "name": "Salesforce",
-        "logo": "img/sponsors/2018/salesforce.png",
+        "logo": "img/sponsors/salesforce.2018.png",
         "url": {
           "fr": "https://www.salesforce.com/",
           "en": "https://www.salesforce.com/"
@@ -135,7 +135,7 @@
       },
       {
         "name": "Zenika",
-        "logo": "img/sponsors/2018/zenika.png",
+        "logo": "img/sponsors/zenika.2018.png",
         "url": {
           "fr": "https://www.zenika.com/",
           "en": "https://www.zenika.com/"
@@ -147,7 +147,7 @@
       },
       {
         "name": "Algoo",
-        "logo": "img/sponsors/2018/algoo.png",
+        "logo": "img/sponsors/algoo.2017.png",
         "url": {
           "fr": "https://www.algoo.fr/",
           "en": "https://www.algoo.fr/"

@@ -13,7 +13,7 @@
     "etoile": [
       {
         "name": "Tuleap",
-        "logo": "img/sponsors/2018/tuleap.png",
+        "logo": "img/sponsors/tuleap.2018.png",
         "url": {
           "fr": "https://www.tuleap.org/",
           "en": "https://www.tuleap.org/"
@@ -25,7 +25,7 @@
       },
       {
         "name": "Red Hat",
-        "logo": "img/sponsors/2016/redhat.png",
+        "logo": "img/sponsors/redhat.2016.png",
         "url": {
           "fr": "https://www.redhat.com/fr",
           "en": "https://www.redhat.com/en"
@@ -39,7 +39,7 @@
     "flocon": [
       {
         "name": "SonarQube",
-        "logo": "img/sponsors/2016/sonarqube.png",
+        "logo": "img/sponsors/sonarqube.2016.png",
         "url": {
           "fr": "http://www.sonarqube.org/",
           "en": "http://www.sonarqube.org/"
@@ -51,7 +51,7 @@
       },
       {
         "name": "Salesforce",
-        "logo": "img/sponsors/2018/salesforce.png",
+        "logo": "img/sponsors/salesforce.2018.png",
         "url": {
           "fr": "https://www.salesforce.com/",
           "en": "https://www.salesforce.com/"
@@ -63,7 +63,7 @@
       },
       {
         "name": "Elastic",
-        "logo": "img/sponsors/2017/elastic.png",
+        "logo": "img/sponsors/elastic.2016.png",
         "url": {
           "fr": "https://www.elastic.co/",
           "en": "https://www.elastic.co/"
@@ -75,7 +75,7 @@
       },
       {
         "name": "Deolan",
-        "logo": "img/sponsors/2016/deolan.png",
+        "logo": "img/sponsors/deolan.2016.png",
         "url": {
           "fr": "http://www.deolan.com/",
           "en": "http://www.deolan.com/"
@@ -87,7 +87,7 @@
       },
       {
         "name": "Datastax",
-        "logo": "img/sponsors/2016/datastax.png",
+        "logo": "img/sponsors/datastax.2016.png",
         "url": {
           "fr": "http://www.datastax.com/",
           "en": "http://www.datastax.com/"
@@ -99,7 +99,7 @@
       },
       {
         "name": "Streamdata.io",
-        "logo": "img/sponsors/2016/streamdataio.png",
+        "logo": "img/sponsors/streamdataio.2016.png",
         "url": {
           "fr": "https://streamdata.io/",
           "en": "https://streamdata.io/"
@@ -111,7 +111,7 @@
       },
       {
         "name": "Jahia",
-        "logo": "img/sponsors/2016/jahia.png",
+        "logo": "img/sponsors/jahia.2016.png",
         "url": {
           "fr": "https://www.jahia.com/home.html",
           "en": "https://www.jahia.com/home.html"
@@ -123,7 +123,7 @@
       },
       {
         "name": "Adobe",
-        "logo": "img/sponsors/2016/adobe.png",
+        "logo": "img/sponsors/adobe.2016.png",
         "url": {
           "fr": "http://www.adobe.com/",
           "en": "http://www.adobe.com/"

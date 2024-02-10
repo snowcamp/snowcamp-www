@@ -13,7 +13,7 @@
     "etoile": [
       {
         "name": "Norsys",
-        "logo": "img/sponsors/2018/norsys.png",
+        "logo": "img/sponsors/norsys.2018.png",
         "url": {
           "fr": "http://www.norsys.fr/",
           "en": "http://www.norsys.fr/"
@@ -25,7 +25,7 @@
       },
       {
         "name": "Kelkoo",
-        "logo": "img/sponsors/2019/kelkoogroup.png",
+        "logo": "img/sponsors/kelkoogroup.2019.png",
         "url": {
           "fr": "https://www.kelkoogroup.com/fr/",
           "en": "https://www.kelkoogroup.com/"
@@ -37,7 +37,7 @@
       },
       {
         "name": "ForgeRock",
-        "logo": "img/sponsors/2018/forgerock.png",
+        "logo": "img/sponsors/forgerock.2017.png",
         "url": {
           "fr": "https://www.forgerock.com/",
           "en": "https://www.forgerock.com/"
@@ -49,7 +49,7 @@
       },
       {
         "name": "BonitaSoft",
-        "logo": "img/sponsors/2019/bonitasoft.png",
+        "logo": "img/sponsors/bonitasoft.2019.png",
         "url": {
           "fr": "https://fr.bonitasoft.com/",
           "en": "https://www.bonitasoft.com/"
@@ -61,7 +61,7 @@
       },
       {
         "name": "Viseo",
-        "logo": "img/sponsors/2018/viseo.png",
+        "logo": "img/sponsors/viseo.2018.png",
         "url": {
           "fr": "http://www.viseo.com/fr",
           "en": "http://www.viseo.com/en"
@@ -73,7 +73,7 @@
       },
       {
         "name": "Kaizen",
-        "logo": "img/sponsors/2018/kaizen.png",
+        "logo": "img/sponsors/kaizen.2018.png",
         "url": {
           "fr": "https://kaizen-solutions.net/",
           "en": "https://kaizen-solutions.net/"
@@ -85,7 +85,7 @@
       },
       {
         "name": "Zenika",
-        "logo": "img/sponsors/2018/zenika.png",
+        "logo": "img/sponsors/zenika.2018.png",
         "url": {
           "fr": "https://www.zenika.com/",
           "en": "https://www.zenika.com/"
@@ -97,7 +97,7 @@
       },
       {
         "name": "Microsoft",
-        "logo": "img/sponsors/2020/microsoft.png",
+        "logo": "img/sponsors/microsoft.2020.png",
         "url": {
           "fr": "https://www.microsoft.com/fr-fr/",
           "en": "https://www.microsoft.com/en-us/"
@@ -109,7 +109,7 @@
       },
       {
         "name": "Sopra Steria",
-        "logo": "img/sponsors/2018/sopra-steria.png",
+        "logo": "img/sponsors/sopra-steria.2018.png",
         "url": {
           "fr": "https://www.soprasteria.com/fr/accueil/",
           "en": "https://www.soprasteria.com/en/home/"
@@ -121,7 +121,7 @@
       },
       {
         "name": "Open",
-        "logo": "img/sponsors/2019/open.png",
+        "logo": "img/sponsors/open.2019.png",
         "url": {
           "fr": "http://www.open-groupe.com/",
           "en": "http://www.open-groupe.com/"
@@ -133,7 +133,7 @@
       },
       {
         "name": "Criteo",
-        "logo": "img/sponsors/2019/crite.png",
+        "logo": "img/sponsors/crite.2019.png",
         "url": {
           "fr": "https://www.criteo.com/",
           "en": "https://www.criteo.com/"
@@ -147,7 +147,7 @@
     "flocon": [
       {
         "name": "Tuleap",
-        "logo": "img/sponsors/2020/tuleap.png",
+        "logo": "img/sponsors/tuleap.2020.png",
         "url": {
           "fr": "https://www.tuleap.org/",
           "en": "https://www.tuleap.org/"
@@ -159,7 +159,7 @@
       },
       {
         "name": "AViSTO",
-        "logo": "img/sponsors/2020/avisto.png",
+        "logo": "img/sponsors/avisto.2020.png",
         "url": {
           "fr": "https://www.avisto.com/?utm_source=snowcamp&utm_medium=sponsor&utm_campaign=backlinks",
           "en": "https://www.avisto.com/?utm_source=snowcamp&utm_medium=sponsor&utm_campaign=backlinks"
@@ -171,7 +171,7 @@
       },
       {
         "name": "KLS Group",
-        "logo": "img/sponsors/2020/kls.png",
+        "logo": "img/sponsors/klsgroup.2020.png",
         "url": {
           "fr": "https://www.kls-group.fr/",
           "en": "https://www.kls-group.fr/en/kls-group-en-home/"
@@ -183,7 +183,7 @@
       },
       {
         "name": "SOAT",
-        "logo": "img/sponsors/2020/soat.png",
+        "logo": "img/sponsors/soat.2020.png",
         "url": {
           "fr": "https://www.soat.fr/",
           "en": "https://www.soat.fr/"
@@ -195,7 +195,7 @@
       },
       {
         "name": "Qim info",
-        "logo": "img/sponsors/2020/quiminfo.png",
+        "logo": "img/sponsors/quiminfo.2020.png",
         "url": {
           "fr": "https://www.qiminfo.ch/",
           "en": "https://www.qiminfo.ch/language/en/"

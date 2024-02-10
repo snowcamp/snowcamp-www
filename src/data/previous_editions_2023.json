@@ -13,7 +13,7 @@
     "etoile": [
       {
         "name": "Viseo",
-        "logo": "img/sponsors/2022/viseo.png",
+        "logo": "img/sponsors/viseo.2022.png",
         "url": {
           "fr": "http://www.viseo.com/fr",
           "en": "http://www.viseo.com/en"
@@ -25,7 +25,7 @@
       },
       {
         "name": "Open",
-        "logo": "img/sponsors/2019/open.png",
+        "logo": "img/sponsors/open.2019.png",
         "url": {
           "fr": "https://www.open.global/",
           "en": "https://www.open.global/"
@@ -37,7 +37,7 @@
       },
       {
         "name": "Criteo",
-        "logo": "img/sponsors/2023/crite.png",
+        "logo": "img/sponsors/crite.2023.png",
         "url": {
           "fr": "https://www.criteo.com/",
           "en": "https://www.criteo.com/"
@@ -49,7 +49,7 @@
       },
       {
         "name": "Gravitee",
-        "logo": "img/sponsors/2022/gravitee.jpg",
+        "logo": "img/sponsors/gravitee.2022.jpg",
         "url": {
           "fr": "https://www.gravitee.io/",
           "en": "https://www.gravitee.io/"
@@ -61,7 +61,7 @@
       },
       {
         "name": "Sopra Steria",
-        "logo": "img/sponsors/2018/sopra-steria.png",
+        "logo": "img/sponsors/sopra-steria.2018.png",
         "url": {
           "fr": "https://www.soprasteria.com/fr/",
           "en": "https://www.soprasteria.com/en/"
@@ -73,7 +73,7 @@
       },
       {
         "name": "Zenika",
-        "logo": "img/sponsors/2023/zenika.png",
+        "logo": "img/sponsors/zenika.2023.png",
         "url": {
           "fr": "https://www.zenika.com/",
           "en": "https://www.zenika.com/"
@@ -85,7 +85,7 @@
       },
       {
         "name": "Thales",
-        "logo": "img/sponsors/2023/thales.jpg",
+        "logo": "img/sponsors/thales.2023.jpg",
         "url": {
           "fr": "https://www.thalesgroup.com/",
           "en": "https://www.thalesgroup.com/en"
@@ -97,7 +97,7 @@
       },
       {
         "name": "Abylsen",
-        "logo": "img/sponsors/2023/abylsen.png",
+        "logo": "img/sponsors/abylsen.2023.png",
         "url": {
           "fr": "https://abylsen.com",
           "en": "https://abylsen.com"
@@ -109,7 +109,7 @@
       },
       {
         "name": "Microsoft",
-        "logo": "img/sponsors/2020/microsoft.png",
+        "logo": "img/sponsors/microsoft.2020.png",
         "url": {
           "fr": "https://www.microsoft.com/fr-fr/",
           "en": "https://www.microsoft.com/en-us/"
@@ -121,7 +121,7 @@
       },
       {
         "name": "Salesforce",
-        "logo": "img/sponsors/2018/salesforce.png",
+        "logo": "img/sponsors/salesforce.2018.png",
         "url": {
           "fr": "https://engineering.salesforce.com/",
           "en": "https://engineering.salesforce.com/"
@@ -133,7 +133,7 @@
       },
       {
         "name": "CGI",
-        "logo": "img/sponsors/2022/cgi.jpg",
+        "logo": "img/sponsors/cgi.2022.jpg",
         "url": {
           "fr": "https://www.cgi.com/fr",
           "en": "https://www.cgi.com/en"
@@ -145,7 +145,7 @@
       },
       {
         "name": "OVH Cloud",
-        "logo": "img/sponsors/2023/logo-ovh.png",
+        "logo": "img/sponsors/ovh.2023.png",
         "url": {
           "fr": "https://ovhcloud.com",
           "en": "https://ovhcloud.com"
@@ -159,7 +159,7 @@
     "flocon": [
       {
         "name": "AViSTO",
-        "logo": "img/sponsors/2022/avisto.png",
+        "logo": "img/sponsors/avisto.2020.png",
         "url": {
           "fr": "https://www.avisto.com",
           "en": "https://www.avisto.com"
@@ -171,7 +171,7 @@
       },
       {
         "name": "Diabeloop",
-        "logo": "img/sponsors/2023/diabeloop.webp",
+        "logo": "img/sponsors/diabeloop.2023.webp",
         "url": {
           "fr": "https://www.diabeloop.fr/",
           "en": "https://www.diabeloop.fr/"
@@ -183,7 +183,7 @@
       },
       {
         "name": "Hardis",
-        "logo": "img/sponsors/2023/hardis_group.webp",
+        "logo": "img/sponsors/hardis_group.2023.webp",
         "url": {
           "fr": "https://www.hardis-group.com",
           "en": "https://www.hardis-group.com"
@@ -195,7 +195,7 @@
       },
       {
         "name": "KLS Group",
-        "logo": "img/sponsors/2023/klsgroup.webp",
+        "logo": "img/sponsors/klsgroup.2020.png",
         "url": {
           "fr": "https://www.kls-group.fr",
           "en": "https://www.kls-group.fr"
@@ -207,7 +207,7 @@
       },
       {
         "name": "Kelkoo Group",
-        "logo": "img/sponsors/2022/kelkoogroup.png",
+        "logo": "img/sponsors/kelkoogroup.2019.png",
         "url": {
           "fr": "https://www.kelkoogroup.com/fr/",
           "en": "https://www.kelkoogroup.com/"
@@ -219,7 +219,7 @@
       },
       {
         "name": "Moodys",
-        "logo": "img/sponsors/2023/moodys.webp",
+        "logo": "img/sponsors/moodys.2023.webp",
         "url": {
           "fr": "https://www.moodysanalytics.com",
           "en": "https://www.moodysanalytics.com"
