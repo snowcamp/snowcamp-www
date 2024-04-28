@@ -49,8 +49,7 @@ export function init() {
     par un comité neutre et ouvert. Alors lancez-vous !
     </p>`;
     i18n.cfp_open_soon_desc=`<p>Le CFP ouvre le ${cfp.dates.open_date.fr } !
-    C'est le moment de préparer des sujets extraordinaires. Le CFP ouvrira ici : 
-    <br><i class="fa fa-bullhorn"></i>&nbsp;<a href="${cfp.url}" target="_blank">${cfp.url}</a></p>
+    C'est le moment de préparer des sujets extraordinaires. Le CFP ouvrira ici : <i class="fa fa-bullhorn"></i></p>
     <br/>
     <p>Quelques conseils :
     <ul>
@@ -119,6 +118,8 @@ export function init() {
     i18n.snowcamp_logo_usage = 'Autorisation d\'exploiter le logo SnowCamp pour votre communication';
     i18n.sponsorship_prospectus = 'Plaquette Sponsors';
     i18n.contact_us = 'Nous contacter';
+    i18n.why_become_sponsor='Pourquoi devenir sponsor ?';
+    i18n.sponsor_options='Les formules de sponsoring';
     i18n.sponsor_desc = `<p class="text dark-background">
         Le SnowCamp est organisé bénévolement par un groupe de geeks de la région grenobloise. Leur seule
         motivation est d'offrir une conférence unique réunissant innovation et recherche.</p>
@@ -130,20 +131,27 @@ export function init() {
         l'occasion idéale pour rencontrer les développeurs grenoblois, montrer vos produits et services, et
         vous faire connaître.
       </p>`;
-    i18n.sponsor_status_not_open = `<p class="text dark-background">
-      L'ouverture du sponsoring aura lieu le ${sponsors.sponsorship.open_datetime.fr}</a>.
-      </p>`;
-    i18n.sponsor_status_open = `<p class="text dark-background">
-      La campagne de sponsoring est ouverte depuis le ${sponsors.sponsorship.open_datetime.fr}. 
-      Vous pouvez vous enregistrer via <a href="${sponsors.sponsorship.subscribe_link}">ce formulaire d'inscription</a>.
-    </p>`;
-    i18n.sponsor_status_closed = `<p class="text dark-background">
-      La campagne de sponsoring est fermée</a>.
-    </p>`;
-    i18n.sponsor_notice = `<p class="text dark-background">Notice: A partir de la réception de la facture par le sponsor, 
-      le sponsor a 90 jours pour réaliser l'entièreté des démarches administratives d'inscription et réaliser le paiement. 
-      Si ce délai n'est pas respecté par un sponsor, l'organisation du Snowcamp se donne le droit d'annuler le contrat avec
-      ce sponsoring pour laisser la place à un autre sponsor.</p>`;
+    i18n.sponsor_subscription_title = 'Inscription';
+    i18n.sponsor_subscription = `L'inscription s'effectue en 2 étapes :
+    <ol>
+    <li style="font-size: 1em; margin-left: 30px;">A partir de la date d'ouverture du sponsoring, vous vous enregistrez via un fomrulaire en ligne. 
+    Cela détermine votre classement pour devenir sponsor et donc l'emplacement qui vous sera attribué.</li>
+    <li style="font-size: 1em; margin-left: 30px;">Suite à votre enregistrement, l'équipe d'organisation Snowcamp vous envoie la facture à payer. 
+    A partir de la réception de la facture par le sponsor, le sponsor a 90 jours pour réaliser le paiement. 
+    Si ce délai n'est pas respecté par un sponsor, l'organisation du Snowcamp se donne le droit d'annuler le 
+    contrat avec ce sponsoring pour laisser la place à un autre sponsor.</li></ol>`;
+
+    i18n.sponsoring_not_open=`L'enregistrement pour le sponsoring du Snowcamp ${edition.year} ouvrira le
+        <div style="text-align: center; font-weight: bold; font-size: 1.3em; margin: 10px 0">${sponsors.sponsorship.open_datetime.fr}</div>
+        Veuillez revenir à partir de ce moment pour vous enregistrer. Nous enverrons un message de rappel aux entreprises qui ont déjà été sponsors.`;
+    i18n.sponsoring_open= (sponsors:any) => `L'enregistrement pour le sponsoring du Snowcamp ${edition.year} est ouvert depuis le 
+      <div style="text-align: center; font-weight: bold; font-size: 1.3em; margin: 10px 0">${sponsors.sponsorship.open_datetime.fr}</div>
+      Il reste actuellement ${12 - sponsors.etoile.length} places de sponsor(s) Etoile et ${6 - sponsors.flocon.length} places de sponsor(s) Flocon. 
+      <br>Vous pouvez vous enregistrer via <a href="${sponsors.sponsorship.subscribe_link}">ce formulaire d'inscription</a>`;
+    i18n.sponsoring_closed=`La campagne de sponsoring du snowcamp ${edition.year} est actuellement terminée. Il y a plus de possibilités de devenir sponsor pour la conférence. 
+      Vous pouvez nous contacter par email pour indiquer que vous souhaitez être parmi notre liste de contact pour la campagne de sponsoring de l'année suivante.`;
+    i18n.sponsoring_question='Pour toute information vous pouvez nous contacter par email';
+
     i18n.sponsor_plan_title = 'Le plan des stands'
     i18n.sponsor_meetgreet_title = 'La bière au Meet & Greet';
     i18n.sponsor_meetgreet_desc = `Pour le moment convivial du Meet & Greet, le Jeudi de 16h50 à 18h, un des sponsors Etoile peut prendre en charge la distribution de la bière.
@@ -215,8 +223,8 @@ export function init() {
       Grenoble et l'Ecole Supérieure de Commerce.`;
 
     i18n.sponsor_guide_booth_etoile_delivery_title=`Livraison de matériel`;
-    i18n.sponsor_guide_booth_etoile_delivery_content=`<p>La livraison des colis et matériels devra se faire à partir mardi 30 janvier, de 8h30 à 16h30
-          et au plus tard mercredi 31 janvier avant 16h30. Tous les colis livrés devront porter
+    i18n.sponsor_guide_booth_etoile_delivery_content=`<p>La livraison des colis et matériels devra se faire à partir du mardi veille du début de la conférence, de 8h30 à 16h30
+          et au plus tard mercredi avant 16h30, 1er jour de la conférence (partie université). Tous les colis livrés devront porter
           l'adresse suivante :
       </p>
           <p style="margin-left:  50px;">SNOWCAMP
@@ -239,7 +247,7 @@ export function init() {
           Les horaires de livraison et d'enlèvement des colis se font entre 8h30 et 16h30
           uniquement.</p>
       <p>Pour les colis ne pouvant être repris le jour du démontage, ils pourront être conservés sur
-          le centre de congrès jusqu'au lundi 30 janvier à 16h30. Il devront être bien emballés et
+          le centre de congrès jusqu'au lundi à 16h30 suivant la conférence. Il devront être bien emballés et
           porter une adresse de retour lisible afin d'être repris par votre transporteur. La
           responsabilité du centre de congrès ne peut être engagée sur leur destruction ou
           disparition. Merci de bien indiquer sur vos colis lisiblement vos coordonnées complètes

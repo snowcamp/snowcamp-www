@@ -1,0 +1,71 @@
+---
+const { beginDate, endDate, refreshInterval } = Astro.props;
+// generation d'un identifiant de composant
+const id = Math.round(Math.random() * 100000);
+const beforeId = 'before' + id;
+const doingId = 'doing' + id;
+const afterId = 'after' + id;
+// console.log(beginDate, endDate, refreshInterval, id);
+---
+<astro-interval-reloader data-genid={id} data-begindate={beginDate}  data-enddate={endDate} data-refreshinterval={refreshInterval}>
+    <span id={beforeId}>
+        <slot name="before"></slot>
+    </span>
+    <span id={doingId}>
+        <slot name="doing"></slot>
+    </span>
+    <span id={afterId}>
+        <slot name="after"></slot>
+    </span>
+</astro-interval-reloader>
+
+<script>
+  // Create your custom class for catching the parameter
+  class IntervalReloader extends HTMLElement {
+    constructor() {
+      super();
+      const beginDate = this.dataset.begindate ? Number.parseInt(this.dataset.begindate, 10) : undefined;
+      const endDate = this.dataset.enddate ? Number.parseInt(this.dataset.enddate, 10) : undefined;
+      const refreshInterval = this.dataset.refreshinterval ? Number.parseInt(this.dataset.refreshinterval, 10) : undefined;
+      const id = this.dataset.genid ? Number.parseInt(this.dataset.genid, 10) : undefined;
+      // console.log('beginDate', beginDate, 'endDate', endDate, 'refreshInterval', refreshInterval, 'id', id);
+      if (beginDate) {
+        this.computeVisibility(''+id, beginDate, endDate);
+        if (refreshInterval) {
+            setInterval(() => this.computeVisibility(''+id, beginDate, endDate), refreshInterval);
+        }
+      } else {
+        console.error('No begin date for the component: ', id);
+      }
+    }
+    computeVisibility(id:string, beginDate:number, endDate?:number) {
+        var now = new Date().getTime();
+        if (now < beginDate) {
+            // console.log('Still before', now, beginDate,  "\n", new Date(now), "\n", new Date(beginDate));
+            this.showElement('before'+id);
+            this.hideElement('doing'+id);
+            this.hideElement('after'+id);
+        } else if (endDate && endDate < now) {
+            // console.log('Closed')
+            this.hideElement('before'+id);
+            this.hideElement('doing'+id);
+            this.showElement('after'+id);
+        } else {
+            // console.log('Open')
+            this.hideElement('before'+id);
+            this.showElement('doing'+id);
+            this.hideElement('after'+id);
+        }
+    }
+    showElement(id: string) {
+        const el = document.getElementById(id);
+        if (el) el.hidden = false;
+    }
+    hideElement(id: string) {
+        const el = document.getElementById(id);
+        if (el) el.hidden = true;
+    }
+  }
+
+  customElements.define('astro-interval-reloader', IntervalReloader);
+</script>

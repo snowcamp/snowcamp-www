@@ -5,6 +5,7 @@ import edition from '../data/edition.json';
 import { t } from "../i18n/i18n";
 import CFPDates from '../components/CFPDates.astro';
 import SponsorsLogosSection from '../components/SponsorsLogosSection.astro';
+import DateTimeChangingChild from "../components/DateTimeChangingChild.astro";
 
 const lang = (Astro.locals as any).lang;
 ---
@@ -127,7 +128,7 @@ const lang = (Astro.locals as any).lang;
   </section>
   
   <section>
-  { cfp.status !== "published" &&
+  { !cfp.published &&
 	<div id="program" class="snc-programme">
 	  <div class="snc-inner">
 		<div class="container">
@@ -140,7 +141,7 @@ const lang = (Astro.locals as any).lang;
 				  </span>
 				  <span class="heading">{t('cfp_program_translation')}</span>
 				</h2>
-				{ cfp.status !== "not_open" && <CFPDates></CFPDates> }
+				<CFPDates></CFPDates>
 			  </div>
 			</div>
 		  </div>
@@ -152,10 +153,11 @@ const lang = (Astro.locals as any).lang;
 			</div>
 			<div class="col-xs-12 col-sm-6 col-md-6">
 			  <div class="single">
-				{cfp.status === "open" ? <span set:html={t('cfp_open_desc')}></span> : ''}
-				{cfp.status === "opens_soon" ? <span set:html={t('cfp_open_soon_desc')}></span> : ''}
-				{cfp.status === "closed" ? <span set:html={t('cfp_closed_desc')}></span> : ''}
-				{cfp.status === "not_open" || cfp.status === "published" ? <span set:html={t('cfp_other_desc')}></span> : ''}
+				<DateTimeChangingChild beginDate={Date.parse(cfp.dates.open_date.date)} endDate={Date.parse(cfp.dates.close_date.date)} refreshInterval="30000">
+				  <span slot="before" set:html={t('cfp_open_soon_desc')}></span>
+				  <span slot="doing" set:html={t('cfp_open_desc')}></span>
+				  <span slot="after" set:html={t('cfp_closed_desc')}></span>
+                </DateTimeChangingChild>
 			  </div>
 			</div>
 		  </div>
@@ -163,7 +165,7 @@ const lang = (Astro.locals as any).lang;
 	  </div>
 	</div>
 	}
-	{ cfp.status === "published" &&
+	{ cfp.published &&
 	<div id="program" class="snc-programme">
 	  <div class="snc-inner">
 		<div class="container">

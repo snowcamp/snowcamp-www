@@ -1,19 +1,18 @@
 
 {
-  "possible_status": [ "not_open", "opens_soon", "open", "closed", "published"],
-  "status": "opens_soon", 
+  "published" : false,
   "url": "",
   "year": 2025,
   "sched_url": "",
   "feedback_url": "",
   "dates": {
     "open_date": {
-      "date": "01/09/2024",
+      "date": "2024-09-01T00:00:00.000",
       "fr": "1er Septembre 2024",
       "en": "1st of September 2024"
     },
     "close_date": {
-      "date": "15/10/2024",
+      "date": "2024-10-15T00:00:00.000",
       "fr": "15 Octobre 2024",
       "en": "15th of October 2024"
     },

@@ -3,6 +3,15 @@ import Layout from '../layouts/Layout.astro';
 import SponsorFormula from '../components/SponsorFormula.astro';
 import sponsors from '../data/sponsors.json';
 import { t } from "../i18n/i18n";
+import DateTimeChangingChild from "../components/DateTimeChangingChild.astro";
+
+let msg_inscription;
+if (sponsors.etoile.length < sponsors.sponsorship.type.etoile.number 
+  || sponsors.flocon.length < sponsors.sponsorship.type.flocon.number) {
+    msg_inscription = t('sponsoring_open', sponsors);
+  }  else {
+    msg_inscription = t('sponsoring_closed');
+  }
 ---
 <Layout title="Snowcamp">
 <section>
@@ -15,11 +24,13 @@ import { t } from "../i18n/i18n";
             <div class="snc-heading-area snc-heading-brand">
               <h2 class="snc-heading ">
                 <span class="back-heading"><i class="fa fa-users" aria-hidden="true"></i></span>
-                <span class="heading dark-background">{t('become_sponsor')}</span>
+                <span class="heading dark-background">{t('why_become_sponsor')}</span>
               </h2>
               <div set:html={t('sponsor_desc')}></div>
-              <div set:html={t('sponsor_status_'+sponsors.sponsorship.subscription_status)} style="margin-top:20px;"></div>
-              <div set:html={t('sponsor_notice')} style="margin-top:20px;"></div>              
+              <h2 class="snc-heading " style="margin-top: 30px">
+                <span class="back-heading"><i class="fa fa-users" aria-hidden="true"></i></span>
+                <span class="heading dark-background">{t('sponsor_options')}</span>
+              </h2>
             </div>
           </div>
         </div>
@@ -31,21 +42,15 @@ import { t } from "../i18n/i18n";
               <SponsorFormula sponsor={sponsors.sponsorship.type.flocon} cssClass=""></SponsorFormula>
             </div>
         </div>
-
-
-        <div id="plan"></div>
         <div class="row" style="margin-top: 80px;">
           <div class="col-xs-12 text-center">
-            <h2 class="snc-heading ">
-              <span class="back-heading"><i class="fa fa-users" aria-hidden="true"></i></span>
-              <span class="heading dark-background">{t('sponsor_plan_title')}</span>
-            </h2>
             <div class="snc-heading-area snc-heading-brand">
-              <img src="/img/sponsors_plan_stands.png">
-            </div>
-          </div>
-        </div>
-
+              <div style="margin-top: 20px;">
+                <a class="snc-btn" href={sponsors.sponsorship.prospectus} target="_blank">{t('sponsorship_prospectus')}</a>
+              </div>
+            </div>    
+          </div>    
+        </div>    
 
         <div id="beers"></div>
         <div class="row" style="margin-top: 80px;">
@@ -61,8 +66,45 @@ import { t } from "../i18n/i18n";
           </div>    
         </div>    
 
+
+        <div id="plan"></div>
+        <div class="row" style="margin-top: 80px;">
+          <div class="col-xs-12 text-center">
+            <h2 class="snc-heading ">
+              <span class="back-heading"><i class="fa fa-users" aria-hidden="true"></i></span>
+              <span class="heading dark-background">{t('sponsor_plan_title')}</span>
+            </h2>
+            <div class="snc-heading-area snc-heading-brand">
+              <img src="/img/sponsors_plan_stands.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <div class="snc-heading-area snc-heading-brand">
+              <h2 class="snc-heading " style="margin-top: 30px">
+                <span class="back-heading"><i class="fa fa-users" aria-hidden="true"></i></span>
+                <span class="heading dark-background">{t('sponsor_subscription_title')}</span>
+              </h2>
+              <div class="text dark-background" style="text-align: left;" set:html={t('sponsor_subscription')}></div>
+              <div class="text dark-background" style="text-align: left; margin-top: 30px;">
+                <DateTimeChangingChild beginDate={Date.parse(sponsors.sponsorship.open_datetime.date)} refreshInterval="30000">
+                  <div slot="before" set:html={t('sponsoring_not_open')}></div>
+                  <div slot="doing" set:html={msg_inscription}></div>
+                </DateTimeChangingChild>
+            
+                <div style="margin: 50px 0" set:html={t('sponsoring_question')}></div>
+              </div>
+              <div><a class="snc-btn" href="mailto:team@snowcamp.io"><span>{t('contact_us')}</span></a></div>
+            </div>
+          </div>
+        </div>
+
+
       </div>
     </div>
+
   </div>
 </section>
 </Layout>
