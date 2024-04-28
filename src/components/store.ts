@@ -4,6 +4,8 @@ export interface StoreType {
     price_conf: number;
     price_univ: number;
     status: string; 
+    beginDate: string;
+    endDate: string;
     open_date: {
         fr: string;
         en: string;

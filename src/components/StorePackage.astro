@@ -2,15 +2,18 @@
 import StoreButton from "./StoreButton.astro"
 import { t } from "../i18n/i18n";
 import type { StoreType } from "./store";
+import DateTimeChangingChild from "./DateTimeChangingChild.astro";
 
 interface Props {
 	days: number;
   store: StoreType;
 }
 const { store, days } = Astro.props;
+const lang = (Astro.locals as any).lang;
 const title = store.title;
 const desc = days === 3 ? t('store_package_universities_plus_confs') : t('store_package_confs_only');
 const price = days === 3 ? store.price_univ : store.price_conf;
+
 ---
 <div class="single">
   <div class="single-top">
@@ -26,6 +29,11 @@ const price = days === 3 ? store.price_univ : store.price_conf;
       <li><i class="fa fa-check" aria-hidden="true"></i> {t('store_access_lunch', days)}</li>
       <li><i class="fa fa-check" aria-hidden="true"></i> {t('store_access_meet_and_greet')}</li>
     </ul>
-    <StoreButton store={store}></StoreButton>
+    
+    <DateTimeChangingChild beginDate={Date.parse(store.beginDate)} endDate={Date.parse(store.endDate)} refreshInterval="10000">
+      <span class="snc-btn disabled" slot="before">{t('store_opens_on', (store.open_date as any)[lang])}</span>
+      <StoreButton store={store} slot="doing"></StoreButton>
+      <span class="snc-btn disabled" slot="after">{t('store_is_soldout')}</span>
+    </DateTimeChangingChild>
   </div>
 </div>

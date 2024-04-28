@@ -2,12 +2,11 @@
   "sponsorship": {
     "prospectus": "https://drive.google.com/file/d/1hOHTGVXJfiQ0nJFJugivkNr3SwdEXuSF/view?usp=share_link",
     "open_datetime" : {
+      "date": "2024-06-17T11:00:00.000",
       "fr": "17 juin 2024 à 11h00",
       "en": "17th of June 2024 at 11:00am"
     },
-    "subscription_status_values": "[not_open|open|closed]",
-    "subscription_status": "not_open",
-    "subscribe_link" : "",
+    "subscribe_link" : "https://docs.google.com/forms/d/e/1FAIpQLSf8fpWvTQTFy0tJnFcCCkQEttTUAnfM3GJ0ksNwG9tnX7FubQ/viewform?usp=sf_link",
     "type": {
       "flocon": {
         "title": "Flocon",

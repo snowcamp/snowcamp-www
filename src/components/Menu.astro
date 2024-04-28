@@ -28,7 +28,7 @@ const path_fr = path.replace('/en/','/');
           </div>
         </li>
         <li class="nav-item"><a class="nav-link" href={url_prefix+'/#program'}>
-          { cfp.status !== "published" ? t("program_translation") : t("schedule_translation") }
+          { !cfp.published ? t("program_translation") : t("schedule_translation") }
         </a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href={url_prefix+'/#sponsors'} id="navSponsorsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -114,6 +114,8 @@ export function init() {
     i18n.snowcamp_logo_usage = 'Authorisation to use the SnowCamp logo for your communications';
     i18n.sponsorship_prospectus = 'Sponsorship Prospectus';
     i18n.contact_us = 'Contact us';
+    i18n.why_become_sponsor='Why become sponsor?';
+    i18n.sponsor_options='Sponsoring options';
     i18n.sponsor_desc = `<p class="text dark-background">
         Snowcamp is organized by a group of geeky volonteers. Their only motivation
         is to propose a unique conference gathering innovation and research.
@@ -127,7 +129,30 @@ export function init() {
         demonstrate your products and services, and to make yourself known.
       </p>
       </p>`;
-    i18n.sponsor_notice = `<p class="text dark-background">Notice: Upon receipt of the invoice by the sponsor, 
+
+      i18n.sponsor_subscription_title = 'The registration';
+      i18n.sponsor_subscription = `The registration process has 2 steps:
+      <ol>
+      <li style="font-size: 1em; margin-left: 30px;">Since the open date of the sponsoring campaign, you can use the online form to register your company. 
+      For the Etoile sponsor, this registratrion sets your ranking and therefore the booth.</li>
+      <li style="font-size: 1em; margin-left: 30px;">After the registration step the Snowcamp organisation team sends you an invoice by email
+      Since the reception of the invoice, the sponsor has 90 days to make the payment.
+      After that delay, the snowcamp organisation has the right to cancel the contract with that sponsor and to replace this sponsor.</li></ol>`;
+  
+      i18n.sponsoring_not_open=`The registration for the Snowcamp ${edition.year} will open on 
+          <div style="text-align: center; font-weight: bold; font-size: 1.3em; margin: 10px 0">${sponsors.sponsorship.open_datetime.en}</div>
+          Please come back after that moment, in order to register your company as sponsor. The snowcamp organisation team will send a reminder to
+          all previous sponsors.`;
+      i18n.sponsoring_open=(sponsors:any) => `The registration for the Snowcamp ${edition.year} is open since
+      <div style="text-align: center; font-weight: bold; font-size: 1.3em; margin: 10px 0">${sponsors.sponsorship.open_datetime.en}</div>
+        ${12 - sponsors.etoile.length} slots of Etoile sponsor and ${6 - sponsors.flocon.length} slots of Flocon sponsor are available. 
+        <br>Use the following online <a href="${sponsors.sponsorship.subscribe_link}">registration form</a>`;
+      i18n.sponsoring_closed=`The sponsoring campaign of the session ${edition.year}. Hence, it is no more possible to become sponsor for the session ${edition.year}. 
+      You can contact us if you wish to belong our contact list in order to be alerted for the next edition of the Snowcamp.`;
+      i18n.sponsoring_question='For any information, contact us by email';
+  
+  
+      i18n.sponsor_notice = `<p class="text dark-background">Notice: Upon receipt of the invoice by the sponsor, 
       the sponsor has 90 days to complete all administrative registration procedures and make the payment. 
       If this deadline is not adhered to by a sponsor, the Snowcamp organization reserves the right to cancel 
       the contract with that sponsor to make way for another sponsor.</p>`;
