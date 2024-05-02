@@ -134,7 +134,7 @@ export function init() {
     i18n.sponsor_subscription_title = 'Inscription';
     i18n.sponsor_subscription = `L'inscription s'effectue en 2 étapes :
     <ol>
-    <li style="font-size: 1em; margin-left: 30px;">A partir de la date d'ouverture du sponsoring, vous vous enregistrez via un fomrulaire en ligne. 
+    <li style="font-size: 1em; margin-left: 30px;">A partir de la date d'ouverture du sponsoring, vous vous enregistrez via un formulaire en ligne. 
     Cela détermine votre classement pour devenir sponsor et donc l'emplacement qui vous sera attribué.</li>
     <li style="font-size: 1em; margin-left: 30px;">Suite à votre enregistrement, l'équipe d'organisation Snowcamp vous envoie la facture à payer. 
     A partir de la réception de la facture par le sponsor, le sponsor a 90 jours pour réaliser le paiement. 
