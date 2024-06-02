@@ -1,0 +1,156 @@
+---
+import edition from '../data/current.yaml';
+import sponsors from '../data/sponsors.yaml';
+---
+<h2 id="prev-editions-title"></h2>
+<script define:vars={{ edition, sponsors }}>
+  const DateTime = luxon.DateTime;
+  function parseDate(input) {
+    const match = input.match(/^(.+)\[(.+)\]$/);
+    if (match) {
+      const dateStr = match[1];
+      const zone = match[2];
+      const dt = DateTime.fromISO(dateStr, { zone });
+      return new Date(dt.toString());
+    }
+    return new Date(input);
+  }
+  function getLang(url) {
+    return url.pathname.includes('/en/') || url.pathname.endsWith('/en') ? 'en' : 'fr';
+  }
+
+  const sponsorsTable = sponsors.sponsors.reduce((a, b) => {
+    a[b.id] = b;
+    return a;
+  }, {});
+
+  function tag(name, text, clazz) {
+    const edition = document.createElement(name);
+    if (clazz) {
+      edition.classList.add(clazz);
+    }
+    if (text) {
+      edition.innerText = text;
+    }
+    return edition;
+  }
+
+  const lang = getLang(location);
+
+  const first = 2016;
+  const currentYear = parseDate(edition.start_date).getFullYear();
+  const editions = [...Array(currentYear - first).keys()].map((offset) => offset + 2016).reverse();
+
+  const sponsoring = [ 'chamois', 'etoile', 'flocon' ];
+  async function loadYear(year) {
+    const url = new URL(`${location.protocol}//${location.host}/editions/${year}.json`);
+    const a = await fetch(url);
+    return a.ok ? await a.json() : Promise.resolve({});
+  }
+  const trad = {
+    "title": {
+      "fr": "Historique des éditions précédentes",
+      "en": "History of previous editions",
+    },
+    "program": {
+      "fr": "Programme",
+      "en": "Program",
+    },
+    "photo": {
+      "fr": "Photos",
+      "en": "Photos",
+    },
+    "presentations": {
+      "fr": "Présentations",
+      "en": "Presentations",
+    },
+    "chamois": {
+      "fr": "Chamois",
+      "en": "Chamois",
+    },
+    "etoile": {
+      "fr": "Étoile",
+      "en": "Étoile",
+    },
+    "flocon": {
+      "fr": "Flocon",
+      "en": "Flocon",
+    },
+    "edition": {
+      "fr": "édition",
+      "en": "edition",
+    }
+  };
+  const title = document.getElementById('prev-editions-title');
+  title.innerText = trad['title'][lang];
+  const parent = title.parentElement;
+  Promise.all(editions.map((year) => loadYear(year))).then((previous_years) => {
+    previous_years = previous_years.filter((ed) => ed.start_date);
+
+    let idxYear = 0;
+    for (let ed of previous_years) {
+      const edition = tag('div', null, 'prevEdition');
+      edition.style.display = 'grid';
+      edition.style['grid-template-columns'] = '1fr 1fr 1fr [sponsor] 1fr';
+      edition.style['place-items'] = 'center';
+      const name = tag('p', null, 'edName');
+      name.style['grid-column-start'] = 1;
+      name.style['grid-column-end'] = 5;
+      edition.appendChild(name);
+      const h4 = tag('h4', `${parseDate(ed.start_date).getFullYear()}(${trad['edition'][lang]} nº${previous_years.length - idxYear})`, null);
+      name.appendChild(h4);
+
+      const p = tag('a', trad['program'][lang], null);
+      p.href = ed.program_link;
+      p.target = 'program';
+      const c2 = tag('p', null, null);
+      c2.appendChild(p);
+      edition.appendChild(c2);
+
+      if (ed.album_link) {
+        const p = tag('a', trad['photo'][lang], null);
+        p.href = ed.album_link;
+        p.target = 'album';
+        const c3 = tag('p', null, null);
+        c3.appendChild(p);
+        edition.appendChild(c3);
+      }
+
+      if (ed.support_link) {
+        const p = tag('a', trad['presentations'][lang], null);
+        p.href = ed.support_link;
+        p.target = 'support';
+        const c4 = tag('p', null, null);
+        c4.appendChild(p);
+        edition.appendChild(c4);
+      }
+
+      const sponso = tag('div', null, 'sponsorCol');
+      sponso.style['grid-column'] = 'sponsor';
+      sponsoring.filter((sl) => ed.sponsorship?.[sl]).forEach((level) => {
+        const sl = tag('div', null, 'sponsorLevel');
+        sl.style.display = 'flex';
+        sl.style['flex-direction'] = 'row';
+        sl.style['flex-wrap'] = 'wrap';
+        sl.style['column-gap'] = '10px';
+        const node = tag('span', trad[level][lang], null);
+        node.style['font-weight'] = 'bold';
+        sl.appendChild(node);
+        ed.sponsorship?.[level]?.map((id) => sponsorsTable[id]).map((sponsor, idx) => {
+          const span = tag('span', null, null);
+          sl.appendChild(span);
+          const a = tag('a', sponsor.name, null);
+          a.href = sponsor.link[lang];
+          span.appendChild(a);
+
+        });
+
+        sponso.appendChild(sl);
+      });
+      edition.appendChild(sponso);
+
+      parent.appendChild(edition);
+      idxYear += 1;
+    }
+  });
+</script>

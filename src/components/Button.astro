@@ -1,0 +1,28 @@
+---
+interface Props {
+  title: string;
+  href: string;
+  className?: string;
+}
+
+const { href, title, className } = Astro.props;
+---
+<style>
+  a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--green);
+    color: var(--background);
+    justify-self: center;
+    border-radius: 5px;
+    padding: 1rem;
+    width: fit-content;
+    height: 3rem;
+    vertical-align: middle;
+  }
+  a:hover {
+    background-color: var(--orange);
+  }
+</style>
+<a href={href} class={className}>{title}</a>

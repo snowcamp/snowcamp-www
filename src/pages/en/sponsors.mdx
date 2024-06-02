@@ -1,0 +1,76 @@
+---
+layout: ../../layouts/main.astro
+title: Sponsors
+---
+import Utils from '../../utils';
+import SponsorFormula from '../../components/SponsorFormula.astro';
+import Button from '../../components/Button.astro';
+import edition from '../../data/current.yaml';
+
+export const endFormat = Intl.DateTimeFormat('en', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  hour: 'numeric',
+});
+export const openDate = endFormat.format(Utils.parseDate(edition.timeline.sponsor.open));
+export const year = Utils.parseDate(edition.start_date).getFullYear();
+export const remainEtoile = edition.sponsorship.type.etoile.number - edition.sponsorship.etoile.length;
+export const remainFlocon = edition.sponsorship.type.flocon.number - edition.sponsorship.flocon.length;
+
+# Why become sponsor?
+
+Snowcamp is organized by a group of geeky volonteers. Their only motivation is to propose a unique conference gathering innovation and research.
+To make a success of this adventure, we need you.
+In return, we offer you a large visibility, on the web and during the event. It's the perfect opportunity to meet developers from Grenoble, demonstrate your products and services, and to make yourself known.
+
+# Sponsoring options
+
+<div style="display: flex; flex-direction: row">
+<SponsorFormula sponsor={edition.sponsorship.type.flocon}/>
+<SponsorFormula sponsor={edition.sponsorship.type.etoile} active={true}/>
+<SponsorFormula sponsor={edition.sponsorship.type.tenyears}/>
+</div>
+
+<Button href="https://drive.google.com/file/d/1hOHTGVXJfiQ0nJFJugivkNr3SwdEXuSF/view?usp=share_link" title="Plaquette Sponsors"/>
+
+<a id="beers"></a>
+
+# Beer at Meet & Greet
+
+For the friendly Meet & Greet moment, the Thursday from 4:50 PM to 6:00 PM, one of the Etoile sponsors can take care of distributing beer and soft drinks. The idea:
+
+- Distribute beer at their booth only during the Meet & Greet time slot (not during the 2 days).
+- The distribution involves draft beer (no bottles or cans). Therefore, a tap, beer kegs, and eco-cups for 600 people need to be arranged.
+- The benefit for the sponsor is to ensure traffic to their booth :-).
+- The counterpart, of course, is to organize this: logistics, beer distribution, rental fees for the tap, purchase of kegs, rental of eco-cups...
+
+<a id="plan"></a>
+
+# Plan of booths
+
+![plan des stands](/img/sponsors_plan_stands.png)
+
+# Inscription
+
+The registration process has 2 steps:
+
+1. Since the open date of the sponsoring campaign, you can use the online form to register your company.
+For the Etoile sponsor, this registratrion sets your ranking and therefore the booth.
+2. After the registration step the Snowcamp organisation team sends you an invoice by email Since the reception of the invoice, the sponsor has 90 days to make the payment.
+After that delay, the snowcamp organisation has the right to cancel the contract with that sponsor and to replace this sponsor.
+
+<p className="sponsorBefore">The registration for the Snowcamp {year} ouvrira le</p>
+<p className="sponsorOpened">The registration for the Snowcamp {year} is open since</p>
+
+<div style="text-align: center; font-weight: bold; font-size: 1.3em; margin: 10px 0" className="sponsorBefore">{openDate}</div>
+<div style="text-align: center; font-weight: bold; font-size: 1.3em; margin: 10px 0" className="sponsorOpened">{openDate}</div>
+
+<p className="sponsorBefore">Please return from this moment to register. We will send a reminder message to companies that have already been sponsors.</p>
+<p className="sponsorOpened">There are currently {remainEtoile} Star sponsor positions and {remainFlocon} Snowflake sponsor positions remaining.</p>
+
+<Button className="sponsorOpened" title="Formulaire d'inscription" href={edition.sponsorship.subscribe_link}></Button>
+
+<p className="sponsorClosed">The SnowCamp {year} sponsorship campaign is currently closed. There are no more opportunities to become a sponsor for the conference. You can contact us by email to indicate that you would like to be on our contact list for next year's sponsorship campaign.</p>
+
+For any information, contact us by email

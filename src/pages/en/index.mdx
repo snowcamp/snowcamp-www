@@ -1,0 +1,153 @@
+---
+layout: ../../layouts/main.astro
+title: SnowCamp
+description: home page
+---
+import Utils from '../../utils.js';
+import current from '../../data/current.yaml';
+import Polaroid from "../../components/Polaroid.astro";
+import Spotlight from '../../components/Spotlight.astro';
+import Columns3 from '../../components/Columns3.astro';
+import ShortDescription from '../../components/ShortDescription.astro';
+import TimelineCFP from '../../components/TimelineCFP.astro';
+import Button from '../../components/Button.astro';
+import Sponsor from '../../components/Sponsor.astro';
+import sponsors from '../../data/sponsors.yaml';
+
+export const sponsorsTable = sponsors.sponsors.reduce((a, b) => {
+  a[b.id] = b;
+  return a;
+}, {});
+
+export const startFormat = Intl.DateTimeFormat('en', {
+  month: 'long',
+  day: 'numeric',
+});
+export const endFormat = Intl.DateTimeFormat('en', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+export const opencfp = endFormat.format(Utils.parseDate(current.timeline.cfp.open));
+export const startDate = Utils.parseDate(current.start_date);
+export const start = startFormat.format(startDate);
+export const end = endFormat.format(Utils.parseDate(current.end_date));
+export const year = startDate.getFullYear();
+
+export const etoiles = current.sponsorship.etoile.map((id) => sponsorsTable[id]);
+export const flocons = current.sponsorship.flocon.map((id) => sponsorsTable[id]);
+export const partners = current.sponsorship.partners.map((id) => sponsorsTable[id]);
+export const tlCFP = [
+  {
+    "title": "Open",
+    "date": current.timeline.cfp.open,
+  },
+  {
+    "title": "Close",
+    "date": current.timeline.cfp.close,
+  },
+  {
+    "title": "Notification",
+    "date": current.timeline.cfp.notification,
+  },
+  {
+    "title": "Conference",
+    "begin": current.start_date,
+    "end": current.end_date,
+  }
+];
+
+<Spotlight/>
+
+# Snowcamp
+
+> 2 days of conferences with 45mn talks.
+
+<Columns3>
+  <ShortDescription title="Universities" description="A day of training (choice of 2 trainings of 3 hours long)." img="/img/icon-univ.png"/>
+  <ShortDescription title="Conferences" description="2 days of conferences with 45mn talks." img="/img/icon-conf.png"/>
+  <ShortDescription title="Unconference" description="A day of exchange on the skiing slopes gathering speakers and attendees." img="/img/icon-unconference.webp"/>
+</Columns3>
+
+# Innovation and research
+
+> A high-level technical conference gathering engineers and researchers
+
+<Columns3>
+  <ShortDescription title="Innovation" description="Learn about today's and tomorrow's tools, frameworks and technologies." img="/img/icon-dev.png"/>
+  <ShortDescription title="Exchange" description="Meet and exchange with other devs, ops, architects and speakers." img="/img/icon-cloud.png"/>
+  <ShortDescription title="Research" description="Discover trending works of researchers." img="/img/icon-academic.png"/>
+</Columns3>
+
+# Call For Proposals
+
+<TimelineCFP tl={tlCFP}/>
+
+<div style="display: flex; flex-direction: row; align-items: center; gap: 2rem">
+  <div>
+    <img src="/img/themas.webp" alt="themas"/>
+  </div>
+  <div>
+The CFP opens on the {opencfp}! Let's prepare awesome subjects! The CFP will be open here:
+
+Some hints:
+
+- Choose well your title
+- Explain what the attendees will see and learn
+- Make demos
+- Submit early!
+
+Sessions can be made in French or English. The talks are selected by a neutral and open-minded committee. So, take the plunge!
+
+Et encore plus de conseils [ici](https://docs.google.com/document/d/e/2PACX-1vReWAaCbafJqc0cCo2vhKWnAVoiHk3Tq561y4GseXvTyOV7cSk6lN2c_feWEWZBIA/pub).
+</div>
+</div>
+
+<a id="sponsors"></a>
+
+# Sponsors { year }
+
+> They have already placed their trust to prepare the edition { year } together.
+
+## Étoile
+
+{ etoiles.map((etoile) => <Sponsor title={etoile.name} img={etoile.logo} href={etoile.link.fr} />)
+}
+
+## Flocon
+
+{ flocons.map((flocon) => <Sponsor title={flocon.name} img={flocon.logo} href={flocon.link.fr} />)
+}
+
+> Many thanks to our sponsors!
+
+<Button title="Become sponsor !" href={current.sponsorship.subscribe_link}></Button>
+
+## Parteners
+
+{ partners.map((partner) => <Sponsor title={partner.name} img={partner.logo} href={partner.link.en} />)
+}
+
+<a id="venue"></a>
+
+# Venue
+
+> The schedule can be found here:
+
+Universities and conferences will take place at ["WTC World Trade Center Grenoble"](http://www.congres-wtcgrenoble.com/fr), a conference center in Grenoble center.
+
+5 - 7 , place Robert Schuman<br/>
+38025 Grenoble
+
+<div>
+  <Polaroid img="https://snowcamp.io/img/wtc.webp" title="WTC Grenoble" side="left" />
+You can access:
+
+- by tramway line B (towards Grenoble Presqu'île), stop "Palais De Justice - Gare"
+- by car (you can park at the parking Doyen Weil or Europole Gare)
+  - when arriving from Lyon or Valence, take the Europole-Gares exit and follow signs to Europole.
+  - when arriving from Chambéry, Gap or Sisteron, take "the rocade Sud", follow signs to Lyon by highway, take the Europole exit and follow signs to Europole
+- by train or bus: use the underground passage between the railway station and Europole
+- by plane: there are airport shuttles: from Lyon Saint-Exupéry (17 round trips per day) and from Genève Cointrin (6 round trips per day)
+- by [bike](http://www.metromobilite.fr/velo.html)
+</div>

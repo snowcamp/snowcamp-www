@@ -1,0 +1,164 @@
+---
+import Utils from '../utils';
+import edition from '../data/current.yaml';
+const lang = Utils.getLang(Astro.url);
+
+const [days, hours, minutes, seconds] = lang === 'fr'
+  ? ['Jours', 'Heures', 'Minutes', 'Secondes']
+  : ['Days', 'Hours', 'Minutes', 'Seconds'];
+
+const startFormat = Intl.DateTimeFormat(lang, {
+  month: 'long',
+  day: 'numeric',
+});
+const endFormat = Intl.DateTimeFormat(lang, {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+const startDate = Utils.parseDate(edition.start_date);
+const start = startFormat.format(startDate);
+const end = endFormat.format(Utils.parseDate(edition.end_date));
+const year = startDate.getFullYear();
+---
+<style>
+  .full-bleed {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr minmax(90vw, 1fr) 1fr;
+
+    & > * {
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
+  #cd-days {
+    color: #fff200;
+  }
+
+  #cd-hours {
+    color: #ff8a00;
+  }
+
+  #cd-min {
+    color: #00b9ff;
+  }
+
+  #cd-sec {
+    color: #8dc63f;
+  }
+
+  .year {
+    color: #8dc63f;
+  }
+
+  .dates {
+    color: #ff8a00;
+  }
+
+  #countdown {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    justify-items: center;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      & > b {
+        font-weight: 700;
+        font-size: clamp(16px, 3vw, 34px);
+      }
+    }
+  }
+
+  .title {
+    font-family: 'Luciole-Bold', sans-serif;
+    font-weight: 700;
+    font-size: clamp(24px, 4vw, 58px);
+    text-transform: uppercase;
+  }
+
+  .dates {
+    font-family: 'Luciole-Bold', sans-serif;
+    font-weight: 700;
+
+  }
+
+  .countdown-box {
+    width: clamp(300px, 40%, 700px);
+    height: fit-content;
+    padding: 2rem;
+    background-color: #2e284199;
+
+    & > * {
+      color: white;
+    }
+
+    border-radius: 12px;
+  }
+
+</style>
+<script>
+  var DateTime = luxon.DateTime;
+  function parseDate(input) {
+    const match = input.match(/^(.+)\[(.+)\]$/);
+    if (match) {
+      const dateStr = match[1];
+      const zone = match[2];
+      const dt = DateTime.fromISO(dateStr, { zone });
+      return new Date(dt.toString());
+      }
+    return new Date(input);
+    }
+  const second = 1000;
+  const minute = second * 60;
+  const hour = minute * 60;
+  const day = hour * 24;
+  const daysElem = document.getElementById("cd-days");
+  const hoursElem = document.getElementById("cd-hours");
+  const minElem = document.getElementById("cd-min");
+  const secElem = document.getElementById("cd-sec");
+  const countdown = document.getElementById("countdown");
+  const deadline = parseDate(countdown.dataset.date);
+
+  const timer = setInterval(() => {
+    const distance = deadline - new Date().getTime();
+    if (distance > 0) {
+      daysElem.innerText = `${Math.floor(distance / day)}`;
+      hoursElem.innerText = `${Math.floor((distance % day) / hour)}`;
+      minElem.innerText = `${Math.floor((distance % hour) / minute)}`;
+      secElem.innerText = `${Math.floor((distance % minute) / second)}`;
+      countdown.hidden = false;
+    } else {
+      countdown.hidden = true;
+      clearInterval(timer);
+    }
+  }, 0);
+</script>
+
+<div class="full-bleed" style="background: url(/img/banner-blue.webp) top center no-repeat fixed; height: 400px; background-size: 100% auto;">
+  <div class="countdown-box">
+    <div id="countdown" data-date={edition.start_date}>
+      <div>
+        <b id="cd-days"></b>
+        <i>{days}</i>
+      </div>
+      <div>
+        <b id="cd-hours"></b>
+        <i>{hours}</i>
+      </div>
+      <div>
+        <b id="cd-min"></b>
+        <i>{minutes}</i>
+      </div>
+      <div>
+        <b id="cd-sec"></b>
+        <i>{seconds}</i>
+      </div>
+    </div>
+    <h2 class="title">Snowcamp <span class="year">{year}</span></h2>
+    <h3 class="date"><span class="dates">{start} - {end}</span>, Grenoble</h3>
+  </div>
+</div>

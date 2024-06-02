@@ -1,0 +1,34 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { description, title } = Astro.props;
+---
+<style>
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1ex;
+    border: 1px solid var(--green);
+
+    & > h4 {
+      color: var(--orange);
+    }
+
+    & > p {
+      visibility: hidden;
+    }
+    &:hover > p {
+      visibility: visible;
+    }
+  }
+</style>
+<div>
+  <h4>{title}</h4>
+  <p>{description}</p>
+</div>

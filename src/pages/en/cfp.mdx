@@ -1,0 +1,81 @@
+---
+layout: ../../layouts/main.astro
+title: Association SnowCamp
+description: Documents officiels de l'association
+---
+import Utils from '../../utils.js';
+import current from '../../data/current.yaml';
+import TimelineCFP from '../../components/TimelineCFP.astro';
+import Button from '../../components/Button.astro';
+
+export const endFormat = Intl.DateTimeFormat('en', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+export const opencfp = endFormat.format(Utils.parseDate(current.timeline.cfp.open));
+export const tlCFP = [
+  {
+    "title": "Open",
+    "date": current.timeline.cfp.open,
+  },
+  {
+    "title": "Close",
+    "date": current.timeline.cfp.close,
+  },
+  {
+    "title": "Notification",
+    "date": current.timeline.cfp.notification,
+  },
+  {
+    "title": "Conference",
+    "begin": current.start_date,
+    "end": current.end_date,
+  }
+];
+
+# Call For Proposals
+
+<TimelineCFP tl={tlCFP}/>
+
+The CFP opens on the {opencfp}!
+Let's prepare awesome subjects!
+
+<Button className="cfpOpened" href={current.conference.cfp_link} title="CFP"/>
+
+<div style="display: flex; flex-direction: row; align-items: center; gap: 2rem">
+    <div>
+      <img src="/img/themas.webp" alt="themas"/>
+    </div>
+  <div>
+Some hints:
+
+- Choose well your title
+- Explain what the attendees will see and learn
+- Make demos
+- Submit early!
+
+Et encore plus de conseils [ici](https://docs.google.com/document/d/e/2PACX-1vReWAaCbafJqc0cCo2vhKWnAVoiHk3Tq561y4GseXvTyOV7cSk6lN2c_feWEWZBIA/pub).
+
+Sessions can be made in French or English.
+The talks are selected by a neutral and open-minded committee.
+So, take the plunge!
+
+  </div>
+</div>
+
+
+
+## Access to the conference
+
+Each selected speakers who has confirmed his/her participation (via conference hall) will receive a two days ticket for himself/herself (no right to transmit this ticket).
+The ticket gives acces to the conference for thursday and Friday only.
+The workshop on wednesday are not covered by this ticket, because the workshop are reserved places.
+If a speaker want to access to the workshop, he has to buy a full ticket (3 days).
+
+## Speakers expenses
+
+The conference pricing policy does not cover speaker expenses (transportation, accommodation, meals).
+The conference provides lunch during conference days and invites the speakers to a dinner on Thursday evening (confirmation depending on the budget).
+
+

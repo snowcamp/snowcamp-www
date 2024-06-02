@@ -1,0 +1,152 @@
+---
+layout: ../layouts/main.astro
+title: SnowCamp
+description: home page
+---
+import Utils from '../utils';
+import current from '../data/current.yaml';
+import Polaroid from '../components/Polaroid.astro';
+import Spotlight from '../components/Spotlight.astro';
+import Columns3 from '../components/Columns3.astro';
+import ShortDescription from '../components/ShortDescription.astro';
+import TimelineCFP from '../components/TimelineCFP.astro';
+import Button from '../components/Button.astro';
+import Sponsor from '../components/Sponsor.astro';
+import sponsors from '../data/sponsors.yaml';
+
+export const sponsorsTable = sponsors.sponsors.reduce((a, b) => {
+  a[b.id] = b;
+  return a;
+}, {});
+
+export const startFormat = Intl.DateTimeFormat('fr', {
+  month: 'long',
+  day: 'numeric',
+});
+export const endFormat = Intl.DateTimeFormat('fr', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+export const opencfp = endFormat.format(Utils.parseDate(current.timeline.cfp.open));
+export const startDate = Utils.parseDate(current.start_date);
+export const start = startFormat.format(startDate);
+export const end = endFormat.format(Utils.parseDate(current.end_date));
+export const year = startDate.getFullYear();
+
+export const etoiles = current.sponsorship.etoile.map((id) => sponsorsTable[id]);
+export const flocons = current.sponsorship.flocon.map((id) => sponsorsTable[id]);
+export const partners = current.sponsorship.partners.map((id) => sponsorsTable[id]);
+export const tlCFP = [
+  {
+    "title": "Ouverture",
+    "date": current.timeline.cfp.open,
+  },
+  {
+    "title": "Fermeture",
+    "date": current.timeline.cfp.close,
+  },
+  {
+    "title": "Notification",
+    "date": current.timeline.cfp.notification,
+  },
+  {
+    "title": "Conférence",
+    "begin": current.start_date,
+    "end": current.end_date,
+  }
+];
+
+<Spotlight/>
+
+# Snowcamp
+
+> 2 jours de conférences avec des présentations de 45 minutes.
+
+<Columns3>
+  <ShortDescription title="Universités" description="Une journée de formation en profondeur (2 formations de 3 heures au choix)." img={Utils.url("/img/icon-univ.png")}/>
+  <ShortDescription title="Conférences" description="2 jours de conférences avec des présentations de 45 minutes." img={Utils.url("/img/icon-conf.png")}/>
+  <ShortDescription title="Unconference" description="Une journée d'échange sur les pistes mêlant orateurs et participants." img={Utils.url("/img/icon-unconference.webp")}/>
+</Columns3>
+
+# Innovation & Recherche
+
+> Une conférence à haut niveau technique réunissant des ingénieurs et des académiques
+
+<Columns3>
+  <ShortDescription title="Innovation" description="Découvrez les outils, frameworks et technologies d'aujourd'hui et de demain." img={Utils.url("/img/icon-dev.png")}/>
+  <ShortDescription title="Échange" description="Rencontrez et échangez avec d'autres devs, ops, archis et orateurs." img={Utils.url("/img/icon-cloud.png")}/>
+  <ShortDescription title="Recherche" description="Découvrez les travaux des chercheurs sur les tendances et sujets du moment." img={Utils.url("/img/icon-academic.png")}/>
+</Columns3>
+
+# Call For Proposals
+
+<TimelineCFP tl={tlCFP}/>
+
+<div style="display: flex; flex-direction: row; align-items: center; gap: 2rem">
+  <div>
+    <img src="/img/themas.webp" alt="themas"/>
+  </div>
+  <div>
+Le CFP ouvre le { opencfp } ! C'est le moment de préparer des sujets extraordinaires. Le CFP ouvrira ici :
+
+Quelques conseils :
+
+- Choisissez bien votre titre
+- Expliquez ce que les participants vont voir et apprendre
+- Faites des démos
+- Soumettez tôt !
+
+Et encore plus de conseils [ici](https://docs.google.com/document/d/e/2PACX-1vReWAaCbafJqc0cCo2vhKWnAVoiHk3Tq561y4GseXvTyOV7cSk6lN2c_feWEWZBIA/pub).
+  </div>
+</div>
+
+<a id="sponsors"></a>
+
+# Sponsors { year }
+
+> Ils nous ont déjà accordé leur confiance pour préparer ensemble l'édition { year }.
+
+## Étoile
+
+{ etoiles.map((etoile) => <Sponsor title={etoile.name} img={etoile.logo} href={etoile.link.fr} />)
+}
+
+## Flocon
+
+{ flocons.map((flocon) => <Sponsor title={flocon.name} img={flocon.logo} href={flocon.link.fr} />)
+}
+
+> Un grand merci à nos sponsors !
+
+<Button className="sponsorOpened" title="Devenez sponsor !" href={current.sponsorship.subscribe_link}></Button>
+
+## Partenaires
+
+{ partners.map((partner) => <Sponsor title={partner.name} img={partner.logo} href={partner.link.fr} />)
+}
+
+<a id="venue"></a>
+
+# Venir
+
+> SnowCamp se déroulera au Centre de Congrès du WTC (World Trade Center) de Grenoble à la fois pour les Universités et les Conférences.
+
+Les Universités et les Conférences auront toutes lieux au ["WTC World Trade Center Grenoble"](http://www.congres-wtcgrenoble.com/fr), un Centre de Conférences au cœur de Grenoble.
+
+5 - 7 , place Robert Schuman<br/>
+38025 Grenoble
+
+<div>
+  <Polaroid img="https://snowcamp.io/img/wtc.webp" title="WTC Grenoble" side="left" />
+Vous pouvez y accéder :
+
+- par la ligne B du Tram (direction Grenoble Presqu'île), arrêt "Palais De Justice - Gare"
+- en voiture (vous pouvez vous garer aux parkings Doyen Weil ou d'Europole Gare)
+  - en arrivant de Lyon ou de Valence, prenez la sortie d'autoroute "Europole - Gares" et suivre la direction Europole
+  - en arrivant de Chambéry, Gap ou Sisteron, prenez la rocade sud, suivre la direction Lyon par l'autoroute, puis la sortie "Europole - Gares" et suivre la direction Europole
+- en train ou bus : utilisez le passage souterrain depuis la gare vers Europole
+- par avion : il y a des navettes d'aéroports : depuis Lyon Saint-Exupéry (17 rotations 7j/7) et depuis Genève Cointrin (3 rotations, 7j/7)
+- en [vélo](http://www.metromobilite.fr/velo.html)
+</div>
+

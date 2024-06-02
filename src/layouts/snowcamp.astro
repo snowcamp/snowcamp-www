@@ -1,0 +1,78 @@
+---
+export interface Props {
+	title: string;
+}
+const { title } = Astro.props;
+const lang = Utils.getLang(Astro.url);
+
+import Footer from '../components/Footer.astro';
+import Menu from '../components/Menu.astro';
+import '../styles/reset.css';
+import '../styles/style.css';
+import '../styles/snowcamp.css';
+import 'font-awesome/css/font-awesome.css'
+import Utils from "../utils";
+
+const {frontmatter} = Astro.props;
+---
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #2e2841;
+    gap: 15px;
+  }
+  header {
+    background-color: #2e2841;
+    color: white;
+    padding: 0;
+
+    /* keep header sticky */
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    /* organize content */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+</style>
+<!DOCTYPE html>
+<html class="no-js" lang={lang} prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="/js/semantic/step.css" rel="stylesheet" type="text/css" />
+	<link rel="shortcut icon" type="image/png" href="/img/favicon/favicon.png">
+	<link rel="canonical" href="">
+	<title>{frontmatter.title}</title>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@3.6.1/build/global/luxon.min.js" integrity="sha256-UA/r5Oi3pNGYgJlnmZuqXkeXYQRLqyHxFGrFuUDZUXA=" crossorigin="anonymous"></script>
+</head>
+<body lang={lang}>
+  <header class="full-bleed">
+    <a href={Utils.url( '', {lang})}>
+      <img style="max-width: 170px" src="/img/alpes-snow-full-illustration.webp" alt="Logo">
+    </a>
+    <Menu></Menu>
+  </header>
+  <main>
+	<slot />
+  </main>
+  <Footer></Footer>
+</body>

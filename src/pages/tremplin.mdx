@@ -1,0 +1,89 @@
+---
+layout: ../layouts/main.astro
+title: Tremplin
+---
+import Polaroid from '../components/Polaroid.astro';
+import Button from '../components/Button.astro';
+import TimelineCFP from '../components/TimelineCFP.astro';
+import current from '../data/current.yaml';
+export const tl = [
+  {
+    "title": "Ouverture",
+    "date": current.timeline.tremplin.open,
+  },
+  {
+    "title": "Fermeture",
+    "date": current.timeline.tremplin.close,
+  },
+  {
+    "title": "Notification",
+    "date": current.timeline.tremplin.notification,
+  },
+  {
+    "title": "Accompagnement",
+    "date": current.timeline.tremplin.start,
+  },
+  {
+    "title": "Soirée du Tremplin",
+    "date": current.timeline.tremplin.event,
+  }
+];
+
+# Le Tremplin de Snowcamp
+
+## En bref
+
+Le Tremplin de SnowCamp est un événement organisé en marge de la conférence SnowCamp.
+Son but est d’accompagner des primo-speakers locaux pour leur première conférence à travers un coaching personnalisé d’une durée d’environ 2 mois.
+Le candidat est accompagné de l’idéation à la session finale de 20 min, qui aura lieu lors d’une mini-conférence dédiée où les talks seront filmés.
+A l’issue d’un vote, 2 des participants seront sélectionnés pour rejouer leur session lors de la conférence SnowCamp.
+
+- du 1er avril au 31 mai 2025 : ouverture du CFP
+- mi-juin 2025 : annonce des candidates et candidats sélectionnés
+- mi-septembre 2025 : début de l'accompagnement
+- mi-novembre 2025 : soirée du Tremplin et sélection des 2 talks qui seront programmés pour le SnowCamp 2026
+
+<TimelineCFP tl={tl}/>
+
+<Button href="https://conference-hall.io/tremplin-de-snowcamp-2025" title="Participer"/>
+
+## Participer
+
+Tu voudrais donner ta première conférence mais tu n’oses pas le faire seul·e ?
+Tu aimerais avoir des conseils et être accompagné·e ?
+
+Alors le Tremplin de SnowCamp est fait pour toi !
+
+**But :**<br/>
+Offrir un accompagnement individuel gratuit aux personnes désireuses de se lancer en tant que speaker. Notre équipe bénévole de coachs expérimentés t’aidera durant toutes les étapes de préparation de ta première conférence de 20 minutes, jusqu'à ta prise de parole devant un public lors de la soirée du Tremplin sur Grenoble.
+
+Et ce n’est pas tout ! Le public du Tremplin choisira lors de la soirée 2 talks, qui seront d'office sélectionnés au programme de la conférence SnowCamp qui aura lieu du 22 janvier - 25 janvier 2025.
+
+**Principe du Tremplin :**<br/>
+Parmi les propositions reçues, nous sélectionnerons 6 personnes pour les accompagner dans la définition de l’idée de leur talk, la structuration, la réalisation et les répétitions jusqu’au Jour-J de la conférence. Chaque participant⋅e bénéficiera d'un coaching personnel pour l'accompagner dans la réalisation de son talk de 20 minutes, sur les mêmes catégories que Snowcamp.
+
+Que tu aies déjà une idée de talk bien définie, ou que tu sois simplement très motivé·e par une thématique mais avec une idée plus floue, n’hésite pas à soumettre ta proposition et tes motivations : le Tremplin est fait pour ça !
+
+**Qui peut participer ?**
+Le CFP (call for papers) du Tremplin est réservé aux primo-speakers n’ayant jamais donné de conférence publique (les meetups ou conférences internes ne comptent pas).
+
+## Les catégories de talks
+
+- **Cloud & DevOps** : tout ce qui touche aux outils, méthodes et solutions pour déployer, tester et faire tourner des applications.
+- **UX & Frontend** : tout ce qui touche au frontend de nos apps: expérience utilisateur, design, interfaces utilisateur, des approches aux outils et technos, web et mobile inclus.
+- **Langage, Backend & Sécurité** : tout ce qui touche aux langages de programmation, backend de nos apps, et la sécurité: bonnes pratiques, frameworks, performance...
+- **Architecture, Data & AI** : modèles d’architectures, paradigmes de conception et développement, gestion des données, et tout ce se rapproche de l'intelligence artificielle.
+- **Hors-piste** : tout ce qui sort des pistes damées et qui ne rentre pas dans les autres tracks, en gardant en ligne de mire une audience technique de développeurs.
+
+## Éditions précédentes
+
+Le Tremplin de SnowCamp a été lancé en 2023.
+
+
+<div>
+<Polaroid img="img/tremplin/tremplin_2023.jpg" title="Participants & coaches de l'édition 2023" side="right"/>
+
+Voici les enregistrements des talks sélectionnés lors des éditions précédentes, pour celles et ceux ayant acceptés leur diffusion publique :
+
+- [Tremplin 2023](https://www.youtube.com/playlist?list=PLIYXcdwc2smE6928CjtzrqCI-sqNZBNDy)
+</div>

@@ -1,0 +1,96 @@
+---
+layout: ../../layouts/main.astro
+title: Tiquets
+---
+import Utils from '../../utils';
+import Button from '../../components/Button.astro';
+import edition from '../../data/current.yaml';
+
+export const endFormat = Intl.DateTimeFormat('en', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  hour: 'numeric',
+  timeZoneName: 'longGeneric',
+});
+export const openDate = endFormat.format(Utils.parseDate(edition.timeline.tickets.open));
+
+# Tickets
+
+You can buy a pack of 3 days (universities + conferences), or 2 days (conferences only).
+The tickets can be bought through our partner BilletWeb.
+Beware, the number of attendees is limited and we were sold out last year!
+
+<p className="ticketsBefore">The store opens on {openDate} !</p>
+<p className="ticketsOpened">The store is open!</p>
+<p className="ticketsClosed">The store is sold out!</p>
+
+<Button className="ticketsOpened" href={edition.ticketing.link} title="Tickets"/>
+
+
+<table style="text-align: center">
+<thead>
+<tr>
+  <th></th>
+  <th scope="col">Pack 2 days</th>
+  <th scope="col">Pack 3 days</th>
+</tr>
+</thead>
+  <tbody>
+  <tr>
+    <th scope="row">Universities (Wednesday)</th>
+    <td>❌</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <th scope="row">Conferences (Thursday & Friday)</th>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <th scope="row">Keynotes (Thursday & Friday)</th>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <th scope="row">Breakfast</th>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <th scope="row">Lunch</th>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <th scope="row">Meet & Greet on Thursday evening</th>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <th scope="row">Prix</th>
+    <td>75 €</td>
+    <td>160 €</td>
+  </tr>
+  </tbody>
+</table>
+
+## Buy several tickets
+
+Snowcamp doesn't propose to buy several tickets in once time.
+It is our policy from the creation of the event.
+To buy several tickets, you can only buy each ticket one by one.
+
+## Ticket sharing
+
+The ticket for a single seat obtained during registration allows you to receive a badge on Thursday morning during the welcome session.
+Each ticket is personalized and typically cannot be transferred.
+However, we tolerate companies sharing badges among their employees over the 2 days.
+Thus, for each ticket/seat, it is possible for you to send one person on Thursday and another on Friday.
+The badge will be necessary for entry on Friday morning.
+The transfer of the badge between the person on Thursday and the one on Friday must be managed on your end.
+We do not distribute two badges for a single ticket.
+Upon arrival on Friday, the person can affix a label to put their name on the badge.
+Please note that the meal preference (regular or vegetarian) will be the one indicated in the Billetweb platform by December 31st.
+Beyond this date, we proceed with the order from our caterer (and the printing of badges).
+Therefore, ensure that the choice is compatible with the preferences of both individuals sharing the badge.

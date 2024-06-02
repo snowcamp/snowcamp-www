@@ -1,0 +1,122 @@
+roles:
+  - name: Sponsors
+    description: Communication, recrutement, facturation, places
+  - name: Lieu de conférence
+    description: Réservation, logistique
+  - name: CFP
+    description: Definition des tracks, organisation votes, planning
+  - name: Tremplin
+    description: ''
+  - name: Speakers et des keynoters
+    description: Communication, remboursement frais keynoters, demandes
+  - name: Billets
+    description: outils, ventes, réclamation, badges
+  - name: Restauration
+    description: Traiteur, speaker diner
+  - name: Unconference
+    description: bus, location, forfait, accompagnement
+  - name: Communication
+    description: mail, LinkedIn, Twitter
+  - name: Réviseur de track du CFP
+    description: Vote pour les talks d'une track
+  - name: Gilet blanc
+    description: Bénévoles le jour J
+  - name: Photographe
+    description: Photographe le jour J
+organizers:
+  - name: Charles Curtit
+    img: charles.jpg
+    linkedin: charles-curtit-9a8451194
+    id: charles
+  - name: Ludovic Poitou
+    img: ludovic.jpg
+    twitter: LudoMP
+    linkedin: ludovicp
+    github: ludomp
+    id: ludovic
+  - name: Jade Crotto-Miglietti
+    img: jade.jpg
+    linkedin: jadecrottomiglietti
+    id: jade
+  - name: Michel Barret
+    img: michel.jpg
+    linkedin: michel-barret-23a39a27
+    github: barmic
+    id: michel
+  - name: Miguel Moquillon
+    img: miguel.jpg
+    twitter: migmoq
+    linkedin: miguel-moquillon-b8a1aa3
+    github: mmoqui
+    id: miguel
+  - name: Ouiame Talbi
+    img: ouiame.png
+    linkedin: ouiame-talbi
+    id: ouiame
+  - name: Pierrick Rassat
+    img: pierrick.jpg
+    linkedin: pierrick-rassat-7002b691
+    github: kraiss
+    id: pierrick
+  - name: Sébastien Chassande-Barrioz
+    img: sebastien.jpg
+    twitter: SnowCampIO
+    linkedin: sébastien-chassande-barrioz-aa6a623
+    github: schassande
+    id: sebastien
+  - name: Virginie Pageaud
+    img: virginie.jpg
+    twitter: La_Fee_Dragee
+    linkedin: virginiecasavecchia
+    github: Fairy-wen
+    id: virginie
+  - name: Willy Malvault
+    img: willy.png
+    twitter: malvaultw
+    linkedin: willy-malvault-aa584814
+    github: vlamy
+    id: willy
+  - name: Yannick Chiron
+    img: yannick.jpg
+    twitter: Ldoppea
+    linkedin: yannickchiron
+    github: Ldoppea
+    id: yannick
+  - name: Yohan Lasorsa
+    img: yohan.jpeg
+    twitter: sinedied
+    linkedin: yohanlasorsa
+    github: sinedied
+    id: yohan
+  # Former
+  - name: Aurore Allibe
+    id: aurore
+  - name: Sylvain Bauza
+    id: sylvain
+  - name: Remy Sanlaville
+    id: remy
+  - name: Mickael Istria
+    id: mickael
+  - name: Maxime Ducros
+    id: maxime
+  - name: Mathieu Poissard
+    id: mathieu
+  - name: Maha Alsayasneh
+    id: maha
+  - name: Lorie Piscichio
+    id: lorie
+    honor: true
+  - name: Julien Giovaresto
+    id: julien
+  - name: Johann Martinson
+    id: johann
+  - name: Emmanuel Hugonnet
+    id: emmanuel
+  - name: Dana Popovici
+    id: dana
+  - name: Clément Escoffier
+    id: clement
+  - name: Cédric Tran-Xuan
+    id: cedric
+    honor: true
+
