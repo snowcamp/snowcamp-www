@@ -1,15 +1,12 @@
 @import "colors";
 
-.snc-btn, .snc-btn:hover, .snc-header .snc-toggle, .snc-heading-brand .heading, .snc-heading-brand .text {
-  color: @white
-}
-
 .snc-row {
   padding: 11rem 0;
 }
 
 .snc-btn {
-  background: @green;
+  background: @snc-green-dark-bg; // used with light background but need contrast with text color
+  color: @snc-white;
   padding: 1rem 2.6rem;
   overflow: hidden;
   display: inline-block;
@@ -43,15 +40,15 @@
 }
 
 .snc-btn-brand:hover {
-  background: @green
+  background: @snc-green-dark-bg;
 }
 
 .snc-btn-big {
   font-size: 1.6rem;
   line-height: 2.4rem;
-  padding: 1.3rem 3.2rem
+  padding: 1.3rem 3.2rem;
 }
 
 button {
-  border: 0
+  border: 0;
 }

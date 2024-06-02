@@ -32,8 +32,8 @@ export function init() {
     i18n.discussion_desc = 'Rencontrez et échangez avec d\'autres devs, ops, archis et orateurs.';
     i18n.research_title = 'Recherche';
     i18n.research_desc = 'Découvrez les travaux des chercheurs sur les tendances et sujets du moment.';
-    
-    i18n.cfp_open_desc=`<p>Le CFP est ouvert ! C'est le moment de soumettre des sujets extraordinaires ici : 
+
+    i18n.cfp_open_desc=`<p>Le CFP est ouvert ! C'est le moment de soumettre des sujets extraordinaires ici :
     <br><i class="fa fa-bullhorn"></i>&nbsp;<a href="${cfp.url}" target="_blank">${cfp.url}</a></p>
     <br/>
     <p>Quelques conseils :</p>
@@ -120,105 +120,101 @@ export function init() {
     i18n.contact_us = 'Nous contacter';
     i18n.why_become_sponsor='Pourquoi devenir sponsor ?';
     i18n.sponsor_options='Les formules de sponsoring';
-    i18n.sponsor_desc = `<p class="text dark-background">
+    i18n.sponsor_desc = `
         Le SnowCamp est organisé bénévolement par un groupe de geeks de la région grenobloise. Leur seule
-        motivation est d'offrir une conférence unique réunissant innovation et recherche.</p>
-      <p class="text dark-background emph">
+        motivation est d'offrir une conférence unique réunissant innovation et recherche.
+      <br>
         Pour réussir dans cette aventure, nous avons besoin de vous.
-      </p>
-      <p class="text dark-background">
+      <br>
         En retour, nous vous offrons une grande visibilité, sur le web mais aussi lors de l'événement. C'est
         l'occasion idéale pour rencontrer les développeurs grenoblois, montrer vos produits et services, et
-        vous faire connaître.
-      </p>`;
+        vous faire connaître.`;
     i18n.sponsor_subscription_title = 'Inscription';
-    i18n.sponsor_subscription = `L'inscription s'effectue en 2 étapes :
-    <ol>
-    <li style="font-size: 1em; margin-left: 30px;">A partir de la date d'ouverture du sponsoring, vous vous enregistrez via un formulaire en ligne. 
-    Cela détermine votre classement pour devenir sponsor et donc l'emplacement qui vous sera attribué.</li>
-    <li style="font-size: 1em; margin-left: 30px;">Suite à votre enregistrement, l'équipe d'organisation Snowcamp vous envoie la facture à payer. 
-    A partir de la réception de la facture par le sponsor, le sponsor a 90 jours pour réaliser le paiement. 
-    Si ce délai n'est pas respecté par un sponsor, l'organisation du Snowcamp se donne le droit d'annuler le 
-    contrat avec ce sponsoring pour laisser la place à un autre sponsor.</li></ol>`;
+    i18n.sponsor_subscription = `L'inscription s'effectue en 2 étapes :`;
+    i18n.sponsor_subscription_step1 = `A partir de la date d'ouverture du sponsoring, vous vous enregistrez via un formulaire en ligne.
+Cela détermine votre classement pour devenir sponsor et donc l'emplacement qui vous sera attribué.`;
+    i18n.sponsor_subscription_step2 = `Suite à votre enregistrement, l'équipe d'organisation Snowcamp vous envoie la facture à payer.
+A partir de la réception de la facture par le sponsor, le sponsor a 90 jours pour réaliser le paiement.
+Si ce délai n'est pas respecté par un sponsor, l'organisation du Snowcamp se donne le droit d'annuler le
+contrat avec ce sponsoring pour laisser la place à un autre sponsor.`;
 
     i18n.sponsoring_not_open=`L'enregistrement pour le sponsoring du Snowcamp ${edition.year} ouvrira le
         <div style="text-align: center; font-weight: bold; font-size: 1.3em; margin: 10px 0">${sponsors.sponsorship.open_datetime.fr}</div>
-        Veuillez revenir à partir de ce moment pour vous enregistrer. Nous enverrons un message de rappel aux entreprises qui ont déjà été sponsors.`;
-    i18n.sponsoring_open= (sponsors:any) => `L'enregistrement pour le sponsoring du Snowcamp ${edition.year} est ouvert depuis le 
-      <div style="text-align: center; font-weight: bold; font-size: 1.3em; margin: 10px 0">${sponsors.sponsorship.open_datetime.fr}</div>
-      Il reste actuellement ${12 - sponsors.etoile.length} places de sponsor(s) Etoile et ${6 - sponsors.flocon.length} places de sponsor(s) Flocon. 
-      <br>Vous pouvez vous enregistrer via <a href="${sponsors.sponsorship.subscribe_link}">ce formulaire d'inscription</a>`;
-    i18n.sponsoring_closed=`La campagne de sponsoring du snowcamp ${edition.year} est actuellement terminée. Il y a plus de possibilités de devenir sponsor pour la conférence. 
+        <p class="text-big-italic">Veuillez revenir à partir de ce moment pour vous enregistrer. Nous enverrons un message de rappel aux entreprises qui ont déjà été sponsors.</p>`;
+    i18n.sponsoring_open= (sponsors:any) => `<div class="text-big-italic">L'enregistrement pour le sponsoring du Snowcamp ${edition.year} est ouvert depuis le
+      <p style="text-align: center; font-weight: bold; font-size: 1.3em; margin: 10px 0">${sponsors.sponsorship.open_datetime.fr}</p>
+      Il reste actuellement ${12 - sponsors.etoile.length} places de sponsor(s) Etoile et ${6 - sponsors.flocon.length} places de sponsor(s) Flocon.
+      <br>Vous pouvez vous enregistrer via <a href="${sponsors.sponsorship.subscribe_link}">ce formulaire d'inscription</a></div>`;
+    i18n.sponsoring_closed=`La campagne de sponsoring du snowcamp ${edition.year} est actuellement terminée. Il y a plus de possibilités de devenir sponsor pour la conférence.
       Vous pouvez nous contacter par email pour indiquer que vous souhaitez être parmi notre liste de contact pour la campagne de sponsoring de l'année suivante.`;
     i18n.sponsoring_question='Pour toute information vous pouvez nous contacter par email';
 
     i18n.sponsor_plan_title = 'Le plan des stands'
     i18n.sponsor_meetgreet_title = 'La bière au Meet & Greet';
-    i18n.sponsor_meetgreet_desc = `Pour le moment convivial du Meet & Greet, le Jeudi de 16h50 à 18h, un des sponsors Etoile peut prendre en charge la distribution de la bière.
-    <br>Le principe :
-      <br> - Distribuer de la bière sur son stand pendant le créneau du Meet & Greet seulement (pas durant les 2 jours)
-      <br> - Il s'agit de distribuer de la bière à la pression (pas de bouteille ou de canette). Il faut donc prévoir une tireuse, des fûts de bière et des écocup pour 600 personnes
-      <br> - L'avantage pour le sponsor est d'assurer du passage sur son stand :-).
-      <br> - La contrepartie est bien sûr d'organiser cela : logistique, distribution de la bière, frais de location de la tireuse, achat des fûts, location des ecocup ...`;
+    i18n.sponsor_meetgreet_desc = `Pour le moment convivial du Meet & Greet, le Jeudi de 16h50 à 18h, un des sponsors Etoile peut prendre en charge la distribution de la bière. Le principe :`;
+    i18n.sponsor_meetgreet_desc_1 = `Distribuer de la bière sur son stand pendant le créneau du Meet & Greet seulement (pas durant les 2 jours)`;
+    i18n.sponsor_meetgreet_desc_2 = `Il s'agit de distribuer de la bière à la pression (pas de bouteille ou de canette). Il faut donc prévoir une tireuse, des fûts de bière et des écocup pour 600 personnes`;
+    i18n.sponsor_meetgreet_desc_3 = `L'avantage pour le sponsor est d'assurer du passage sur son stand :-).`;
+    i18n.sponsor_meetgreet_desc_4 = `La contrepartie est bien sûr d'organiser cela : logistique, distribution de la bière, frais de location de la tireuse, achat des fûts, location des ecocup ...`;
 
-    i18n.sponsor_guide_title = `Guide du sponsor`;
+    i18n.sponsor_guide_title = 'Guide du sponsor';
 
     i18n.sponsor_guide_place_title ='Les places';
-    i18n.sponsor_guide_place_content =`Les places liées au sponsoring doivent être retirées par le sponsor au moyen 
+    i18n.sponsor_guide_place_content =`Les places liées au sponsoring doivent être retirées par le sponsor au moyen
       d'une url de connexion et d'un code fourni par l'organisation du Snowcamp vers la mi-novembre. Via ce lien vous
       pourrez entrer les informations de chaque participant : nom, prénom, email, type de repas (végétarien ou normal).
-      <br>Le retrait des places doit être réalisé impérativement avant le <b>31 décembre</b> précédent la 
-      conférence. Passé ce délais les places "conference" ne seront plus récupérable par le sponsor. Elles 
-      seront mis en vente au public.                
+      <br>Le retrait des places doit être réalisé impérativement avant le <b>31 décembre</b> précédent la
+      conférence. Passé ce délais les places "conference" ne seront plus récupérable par le sponsor. Elles
+      seront mis en vente au public.
       <br>Il existe 2 types de places :<ul>
         <li>Place <b>conférence</b>: Elle donne le droit d'accéder à la conférence le jeudi et le vendredi
             et permet d'assister aux talks/schuss durant les 2 jours.</li>
         <li>Place <b>stand</b>: Elle donne le droit d'accéder à la conférence le jeudi et le vendredi mais
-            seulement au hall des sponsors (contenant les stands), l'atrium du WTC. Elle ne permet pas 
+            seulement au hall des sponsors (contenant les stands), l'atrium du WTC. Elle ne permet pas
             d'accéder aux présentations (talk/schuss).</li>
       </ul>`;
 
     i18n.sponsor_guide_place_sharing_title ='Partage de place';
-    i18n.sponsor_guide_place_sharing_content =`Le billet d'une place que vous obtenez lors de l'inscription permet d'obtenir un badge le jeudi matin lors de l'accueil. 
-      Chaque billet est nominatif. Et normalement, il ne peut être cédé. Cependant, nous tolérons que des entreprises 
-      pratiquent le partage de badge entre leurs employés sur les 2 jours. Ainsi pour chaque billet/place, il vous est possible d'envoyer une personne le jeudi et une autre le vendredi. 
-      Le badge sera nécessaire pour rentrer le vendredi matin. La transmission du badge entre la personne du jeudi 
-      et celle du vendredi doit être gérée de votre côté. Nous ne distribuons pas deux badges pour un même billet. 
+    i18n.sponsor_guide_place_sharing_content =`Le billet d'une place que vous obtenez lors de l'inscription permet d'obtenir un badge le jeudi matin lors de l'accueil.
+      Chaque billet est nominatif. Et normalement, il ne peut être cédé. Cependant, nous tolérons que des entreprises
+      pratiquent le partage de badge entre leurs employés sur les 2 jours. Ainsi pour chaque billet/place, il vous est possible d'envoyer une personne le jeudi et une autre le vendredi.
+      Le badge sera nécessaire pour rentrer le vendredi matin. La transmission du badge entre la personne du jeudi
+      et celle du vendredi doit être gérée de votre côté. Nous ne distribuons pas deux badges pour un même billet.
       Lors de son arrivée le vendredi, la personne pourra coller une étiquette afin de mettre son nom sur le badge.
       A noter que la préférence de repas (normal ou végé) sera celle indiquée dans la plateforme billetweb au 31 décembre.
-      Au delà de cette date, nous procédons à la commande auprès de notre traiteur (et à l'impression des badges). 
+      Au delà de cette date, nous procédons à la commande auprès de notre traiteur (et à l'impression des badges).
       Veillez donc à faire un choix compatible avec les 2 personnes partageant le badge.`;
 
     i18n.sponsor_guide_booth_etoile_title='Le stand ETOILE';
-    i18n.sponsor_guide_booth_etoile_content=`Le stand Etoile fait 9m² (3m x 3m). Il est tracé au sol. Il contient par 
+    i18n.sponsor_guide_booth_etoile_content=`Le stand Etoile fait 9m² (3m x 3m). Il est tracé au sol. Il contient par
       défault: 1 table, 2 chaises, une arrivée électrique et 1 claustra métallique d'affichage (163 cmH x 83 cm L).
       La hauteur maximal du stand ne doit pas dépasser 2m40. La charge au sol des produits ne doit pas excéder 500kg / m2.
-      <br>Aucun affichage direct sur les murs, cloisons et piliers du centre de congrès n'est autorisé, prévoir 
+      <br>Aucun affichage direct sur les murs, cloisons et piliers du centre de congrès n'est autorisé, prévoir
       obligatoirement un support si besoin, en plus du claustra fourni.`;
 
     i18n.sponsor_guide_booth_etoile_what_title=`Ce qu'il est possible de faire sur le stand`;
-    i18n.sponsor_guide_booth_etoile_what_content=`Il n'y a pas de liste définissant ce qui est interdit ou ce qui 
+    i18n.sponsor_guide_booth_etoile_what_content=`Il n'y a pas de liste définissant ce qui est interdit ou ce qui
       est autorisé. L'équipe d'organisation du Snowcamp est à solliciter pour tout ce qui peut sortir de l'ordinaire
       d'un stand d'une conférence.
       <br>Concernant la nourriture, il y a 3 préoccupations :<ol>
         <li>L'hygiène: La nourriture doit être manipulée de manière hygiénique.</li>
-        <li>La propreté: Vous devez rendre l'emplacement de votre stand dans un état correct afin qu'il ne 
+        <li>La propreté: Vous devez rendre l'emplacement de votre stand dans un état correct afin qu'il ne
             nécessite pas un surcroît de nettoyage inhabituel.</li>
-        <li>La cuisson: Faire cuire peut être une source de problème : risque de feu, surcharge d'électricité. 
+        <li>La cuisson: Faire cuire peut être une source de problème : risque de feu, surcharge d'électricité.
             Donc un appareillage au gaz n'est pas accepté. En revanche un appareil pour réchauffer des crêpes
             est acceptable.</li>
       </ol>`;
 
     i18n.sponsor_guide_booth_etoile_material_title=`Matériel à louer`;
-    i18n.sponsor_guide_booth_etoile_material_content=`Il est possible de commander du matériel supplémentaire auprès du 
-      WTC mais via l'organisation du Snowcamp. Le catalogue est disponible <a target="_" href="/catalogue_WTC.pdf">ici</a>. Le demande de 
-      matériel doit être adressée à l'équipe d'organisation du Snowcamp qui vous transmettra les tarifs. 
+    i18n.sponsor_guide_booth_etoile_material_content=`Il est possible de commander du matériel supplémentaire auprès du
+      WTC mais via l'organisation du Snowcamp. Le catalogue est disponible <a target="_" href="/catalogue_WTC.pdf">ici</a>. Le demande de
+      matériel doit être adressée à l'équipe d'organisation du Snowcamp qui vous transmettra les tarifs.
       Une facture sera émise qui devra être réglée au plus tard 7j AVANT le début de la conférence. L'absence
       de paiement dans le délais fixé impliquera la non fourniture du matériel demandé.`;
 
     i18n.sponsor_guide_booth_etoile_install_title=`(De)Installation du stand`;
     i18n.sponsor_guide_booth_etoile_install_content=`L'installation du stand peut s'opérer le mercredi après-midi (14h-17h30)
-      du démarrage du Snowcamp. Les stands devront être démontés pour le vendredi 18h au plus tard. Le WTC comporte un monte 
+      du démarrage du Snowcamp. Les stands devront être démontés pour le vendredi 18h au plus tard. Le WTC comporte un monte
       charge et un ascenseur. L'accès au monte-charge se fait par la rue de la Frise, entre le World Trade Center
       Grenoble et l'Ecole Supérieure de Commerce.`;
 
@@ -233,7 +229,7 @@ export function init() {
           <br>5 - 7, place Robert Schuman
           <br>38000 GRENOBLE</p>
       <p>Les livreurs devront déposer les colis sur le lieu de l'exposition, qui se trouve au 1er étage
-          du bâtiment, accessible par monte-charge et ascenseur, sinon, les colis seront refusés. Les livreurs 
+          du bâtiment, accessible par monte-charge et ascenseur, sinon, les colis seront refusés. Les livreurs
           doivent être AUTONOMES pour assurer leurs prestations :</p>
           <ul>
           <li>soit disposer du matériel adéquat (hayon, transpalette spécifique, élévateur, ...)</li>
@@ -288,7 +284,7 @@ export function init() {
     i18n.previous_edition_relive_with_images = (year: number) => `Revivez l'édition ${year} en images !`;
 
     i18n.organisation_title='Organisation';
-    i18n.organisation_desc=`Le Snowcamp est une conférence faite par des développeurs de la région grenobloise. 
+    i18n.organisation_desc=`Le Snowcamp est une conférence faite par des développeurs de la région grenobloise.
       Elle a été créée en 2016 à l'initiative de l'<a href="http://www.alpesjug.fr/">AlpesJug</a>.
       Tous les organisateurs sont des geeks bénévoles passionnés.`;
 
@@ -301,7 +297,7 @@ export function init() {
       journée complète pour apprendre ou approfondir une technologie particulière; une conférence le jeudi et
       vendredi plus classique; enfin le samedi, une journée détente à la neige.`;
     i18n.snowcamp_gren_inno_title='Grenoble et l\'innovation';
-    i18n.snowcamp_gren_inno_desc=`Depuis les débuts de l'électricité, Grenoble a toujours été un vivier 
+    i18n.snowcamp_gren_inno_desc=`Depuis les débuts de l'électricité, Grenoble a toujours été un vivier
       d'innovation et d'excellence :
       des laboratoires et des industries de pointe y sont installés, elle a été classée 5e ville la plus
       innovante au monde par le magazine Forbes et est maintenant labellisée “French Tech”. Ici, l'innovation
@@ -321,7 +317,7 @@ export function init() {
         <li>L'unconference, le samedi, propose aux orateurs et aux participants de se retrouver sur les
           pistes de ski de la région grenobloise.</li>
       </ul>
-      La première édition en 2016 réunissait ~200 participants et orateurs dans les locaux de l'université 
+      La première édition en 2016 réunissait ~200 participants et orateurs dans les locaux de l'université
       de Grenoble et a grandi grâce à votre confiance pour pouvoir accueillir ~600 participants et ~70
       orateurs depuis 2020 au World Trade Center de Grenoble.`;
     i18n.snowcamp_unconf_title='L\'unconference';
@@ -394,5 +390,4 @@ export function init() {
         target="_blank">Creative Commons Attribution 3.0 Unported License</a>.</em></p>`
 
   return i18n;
-}    
-  
+}
