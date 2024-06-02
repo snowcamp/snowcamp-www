@@ -1,22 +1,60 @@
 ---
-import organisation from '../data/organisation.json';
+import Utils from '../utils';
+interface Props {
+  orga: Orga;
+}
+
+interface Orga {
+  name: string;
+  img: string;
+  twitter?: string;
+  linkedin?: string;
+  github?: string;
+}
+
+const { orga } = Astro.props;
 ---
-<div class="row">
-    { organisation.organizers.map(orga => (
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="snc-single-speaker">
-        <figure>
-          <img src={'/img/orga/' + orga.img} alt={orga.name}>
-          <figcaption>
-            {orga.twitter && <a class="sp-tw" href={'https://twitter.com/'+orga.twitter} target="_blank"><i class="fa fa-twitter"></i></a>}
-            {orga.linkedin && <a class="sp-in" href={'https://www.linkedin.com/in/'+orga.linkedin} target="_blank"><i class="fa fa-linkedin"></i></a>}
-            {orga.github && <a class="sp-gh" href={'https://github.com/'+orga.github} target="_blank"><i class="fa fa-github"></i></a>}
-          </figcaption>
-        </figure>
-        <div class="speaker-info">
-          <h4 class="subtitle">{orga.name}</h4>
-        </div>
-      </div>
-    </div>
-    )) }
+<style>
+  img {
+    clip-path: circle();
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  figcaption {
+    float: left;
+    position: absolute;
+    width: 100%;
+    top: 70%;
+    z-index: 500;
+    display: none;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    color: var(--orange);
+    background-color: var(--background2);
+    border-radius: 5px;
+    & > a {
+      color: inherit;
+    }
+  }
+  div:hover > figure > figcaption {
+    background-color: var(--orange);
+    color: var(--background2);
+    display: flex;
+  }
+</style>
+<div>
+  <figure>
+    <img src={Utils.url(`/img/orga/${orga.img}`)} alt={orga.name} />
+    <figcaption>
+      {orga.twitter && <a class="sp-tw" href={`https://twitter.com/${orga.twitter}`} target="_blank"><i class="fa fa-twitter"></i></a>}
+      {orga.linkedin && <a class="sp-in" href={`https://www.linkedin.com/in/${orga.linkedin}`} target="_blank"><i class="fa fa-linkedin"></i></a>}
+      {orga.github && <a class="sp-gh" href={`https://github.com/${orga.github}`} target="_blank"><i class="fa fa-github"></i></a>}
+    </figcaption>
+  </figure>
+  <p>{orga.name}</p>
 </div>

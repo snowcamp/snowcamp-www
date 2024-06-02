@@ -1,0 +1,94 @@
+---
+import edition from '../data/current.yaml';
+import organisation from '../data/organisation.yaml';
+
+---
+<style>
+  td {
+    text-align: center;
+  }
+</style>
+titi
+<table>
+  <thead>
+  <tr id="orga-histo-tr">
+  </tr>
+  </thead>
+  <tbody id="orga-histo-tbody">
+  </tbody>
+</table>
+<script define:vars={{ edition, organisation }}>
+  const DateTime = luxon.DateTime;
+  function parseDate(input) {
+    const match = input.match(/^(.+)\[(.+)\]$/);
+    if (match) {
+      const dateStr = match[1];
+      const zone = match[2];
+      const dt = DateTime.fromISO(dateStr, { zone });
+      return new Date(dt.toString());
+    }
+    return new Date(input);
+  }
+
+  const first = 2016;
+  const currentYear = parseDate(edition.start_date).getFullYear();
+  const years = [...Array(currentYear - first).keys()].map((offset) => offset + 2016);
+
+  async function loadYear(year) {
+    const url = new URL(`${location.protocol}//${location.host}/editions/${year}.json`);
+    const a = await fetch(url);
+    return a.ok ? await a.json() : Promise.resolve({});
+  }
+
+  Promise.all(years.map((year) => loadYear(year))).then((previous_years) => {
+    previous_years = previous_years.filter((ed) => ed.start_date);
+    const editions = previous_years.map((year) => parseDate(year.start_date).getFullYear());
+    const trEditions = document.getElementById("orga-histo-tr");
+
+    trEditions.appendChild(document.createElement('th'));
+    editions.forEach((edition) => {
+      const ed = document.createElement('th');
+      ed.innerText = edition;
+      trEditions.appendChild(ed);
+    });
+    const tot = document.createElement('th');
+    tot.innerText = "Total";
+    trEditions.appendChild(tot);
+
+    function compare(a, b) {
+      const split = a.name.split(" ");
+      const name1 = split[split.length - 1];
+      const split2 = b.name.split(" ");
+      const name2 = split2[split2.length - 1];
+      return name1.localeCompare(name2);
+    }
+
+    const tbodyOrga = document.getElementById("orga-histo-tbody");
+    console.table(previous_years)
+    organisation.organizers.map((o) => ({
+      name: o.name,
+      editions: previous_years
+        .map((py) => py.organisers.includes(o.id)),
+      total: previous_years
+        .filter((py) => py.organisers.includes(o.id))
+        .length,
+    })).filter((o) => o.total > 0).sort(compare).forEach((organiser) => {
+      const tr = document.createElement('tr');
+      const o = document.createElement('th');
+      o.innerText = organiser.name;
+      tr.appendChild(o);
+      organiser.editions.forEach((ed) => {
+        const e = document.createElement('th');
+        if (ed) {
+          e.innerText = '✔';
+        }
+        tr.appendChild(e);
+      });
+      const e = document.createElement('th');
+      e.innerText = organiser.total;
+      tr.appendChild(e);
+      tbodyOrga.appendChild(tr);
+    })
+
+  })
+</script>

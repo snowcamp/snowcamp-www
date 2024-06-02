@@ -1,0 +1,47 @@
+---
+layout: ../../layouts/snowcamp.astro
+title: Organisation du Snowcamp
+---
+import Role from '../../components/Role.astro';
+import Orga from '../../components/Orgas.astro';
+import OrgaHisto from '../../components/OrgaHisto.astro';
+import organisation from '../../data/organisation.yaml';
+import current from '../../data/current.yaml';
+
+# Organisation
+
+> Snowcamp is a conference crafted by developers from the Grenoble area.
+It was started in 2016 on the initiative of [AlpesJug](https://alpesjug.fr).
+All organizers are enthusiast geeky volonteers.
+
+<div style="display: grid; grid-template-columns: repeat(3, minmax(200px, 1fr)); justify-items: center; align-items: center">
+  { organisation.organizers.filter((orga) => current.organisers.includes(orga.id)).map(orga => (<Orga orga={orga}/>))}
+</div>
+
+# Historique des organisateurs
+
+<OrgaHisto past={organisation.past}/>
+
+# Les différents rôles
+
+Les différents rôles de l'organisation du snowcamp sont :
+
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1ex">
+  {organisation.roles.map((role) => (<Role title={role.name} description={role.description}/>))}
+</div>
+
+
+Il est souhaité de répartir les différents rôles sur l'ensemble de l'équipe d'organisation, de nommer un backup sur chaque rôle et d'éviter de cumuler trop de rôles.
+En plus des ces rôles d'organisation de la conférence, il y a un président, un trésorier et un secrétaire comme pour toute association.
+
+# Les principaux postes de dépenses/Recette.
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; justify-items: center; align-items: center">
+  ![recettes](https://snowcamp.io/img/repartition_recettes.png)
+
+  ![dépenses](https://snowcamp.io/img/repartition_depenses.png)
+</div>
+
+Le budget du snowcamp est d'environ 80 000€ et est en principe à l'équilibre chaque année.
+Il n'y a pas vocation à faire des bénéfices.
+Lorsqu'il y a un excedent budgétaire, il est reversé à des associations pour la défense de l'environnement.

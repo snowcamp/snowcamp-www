@@ -1,0 +1,18 @@
+---
+layout: ../layouts/main.astro
+title: Association SnowCamp
+description: Planning
+---
+import Utils from '../utils.js';
+import current from '../data/current.yaml';
+
+export const endFormat = Intl.DateTimeFormat('fr', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+export const end = endFormat.format(Utils.parseDate(current.timeline.cfp.publish));
+
+
+
+Le programme sera disponible le {end}.

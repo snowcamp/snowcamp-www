@@ -1,0 +1,77 @@
+---
+layout: ../layouts/main.astro
+title: Association SnowCamp
+description: Documents officiels de l'association
+---
+import Utils from '../utils.js';
+import current from '../data/current.yaml';
+import TimelineCFP from '../components/TimelineCFP.astro';
+import Button from '../components/Button.astro';
+
+export const endFormat = Intl.DateTimeFormat('fr', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+export const opencfp = endFormat.format(Utils.parseDate(current.timeline.cfp.open));
+export const tlCFP = [
+  {
+    "title": "Ouverture",
+    "date": current.timeline.cfp.open,
+  },
+  {
+    "title": "Fermeture",
+    "date": current.timeline.cfp.close,
+  },
+  {
+    "title": "Notification",
+    "date": current.timeline.cfp.notification,
+  },
+  {
+    "title": "Conférence",
+    "begin": current.start_date,
+    "end": current.end_date,
+  }
+];
+
+# Call For Proposals
+
+<TimelineCFP tl={tlCFP}/>
+
+Le CFP ouvre le {opencfp} ! C'est le moment de préparer des sujets extraordinaires.
+Le CFP ouvrira ici :
+
+<Button className="cfpOpened" href={current.conference.cfp_link} title="CFP"/>
+
+<div style="display: flex; flex-direction: row; align-items: center; gap: 2rem">
+    <div>
+      <img src="/img/themas.webp" alt="themas"/>
+    </div>
+  <div>
+Quelques conseils :
+
+- Choisissez bien votre titre
+- Expliquez ce que les participants vont voir et apprendre
+- Faites des démos
+- Soumettez tôt !
+
+Et encore plus de conseils [ici](https://docs.google.com/document/d/e/2PACX-1vReWAaCbafJqc0cCo2vhKWnAVoiHk3Tq561y4GseXvTyOV7cSk6lN2c_feWEWZBIA/pub).
+  </div>
+</div>
+
+Les sessions peuvent être proposées en français ou en anglais.
+Les présentations sont sélectionnées par un comité neutre et ouvert.
+Alors lancez-vous !
+
+## Accès à la conférence
+
+Chaque speaker retenu et qui a confirmé sa participation (via conference hall) a droit à un billet conférence 2 jours (Jeudi + Vendredi).
+Ce billet ne peut être céder. Le speaker recevra son billet entre novembre et décembre. Le billet ne donne pas accès aux universités car il s'agit de places réservées.
+Si le speaker veut assister à une université il doit acheter un billet 3 jours.
+
+## Frais des speakers
+
+La politique de prix de la conférence ne permet pas de prendre en charge les frais des speakers (transport, logement, repas).
+La conférence offre le repas le midi les jours de conférence et invite les speakers à un diner le jeudi soir (Confirmation en fonction du budget).
+
+

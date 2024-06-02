@@ -1,47 +1,117 @@
 ---
-import { t } from "../i18n/i18n";
-import { type SponsorType } from "./sponsor";
+import { type SponsorType } from './sponsor';
+import Utils from "../utils";
 
 interface Props {
 	sponsor: SponsorType;
-  cssClass: string;
+  active: boolean;
 }
-const { sponsor, cssClass } = Astro.props;
+const { sponsor, active } = Astro.props;
+type translation = {fr: string, en: string};
+type language = keyof translation;
+const lang = Utils.getLang(Astro.url) as language;
 
+const trad: {[key: string]: translation} = {
+  "title-tenyears": {
+    fr: "10 ans",
+    en: "10 years"
+  },
+  "title-etoile": {
+    fr: "Étoile",
+    en: "Étoile"
+  },
+  "title-flocon": {
+    fr: "Flocon",
+    en: "Flocon"
+  }
+}
 ---
-<div class="snc-ticket">
-<div class={'single ' + cssClass} >
-  <div class="single-top">
-    <h2 class="title">
-      {sponsor.title_key ? t(sponsor.title_key) : sponsor.title}
-    </h2>
-    <h4 class="price">{sponsor.price}</h4>
-    <p>{t('sponsor_limit',sponsor.number)}</p>
-  </div>
-  <div class="single-bottom">
-    <ul class="list-unstyled list">
-      {sponsor.description ?
-      <li><i class="fa fa-check" aria-hidden="true"></i> {t(sponsor.description)}</li>
-      : ''}
-      {sponsor.places.conferences ?
-      <li><i class="fa fa-check" aria-hidden="true"></i> {t('sponsor_places_conferences', sponsor.places.conferences)}</li>
-      : ''}
-      {sponsor.places.booth ?
-      <li><i class="fa fa-check" aria-hidden="true"></i> {t('sponsor_places_booth', sponsor.places.booth)}</li>
-      : ''}
-      {sponsor.booth_area ?
-      <li><i class="fa fa-check" aria-hidden="true"></i> {t('sponsor_booth_area', sponsor.booth_area)}</li>
-      : ''}
-      <li><i class="fa fa-check" aria-hidden="true"></i> {t('sponsor_logo_website')}</li>
-      <li><i class="fa fa-check" aria-hidden="true"></i> {t('sponsor_logo_billposting')}</li>
-      { sponsor.places && sponsor.places.speakers_dinner ?
-      <li><i class="fa fa-check" aria-hidden="true"></i> {t('sponsor_places_speakers_dinner', sponsor.places.speakers_dinner)}</li>
-      : ''}
-      <li><i class="fa fa-check" aria-hidden="true"></i> {t('snowcamp_logo_usage')}</li>
-      {sponsor.kakemono ?
-        <li><i class="fa fa-check" aria-hidden="true"></i> {t('sponsor_kakemono')}</li>
-      : ''}
-      </ul>
-  </div>
-</div>
-</div>
+<style>
+  section {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 1rem;
+    border-radius: 5px;
+    background-color: var(--main);
+    & > header > * {
+      color: var(--background);
+    }
+    & > header > h4 {
+      color: var(--background);
+    }
+  }
+  section.active {
+    background-color: var(--orange);
+    & > header > * {
+      color: var(--main);
+    }
+    & > header > h4 {
+      color: var(--background);
+    }
+  }
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background);
+    margin: 1ex;
+    list-style-type: none;
+    padding: 1ex 1rem;
+  }
+  li {
+    text-align: center;
+    &::before {
+      content: "✔  ";
+      color: var(--green);
+    }
+    &.hidden {
+      display: none;
+    }
+  }
+  p {
+    display: none;
+  }
+  .en:lang(en) {
+    display: flex;
+  }
+  .fr:lang(fr) {
+    display: flex;
+  }
+</style>
+<section class={active ? "active" : ""}>
+  <header>
+    <h2>{trad['title-' + sponsor.id][lang]}</h2>
+    <h4>{sponsor.price}</h4>
+    <p class={lang} lang="en">{`Limited to ${sponsor.number} sponsors`}</p>
+    <p class={lang} lang="fr">{`Limité à ${sponsor.number} sponsors`}</p>
+  </header>
+  <ul class={lang} lang="fr">
+    <li class={sponsor.id == 'tenyears' || 'hidden'}>Sponsor du goodies spécial des 10 ans: un T-shirt de qualité sur lequel sera affiché devant/derrière le logo du snowcamp et le logo des 10 ans. Votre logo sur la manche du t-shirt.</li>
+    <li>{`${sponsor.places.conferences} entrées offertes pour participer aux sessions`}</li>
+    <li class={sponsor.places.booth || 'hidden'}>{`${sponsor.places.booth} entrées offertes sur l'espace sponsor uniquement`}</li>
+    <li class={sponsor.booth_area || 'hidden'}>{`Stand dans le hall d'exposition (${sponsor.booth_area})`}</li>
+    <li>Logo sur notre site web du SnowCamp</li>
+    <li>Affichage de votre logo sur le lieu de la conférence</li>
+    <li>Autorisation d'exploiter le logo SnowCamp pour votre communication</li>
+    <li class={sponsor.kakemono || 'hidden'}>Un kakémono (max 1m x 2m50)</li>
+  </ul>
+  <ul class={lang} lang="en">
+    <li class={sponsor.id == 'tenyears' || 'hidden'}>Sponsor a special 10-year anniversary goodie: a high-quality T-shirt featuring the Snowcamp logo and the 10-year logo on the front and back. Placing your logo on the sleeve of the T-shirt.</li>
+    <li class={sponsor.places.booth || 'hidden'}>{`${sponsor.places.conferences} free tickets to attend the sessions`}</li>
+    <li class={sponsor.booth_area || 'hidden'}>{`${sponsor.places.booth} free tickets for the sponsors space only`}</li>
+    <li>{`Booth in the exhibition hall (${sponsor.booth_area})`}</li>
+    <li>Your logo on the SnowCamp website</li>
+    <li>Your logo visible on the location of the conference</li>
+    <li>Authorisation to use the SnowCamp logo for your communications</li>
+    <li class={sponsor.kakemono || 'hidden'}>1 kakémono (max 1m x 2m50)</li>
+  </ul>
+</section>

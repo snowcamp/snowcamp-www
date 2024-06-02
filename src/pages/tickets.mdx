@@ -1,0 +1,95 @@
+---
+layout: ../layouts/main.astro
+title: Tiquets
+---
+import Utils from '../utils';
+import Button from '../components/Button.astro';
+import edition from '../data/current.yaml';
+
+export const endFormat = Intl.DateTimeFormat('fr', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  hour: 'numeric',
+});
+export const openDate = endFormat.format(Utils.parseDate(edition.timeline.tickets.open));
+
+# Billetterie
+
+Vous pouvez acheter le pack 3 jours (Universités + Conférences) ou 2 jours (Conférences seulement).
+L'achat du ticket est délégué à notre prestataire BilletWeb.
+Attention, le nombre de billets est limité !
+
+<p className="ticketsBefore">La billetterie ouvre le {openDate} !</p>
+<p className="ticketsOpened">La billetterie est ouverte !</p>
+<p className="ticketsClosed">La billetterie est épuisée !</p>
+
+<Button className="ticketsOpened" href={edition.ticketing.link} title="Billetterie"/>
+
+<table style="text-align: center">
+<thead>
+<tr>
+  <th></th>
+  <th scope="col">Pack 2 jours</th>
+  <th scope="col">Pack 3 jours</th>
+</tr>
+</thead>
+  <tbody>
+  <tr>
+    <th scope="row">Universités (mercredi)</th>
+    <td>❌</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <th scope="row">Conférences (jeudi & vendredi)</th>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <th scope="row">Keynotes (jeudi & vendredi)</th>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <th scope="row">Petit déjeuner tous les jours</th>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <th scope="row">Repas tous les midi</th>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <th scope="row">Meet & Greet le Jeudi soir</th>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <th scope="row">Prix</th>
+    <td>75 €</td>
+    <td>160 €</td>
+  </tr>
+  </tbody>
+</table>
+
+## Achat de plusieurs places
+
+Le snowcamp ne propose pas la possibilité d'acheter plusieurs places à la fois.
+Il s'agit de notre politique définie depuis de l'origine.
+Pour acheter plusieurs places, il faut les acheter une par une.
+
+## Partage de place
+
+Le billet d'une place que vous obtenez lors de l'inscription permet d'obtenir un badge le jeudi matin lors de l'accueil.
+Chaque billet est nominatif.
+Et normalement, il ne peut être cédé.
+Cependant, nous tolérons que des entreprises pratiquent le partage de badge entre leurs employés sur les 2 jours.
+Ainsi pour chaque billet/place, il vous est possible d'envoyer une personne le jeudi et une autre le vendredi.
+Le badge sera nécessaire pour rentrer le vendredi matin.
+La transmission du badge entre la personne du jeudi et celle du vendredi doit être gérée de votre côté.
+Nous ne distribuons pas deux badges pour un même billet.
+Lors de son arrivée le vendredi, la personne pourra coller une étiquette afin de mettre son nom sur le badge.
+A noter que la préférence de repas (normal ou végé) sera celle indiquée dans la plateforme billetweb au 31 décembre.
+Au delà de cette date, nous procédons à la commande auprès de notre traiteur (et à l'impression des badges).
+Veillez donc à faire un choix compatible avec les 2 personnes partageant le badge.

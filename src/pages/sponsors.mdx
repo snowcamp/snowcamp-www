@@ -1,0 +1,81 @@
+---
+layout: ../layouts/main.astro
+title: Sponsors
+---
+import Utils from '../utils';
+import SponsorFormula from '../components/SponsorFormula.astro';
+import Button from '../components/Button.astro';
+import edition from '../data/current.yaml';
+
+export const endFormat = Intl.DateTimeFormat('fr', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  hour: 'numeric',
+});
+export const openDate = endFormat.format(Utils.parseDate(edition.timeline.sponsor.open));
+export const year = Utils.parseDate(edition.start_date).getFullYear();
+export const remainEtoile = edition.sponsorship.type.etoile.number - edition.sponsorship.etoile.length;
+export const remainFlocon = edition.sponsorship.type.flocon.number - edition.sponsorship.flocon.length;
+
+# Pourquoi devenir sponsor ?
+
+Le SnowCamp est organisé bénévolement par un groupe de geeks de la région grenobloise.
+Leur seule motivation est d'offrir une conférence unique réunissant innovation et recherche.
+Pour réussir dans cette aventure, nous avons besoin de vous.
+
+En retour, nous vous offrons une grande visibilité, sur le web mais aussi lors de l'événement.
+C'est l'occasion idéale pour rencontrer les développeurs grenoblois, montrer vos produits et services, et vous faire connaître.
+
+# Les formules de sponsoring
+
+<div style="display: flex; flex-direction: row">
+<SponsorFormula sponsor={edition.sponsorship.type.flocon}/>
+<SponsorFormula sponsor={edition.sponsorship.type.etoile} active={true}/>
+<SponsorFormula sponsor={edition.sponsorship.type.tenyears}/>
+</div>
+
+<Button href="https://drive.google.com/file/d/1hOHTGVXJfiQ0nJFJugivkNr3SwdEXuSF/view?usp=share_link" title="Plaquette Sponsors"/>
+
+<a id="beers"></a>
+
+# La bière au Meet & Greet
+
+Pour le moment convivial du Meet & Greet, le Jeudi de 16h50 à 18h, un des sponsors Etoile peut prendre en charge la distribution de la bière.
+Le principe :
+
+- Distribuer de la bière sur son stand pendant le créneau du Meet & Greet seulement (pas durant les 2 jours)
+- Il s'agit de distribuer de la bière à la pression (pas de bouteille ou de canette). Il faut donc prévoir une tireuse, des fûts de bière et des écocup pour 600 personnes
+- L'avantage pour le sponsor est d'assurer du passage sur son stand :-).
+- La contrepartie est bien sûr d'organiser cela : logistique, distribution de la bière, frais de location de la tireuse, achat des fûts, location des écocup…
+
+<a id="plan"></a>
+
+# Le plan des stands
+
+![plan des stands](/img/sponsors_plan_stands.png)
+
+# Inscription
+
+L'inscription s'effectue en 2 étapes :
+
+1. A partir de la date d'ouverture du sponsoring, vous vous enregistrez via un formulaire en ligne.
+Cela détermine votre classement pour devenir sponsor et donc l'emplacement qui vous sera attribué.
+1. Suite à votre enregistrement, l'équipe d'organisation Snowcamp vous envoie la facture à payer.
+A partir de la réception de la facture par le sponsor, le sponsor a 90 jours pour réaliser le paiement.
+Si ce délai n'est pas respecté par un sponsor, l'organisation du Snowcamp se donne le droit d'annuler le contrat avec ce sponsoring pour laisser la place à un autre sponsor.
+
+<p className="sponsorBefore">L'enregistrement pour le sponsoring du Snowcamp {year} ouvrira le</p>
+<p className="sponsorOpened">L'enregistrement pour le sponsoring du Snowcamp {year} est ouvert depuis le</p>
+
+<div style="text-align: center; font-weight: bold; font-size: 1.3em; margin: 10px 0" className="sponsorBefore">{openDate}</div>
+<div style="text-align: center; font-weight: bold; font-size: 1.3em; margin: 10px 0" className="sponsorOpened">{openDate}</div>
+
+<p className="sponsorBefore">Veuillez revenir à partir de ce moment pour vous enregistrer. Nous enverrons un message de rappel aux entreprises qui ont déjà été sponsors.</p>
+<p className="sponsorOpened">Il reste actuellement {remainEtoile} places de sponsor(s) Etoile et {remainFlocon} places de sponsor(s) Flocon.</p>
+
+<Button className="sponsorOpened" title="Formulaire d'inscription" href={edition.sponsorship.subscribe_link}></Button>
+
+<p className="sponsorClosed">La campagne de sponsoring du snowcamp {year} est actuellement terminée. Il y a plus de possibilités de devenir sponsor pour la conférence. Vous pouvez nous contacter par email pour indiquer que vous souhaitez être parmi notre liste de contact pour la campagne de sponsoring de l'année suivante.</p>
+
+Pour toute information vous pouvez nous contacter par email
