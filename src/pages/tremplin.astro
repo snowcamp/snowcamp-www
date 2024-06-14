@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { t } from "../i18n/i18n";
+import edition from '../data/edition.json';
+const lang = (Astro.locals as any).lang;
+---
+<Layout title="Snowcamp">
+<section>
+    <div class="snc-snowcamp-page">
+        <div class="snc-inner">
+          <div class="container">
+            <h1>{t('tremplin_title')}</h1>
+
+            <br><br>
+            <h2>{t('tremplin_brief_title')}</h2>  
+            <div set:html={t('tremplin_brief_content')}></div>
+
+            <br>
+            <h3>{t('tremplin_participate_title')}</h3>  
+            <div set:html={t('tremplin_participate_content_fn', `${(edition.dates as any)[lang]} ${edition.year}`)}></div>
+
+            <br>
+            <h3>{t('cfp_tracks_title')}</h3>
+            <div set:html={t('cfp_tracks_content')}></div>
+        </div>
+    </div>
+  </div>
+</section>
+</Layout>

@@ -367,5 +367,46 @@ export function init() {
                     target="_blank">The Ada Initiative</a>.
                 This work is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/deed.en_US"
                     target="_blank">Creative Commons Attribution 3.0 Unported License</a>.</em></p>`
-    return i18n;
-  }
+
+  i18n.tremplin_title = 'Le Tremplin de Snowcamp'
+  i18n.tremplin_brief_title = 'In short'
+  i18n.tremplin_brief_content = `Le Tremplin de SnowCamp is an event organized alongside the SnowCamp conference.
+  Its purpose is to support local first-time speakers for their first conference through personalized coaching lasting about 2 months,
+  from ideation to the final 20-minute session that will take place at a dedicated mini-conference where the talks will be filmed.
+  Following a vote, 2 of the participants will be selected to replay their session at the SnowCamp conference.`
+
+  i18n.tremplin_participate_title = 'Participate'
+  i18n.tremplin_participate_content_fn = (date: string) => `<em>Would you like to give your first conference but you don't dare to do it alone?<br>
+    Would you like to have advice and be accompanied?<br><br></em>
+    Then Le Tremplin de SnowCamp is for you!<br><br>
+    <b>Goal:</b><br>
+    To offer free individual support to people wishing to start as a speaker.
+    Our volunteer team of experienced coaches will help you during all the stages of preparing your first 20-minute conference,
+    up to your speech in front of an audience during the Tremplin evening in Grenoble.<br><br>
+
+    <em>And that's not all!</em> The Tremplin audience will choose 2 talks during the evening, which will be automatically selected for the
+    SnowCamp conference program that will take place from ${date}.<br><br>
+
+    <b>Principle of the Tremplin:</b><br>
+    Among the proposals received, we will select 6 people to accompany them in defining the idea of their talk,
+    structuring, realization and rehearsals until the D-Day of the conference.
+    Each participant will benefit from personal coaching to assist him in the realization of his 20-minute talk, on the same categories as Snowcamp.<br><br>
+
+    Whether you already have a well-defined talk idea, or you are simply very motivated by a theme but with a more vague idea,
+    do not hesitate to submit your proposal and your motivations: the Tremplin is made for that!<br><br>
+    
+    <b>Who can participate?</b><br>
+    The Tremplin CFP (call for papers) is reserved for first-time speakers who have never given a public conference (meetups or internal conferences do not count).
+    `
+
+  i18n.cfp_tracks_title = 'Talk categories'
+  i18n.cfp_tracks_content = `<ul>
+      <li><b>Cloud & DevOps :</b> everything related to tools, methods, and solutions for deploying, testing, and running applications.</li>
+      <li><b>UX & Frontend :</b> everything related to the frontend of our apps: user experience, design, user interfaces, from approaches to tools and technologies, including web and mobile.</li>
+      <li><b>Language, Backend & Security :</b> everything related to programming languages, the backend of our apps, and security: best practices, frameworks, performance...</li>
+      <li><b>Architecture, Data & AI :</b> architecture models, design and development paradigms, data management, and everything related to artificial intelligence.</li>
+      <li><b>Off-road :</b> everything that goes off the beaten track and does not fit into the other tracks, keeping in mind a technical audience of developers.</li>
+    </ul>`
+    
+  return i18n;
+}

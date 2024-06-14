@@ -389,5 +389,45 @@ contrat avec ce sponsoring pour laisser la place à un autre sponsor.`;
       This work is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/deed.en_US"
         target="_blank">Creative Commons Attribution 3.0 Unported License</a>.</em></p>`
 
+  i18n.tremplin_title = 'Le Tremplin de Snowcamp'
+  i18n.tremplin_brief_title = 'En bref'
+  i18n.tremplin_brief_content = `Le Tremplin de SnowCamp est un événement organisé en marge de la conférence SnowCamp.
+    Son but est d’accompagner des primo-speakers locaux pour leur première conférence à travers un coaching personnalisé
+    d’une durée d’environ 2 mois, de l’idéation à la session finale de 20 min qui aura lieu lors d’une mini-conférence dédiée où les talks seront filmés.
+    A l’issue d’un vote, 2 des participants seront sélectionnés pour rejouer leur session lors de la conférence SnowCamp.`
+
+  i18n.tremplin_participate_title = 'Participer'
+  i18n.tremplin_participate_content_fn = (date: string) => `<em>Tu voudrais donner ta première conférence mais tu n’oses pas le faire seul·e ?<br>
+    Tu aimerais avoir des conseils et être accompagné·e ?<br><br></em>
+    Alors le Tremplin de SnowCamp est fait pour toi !<br><br>
+    <b>But :</b><br>
+    Offrir un accompagnement individuel gratuit aux personnes désireuses de se lancer en tant que speaker.
+    Notre équipe bénévole de coachs expérimentés t’aidera durant toutes les étapes de préparation de ta première conférence de 20 minutes,
+    jusqu'à ta prise de parole devant un public lors de la soirée du Tremplin sur Grenoble.<br><br>
+
+    <em>Et ce n’est pas tout !</em> Le public du Tremplin choisira lors de la soirée 2 talks, qui seront d'office sélectionnés au programme
+    de la conférence SnowCamp qui aura lieu du ${date}.<br><br>
+
+    <b>Principe du Tremplin :</b><br>
+    Parmi les propositions reçues, nous sélectionnerons 6 personnes pour les accompagner dans la définition de l’idée de leur talk,
+    la structuration, la réalisation et les répétitions jusqu’au Jour-J de la conférence.
+    Chaque participant⋅e bénéficiera d'un coaching personnel pour l'accompagner dans la réalisation de son talk de 20 minutes, sur les mêmes catégories que Snowcamp.<br><br>
+
+    Que tu aies déjà une idée de talk bien définie, ou que tu sois simplement très motivé·e par une thématique mais avec une idée plus floue,
+    n’hésite pas à soumettre ta proposition et tes motivations : le Tremplin est fait pour ça !<br><br>
+    
+    <b>Qui peut participer ?</b><br>
+    Le CFP (call for papers) du Tremplin est réservé aux primo-speakers n’ayant jamais donné de conférence publique (les meetups ou conférences internes ne comptent pas).
+    `
+
+    i18n.cfp_tracks_title = 'Les catégories de talks'
+    i18n.cfp_tracks_content = `<ul>
+      <li><b>Cloud & DevOps :</b> tout ce qui touche aux outils, méthodes et solutions pour déployer, tester et faire tourner des applications.</li>
+      <li><b>UX & Frontend :</b> tout ce qui touche au frontend de nos apps: expérience utilisateur, design, interfaces utilisateur, des approches aux outils et technos, web et mobile inclus.</li>
+      <li><b>Langage, Backend & Sécurité :</b> tout ce qui touche aux langages de programmation, backend de nos apps, et la sécurité: bonnes pratiques, frameworks, performance...</li>
+      <li><b>Architecture, Data & AI :</b> modèles d’architectures, paradigmes de conception et développement, gestion des données, et tout ce se rapproche de l'intelligence artificielle.</li>
+      <li><b>Hors-piste :</b> tout ce qui sort des pistes damées et qui ne rentre pas dans les autres tracks, en gardant en ligne de mire une audience technique de développeurs.</li>
+    </ul>`
+
   return i18n;
 }
