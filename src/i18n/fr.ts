@@ -419,15 +419,27 @@ contrat avec ce sponsoring pour laisser la place à un autre sponsor.`;
     <b>Qui peut participer ?</b><br>
     Le CFP (call for papers) du Tremplin est réservé aux primo-speakers n’ayant jamais donné de conférence publique (les meetups ou conférences internes ne comptent pas).
     `
+    
+    i18n.tremplin_previous_editions_title = 'Éditions précédentes'
+    i18n.tremplin_previous_editions_content = `Le Tremplin de SnowCamp a été lancé en 2023.<br><br>
+      <p style="text-align: center;">
+        <img src="/img/tremplin/tremplin_2023.jpg" width="100%">
+        <small><em>Participants et coaches de l'édition 2023</em></small>
+      </p>
+      <br>
+      Voici les enregistrements des talks sélectionnés lors des éditions précédentes, pour celles et ceux ayant acceptés leur diffusion publique :
+      <ul>
+        <li><a href="https://www.youtube.com/playlist?list=PLIYXcdwc2smE6928CjtzrqCI-sqNZBNDy" target="_blank">Tremplin 2023</a></li>
+      </ul>`
 
     i18n.cfp_tracks_title = 'Les catégories de talks'
     i18n.cfp_tracks_content = `<ul>
-      <li><b>Cloud & DevOps :</b> tout ce qui touche aux outils, méthodes et solutions pour déployer, tester et faire tourner des applications.</li>
-      <li><b>UX & Frontend :</b> tout ce qui touche au frontend de nos apps: expérience utilisateur, design, interfaces utilisateur, des approches aux outils et technos, web et mobile inclus.</li>
-      <li><b>Langage, Backend & Sécurité :</b> tout ce qui touche aux langages de programmation, backend de nos apps, et la sécurité: bonnes pratiques, frameworks, performance...</li>
-      <li><b>Architecture, Data & AI :</b> modèles d’architectures, paradigmes de conception et développement, gestion des données, et tout ce se rapproche de l'intelligence artificielle.</li>
-      <li><b>Hors-piste :</b> tout ce qui sort des pistes damées et qui ne rentre pas dans les autres tracks, en gardant en ligne de mire une audience technique de développeurs.</li>
-    </ul>`
+        <li><b>Cloud & DevOps :</b> tout ce qui touche aux outils, méthodes et solutions pour déployer, tester et faire tourner des applications.</li>
+        <li><b>UX & Frontend :</b> tout ce qui touche au frontend de nos apps: expérience utilisateur, design, interfaces utilisateur, des approches aux outils et technos, web et mobile inclus.</li>
+        <li><b>Langage, Backend & Sécurité :</b> tout ce qui touche aux langages de programmation, backend de nos apps, et la sécurité: bonnes pratiques, frameworks, performance...</li>
+        <li><b>Architecture, Data & AI :</b> modèles d’architectures, paradigmes de conception et développement, gestion des données, et tout ce se rapproche de l'intelligence artificielle.</li>
+        <li><b>Hors-piste :</b> tout ce qui sort des pistes damées et qui ne rentre pas dans les autres tracks, en gardant en ligne de mire une audience technique de développeurs.</li>
+      </ul>`
 
   return i18n;
 }

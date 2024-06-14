@@ -399,6 +399,18 @@ export function init() {
     The Tremplin CFP (call for papers) is reserved for first-time speakers who have never given a public conference (meetups or internal conferences do not count).
     `
 
+  i18n.tremplin_previous_editions_title = 'Previous editions'
+  i18n.tremplin_previous_editions_content = `Le Tremplin de Snowcamp was launched in 2023.<br><br>
+    <p style="text-align: center;">
+      <img src="/img/tremplin/tremplin_2023.jpg" width="100%">
+      <small><em>Participants and coaches of the 2023 edition</em></small>
+    </p>
+    <br>
+    Here are the recordings of the talks selected during previous editions, for those who have accepted their public broadcast :
+    <ul>
+      <li><a href="https://www.youtube.com/playlist?list=PLIYXcdwc2smE6928CjtzrqCI-sqNZBNDy" target="_blank">Tremplin 2023</a></li>
+    </ul>`
+
   i18n.cfp_tracks_title = 'Talk categories'
   i18n.cfp_tracks_content = `<ul>
       <li><b>Cloud & DevOps :</b> everything related to tools, methods, and solutions for deploying, testing, and running applications.</li>
