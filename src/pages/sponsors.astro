@@ -1,4 +1,5 @@
 ---
+import { Markdown } from 'astro-remote';
 import Layout from '../layouts/Layout.astro';
 import SponsorFormula from '../components/SponsorFormula.astro';
 import sponsors from '../data/sponsors.json';
@@ -13,98 +14,98 @@ if (sponsors.etoile.length < sponsors.sponsorship.type.etoile.number
     msg_inscription = t('sponsoring_closed');
   }
 ---
+<style>
+  .two-columns {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+  }
+  section {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr min(70ch, 100%) 1fr 1fr;
+    row-gap: 20px;
+  }
+  section > * {
+    grid-column: 3;
+  }
+  section > .two-columns {
+    width: 100%;
+    grid-column: 2 / 5;
+  }
+  .center {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+</style>
 <Layout title="Snowcamp">
 <section>
-  <div id="snc-sponsors" class="snc-ticket">
-    <div class="snc-inner">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-xs-12 text-center">
-            <div class="snc-heading-area snc-heading-brand">
-              <h2 class="snc-heading ">
-                <span class="back-heading"><i class="fa fa-users" aria-hidden="true"></i></span>
-                <span class="heading dark-background">{t('why_become_sponsor')}</span>
-              </h2>
-              <div set:html={t('sponsor_desc')}></div>
-              <h2 class="snc-heading " style="margin-top: 30px">
-                <span class="back-heading"><i class="fa fa-users" aria-hidden="true"></i></span>
-                <span class="heading dark-background">{t('sponsor_options')}</span>
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 col-md-6">
-              <SponsorFormula sponsor={sponsors.sponsorship.type.etoile} cssClass="active"></SponsorFormula>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-6">
-              <SponsorFormula sponsor={sponsors.sponsorship.type.flocon} cssClass=""></SponsorFormula>
-            </div>
-        </div>
-        <div class="row" style="margin-top: 80px;">
-          <div class="col-xs-12 text-center">
-            <div class="snc-heading-area snc-heading-brand">
-              <div style="margin-top: 20px;">
-                <a class="snc-btn" href={sponsors.sponsorship.prospectus} target="_blank">{t('sponsorship_prospectus')}</a>
-              </div>
-            </div>    
-          </div>    
-        </div>    
-
-        <div id="beers"></div>
-        <div class="row" style="margin-top: 80px;">
-          <div class="col-xs-12 text-center">
-            <div class="snc-heading-area snc-heading-brand">
-              <h2 class="snc-heading ">
-                <span class="back-heading"><i class="fa fa-users" aria-hidden="true"></i></span>
-                <span class="heading dark-background">{t('sponsor_meetgreet_title')}</span>
-              </h2>
-              <div class="text dark-background" style="text-align: left;" set:html={t('sponsor_meetgreet_desc')}>
-              </div>
-            </div>    
-          </div>    
-        </div>    
-
-
-        <div id="plan"></div>
-        <div class="row" style="margin-top: 80px;">
-          <div class="col-xs-12 text-center">
-            <h2 class="snc-heading ">
-              <span class="back-heading"><i class="fa fa-users" aria-hidden="true"></i></span>
-              <span class="heading dark-background">{t('sponsor_plan_title')}</span>
-            </h2>
-            <div class="snc-heading-area snc-heading-brand">
-              <img src="/img/sponsors_plan_stands.png">
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-xs-12 text-center">
-            <div class="snc-heading-area snc-heading-brand">
-              <h2 class="snc-heading " style="margin-top: 30px">
-                <span class="back-heading"><i class="fa fa-users" aria-hidden="true"></i></span>
-                <span class="heading dark-background">{t('sponsor_subscription_title')}</span>
-              </h2>
-              <div class="text dark-background" style="text-align: left;" set:html={t('sponsor_subscription')}></div>
-              <div class="text dark-background" style="text-align: left; margin-top: 30px;">
-                <DateTimeChangingChild beginDate={Date.parse(sponsors.sponsorship.open_datetime.date)} refreshInterval="30000">
-                  <div slot="before" set:html={t('sponsoring_not_open')}></div>
-                  <div slot="doing" set:html={msg_inscription}></div>
-                </DateTimeChangingChild>
-            
-                <div style="margin: 50px 0" set:html={t('sponsoring_question')}></div>
-              </div>
-              <div><a class="snc-btn" href="mailto:team@snowcamp.io"><span>{t('contact_us')}</span></a></div>
-            </div>
-          </div>
-        </div>
-
-
-      </div>
-    </div>
-
+  <h2 class="snc-heading">
+    <span class="back-heading"><i class="fa fa-users" aria-hidden="true"></i></span>
+    <span class="heading">{t('why_become_sponsor')}</span>
+  </h2>
+  <p class="text-big-italic" set:html={t('sponsor_desc')}></p>
+  <h2 class="snc-heading" style="margin-top: 30px">
+    <span class="back-heading"><i class="fa fa-users" aria-hidden="true"></i></span>
+    <span class="heading">{t('sponsor_options')}</span>
+  </h2>
+  <div class="two-columns">
+    <SponsorFormula sponsor={sponsors.sponsorship.type.etoile} cssClass="active"></SponsorFormula>
+    <SponsorFormula sponsor={sponsors.sponsorship.type.flocon} cssClass=""></SponsorFormula>
   </div>
+  <div class="center">
+    <a class="snc-btn" href={sponsors.sponsorship.prospectus} target="_blank">{t('sponsorship_prospectus')}</a>
+  </div>
+
+  <div id="beers"></div>
+  <h2 class="snc-heading">
+    <span class="back-heading"><i class="fa fa-users" aria-hidden="true"></i></span>
+    <span class="heading">{t('sponsor_meetgreet_title')}</span>
+  </h2>
+  <article>
+    <p class="text-big-italic" style="text-align: left;" set:html={t('sponsor_meetgreet_desc')}></p>
+    <ul>
+      <li class="text-big-italic" style="text-align: left;">{t('sponsor_meetgreet_desc_1')}</li>
+      <li class="text-big-italic" style="text-align: left;">{t('sponsor_meetgreet_desc_2')}</li>
+      <li class="text-big-italic" style="text-align: left;">{t('sponsor_meetgreet_desc_3')}</li>
+      <li class="text-big-italic" style="text-align: left;">{t('sponsor_meetgreet_desc_4')}</li>
+    </ul>
+  </article>
+
+  <h2 class="snc-heading">
+    <span class="back-heading"><i class="fa fa-users" aria-hidden="true"></i></span>
+    <span class="heading">{t('sponsor_plan_title')}</span>
+  </h2>
+  <div class="snc-heading-area snc-heading-brand">
+    <img src="/img/sponsors_plan_stands.png">
+  </div>
+
+  <h2 class="snc-heading" style="margin-top: 30px">
+    <span class="back-heading"><i class="fa fa-users" aria-hidden="true"></i></span>
+    <span class="heading">{t('sponsor_subscription_title')}</span>
+  </h2>
+  <article>
+    <p class="text-big-italic">{t('sponsor_subscription')}</p>
+    <ol>
+      <li class="text-big-italic" style="text-align: left;">{t('sponsor_subscription_step1')}</li>
+      <li class="text-big-italic" style="text-align: left;">{t('sponsor_subscription_step2')}</li>
+    </ol>
+  </article>
+  <article>
+    <DateTimeChangingChild beginDate={Date.parse(sponsors.sponsorship.open_datetime.date)} refreshInterval="30000">
+      <p class="text-big-italic" slot="before" set:html={t('sponsoring_not_open')}></p>
+      <p class="text-big-italic" slot="doing" set:html={msg_inscription}></p>
+    </DateTimeChangingChild>
+  </article>
+
+  <article>
+    <p class="text-big-italic" set:html={t('sponsoring_question')}></p>
+    <div class="center">
+      <a class="snc-btn" href="mailto:team@snowcamp.io"><span>{t('contact_us')}</span></a>
+    </div>
+  </article>
 </section>
 </Layout>

@@ -22,7 +22,7 @@ if ((early_birds_status === "closed" || early_birds_status === "deactivated") &&
   storeStatus = t('store_not_open');
 }
 ---
-<p class="text dark-background emph">{storeStatus}</p>
+<span class="emph">{storeStatus}</span>
 {store.url && (early_birds_status === "open" || classic_status === "open") ? 
 <p>
   <a href={store.url} target="_blank">

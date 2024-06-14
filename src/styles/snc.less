@@ -51,7 +51,6 @@ img {
 }
 
 .snc-inner .emph {
-  color: @orange;
   font-weight: 800;
 }
 
@@ -106,14 +105,6 @@ img {
   text-transform: uppercase
 }
 
-.snc-heading .heading.dark-background {
-  color: @white;
-}
-
-.text.dark-background {
-  color: @white;
-}
-
 .snc-schedule .snc-tab, .snc-schedule .snc-tab .snc-single-tab .time-area, .snc-schedule .snc-tab .nav-pills, .snc-single-speaker .speaker-info, .snc-speaker-single .social ul li, .snc-speakers .speakers-btn-area, .snc-snowcamp, .snc-innovation {
   text-align: center
 }
@@ -146,7 +137,7 @@ img {
 }
 
 .snc-programme .ui.steps .step.active .title {
-  color: @orange-light;
+  color: @orange-light-bg;
 }
 
 .snc-programme .ui.steps .step.active .description {
@@ -208,4 +199,16 @@ img {
 
 .snc-past-inner {
   padding: 6rem 0 0 0
+}
+
+.banner-info {
+  width: fit-content;
+  padding: 1ex;
+  background-color: rgba(@black, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+}
+
+.two-columns > * {
+  width: clamp(25rem, 50%, 50rem);
 }
