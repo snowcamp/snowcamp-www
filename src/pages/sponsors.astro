@@ -95,10 +95,7 @@ if (sponsors.etoile.length < sponsors.sponsorship.type.etoile.number
     </ol>
   </article>
   <article>
-    <DateTimeChangingChild beginDate={Date.parse(sponsors.sponsorship.open_datetime.date)} refreshInterval="30000">
-      <p class="text-big-italic" slot="before" set:html={t('sponsoring_not_open')}></p>
-      <p class="text-big-italic" slot="doing" set:html={msg_inscription}></p>
-    </DateTimeChangingChild>
+      <p class="text-big-italic" set:html={msg_inscription}></p>
   </article>
 
   <article>
