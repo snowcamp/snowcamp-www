@@ -393,7 +393,7 @@ contrat avec ce sponsoring pour laisser la place à un autre sponsor.`;
   i18n.tremplin_brief_title = 'En bref'
   i18n.tremplin_brief_content = `Le Tremplin de SnowCamp est un événement organisé en marge de la conférence SnowCamp.
     Son but est d’accompagner des primo-speakers locaux pour leur première conférence à travers un coaching personnalisé
-    d’une durée d’environ 2 mois, de l’idéation à la session finale de 20 min qui aura lieu lors d’une mini-conférence dédiée où les talks seront filmés.
+    d’une durée d’environ 2 mois. Le candidat est accompagné de l’idéation à la session finale de 20 min, qui aura lieu lors d’une mini-conférence dédiée où les talks seront filmés.
     A l’issue d’un vote, 2 des participants seront sélectionnés pour rejouer leur session lors de la conférence SnowCamp.`
 
   i18n.tremplin_participate_title = 'Participer'
