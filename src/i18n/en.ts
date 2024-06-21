@@ -372,7 +372,7 @@ export function init() {
   i18n.tremplin_brief_title = 'In short'
   i18n.tremplin_brief_content = `Le Tremplin de SnowCamp is an event organized alongside the SnowCamp conference.
   Its purpose is to support local first-time speakers for their first conference through personalized coaching lasting about 2 months.
-  from ideation to the final 20-minute session that will take place at a dedicated mini-conference where the talks will be filmed.
+Candidate is coached from ideation to the final 20-minute session, that will take place at a dedicated mini-conference where the talks will be filmed.
   Following a vote, 2 of the participants will be selected to replay their session at the SnowCamp conference.`
 
   i18n.tremplin_participate_title = 'Participate'
