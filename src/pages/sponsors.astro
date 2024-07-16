@@ -1,13 +1,11 @@
 ---
-import { Markdown } from 'astro-remote';
 import Layout from '../layouts/Layout.astro';
 import SponsorFormula from '../components/SponsorFormula.astro';
 import sponsors from '../data/sponsors.json';
-import { t } from "../i18n/i18n";
-import DateTimeChangingChild from "../components/DateTimeChangingChild.astro";
+import { t } from '../i18n/i18n';
 
 let msg_inscription;
-if (sponsors.etoile.length < sponsors.sponsorship.type.etoile.number 
+if (sponsors.etoile.length < sponsors.sponsorship.type.etoile.number
   || sponsors.flocon.length < sponsors.sponsorship.type.flocon.number) {
     msg_inscription = t('sponsoring_open', sponsors);
   }  else {
