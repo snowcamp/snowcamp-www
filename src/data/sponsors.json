@@ -106,6 +106,18 @@
         "fr": "VISEO utilise la technologie comme un puissant levier de transformation et d innovation pour aider ses clients à tirer parti des opportunités du numérique, adresser les nouveaux usages et affronter la concurrence d acteurs qui changent les règles du jeu. <br>Avec 2 500 collaborateurs intervenant sur 5 continents, VISEO concilie agilité et complémentarité de ses savoir-faire - design de nouveaux produits et services, digitalisation des processus métier, valorisation des données, développement des actifs digitaux - pour faire du numérique un réel levier de compétitivité et de performance. <br>Aujourd hui, nous sommes des experts de l architecture et du développement logiciel, back-end, web, mobile et IoT. L agilité a changé notre façon de penser notre métier et nous a considérablement aidé dans la réussite de nos projets en mettant la collaboration et la qualité au centre de l engagement. <br>Nous organisons régulièrement au sein de nos communautés des présentations sur les techniques, les technologies ou les pratiques du monde du développement, comme les VISEO Tech An Hour. Si comme nous, vous êtes convaincus que l excellence passe par l'amélioration continue individuelle et collective et par le partage des expériences et des connaissances, alors, venez nous rencontrer.",
         "en": "<b>VISEO</b> is a digital service company that reconciles agility and the complementarity of its know-how - design of new products and services, digitization of business processes, enhancement of data, development of digital assets - to make digital a real lever for competitiveness and performance. Today, we are nearly 600 experts in software architecture and development, web, mobile and IoT. Agility has changed the way we think about our business and has helped us considerably in the success of our projects by putting collaboration and quality at the center of our commitment. We regularly organize presentations in our communities on techniques, technologies or practices in the development world, such as the VISEO Tech An Hour. If, like us, you are convinced that excellence is achieved through individual and collective continuous improvement and by sharing experiences and knowledge, then come and meet us."
       }
+    },
+    {
+      "name": "Criteo",
+      "logo": "img/sponsors/crite.2023.png",
+      "url": {
+        "fr": "https://www.criteo.com/",
+        "en": "https://www.criteo.com/"
+      },
+      "description": {
+        "fr": "Criteo (CRTO), the leader in commerce marketing, is building the highest performing and open commerce marketing ecosystem to drive profits and sales for retailers and brands. 2,700 Criteo team members partner with 16,000 customers and thousands of publishers across the globe to deliver performance at scale by connecting shoppers to the things they need and love. Designed for commerce, Criteo Commerce Marketing Ecosystem sees over $550 billion in annual commerce sales data.",
+        "en": "Criteo (CRTO), the leader in commerce marketing, is building the highest performing and open commerce marketing ecosystem to drive profits and sales for retailers and brands. 2,700 Criteo team members partner with 16,000 customers and thousands of publishers across the globe to deliver performance at scale by connecting shoppers to the things they need and love. Designed for commerce, Criteo Commerce Marketing Ecosystem sees over $550 billion in annual commerce sales data."
+      }
     }
   ],
   "flocon": [
