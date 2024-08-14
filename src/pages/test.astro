@@ -1,0 +1,29 @@
+---
+import DateTimeChangingChild from "../components/DateTimeChangingChild.astro"
+import cfp from '../data/cfp.json';
+import { t } from "../i18n/i18n";
+
+---
+<div>Test of DateTimeChangingChild : 
+    <div id="clock">00:00:00</div>
+</div>
+<script>
+    var intervalId;
+    function updateClock() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        const timeString = `${hours}:${minutes}:${seconds}`;
+        const elm = document.getElementById('clock');
+        if (elm) elm.textContent = timeString;
+    }
+    intervalId = setInterval(updateClock, 1000);
+    
+    updateClock(); // Initial call to display the clock immediately
+</script>
+<DateTimeChangingChild beginDate={Date.parse(cfp.dates.test.begin)} endDate={Date.parse(cfp.dates.test.end)} refreshInterval="10000">
+    <span slot="before" set:html={t('cfp_open_soon_desc')}></span>
+    <span slot="doing" set:html={t('cfp_open_desc')}></span>
+    <span slot="after" set:html={t('cfp_closed_desc')}></span>
+</DateTimeChangingChild>

@@ -22,17 +22,18 @@ const afterId = 'after' + id;
 <script>
   // Create your custom class for catching the parameter
   class IntervalReloader extends HTMLElement {
+    intervalId = -1;
     constructor() {
       super();
       const beginDate = this.dataset.begindate ? Number.parseInt(this.dataset.begindate, 10) : undefined;
       const endDate = this.dataset.enddate ? Number.parseInt(this.dataset.enddate, 10) : undefined;
       const refreshInterval = this.dataset.refreshinterval ? Number.parseInt(this.dataset.refreshinterval, 10) : undefined;
       const id = this.dataset.genid ? Number.parseInt(this.dataset.genid, 10) : undefined;
-      // console.log('beginDate', beginDate, 'endDate', endDate, 'refreshInterval', refreshInterval, 'id', id);
+      console.log('beginDate', beginDate, 'endDate', endDate, 'refreshInterval', refreshInterval, 'id', id);
       if (beginDate) {
         this.computeVisibility(''+id, beginDate, endDate);
         if (refreshInterval) {
-            setInterval(() => this.computeVisibility(''+id, beginDate, endDate), refreshInterval);
+            this.intervalId = setInterval(() => this.computeVisibility(''+id, beginDate, endDate), refreshInterval);
         }
       } else {
         console.error('No begin date for the component: ', id);
@@ -41,20 +42,26 @@ const afterId = 'after' + id;
     computeVisibility(id:string, beginDate:number, endDate?:number) {
         var now = new Date().getTime();
         if (now < beginDate) {
-            // console.log('Still before', now, beginDate,  "\n", new Date(now), "\n", new Date(beginDate));
+            console.log('Still before', now, beginDate,  "\n", new Date(now), "\n", new Date(beginDate));
             this.showElement('before'+id);
             this.hideElement('doing'+id);
             this.hideElement('after'+id);
+            this.cancelIntervalIfTooFar(now, beginDate, "Begin date");
         } else if (endDate && endDate < now) {
-            // console.log('Closed')
+            console.log('Closed')
             this.hideElement('before'+id);
             this.hideElement('doing'+id);
             this.showElement('after'+id);
+            if (this.intervalId > 0) this.cancelInterval();
         } else {
-            // console.log('Open')
+            console.log('Open')
             this.hideElement('before'+id);
             this.showElement('doing'+id);
             this.hideElement('after'+id);
+            if (endDate)
+                this.cancelIntervalIfTooFar(now, endDate, "Begin date");
+            else
+                this.cancelInterval();
         }
     }
     showElement(id: string) {
@@ -64,6 +71,16 @@ const afterId = 'after' + id;
     hideElement(id: string) {
         const el = document.getElementById(id);
         if (el) el.hidden = true;
+    }
+    cancelIntervalIfTooFar(now:number, limit:number, limitName: string) {
+        if ((limit - now) > (24 * 3600 * 1000)) {
+            console.log(limitName+' is too far. => stop the interval');
+            this.cancelInterval();
+        }
+    }
+    cancelInterval() {
+        clearInterval(this.intervalId);
+        this.intervalId = -1;
     }
   }
 

@@ -8,6 +8,7 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
+    "http-server": "npm run build && http-server dist",
     "astro": "astro"
   },
   "dependencies": {
@@ -23,6 +24,7 @@
     "jquery": "~3.7.1",
     "jquery-countdown": "~2.2.0",
     "jquery.easing": "~1.4.1",
+    "snowcamp-www": "file:",
     "typescript": "^5.2.2"
   },
   "devDependencies": {
