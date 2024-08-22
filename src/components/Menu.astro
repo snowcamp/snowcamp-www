@@ -23,14 +23,22 @@ const path_fr = path.replace('/en/','/');
           <div class="dropdown-menu" aria-labelledby="navSnowcampDropdown">
             <a class="dropdown-item" href={url_prefix+'/snowcamp/#what'}>{t("what_is_this")}</a>
             <a class="dropdown-item" href={url_prefix+'/organisation/'}>Organisation</a>
-            <a class="dropdown-item" href={url_prefix+'/tremplin/'}>Le Tremplin</a>
             <a class="dropdown-item" href={url_prefix+'/association/'}>Association</a>
             <a class="dropdown-item" href={url_prefix+'/previous-editions/'}>{t("past_editions")}</a>
           </div>
         </li>
-        <li class="nav-item"><a class="nav-link" href={url_prefix+'/#program'}>
+        <!-- <li class="nav-item"><a class="nav-link" href={url_prefix+'/#program'}>
           { !cfp.published ? t("program_translation") : t("schedule_translation") }
-        </a></li>
+        </a></li> -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href={url_prefix+'/program/'} id="navCfpDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            CFP <span class="caret"></span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navCfpDropdown">
+            <a class="nav-link" href={url_prefix+'/program/'}>{ !cfp.published ? t("program_translation") : t("schedule_translation") }</a>
+            <a class="dropdown-item" href={url_prefix+'/tremplin/'}>Le Tremplin</a>
+          </div>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href={url_prefix+'/#sponsors'} id="navSponsorsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Sponsors <span class="caret"></span>
