@@ -4,7 +4,7 @@ import cfp from '../data/cfp.json';
 
 export function init() {
     const i18n: any = {};
-    i18n.program_translation = 'CFP';
+    i18n.program_translation = 'Conférence';
     i18n.cfp_program_translation = 'Call For Proposals';
     i18n.ticketlabel = 'Tickets';
     i18n.what_is_this = "C'est quoi ?";
