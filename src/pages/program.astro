@@ -78,6 +78,16 @@ const lang = (Astro.locals as any).lang;
 	</div>
 	}
   </section>
+  <section>
+	<div class="snc-snowcamp-page">
+	  <div class="snc-inner">
+		<div class="container">
+			<h2 set:html={t('cfp_speaker_expenses_title')}></h2>
+			<p set:html={t('cfp_speaker_expenses_content')}></p>
+		</div>
+	  </div>
+	</div>
+  </section>
 </main>
 <script is:inline src="/js/homepage.js"></script>
 </Layout>
