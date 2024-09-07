@@ -252,7 +252,7 @@ contrat avec ce sponsoring pour laisser la place à un autre sponsor.`;
     i18n.sponsor_guide_booth_etoile_wifi_title=`Connexion wifi`;
     i18n.sponsor_guide_booth_etoile_wifi_content=`<p>L'ensemble des espaces du centre de congrès est équipée de bornes Wifi.
           Matériel compatible : ordinateur, assistant personnel (PDA) et tout matériel certifié wifi 802.11a/b/g :</p>
-          <p style="margin-left:  50px;">
+          < style="margin-left:  50px;">
               Nom du réseau : ESPACE-CONGRES
               <br>Le code d'accès vous sera communiqué ultérieurement
           </p>`;
@@ -440,6 +440,10 @@ contrat avec ce sponsoring pour laisser la place à un autre sponsor.`;
         <li><b>Architecture, Data & AI :</b> modèles d’architectures, paradigmes de conception et développement, gestion des données, et tout ce se rapproche de l'intelligence artificielle.</li>
         <li><b>Hors-piste :</b> tout ce qui sort des pistes damées et qui ne rentre pas dans les autres tracks, en gardant en ligne de mire une audience technique de développeurs.</li>
       </ul>`
+    i18n.cfp_speaker_expenses_title=`Frais des speakers`
+    i18n.cfp_speaker_expenses_content=`La politique de prix de la conférence ne permet pas de prendre en charge les frais des speakers (transport, logement, repas).
+				La conférence offre le repas le midi les jours de conférence et invite les speakers à un diner le jeudi soir (Confirmation en fonction du budget).`
+
     i18n.cfp_editoriale_line_title = `Ligne éditoriale`;
     i18n.cfp_editoriale_line_content = `
         <h2>Introduction</h2>
