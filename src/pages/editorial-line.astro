@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { t } from "../i18n/i18n";
+---
+<Layout title={t('coc_title')}>
+<section>
+  <div class="snc-snowcamp-page">
+    <div class="snc-inner">
+      <div class="container">
+        <h1>{t('cfp_editoriale_line_title')}</h1>
+        <div set:html={t('cfp_editoriale_line_content')}></div>
+      </div>
+    </div>
+  </div>
+</section>
+</Layout>
+

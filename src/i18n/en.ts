@@ -419,6 +419,73 @@ Candidate is coached from ideation to the final 20-minute session, that will tak
       <li><b>Architecture, Data & AI :</b> architecture models, design and development paradigms, data management, and everything related to artificial intelligence.</li>
       <li><b>Off-road :</b> everything that goes off the beaten track and does not fit into the other tracks, keeping in mind a technical audience of developers.</li>
     </ul>`
-    
+    i18n.cfp_editoriale_line_title = `Ligne éditoriale`;
+    i18n.cfp_editoriale_line_content = `
+      <h2>Introduction</h2>
+      <p>Each year, during the preparation of the Snowcamp.io conference, we organize a Call For Papers (CFP) to allow you, if you are a speaker, to propose the topics that matter most to you.</p>
+      <p>The CFP is a fantastic tool for us to build the conference schedule that we will offer to the audience, while also giving unknown speakers a chance to express themselves.</p>
+      <p>However, the number of topics presented at Snowcamp.io is limited, and we can't select everyone. Therefore, the topic you propose may not necessarily be accepted.</p>
+      <p>For example, last year we received more than 250 proposals and had to select only around 50, or 20%.</p>
+      <p>This is why, to give you the best chance of being selected, we have compiled in this document a set of tips to help showcase your topic submission.</p>
+      <p>These tips are strongly inspired by the amazing work of Katia Aresti in her <a href="https://twitter.com/karesti/status/1079114352240795650">Twitter thread</a>. Thanks to her ;-)</p>
+
+      <h2>The editorial line of Snowcamp.io</h2>
+      <p>The first step before submitting your topic is to ensure that it fits our editorial line.</p>
+      <p>While we value methodology, we have chosen to dedicate this event to technology. Thus, our editorial line is to offer technical topics related to programming languages, development tools (e.g., IDEs, Frameworks, SDKs, etc.), or software architecture topics. The format is quite flexible and can include a technical presentation, a case study, a course, or even a comparison with competing technologies.</p>
+      <p>If your topic is not purely technical or does not fit within the proposed categories, the Off-Track category has been created to allow for some deviation from our editorial line, but keep in mind that this category will represent only a small number of sessions.</p>
+
+      <h2>Important points when submitting a session</h2>
+      <h3>Introduce yourself</h3>
+      <p>In our CFP tool, there is a section dedicated to your introduction. Use it to tell us who you are and what your past experiences are as a speaker.</p>
+      <p>Each year, a number of topics are very similar. In these cases, even though it’s not everything, your bio can make the difference if it highlights your experience in the field and/or your motivation.</p>
+      <p>Of course, if you don't have past experience as a speaker in this format, be honest and let us know. As conference organizers, we are committed to giving new speakers a chance.</p>
+      <p>Finally, if you've already presented the same topic at another conference and it was recorded, or if you've simply practiced in front of a camera, feel free to share a link that we could watch. As they say, a picture is worth a thousand words ;-)</p>
+      <p>Please note that the maximum number of speakers per topic (whether for a conference or workshop) is limited to 2.</p>
+
+      <h3>Find a good title for your session</h3>
+      <p>The title is the first thing people see and may determine whether a talk is selected (for the organizers) or attended (for the participants). The title is therefore an essential part of your proposal—don’t neglect it!</p>
+      <p>An original or funny title can catch the eye, but keep in mind that it must still reflect your topic: when we read a title and don’t know what the topic is about, it’s never a good sign!</p>
+      <p>And if you're struggling to come up with a title, you can always ask ChatGPT for suggestions based on your abstract ;)</p>
+
+      <h3>Be clear when writing the abstract</h3>
+      <p>Your session's abstract is the most important element to fill out, as it helps us understand both what you’re going to talk about and how you’ll present it.</p>
+      <p>It is strongly recommended that you include in your abstract:</p>
+      <ul>
+      <li>The "what" of your session: the topic you will cover. Try to be precise on this point. For example, if you want to talk about a framework, will you provide a broad overview of it? Or will you focus on a specific feature of the framework, such as memory optimization?</li>
+      <li>The "how" of your session: how you will conduct your session. Will you stay in theory or show examples? Will your session be in the form of live coding or a case study? Are you experimenting with a new way of sharing knowledge?</li>
+      <li>The target audience: who you intend to dedicate your session to. Will your topic be an introduction to a technology for beginners? Or is it geared toward experts?</li>
+      </ul>
+      <p>Don't rush your abstract, as it shows, and it can only reduce your chances of being selected.</p>
+      <p>On the other hand, don't write an abstract that's too long. At the end of the CFP, we usually have hundreds of sessions to read, analyze, and grade. Even though we do our best to fully read each submission, coming across an overly long abstract can quickly be discouraging.</p>
+      <p>It might be tempting to add humor or emojis to your abstract. This is, of course, acceptable, but it shouldn't come at the expense of clarity. No matter how amusing your abstract is, if we don't understand what your session is about, we won’t be able to give it a high score.</p>
+      <p>Finally, be careful not to overuse buzzwords. Your session needs to make sense above all. Using trendy terms and riding the wave of trends without substance will not increase your chances of being selected.</p>
+
+      <h3>Don't forget to specify the format, category, and language of your session</h3>
+      <p>When defining our editorial line, we identified a number of session categories that can be presented. These categories (or themes) are as follows:</p>
+      <ul>
+      <li>Cloud & DevOps</li>
+      <li>UX & Frontend</li>
+      <li>Languages, Backend & Security</li>
+      <li>Architecture, Data & AI</li>
+      <li>Off-Track</li>
+      </ul>
+      <p>Our goal is to represent each of these categories as equally as possible during the conference. If you don't specify a category when submitting your topic, it will be harder for us to classify your session, and it could be penalized if we assign it to the wrong category (e.g., if the topic is ambiguous).</p>
+
+      <p>In addition to categories, there are three session formats:</p>
+      <ul>
+      <li>45-minute Talks</li>
+      <li>20-minute short sessions (Schuss)</li>
+      <li>3-hour Workshops</li>
+      </ul>
+      <p>The Workshop format is reserved for the first day of SnowCamp, while the talks are scheduled over the following two days. It is therefore crucial for us to know which format your session fits into. While it’s possible to estimate a topic's category, it's often difficult to estimate the duration and format the speaker intends. <strong>The rule is clear: no format = no vote</strong>.</p>
+      <p>If you think your topic can be presented both as a Workshop and a talk, submit it twice, specifying the appropriate format for each.</p>
+      <p>Finally, don't forget to specify the language in which you'll present your session. We will need to display this information on the conference schedule, so the earlier we have this information, the easier it will be to format the program.</p>
+      <p>As a side note, if you're presenting a session in one language, then write the abstract in the same language.</p>
+      <p>We also recommend that you only propose a talk in English if you're truly comfortable in the language and/or if you’re more proficient in English than in French. Presenting a technical topic in front of an audience within a limited time frame is already a challenging task—don’t add more difficulties by choosing a language you’re not comfortable with.</p>
+
+      <h2>Our commitment</h2>
+      <p>Of course, if we notice that your submission is missing information or that your topic/abstract isn’t clear enough, we will do our best to let you know so you can make adjustments.</p>
+      <p>However, note that this is only possible while the CFP is open and you can still modify your submission. The closer you submit your session to the CFP closing date, the fewer chances you'll have to revise your text.</p>
+    `;    
   return i18n;
 }
