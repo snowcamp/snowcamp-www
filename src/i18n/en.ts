@@ -419,7 +419,7 @@ Candidate is coached from ideation to the final 20-minute session, that will tak
       <li><b>Architecture, Data & AI :</b> architecture models, design and development paradigms, data management, and everything related to artificial intelligence.</li>
       <li><b>Off-road :</b> everything that goes off the beaten track and does not fit into the other tracks, keeping in mind a technical audience of developers.</li>
     </ul>`
-    i18n.cfp_editoriale_line_title = `Ligne éditoriale`;
+    i18n.cfp_editoriale_line_title = `Editoriale line`;
     i18n.cfp_editoriale_line_content = `
       <h2>Introduction</h2>
       <p>Each year, during the preparation of the Snowcamp.io conference, we organize a Call For Papers (CFP) to allow you, if you are a speaker, to propose the topics that matter most to you.</p>
