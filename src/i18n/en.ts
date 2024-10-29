@@ -249,7 +249,6 @@ export function init() {
     i18n.store_access_meet_and_greet = 'Meet & Greet on Thursday evening';
     i18n.store_classic_dates = (date: string) => `The store opens on ${date}`;
     i18n.store_not_open = 'The store is not open yet';
-    i18n.store_early_birds_open = (date: string) => `Early Birds sell starts on ${date}!`;
     i18n.store_opens_on = (date: string) => `Store opens on the ${date}!`;
     i18n.store_is_open = 'The store is open';
     i18n.store_is_soldout = 'The store is soldout!';

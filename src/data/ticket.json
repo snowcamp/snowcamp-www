@@ -1,18 +1,6 @@
 {
   "store": {
     "url": "https://www.billetweb.fr/shop.php?event=snowcamp-2025",
-    "early": {
-      "title": "Early Birds",
-      "price_conf": 42,
-      "price_univ": 100,
-      "possible_status": ["not_open", "open", "closed", "deactivated"],
-      "status": "deactivated", 
-      "open_date": {
-        "default": "unknown",
-        "fr": "",
-        "en": ""
-      }
-    },
     "classic": {
       "title": "Standard",
       "price_conf": 75,

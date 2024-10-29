@@ -273,7 +273,6 @@ contrat avec ce sponsoring pour laisser la place à un autre sponsor.`;
     i18n.store_access_meet_and_greet = 'Meet & Greet le Jeudi soir';
     i18n.store_classic_dates = (date: string) => `La billetterie ouvre le ${date}`;
     i18n.store_not_open = 'La billetterie n\'est pas encore ouverte';
-    i18n.store_early_birds_open = (date: string) => `Vente des Early Birds le ${date}!`;
     i18n.store_opens_on = (date: string) => `La billetterie ouvre le ${date}!`;
     i18n.store_is_open = 'La billetterie est ouverte';
     i18n.store_is_soldout = 'La billetterie est épuisée !';
