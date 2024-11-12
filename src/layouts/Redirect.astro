@@ -1,0 +1,19 @@
+---
+export interface Props {
+	target: string;
+}
+const { target } = Astro.props;
+const lang = (Astro.locals as any).lang;
+
+const content = `0; url=${target}`;
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content={content}/>
+	<title>Redirect to {target}</title>
+</head>
+</head>
+<body lang="fr">
+<h1>Redirect to {target}</h1>
+</body>
