@@ -511,6 +511,12 @@ contrat avec ce sponsoring pour laisser la place à un autre sponsor.`;
         <p>Bien sûr si nous constatons qu'il manque des informations à votre soumission ou que votre sujet/abstract n'est pas assez clair nous ferons au mieux pour vous en faire part afin que vous puissiez corriger le tir.</p>
         <p>Cependant notez que cela ne nous est possible que pendant que le CFP est ouvert et que vous pouvez modifier votre soumission. Donc plus vous soumettez votre session proche de la date de fermeture du CFP, plus vous réduisez vos chances d'avoir droit à retravailler votre texte.</p>
     `;
+    i18n.schedule_menu ='Programme';
+    i18n.schedule_title ='Programme';
+    i18n.schedule_unavailable =`Le programme sera disponible le ${cfp.dates.schedule.fr}.`;
+    i18n.schedule_available =`Le programme est disponible depuis le ${cfp.dates.schedule.fr}.`;
+    i18n.schedule_openfullschedule =`Pour le voir sur une page complète cliquer sur `;
+    i18n.schedule_change =`Jusqu'à la dernière minute un ajustement de programme est possible car un speaker peut être indisponible ou l'organisation peut décider d'inverser 2 salles par rapport à la fréquentation supposée.`;
 
   return i18n;
 }

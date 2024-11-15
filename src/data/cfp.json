@@ -7,18 +7,27 @@
   "feedback_url": "",
   "dates": {
     "open_date": {
-      "date": "2024-09-07T00:00:00.000",
+      "date": "2024-09-07T00:00:00.000+02:00",
       "fr": "7 Septembre 2024",
       "en": "7th of September 2024"
     },
     "close_date": {
-      "date": "2024-10-15T00:00:00.000",
+      "date": "2024-10-15T00:00:00.000+02:00",
       "fr": "15 Octobre 2024",
       "en": "15th of October 2024"
     },
     "notification_date": {
       "fr": "Début Novembre 2024",
       "en": "Beginning November 2024"
+    },
+    "schedule" : {
+      "date": "2024-11-15T00:00:00.000+01:00",
+      "fr": "15 Novembre 2024",
+      "en": "15th of November 2024",
+      "url" : {
+        "embedded": "https://app-demo.voxxr.in/events/snowcamp25/embedded-schedule",
+        "full": "https://app-demo.voxxr.in/events/snowcamp25/schedule"
+      }
     }
   }
 }

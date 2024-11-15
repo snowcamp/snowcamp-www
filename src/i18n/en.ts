@@ -491,5 +491,12 @@ Candidate is coached from ideation to the final 20-minute session, that will tak
       <p>Of course, if we notice that your submission is missing information or that your topic/abstract isn’t clear enough, we will do our best to let you know so you can make adjustments.</p>
       <p>However, note that this is only possible while the CFP is open and you can still modify your submission. The closer you submit your session to the CFP closing date, the fewer chances you'll have to revise your text.</p>
     `;    
-  return i18n;
+  i18n.schedule_menu ='Program';
+  i18n.schedule_title ='Program';
+  i18n.schedule_unavailable =`The program will be available the ${cfp.dates.schedule.en}.`;
+  i18n.schedule_available =`The programm is available since the ${cfp.dates.schedule.en}.`;
+  i18n.schedule_openfullschedule =`To see the program on a full page click on `;
+  i18n.schedule_change =`Until the last minute, some minor changes are possible. A speaker can be unavailable or the Snowcamp organisation team can decided to swap some talk of room due to the number of expected attendees.`;
+
+    return i18n;
 }

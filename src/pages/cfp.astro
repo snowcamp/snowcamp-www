@@ -35,7 +35,7 @@ const lang = (Astro.locals as any).lang;
 			</div>
 			<div class="col-xs-12 col-sm-6 col-md-6">
 			  <div class="single">
-				<DateTimeChangingChild beginDate={Date.parse(cfp.dates.open_date.date)} endDate={Date.parse(cfp.dates.close_date.date)} refreshInterval="30000">
+				<DateTimeChangingChild beginDate={new Date(cfp.dates.open_date.date).getTime()} endDate={new Date(cfp.dates.close_date.date).getTime()} refreshInterval="30000">
 				  <span slot="before" set:html={t('cfp_open_soon_desc')}></span>
 				  <span slot="doing" set:html={t('cfp_open_desc')}></span>
 				  <span slot="after" set:html={t('cfp_closed_desc')}></span>
