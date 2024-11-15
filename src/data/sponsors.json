@@ -118,6 +118,30 @@
         "fr": "Criteo (CRTO), the leader in commerce marketing, is building the highest performing and open commerce marketing ecosystem to drive profits and sales for retailers and brands. 2,700 Criteo team members partner with 16,000 customers and thousands of publishers across the globe to deliver performance at scale by connecting shoppers to the things they need and love. Designed for commerce, Criteo Commerce Marketing Ecosystem sees over $550 billion in annual commerce sales data.",
         "en": "Criteo (CRTO), the leader in commerce marketing, is building the highest performing and open commerce marketing ecosystem to drive profits and sales for retailers and brands. 2,700 Criteo team members partner with 16,000 customers and thousands of publishers across the globe to deliver performance at scale by connecting shoppers to the things they need and love. Designed for commerce, Criteo Commerce Marketing Ecosystem sees over $550 billion in annual commerce sales data."
       }
+    },
+    {
+      "name": "Elastic",
+      "logo": "img/sponsors/elastic.2016.png",
+      "url": {
+        "fr": "https://www.elastic.co/fr/",
+        "en": "https://www.elastic.co"
+      },
+      "description": {
+        "fr": "En tant que plateforme de pointe destinée aux solutions optimisées pour la recherche, Elastic aide les organisations, leurs employés et leurs clients à trouver plus rapidement ce dont ils ont besoin, tout en assurant le bon fonctionnement des applications fondamentales et la protection des infrastructures contre les cyber attaques. Adobe, BMW, Microsoft, Zurich Insurance et des milliers d'autres organisations exploitent la puissance des solutions Elastic que sont Enterprise Search, Observability et Security pour obtenir plus rapidement des résultats pertinents. Peu importe où et comment nos clients mettent en œuvre les solutions Elastic, nous les aidons dans la recherche, la résolution et la réussite, à grande échelle et sur une seule et unique plateforme. Des résultats disponibles où que se trouvent vos données, dans un seul cloud, sur plusieurs clouds ou bien sur site. La puissance d'Elastic.",
+        "en": "En tant que plateforme de pointe destinée aux solutions optimisées pour la recherche, Elastic aide les organisations, leurs employés et leurs clients à trouver plus rapidement ce dont ils ont besoin, tout en assurant le bon fonctionnement des applications fondamentales et la protection des infrastructures contre les cyber attaques. Adobe, BMW, Microsoft, Zurich Insurance et des milliers d'autres organisations exploitent la puissance des solutions Elastic que sont Enterprise Search, Observability et Security pour obtenir plus rapidement des résultats pertinents. Peu importe où et comment nos clients mettent en œuvre les solutions Elastic, nous les aidons dans la recherche, la résolution et la réussite, à grande échelle et sur une seule et unique plateforme. Des résultats disponibles où que se trouvent vos données, dans un seul cloud, sur plusieurs clouds ou bien sur site. La puissance d'Elastic."
+      }
+    },
+    {
+      "name": "Clever Cloud",
+      "logo": "img/sponsors/clever_cloud.png",
+      "url": {
+        "fr": "https://www.clever-cloud.com/fr/home/",
+        "en": "https://www.clever-cloud.com"
+      },
+      "description": {
+        "fr": "",
+        "en": ""
+      }
     }
   ],
   "flocon": [
