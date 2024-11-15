@@ -27,15 +27,13 @@ const path_fr = path.replace('/en/','/');
             <a class="dropdown-item" href={url_prefix+'/previous-editions/'}>{t("past_editions")}</a>
           </div>
         </li>
-        <!-- <li class="nav-item"><a class="nav-link" href={url_prefix+'/#program'}>
-          { !cfp.published ? t("program_translation") : t("schedule_translation") }
-        </a></li> -->
+        <li class="nav-item"><a class="nav-link" href={url_prefix+'/schedule/'}>{ t("schedule_menu") }</a></li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href={url_prefix+'/program/'} id="navCfpDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href={url_prefix+'/cfp/'} id="navCfpDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             CFP <span class="caret"></span>
           </a>
           <div class="dropdown-menu" aria-labelledby="navCfpDropdown">
-            <a class="nav-link" href={url_prefix+'/program/'}>{ !cfp.published ? t("program_translation") : t("schedule_translation") }</a>
+            <a class="nav-link" href={url_prefix+'/cfp/'}>{t("program_translation")}</a>
             <a class="dropdown-item" href={url_prefix+'/tremplin/'}>Le Tremplin</a>
             <a class="dropdown-item" href={url_prefix+'/editorial-line/'}>Ligne éditoriale</a>
           </div>

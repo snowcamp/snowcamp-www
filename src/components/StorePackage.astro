@@ -30,7 +30,7 @@ const price = days === 3 ? store.price_univ : store.price_conf;
       <li><i class="fa fa-check" aria-hidden="true"></i> {t('store_access_meet_and_greet')}</li>
     </ul>
     
-    <DateTimeChangingChild beginDate={Date.parse(store.beginDate)} endDate={Date.parse(store.endDate)} refreshInterval="10000">
+    <DateTimeChangingChild beginDate={new Date(store.beginDate).getTime()} endDate={new Date(store.endDate).getTime()} refreshInterval="10000">
       <span class="snc-btn disabled" slot="before">{t('store_opens_on', (store.open_date as any)[lang])}</span>
       <StoreButton store={store} slot="doing"></StoreButton>
       <span class="snc-btn disabled" slot="after">{t('store_is_soldout')}</span>

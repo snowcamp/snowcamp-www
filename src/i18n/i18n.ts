@@ -11,6 +11,8 @@ export async function initConfig(lang: string) {
         i18nconfig.i18n = en_init();
     } else if (lang === 'fr') {
         i18nconfig.i18n = fr_init();
+    } else {
+        i18nconfig.i18n = en_init();
     }
 } 
 export function t(key: string, ...params:any[]): any {
@@ -23,7 +25,6 @@ export function t(key: string, ...params:any[]): any {
             case 3: return value(params[0], params[1], params[2]);
             default: return value(params);
         }
-        return value(params);
     } else {
         return value;
     }
