@@ -183,6 +183,10 @@ export function init() {
         (containing the booths), the atrium of the WTC. It does not allow access to presentations (talks/schuss).</li>
       </ul>`;
 
+    i18n.sponsor_guide_buy_ticket_package_title='Buy several tickets';
+    i18n.sponsor_guide_buy_ticket_package_content=`Snowcamp doesn\'t propose to buy several tickets in once time. It 
+      is our policy from the creation of the event. To buy several tickets, you can only buy each ticket one by one.`;
+
     i18n.sponsor_guide_place_sharing_title ='Ticket sharing';
     i18n.sponsor_guide_place_sharing_content =`The ticket for a single seat obtained during registration allows you
     to receive a badge on Thursday morning during the welcome session. Each ticket is personalized and typically cannot
@@ -194,6 +198,11 @@ export function init() {
     <br>Please note that the meal preference (regular or vegetarian) will be the one indicated in the Billetweb platform
     by December 31st. Beyond this date, we proceed with the order from our caterer (and the printing of badges).
     Therefore, ensure that the choice is compatible with the preferences of both individuals sharing the badge.`;
+
+    i18n.sponsor_guide_add_booth_ticket_title='Additionnal booth ticket';
+    i18n.sponsor_guide_add_booth_ticket_content=`On demand it is possible to buy additionnal booth ticket (only access to 
+      sponsor hall). The ticket price is about 60€ for the two days of conference (Thurday and Friday). Contact 
+      <a mailto:team@snowcamp.io>team@snowcamp.io</a> to ask these types of ticket.`;
 
     i18n.sponsor_guide_booth_etoile_title='The booth ETOILE';
     i18n.sponsor_guide_booth_etoile_content=`The Star booth is 9m² (3m x 3m). It is marked on the ground. By default,

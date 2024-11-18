@@ -174,6 +174,11 @@ contrat avec ce sponsoring pour laisser la place à un autre sponsor.`;
             d'accéder aux présentations (talk/schuss).</li>
       </ul>`;
 
+    i18n.sponsor_guide_buy_ticket_package_title='Achat de plusieurs places';
+    i18n.sponsor_guide_buy_ticket_package_content=`Le snowcamp ne propose pas la possibilité d\'acheter plusieurs 
+      places à la fois. Il s\'agit de notre politique définie depuis de l\'origine. Pour acheter plusieurs places, il 
+      faut les acheter une par une.`;
+
     i18n.sponsor_guide_place_sharing_title ='Partage de place';
     i18n.sponsor_guide_place_sharing_content =`Le billet d'une place que vous obtenez lors de l'inscription permet d'obtenir un badge le jeudi matin lors de l'accueil.
       Chaque billet est nominatif. Et normalement, il ne peut être cédé. Cependant, nous tolérons que des entreprises
@@ -184,6 +189,10 @@ contrat avec ce sponsoring pour laisser la place à un autre sponsor.`;
       A noter que la préférence de repas (normal ou végé) sera celle indiquée dans la plateforme billetweb au 31 décembre.
       Au delà de cette date, nous procédons à la commande auprès de notre traiteur (et à l'impression des badges).
       Veillez donc à faire un choix compatible avec les 2 personnes partageant le badge.`;
+
+    i18n.sponsor_guide_add_booth_ticket_title='Place stand supplémentaire';
+    i18n.sponsor_guide_add_booth_ticket_content=`Sur demande il est possible d\'acheter des places stands supplémentaire. 
+      Le prix est de 60€ pour les 2 jours de conférence. Contactez <a mailto:team@snowcamp.io>team@snowcamp.io</a> pour demander la place.`;
 
     i18n.sponsor_guide_booth_etoile_title='Le stand ETOILE';
     i18n.sponsor_guide_booth_etoile_content=`Le stand Etoile fait 9m² (3m x 3m). Il est tracé au sol. Il contient par
