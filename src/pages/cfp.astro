@@ -12,7 +12,6 @@ const lang = (Astro.locals as any).lang;
   <section>
   { !cfp.published &&
 	<div id="program" class="snc-programme">
-	  <div class="snc-inner">
 		<div class="container">
 		  <div class="row">
 			<div class="col-xs-12">
@@ -44,12 +43,10 @@ const lang = (Astro.locals as any).lang;
 			</div>
 		  </div>
 		</div>
-	  </div>
 	</div>
 	}
 	{ cfp.published &&
 	<div id="program" class="snc-programme">
-	  <div class="snc-inner">
 		<div class="container">
 		  <div class="row">
 			<div class="col-xs-12">
@@ -74,20 +71,27 @@ const lang = (Astro.locals as any).lang;
 			</div>
 		  </div>
 		</div>
-	  </div>
 	</div>
 	}
   </section>
   <section>
 	<div class="snc-snowcamp-page">
-	  <div class="snc-inner">
+		<div class="container">
+			<h2 set:html={t('cfp_speaker_ticket_title')}></h2>
+			<p set:html={t('cfp_speaker_ticket_content')}></p>
+		</div>
+	</div>
+  </section>
+  <section>
+	<div class="snc-snowcamp-page">
 		<div class="container">
 			<h2 set:html={t('cfp_speaker_expenses_title')}></h2>
 			<p set:html={t('cfp_speaker_expenses_content')}></p>
 		</div>
-	  </div>
 	</div>
   </section>
+  <div class="snc-inner">
+	  </div>
 </main>
 <script is:inline src="/js/homepage.js"></script>
 </Layout>

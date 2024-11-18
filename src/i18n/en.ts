@@ -423,6 +423,9 @@ Candidate is coached from ideation to the final 20-minute session, that will tak
     i18n.cfp_speaker_expenses_content=`The conference pricing policy does not cover speaker expenses (transportation, accommodation, meals).
       The conference provides lunch during conference days and invites the speakers to a dinner on Thursday evening (confirmation depending on the budget).`
 
+    i18n.cfp_speaker_ticket_title='Access to the conference';
+    i18n.cfp_speaker_ticket_content='Each selected speakers who has confirmed his/her participation (via conference hall) will receive a two days ticket for himself/herself (no right to transmit this ticket). The ticket gives acces to the conference for thursday and Friday only. The workshop on wednesday are not covered by this ticket, because the workshop are reserved places. If a speaker want to access to the workshop, he has to buy a full ticket (3 days).';
+
       i18n.cfp_editoriale_line_title = `Editoriale line`;
     i18n.cfp_editoriale_line_content = `
       <h2>Introduction</h2>

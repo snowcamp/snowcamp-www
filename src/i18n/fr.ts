@@ -443,6 +443,9 @@ contrat avec ce sponsoring pour laisser la place à un autre sponsor.`;
     i18n.cfp_speaker_expenses_content=`La politique de prix de la conférence ne permet pas de prendre en charge les frais des speakers (transport, logement, repas).
 				La conférence offre le repas le midi les jours de conférence et invite les speakers à un diner le jeudi soir (Confirmation en fonction du budget).`
 
+    i18n.cfp_speaker_ticket_title='Accès à la conférence';
+    i18n.cfp_speaker_ticket_content='Chaque speaker retenu et qui a confirmé sa participation (via conference hall) a droit à un billet conférence 2 jours (Jeudi + Vendredi). Ce billet ne peut être céder. Le speaker recevra son billet entre novembre et décembre. Le billet ne donne pas accès aux universités car il s\'agit de places réservées. Si le speaker veut assister à une université il doit acheter un billet 3 jours.';
+    
     i18n.cfp_editoriale_line_title = `Ligne éditoriale`;
     i18n.cfp_editoriale_line_content = `
         <h2>Introduction</h2>
