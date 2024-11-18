@@ -37,7 +37,10 @@ curl --request POST --url "${VOXXRIN_BASE_URL}/api/crawlers/${VOXXRIN_EVENT_ID}/
 # Recuperation des statistiques
 ###############################################################################
 function getTalksStats() {
-    curl --request GET --url "${VOXXRIN_BASE_URL}/api/crawlers/${VOXXRIN_EVENT_ID}/talksStats?token=${VOXXRIN_TOKEN}"
+  #{{baseUrl}}/api/events/{{eventId}}/talksStats?token={{secretToken}}
+    curl --request GET --silent --url "${VOXXRIN_BASE_URL}/api/events/${VOXXRIN_EVENT_ID}/talksStats?token=${VOXXRIN_TOKEN}" > talks-stats.json
+    node talks-stats.cjs talks-stats.json
+    rm talks-stats.json
 }
 
 

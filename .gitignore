@@ -23,3 +23,6 @@ src/astro_tmp_pages_*
 
 # IDE
 .idea
+
+voxxrin/talks-stats.csv
+voxxrin/talks-stats.json
