@@ -17,4 +17,5 @@ jobs:
       - name: update
         run: |
           cd voxxrin
+          chmod +x voxxrin.sh
           ./voxxrin.sh update
