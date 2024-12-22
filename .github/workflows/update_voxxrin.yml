@@ -15,7 +15,7 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
       - name: update
+        env:
+          VOXXRIN_TOKEN: ${{ secrets.VOXXRIN_TOKEN }}
         run: |
-          cd voxxrin
-          chmod +x voxxrin.sh
-          ./voxxrin.sh update
+          voxxrin/voxxrin.sh update

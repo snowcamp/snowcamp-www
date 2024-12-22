@@ -1,4 +1,5 @@
-# VOXXRIN est le site web utilisé pour publier le programme de la conference. 
+#!/usr/bin/env bash
+# VOXXRIN est le site web utilisé pour publier le programme de la conference.
 # Le site se base sur OpenPlanner qui lui même est branché sur Conference Hall
 # Ce script sert à mettre à jour le site voxxrin. La mise à jour se base sur
 # Le fichier de configuration est dans /public/voxxrin/ et sur ce qu'il y a dans
@@ -6,24 +7,27 @@
 # La mise à jour de Open Planner s'effectue dans conference hall en faisant un
 # export. Attention à n'exporter que les talks 'confirmed'.
 #
-#Author: Sebastien Chassande
+# Author: Sebastien Chassande
 
 ###############################################################################
 # Variables de configuration
 ###############################################################################
 VOXXRIN_BASE_URL=https://api.voxxr.in
 VOXXRIN_EVENT_ID=snowcamp25
-#Le token de voxxrin mais les : on été remplacés par des %3A pour le passage dans l'url
-VOXXRIN_TOKEN=eventOrganizer%3Asnowcamp%3A4238c6e8-d71c-46dc-826f-2f78721b7278
+
+if [[ -z "$VOXXRIN_TOKEN" ]]; then
+  echo 'Missing $VOXXRIN_TOKEN environment variable'
+  exit 1
+fi
 
 ###############################################################################
 # Fonction d'affichage de l'usage du script
 ###############################################################################
 function usage() {
-  echo "Usage du script:" 
-  echo "  ./voxxrin.sh update         : Mets à jour le site voxxrin" 
-  echo "  ./voxxrin.sh talks-stats    : Telecharge les statistiques de tous les talks" 
-  echo "  ./voxxrin.sh usage          : Affiche cette documentation" 
+  echo "Usage du script (need VOXXRIN_TOKEN env var token url encoded):"
+  echo "  ./voxxrin.sh update         : Mets à jour le site voxxrin"
+  echo "  ./voxxrin.sh talks-stats    : Telecharge les statistiques de tous les talks"
+  echo "  ./voxxrin.sh usage          : Affiche cette documentation"
 }
 
 ###############################################################################
@@ -38,9 +42,9 @@ curl --request POST --url "${VOXXRIN_BASE_URL}/api/crawlers/${VOXXRIN_EVENT_ID}/
 ###############################################################################
 function getTalksStats() {
   #{{baseUrl}}/api/events/{{eventId}}/talksStats?token={{secretToken}}
-    curl --request GET --silent --url "${VOXXRIN_BASE_URL}/api/events/${VOXXRIN_EVENT_ID}/talksStats?token=${VOXXRIN_TOKEN}" > talks-stats.json
-    node talks-stats.cjs talks-stats.json
-    rm talks-stats.json
+  curl --request GET --silent --url "${VOXXRIN_BASE_URL}/api/events/${VOXXRIN_EVENT_ID}/talksStats?token=${VOXXRIN_TOKEN}" > talks-stats.json
+  node talks-stats.cjs talks-stats.json
+  rm talks-stats.json
 }
 
 
@@ -54,5 +58,7 @@ case $1 in
   "talks-stats")
     getTalksStats $*
     ;;
-  *)  usage;;
+  *)
+    usage
+    ;;
 esac
