@@ -153,7 +153,7 @@ export function init() {
     i18n.sponsor_plan_title = 'Plan of booths'
     i18n.sponsor_meetgreet_title = 'Beer at Meet & Greet';
     i18n.sponsor_meetgreet_desc = `For the friendly Meet & Greet moment, the Thursday from 4:50 PM to 6:00 PM,
-      one of the Etoile sponsors can take care of distributing beer. The idea:`
+      one of the Etoile sponsors can take care of distributing beer and soft drinks. The idea:`
     i18n.sponsor_meetgreet_desc_1 = `Distribute beer at their booth only during the Meet & Greet time slot (not during the 2 days).`;
     i18n.sponsor_meetgreet_desc_2 = `The distribution involves draft beer (no bottles or cans). Therefore, a tap, beer kegs, and eco-cups for 600 people need to be arranged.`;
     i18n.sponsor_meetgreet_desc_3 = `The benefit for the sponsor is to ensure traffic to their booth :-).`;
@@ -184,7 +184,7 @@ export function init() {
       </ul>`;
 
     i18n.sponsor_guide_buy_ticket_package_title='Buy several tickets';
-    i18n.sponsor_guide_buy_ticket_package_content=`Snowcamp doesn\'t propose to buy several tickets in once time. It 
+    i18n.sponsor_guide_buy_ticket_package_content=`Snowcamp doesn\'t propose to buy several tickets in once time. It
       is our policy from the creation of the event. To buy several tickets, you can only buy each ticket one by one.`;
 
     i18n.sponsor_guide_place_sharing_title ='Ticket sharing';
@@ -200,8 +200,8 @@ export function init() {
     Therefore, ensure that the choice is compatible with the preferences of both individuals sharing the badge.`;
 
     i18n.sponsor_guide_add_booth_ticket_title='Additionnal booth ticket';
-    i18n.sponsor_guide_add_booth_ticket_content=`On demand it is possible to buy additionnal booth ticket (only access to 
-      sponsor hall). The ticket price is about 60€ for the two days of conference (Thurday and Friday). Contact 
+    i18n.sponsor_guide_add_booth_ticket_content=`On demand it is possible to buy additionnal booth ticket (only access to
+      sponsor hall). The ticket price is about 60€ for the two days of conference (Thurday and Friday). Contact
       <a mailto:team@snowcamp.io>team@snowcamp.io</a> to ask these types of ticket.`;
 
     i18n.sponsor_guide_booth_etoile_title='The booth ETOILE';
@@ -402,7 +402,7 @@ Candidate is coached from ideation to the final 20-minute session, that will tak
 
     Whether you already have a well-defined talk idea, or you are simply very motivated by a theme but with a more vague idea,
     do not hesitate to submit your proposal and your motivations: the Tremplin is made for that!<br><br>
-    
+
     <b>Who can participate?</b><br>
     The Tremplin CFP (call for papers) is reserved for first-time speakers who have never given a public conference (meetups or internal conferences do not count).
     `
@@ -502,7 +502,7 @@ Candidate is coached from ideation to the final 20-minute session, that will tak
       <h2>Our commitment</h2>
       <p>Of course, if we notice that your submission is missing information or that your topic/abstract isn’t clear enough, we will do our best to let you know so you can make adjustments.</p>
       <p>However, note that this is only possible while the CFP is open and you can still modify your submission. The closer you submit your session to the CFP closing date, the fewer chances you'll have to revise your text.</p>
-    `;    
+    `;
   i18n.schedule_menu ='Program';
   i18n.schedule_title ='Program';
   i18n.schedule_unavailable =`The program will be available the ${cfp.dates.schedule.en}.`;
