@@ -240,6 +240,18 @@
         "fr": "Bpifrance.io, c’est la fusion de la communauté DSI et Digital chez Bpifrance. Création de plateformes, maintien du réseau, des applications, architecture, QA, cybersécurité, SRE, finops, Data, cloud, innovation... tout ce que la Tech offre comme domaines de compétences se retrouve chez Bpifrance.io.",
         "en": "Bpifrance.io is the merger of the IT and Digital communities at Bpifrance. Platform creation, network maintenance, applications, architecture, QA, cybersecurity, SRE, finops, data, cloud, innovation... all the areas of expertise that Tech offers can be found at Bpifrance.io."
       }
+    },
+    {
+      "name": "Havana IT",
+      "logo": "img/sponsors/havanaIT.png",
+      "url": {
+        "fr": "https://www.havana-it.com/",
+        "en": "https://www.havana-it.com/"
+      },
+      "description": {
+        "fr": "Notre Mission : Accélérer la transformation des systèmes d'information de nos clients, en mettant l'innovation, l'expertise et la proximité au cœur de notre démarche. Notre Identité :<ul><li>Plus de 200 consultants à travers la France, en présentiel ou en télétravail.</li><li>Expertises clés en DATA, Cloud et IA pour une transformation digitale centrée sur les données.</li><li>Proximité quotidienne avec nos clients, garantissant des solutions sur mesure.</li></ul>",
+        "en": "Our Mission: Accelerating the transformation of our clients' information systems by placing innovation, expertise, and proximity at the heart of our approach. Our Identity:<ul><li>Over 200 consultants across France, working onsite or remotely.</li><li>Key expertise in DATA, Cloud, and AI, driving a data-centric digital transformation.</li><li>Daily proximity with our clients, ensuring tailored solutions.</li></ul>Our Values:<ul><li>Innovate to make a difference</li><li>Progress and evolve</li><li>Well-being of our consultants</li><li>Eco-responsibility</li></ul>"
+      }
     }
 ],
   "partners": [
