@@ -216,7 +216,7 @@ contrat avec ce sponsoring pour laisser la place à un autre sponsor.`;
 
     i18n.sponsor_guide_booth_etoile_material_title=`Matériel à louer`;
     i18n.sponsor_guide_booth_etoile_material_content=`Il est possible de commander du matériel supplémentaire auprès du
-      WTC mais via l'organisation du Snowcamp. Le catalogue est disponible <a target="_" href="/catalogue_WTC.pdf">ici</a>. Le demande de
+      WTC mais via l'organisation du Snowcamp. Le catalogue est disponible <a target="_" href="https://www.calameo.com/read/0052859110d5d2f7cc04d">ici</a>. Le demande de
       matériel doit être adressée à l'équipe d'organisation du Snowcamp qui vous transmettra les tarifs.
       Une facture sera émise qui devra être réglée au plus tard 7j AVANT le début de la conférence. L'absence
       de paiement dans le délais fixé impliquera la non fourniture du matériel demandé.`;

@@ -225,7 +225,7 @@ export function init() {
     i18n.sponsor_guide_booth_etoile_material_title=`Rent material`;
     i18n.sponsor_guide_booth_etoile_material_content=`It is possible to order additional equipment through the
       WTC, but it must be done through the Snowcamp organization. The catalog is available
-      <a target="_" href="/catalog_WTC.pdf">here</a>. The request for equipment should be addressed to the Snowcamp
+      <a target="_" href="https://www.calameo.com/read/0052859110d5d2f7cc04d">here</a>. The request for equipment should be addressed to the Snowcamp
       organizing team, who will provide you with the pricing. An invoice will be issued and must be settled no later
       than 7 days BEFORE the start of the conference. Failure to make the payment within the specified period will
       result in the non-provision of the requested equipment.`;
@@ -235,6 +235,29 @@ export function init() {
       (2:00 PM to 5:30 PM) starting from the beginning of Snowcamp. The booths must be dismantled no later than Friday
       at 6:00 PM. The WTC has a freight elevator and a regular elevator. Access to the freight elevator is through Rue
       de la Frise, between the World Trade Center Grenoble and Grenoble Ecole Management.`;
+
+    i18n.sponsor_guide_booth_etoile_delivery_title=`Delivery of equipment`;
+    i18n.sponsor_guide_booth_etoile_delivery_content=`<p>Delivery of parcels and equipment must take place starting from Tuesday,
+      the day before the beginning of the conference, between 8:30 AM and 4:30 PM, and no later than Wednesday before 4:30 PM, the
+       first day of the conference (university part). All delivered parcels must bear the following address:</p>
+      <p style="margin-left: 50px;">SNOWCAMP <br>Exhibitor company name + contact
+        <br>WTC Grenoble Conference Center, 1st Floor
+        <br>5 - 7, Place Robert Schuman <br>38000 GRENOBLE</p>
+      <p>Delivery personnel must drop off parcels at the exhibition area located on the 1st floor of the building, accessible by
+      freight elevator and regular elevator. Otherwise, the parcels will be refused. Delivery personnel must be SELF-SUFFICIENT
+      to perform their tasks:</p>
+      <ul>
+        <li>Either have adequate equipment (tailgate lift, specific pallet jack, elevator, etc.)</li>
+        <li>Or have sufficient personnel</li>
+      </ul>
+      <p>No handling assistance will be provided by the Conference Center team. A Jungheinrich pallet jack, model AM 22, will be
+      freely available during the delivery time. Any delivery that cannot be carried out independently must be resolved outside the
+      Conference Center's responsibility. All parcels must be picked up after the dismantling. Delivery and pick-up times for
+      parcels are strictly between 8:30 AM and 4:30 PM.</p>
+      <p>For parcels that cannot be picked up on the dismantling day, they may be stored at the conference center until Monday
+      at 4:30 PM following the conference. They must be well-packaged and bear a clear return address to be collected by your carrier.
+      The Conference Center cannot be held responsible for their destruction or disappearance. Please ensure that your parcels clearly
+      display your complete contact details to avoid losses.</p>`;
 
     i18n.sponsor_guide_booth_etoile_wifi_title=`Wifi`;
     i18n.sponsor_guide_booth_etoile_wifi_content=`<p>The entire congress center is equipped with WiFi access points.
