@@ -26,3 +26,6 @@ src/astro_tmp_pages_*
 
 voxxrin/talks-stats.csv
 voxxrin/talks-stats.json
+voxxrin/talks-url.csv
+voxxrin/talks-url.json
+voxxrin/feedback*.json

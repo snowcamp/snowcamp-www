@@ -12,6 +12,7 @@
 ###############################################################################
 # Variables de configuration
 ###############################################################################
+VOXXRIN_FRONT_END_BASE_URL=app.voxxr.in
 VOXXRIN_BASE_URL=https://api.voxxr.in
 VOXXRIN_EVENT_ID=snowcamp25
 
@@ -47,6 +48,29 @@ function getTalksStats() {
   rm talks-stats.json
 }
 
+###############################################################################
+# Recuperation des feedbacks d'un talk
+###############################################################################
+function getTalkFeedbacks() {
+  TALK_ID=$2
+  echo "Talk: $TALK_ID"
+  NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+  echo "Now: $NOW"
+  #{{baseUrl}}/api/events/{{eventId}}/talks/{{talkId}}/feedbacks?token={{secretToken}}&updatedSince={{updatedSinceISODatetime}}
+  curl --request GET --silent --url "${VOXXRIN_BASE_URL}/api/events/${VOXXRIN_EVENT_ID}/talks/${TALK_ID}/feedback?token=${VOXXRIN_TOKEN}&updatedSince=${NOW}" > feedback-${TALK_ID}.json
+}
+
+###############################################################################
+# Recuperation de l'url de gestion des talks
+###############################################################################
+function getTalksUrl() {
+  #{{baseUrl}}/api/events/{{eventId}}/talksEditors?token={{secretToken}}&baseUrl={{voxxrinInstanceBaseUrl}}
+  curl --request GET --silent --url "${VOXXRIN_BASE_URL}/api/events/${VOXXRIN_EVENT_ID}/talksEditors?token=${VOXXRIN_TOKEN}&baseUrl=${VOXXRIN_FRONT_END_BASE_URL}" > talks-url.json
+  node talks-url.cjs talks-url.json
+  rm talks-url.json
+}
+
+
 
 ###############################################################################
 # Programme principal
@@ -57,6 +81,12 @@ case $1 in
     ;;
   "talks-stats")
     getTalksStats $*
+    ;;
+  "talks-url")
+    getTalksUrl $*
+    ;;
+  "talk-feedbacks")
+    getTalkFeedbacks $*
     ;;
   *)
     usage
