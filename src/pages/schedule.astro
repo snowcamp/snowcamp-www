@@ -1,10 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { t } from "../i18n/i18n";
+// import Layout from '../layouts/Layout.astro';
+// import { t } from "../i18n/i18n";
+import Redirect from '../layouts/Redirect.astro';
 import cfp from '../data/cfp.json';
-import DateTimeChangingChild from "../components/DateTimeChangingChild.astro";
+// import DateTimeChangingChild from "../components/DateTimeChangingChild.astro";
 
 ---
+<Redirect target={cfp.dates.schedule.url.full}></Redirect>
+<!-- Temporary redirect to the full schedule page
 <Layout title={t('schedule_title')}>
     <section>
         <div style="height: 70px;"></div>
@@ -14,9 +17,9 @@ import DateTimeChangingChild from "../components/DateTimeChangingChild.astro";
             </div>
 
             <div slot="doing" style="margin: 20px auto 50px auto; width: 700px; text-align: center;">
-                <p>{t('schedule_available')} 
+                <p>{t('schedule_available')}
                     <br>{t('schedule_openfullschedule')}
-                    <br><a href="/schedule-full/"><img src="/img/schedule.png" height="100px" ></a> 
+                    <br><a href="/schedule-full/"><img src="/img/schedule.png" height="100px" ></a>
                 </p>
                 <p>{t('schedule_change')}</p>
                 <div style="margin-top: 50px;">
@@ -33,3 +36,4 @@ import DateTimeChangingChild from "../components/DateTimeChangingChild.astro";
     </section>
 </Layout>
 
+ -->
