@@ -13,7 +13,7 @@
       { "name": "Lorie Piscichio"            , "editions": [false,  true,  true,  true,  true,  true,  true, false, false], "honnor":  true},
       { "name": "Ludovic Poitou"             , "editions": [false,  true,  true,  true,  true,  true,  true,  true,  true], "honnor": false},
       { "name": "Maha Alsayasneh"            , "editions": [false, false, false, false, false, false,  true, false, false], "honnor": false},
-      { "name": "Mathieu Poissard"           , "editions": [false, false, false, false, false, false, false,  true,  true], "honnor": false},
+      { "name": "Mathieu Poissard"           , "editions": [false, false, false, false, false, false, false,  true, false], "honnor": false},
       { "name": "Maxime Ducros"              , "editions": [false, false, false,  true,  true, false, false, false, false], "honnor": false},
       { "name": "Michel Barret"              , "editions": [false, false,  true,  true,  true,  true,  true,  true,  true], "honnor": false},
       { "name": "Mickael Istria"             , "editions": [true,   true, false, false, false, false, false, false, false], "honnor": false},
@@ -41,7 +41,7 @@
     { "name":"Communication",             "description":"mail, LinkedIn, Twitter"},
     { "name":"Réviseur de track du CFP",  "description":"Vote pour les talks d'une track"},
     { "name":"Gilet blanc",               "description":"Bénévoles le jour J"},
-    { "name":"Photographe",               "description":"Photographe le jour J"}    
+    { "name":"Photographe",               "description":"Photographe le jour J"}
   ],
   "organizers": [
     {
