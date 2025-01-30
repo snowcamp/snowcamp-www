@@ -15,7 +15,8 @@ async function convertJsonToCsv(inputFilePath, outputFilePath) {
         const csvData = jsonData.filter(item => item.speakersFullNames.length > 0)
           .map(item => ({
           talkId: item.talkId,
-          talkTitle: item.speakersFullNames.join(', '),
+          talkTitle: item.talkTitle,
+          speakers: item.speakersFullNames.join(', '),
           registrationUrl: "https://"+item.registrationUrl
       }));
 
@@ -23,9 +24,10 @@ async function convertJsonToCsv(inputFilePath, outputFilePath) {
         const csvWriter = createCsvWriter({
             path: outputFilePath,
             header: [
-              { id: 'talkId', title: 'talkId' },
-              { id: 'talkTitle', title: 'talkTitle' },
-              { id: 'registrationUrl', title: 'registrationUrl' }
+              { id: 'talkId', title: 'Talk Id' },
+              { id: 'talkTitle', title: 'Talk Title' },
+              { id: 'speakers', title: 'Speakers' },
+              { id: 'registrationUrl', title: 'Registration Url' }
           ]
         });
 

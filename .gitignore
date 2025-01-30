@@ -29,3 +29,5 @@ voxxrin/talks-stats.json
 voxxrin/talks-url.csv
 voxxrin/talks-url.json
 voxxrin/feedback*.json
+
+.env

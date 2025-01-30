@@ -28,6 +28,8 @@ function usage() {
   echo "Usage du script (need VOXXRIN_TOKEN env var token url encoded):"
   echo "  ./voxxrin.sh update         : Mets à jour le site voxxrin"
   echo "  ./voxxrin.sh talks-stats    : Telecharge les statistiques de tous les talks"
+  echo "  ./voxxrin.sh talks-url      : Telecharge les URL de feedback de tous les talks"
+  echo "  ./voxxrin.sh talk-feedbacks : Telecharge les feedback de tous les talks"
   echo "  ./voxxrin.sh usage          : Affiche cette documentation"
 }
 
@@ -55,7 +57,6 @@ function getTalkFeedbacks() {
   TALK_ID=$2
   echo "Talk: $TALK_ID"
   NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-  echo "Now: $NOW"
   #{{baseUrl}}/api/events/{{eventId}}/talks/{{talkId}}/feedbacks?token={{secretToken}}&updatedSince={{updatedSinceISODatetime}}
   curl --request GET --silent --url "${VOXXRIN_BASE_URL}/api/events/${VOXXRIN_EVENT_ID}/talks/${TALK_ID}/feedback?token=${VOXXRIN_TOKEN}&updatedSince=${NOW}" > feedback-${TALK_ID}.json
 }
