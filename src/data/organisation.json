@@ -45,11 +45,6 @@
   ],
   "organizers": [
     {
-      "name": "Jade Crotto-Miglietti",
-      "img": "jade.jpg",
-      "linkedin": "jadecrottomiglietti"
-    },
-    {
       "name": "Charles Curtit",
       "img": "charles.jpg",
       "linkedin": "charles-curtit-9a8451194"
@@ -60,6 +55,11 @@
       "twitter": "LudoMP",
       "linkedin": "ludovicp",
       "github": "ludomp"
+    },
+    {
+      "name": "Jade Crotto-Miglietti",
+      "img": "jade.jpg",
+      "linkedin": "jadecrottomiglietti"
     },
     {
       "name": "Michel Barret",
