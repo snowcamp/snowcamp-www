@@ -1,18 +1,18 @@
 {
   "store": {
-    "url": "https://www.billetweb.fr/shop.php?event=snowcamp-2025",
+    "url": "https://www.billetweb.fr/shop.php?event=snowcamp-2026",
     "classic": {
       "title": "Standard",
       "price_conf": 90,
       "price_univ": 160,
       "possible_status": ["not_open", "open", "closed", "deactivated"],
       "status": "open",
-      "beginDate": "2024-11-18T06:00:00.000+01:00",
+      "beginDate": "2025-11-17T06:00:00.000+01:00",
       "endDate": "2025-01-20T00:00:00.000+01:00",
       "open_date": {
         "default": "unknown",
-        "fr": "18 Novembre à 11h00",
-        "en": "18th of November at 11am (Paris)"
+        "fr": "17 Novembre à 11h00",
+        "en": "17th of November at 11am (Paris)"
       }
     }
   }
