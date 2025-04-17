@@ -403,6 +403,13 @@ contrat avec ce sponsoring pour laisser la place à un autre sponsor.`;
     Son but est d’accompagner des primo-speakers locaux pour leur première conférence à travers un coaching personnalisé
     d’une durée d’environ 2 mois. Le candidat est accompagné de l’idéation à la session finale de 20 min, qui aura lieu lors d’une mini-conférence dédiée où les talks seront filmés.
     A l’issue d’un vote, 2 des participants seront sélectionnés pour rejouer leur session lors de la conférence SnowCamp.`
+  i18n.tremplin_planning_content = `
+    <ul>
+      <li>du 1er avril au 31 mai 2025 : ouverture du CFP</li>
+      <li>mi-juin 2025 : annonce des candidates et candidats sélectionnés</li>
+      <li>mi-septembre 2025 : début de l'accompagnement</li>
+      <li>mi-novembre 2025 : soirée du Tremplin et sélection des 2 talks qui seront programmés pour le SnowCamp 2026</li>
+    </ul>`
 
   i18n.tremplin_participate_title = 'Participer'
   i18n.tremplin_participate_content_fn = (date: string) => `<em>Tu voudrais donner ta première conférence mais tu n’oses pas le faire seul·e ?<br>

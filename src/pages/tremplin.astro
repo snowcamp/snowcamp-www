@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { t } from "../i18n/i18n";
 import edition from '../data/edition.json';
+import tremplin from '../data/tremplin.json';
 const lang = (Astro.locals as any).lang;
 ---
 <Layout title="Snowcamp">
@@ -14,6 +15,14 @@ const lang = (Astro.locals as any).lang;
             <br><br>
             <h2>{t('tremplin_brief_title')}</h2>  
             <div set:html={t('tremplin_brief_content')}></div>
+
+            <div style="display: flex; justify-content: center; margin-top: 1em">
+              <div style="width: clamp(50%, 15em, 100%);" set:html={t('tremplin_planning_content')}></div>
+            </div>
+
+            <div style="display: flex; justify-content: center; margin-top: 1em">
+              <a class="snc-btn" href={tremplin.cfp_link}><span>{t('tremplin_participate_title')}</span></a>
+            </div>
 
             <br>
             <h3>{t('tremplin_participate_title')}</h3>  

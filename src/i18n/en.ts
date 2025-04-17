@@ -405,7 +405,13 @@ export function init() {
   Its purpose is to support local first-time speakers for their first conference through personalized coaching lasting about 2 months.
 Candidate is coached from ideation to the final 20-minute session, that will take place at a dedicated mini-conference where the talks will be filmed.
   Following a vote, 2 of the participants will be selected to replay their session at the SnowCamp conference.`
-
+  i18n.tremplin_planning_content = `
+    <ul>
+      <li>April 1 to May 31, 2025: CFP (Call for Papers) opens</li>
+      <li>Mid-June 2025: Announcement of selected candidates</li>
+      <li>Mid-September 2025: Start of coaching/mentoring</li>
+      <li>Mid-November 2025: Tremplin (Springboard) evening and selection of 2 talks to be scheduled for SnowCamp 2026</li>
+    </ul>`
   i18n.tremplin_participate_title = 'Participate'
   i18n.tremplin_participate_content_fn = (date: string) => `<em>Would you like to give your first conference but you don't dare to do it alone?<br>
     Would you like to have advice and be accompanied?<br><br></em>
