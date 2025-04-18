@@ -4,9 +4,9 @@ import { t } from "../i18n/i18n";
 import SponsorsLogos from "./SponsorsLogos.astro";
 export interface Props {
   year: number;
-  previousSponsors: any;
+  previousYearData: any;
 }
-const { year, previousSponsors } = Astro.props;
+const { year, previousYearData } = Astro.props;
 ---
 <section>
   <div class="snc-sponsors" style="margin-top: 100px;">
@@ -26,20 +26,20 @@ const { year, previousSponsors } = Astro.props;
               </div>
             </div>
           </div>
-          { previousSponsors.sponsors.chamois && previousSponsors.sponsors.chamois.length ?
-            <SponsorsLogos sponsors={previousSponsors.sponsors.chamois} column_number={3} sponsor_title={t('sponsor_chamois')}></SponsorsLogos>
+          { previousYearData.sponsors.chamois && previousYearData.sponsors.chamois.length ?
+            <SponsorsLogos sponsors={previousYearData.sponsors.chamois} column_number={3} sponsor_title={t('sponsor_chamois')}></SponsorsLogos>
           : ''}
-          { previousSponsors.sponsors.etoile && previousSponsors.sponsors.etoile.length ?
-            <SponsorsLogos sponsors={previousSponsors.sponsors.etoile} column_number={4} sponsor_title={t('sponsor_etoile')}></SponsorsLogos>
+          { previousYearData.sponsors.etoile && previousYearData.sponsors.etoile.length ?
+            <SponsorsLogos sponsors={previousYearData.sponsors.etoile} column_number={4} sponsor_title={t('sponsor_etoile')}></SponsorsLogos>
           : ''}
-          { previousSponsors.sponsors.meetgreet && previousSponsors.sponsors.meetgreet.length ?
-            <SponsorsLogos sponsors={previousSponsors.sponsors.meetgreet} column_number={4} sponsor_title={t('sponsor_meetgreet')}></SponsorsLogos>
+          { previousYearData.sponsors.meetgreet && previousYearData.sponsors.meetgreet.length ?
+            <SponsorsLogos sponsors={previousYearData.sponsors.meetgreet} column_number={4} sponsor_title={t('sponsor_meetgreet')}></SponsorsLogos>
           : ''}
-          { previousSponsors.sponsors.flocon && previousSponsors.sponsors.flocon.length ?
-            <SponsorsLogos sponsors={previousSponsors.sponsors.flocon} column_number={4} sponsor_title={t('sponsor_flocon')}></SponsorsLogos>
+          { previousYearData.sponsors.flocon && previousYearData.sponsors.flocon.length ?
+            <SponsorsLogos sponsors={previousYearData.sponsors.flocon} column_number={4} sponsor_title={t('sponsor_flocon')}></SponsorsLogos>
           : ''}
-          { previousSponsors.sponsors.partners && previousSponsors.sponsors.partners ?
-            <SponsorsLogos sponsors={previousSponsors.sponsors.partners} column_number={3} sponsor_title={t('partners')}></SponsorsLogos>
+          { previousYearData.sponsors.partners && previousYearData.sponsors.partners ?
+            <SponsorsLogos sponsors={previousYearData.sponsors.partners} column_number={3} sponsor_title={t('partners')}></SponsorsLogos>
           : ''}
         </div>
       </div>
