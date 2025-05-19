@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import SponsorFormula from '../components/SponsorFormula.astro';
 import sponsors from '../data/sponsors.json';
 import { t } from '../i18n/i18n';
+import DateTimeChangingChild from "../components/DateTimeChangingChild.astro";
+
 
 let msg_inscription;
 if (sponsors.etoile.length < sponsors.sponsorship.type.etoile.number
@@ -51,8 +53,9 @@ if (sponsors.etoile.length < sponsors.sponsorship.type.etoile.number
     <span class="heading">{t('sponsor_options')}</span>
   </h2>
   <div class="two-columns">
-    <SponsorFormula sponsor={sponsors.sponsorship.type.etoile} cssClass="active"></SponsorFormula>
     <SponsorFormula sponsor={sponsors.sponsorship.type.flocon} cssClass=""></SponsorFormula>
+    <SponsorFormula sponsor={sponsors.sponsorship.type.etoile} cssClass=""></SponsorFormula>
+    <SponsorFormula sponsor={sponsors.sponsorship.type.tenyears} cssClass=""></SponsorFormula>
   </div>
   <div class="center">
     <a class="snc-btn" href={sponsors.sponsorship.prospectus} target="_blank">{t('sponsorship_prospectus')}</a>
@@ -93,7 +96,12 @@ if (sponsors.etoile.length < sponsors.sponsorship.type.etoile.number
     </ol>
   </article>
   <article>
-      <p class="text-big-italic" set:html={msg_inscription}></p>
+    <DateTimeChangingChild
+      beginDate={new Date(sponsors.sponsorship.open_datetime.date).getTime()}
+      refreshInterval="10000">
+      <p class="text-big-italic" slot="before" set:html={t('sponsoring_not_open')}></p>
+      <p class="text-big-italic" slot="doing" set:html={msg_inscription}></p>
+      </DateTimeChangingChild>
   </article>
 
   <article>

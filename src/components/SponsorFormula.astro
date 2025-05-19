@@ -1,7 +1,6 @@
 ---
 import { t } from "../i18n/i18n";
 import { type SponsorType } from "./sponsor";
-import sponsors from '../data/sponsors.json';
 
 interface Props {
 	sponsor: SponsorType;
@@ -13,12 +12,17 @@ const { sponsor, cssClass } = Astro.props;
 <div class="snc-ticket">
 <div class={'single ' + cssClass} >
   <div class="single-top">
-    <h2 class="title">{sponsor.title}</h2>
+    <h2 class="title">
+      {sponsor.title_key ? t(sponsor.title_key) : sponsor.title}
+    </h2>
     <h4 class="price">{sponsor.price}</h4>
     <p>{t('sponsor_limit',sponsor.number)}</p>
   </div>
   <div class="single-bottom">
     <ul class="list-unstyled list">
+      {sponsor.description ?
+      <li><i class="fa fa-check" aria-hidden="true"></i> {t(sponsor.description)}</li>
+      : ''}
       {sponsor.places.conferences ?
       <li><i class="fa fa-check" aria-hidden="true"></i> {t('sponsor_places_conferences', sponsor.places.conferences)}</li>
       : ''}
@@ -30,7 +34,7 @@ const { sponsor, cssClass } = Astro.props;
       : ''}
       <li><i class="fa fa-check" aria-hidden="true"></i> {t('sponsor_logo_website')}</li>
       <li><i class="fa fa-check" aria-hidden="true"></i> {t('sponsor_logo_billposting')}</li>
-      { sponsor.places && sponsor.places.speakers_dinner ? 
+      { sponsor.places && sponsor.places.speakers_dinner ?
       <li><i class="fa fa-check" aria-hidden="true"></i> {t('sponsor_places_speakers_dinner', sponsor.places.speakers_dinner)}</li>
       : ''}
       <li><i class="fa fa-check" aria-hidden="true"></i> {t('snowcamp_logo_usage')}</li>

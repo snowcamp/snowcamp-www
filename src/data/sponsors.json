@@ -2,11 +2,11 @@
   "sponsorship": {
     "prospectus": "https://drive.google.com/file/d/1hOHTGVXJfiQ0nJFJugivkNr3SwdEXuSF/view?usp=share_link",
     "open_datetime" : {
-      "date": "2025-09-17T11:00:00.000",
+      "date": "2025-06-09T11:00:00.000",
       "fr": "9 juin 2025 à 11h00",
       "en": "9th of June 2025 at 11:00am"
     },
-    "subscribe_link" : "https://docs.google.com/forms/d/e/1FAIpQLSf8fpWvTQTFy0tJnFcCCkQEttTUAnfM3GJ0ksNwG9tnX7FubQ/viewform?usp=sf_link",
+    "subscribe_link" : "https://docs.google.com/forms/d/e/1FAIpQLScZDdAWonmZZYfV3khF5QJMIx7sx33MP8g3kzMUbLgGCFmbpQ/viewform?usp=dialog",
     "type": {
       "flocon": {
         "title": "Flocon",
@@ -28,6 +28,15 @@
           "booth": 2,
           "speakers_dinner": 0
         }
+      },
+      "tenyears": {
+        "title": "Special 10 ans",
+        "title_key": "sponsor_tenyears_title",
+        "price": "5000 €",
+        "number": 1,
+        "kakemono": false,
+        "places": {},
+        "description": "sponsor_tenyears_description"
       }
     }
   },

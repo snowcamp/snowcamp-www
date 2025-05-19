@@ -144,7 +144,7 @@ contrat avec ce sponsoring pour laisser la place à un autre sponsor.`;
     i18n.sponsoring_open= (sponsors:any) => `<div class="text-big-italic">L'enregistrement pour le sponsoring du Snowcamp ${edition.year} est ouvert depuis le
       <p style="text-align: center; font-weight: bold; font-size: 1.3em; margin: 10px 0">${sponsors.sponsorship.open_datetime.fr}</p>
       Il reste actuellement ${12 - sponsors.etoile.length} places de sponsor(s) Etoile et ${6 - sponsors.flocon.length} places de sponsor(s) Flocon.
-      <br>Vous pouvez vous enregistrer via <a href="${sponsors.sponsorship.subscribe_link}">ce formulaire d'inscription</a></div>`;
+      <br>Vous pouvez vous enregistrer via <a href="/sponsors_subscription_form/">ce formulaire d'inscription</a></div>`;
     i18n.sponsoring_closed=`La campagne de sponsoring du snowcamp ${edition.year} est actuellement terminée. Il y a plus de possibilités de devenir sponsor pour la conférence.
       Vous pouvez nous contacter par email pour indiquer que vous souhaitez être parmi notre liste de contact pour la campagne de sponsoring de l'année suivante.`;
     i18n.sponsoring_question='Pour toute information vous pouvez nous contacter par email';
@@ -269,8 +269,8 @@ contrat avec ce sponsoring pour laisser la place à un autre sponsor.`;
     i18n.sponsor_guide_media_kit_title='Kit de communication';
     i18n.sponsor_guide_media_kit_content=`Un <a href="/media_kit.pdf">kit de communication</a> est disponible pour vous aider dans la communication à propos du Snowcamp.
     <br>Vous pouvez utiliser notre logo: <a href="/img/logo/snowcamp.svg">format vectoriel</a>, <a href="/img/logo/SnowCampLogo500x500.png">format PNG</a>`;
-
-
+    i18n.sponsor_tenyears_title="10 ans";
+    i18n.sponsor_tenyears_description="Sponsor du goodies spécial des 10 ans: un T-shirt de qualité sur lequel sera affiché devant/derrière le logo du snowcamp et le logo des 10 ans. Votre logo sur la manche du t-shirt."
 
     i18n.store_package_title = (title:string, days: number) => `${title} - Pack ${days} days`;
     i18n.store_package_universities_plus_confs = 'Universités + Conférences';
