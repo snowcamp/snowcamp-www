@@ -162,7 +162,7 @@ export function init() {
       Sponsoring campaign will open at ${sponsors.sponsorship.open_datetime.fr}</a>.</p>`;
     i18n.sponsor_status_open = `<p class="text dark-background">
       Sponsoring campaign is open since the ${sponsors.sponsorship.open_datetime.en}.
-      <br>You can register with the following  <a href="${sponsors.sponsorship.subscribe_link}">online form</a>.
+      <br>You can register with the following  <a href="/sponsors_subscription_form/">online form</a>.
       </p>`;
     i18n.sponsor_status_closed = `<p class="text dark-background">
       Sponsoring campaign is closed</a>.
@@ -270,6 +270,9 @@ export function init() {
     i18n.sponsor_guide_media_kit_title='Kit de communication';
     i18n.sponsor_guide_media_kit_content=`A <a href="/media_kit.pdf">communication kit</a> is available to assist you in promoting Snowcamp.
     <br>You can use our logo: <a href="/img/logo/snowcamp.svg">vector format</a>, <a href="/img/logo/SnowCampLogo500x500.png">PNG format</a>.`;
+
+    i18n.sponsor_tenyears_title="10 years";
+    i18n.sponsor_tenyears_description="Sponsor a special 10-year anniversary goodie: a high-quality T-shirt featuring the Snowcamp logo and the 10-year logo on the front and back. Placing your logo on the sleeve of the T-shirt."
 
     i18n.store_package_title = (title:string, days: number) => `${title} - Package ${days} days`;
     i18n.store_package_universities_plus_confs = 'Universities + Conferences';

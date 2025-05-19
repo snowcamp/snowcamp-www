@@ -1,11 +1,13 @@
 export interface SponsorType {
   title: string;
+  title_key?: string
   price: string;
   number: number;
   booth_area?: string;
   kakemono: boolean;
+  description?: string;
   places: {
-    conferences: number;
+    conferences?: number;
     booth?: number;
     speakers_dinner?: number;
   }
