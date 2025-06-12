@@ -1,7 +1,7 @@
 :root {
   --main: rgb(18.039% 15.686% 25.49%);
-  --background: #d8dee9;
-  --background2: #eceff4;
+  --background: #f9f9f9;
+  --background2: #f9f9f9;
   --orange: hsl(355.54 50.959% 42.657%);
   --orange-on-main: hsl(25.262 92.02% 69.731%);
   --green: #1c784d;
@@ -38,7 +38,8 @@ a {
   text-decoration: none;
 }
 
-body {
+html, body {
+  height: 100%;
   margin: 0;
   display: flex;
   flex-direction: column;
