@@ -23,7 +23,6 @@ const year = startDate.getFullYear();
 ---
 <style>
   .full-bleed {
-    padding: 1rem;
     display: grid;
     grid-template-columns: 1fr minmax(90vw, 1fr) 1fr;
 
@@ -59,6 +58,7 @@ const year = startDate.getFullYear();
   #countdown {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    column-gap: 15px;
     justify-items: center;
 
     & > div {
@@ -68,7 +68,7 @@ const year = startDate.getFullYear();
       align-items: center;
       & > b {
         font-weight: 700;
-        font-size: clamp(16px, 3vw, 34px);
+        font-size: 1.5rem;
       }
     }
   }
@@ -76,21 +76,22 @@ const year = startDate.getFullYear();
   .title {
     font-family: 'Luciole-Bold', sans-serif;
     font-weight: 700;
-    font-size: clamp(24px, 4vw, 58px);
+    font-size: 2rem;
     text-transform: uppercase;
   }
 
   .dates {
     font-family: 'Luciole-Bold', sans-serif;
     font-weight: 700;
-
+    font-size: 1rem;
   }
 
   .countdown-box {
-    width: clamp(300px, 40%, 700px);
+    width: clamp(300px, 40%, 500px);
     height: fit-content;
     padding: 2rem;
     background-color: #2e284199;
+    font-size: clamp(16px, 3vw, 18px);
 
     & > * {
       color: white;
@@ -138,7 +139,7 @@ const year = startDate.getFullYear();
   }, 0);
 </script>
 
-<div class="full-bleed" style="background: url(/img/banner-blue.webp) top center no-repeat fixed; height: 400px; background-size: 100% auto;">
+<div class="full-bleed" style="background: url(/img/banner-blue.webp) center/cover no-repeat; height: 400px">
   <div class="countdown-box">
     <div id="countdown" data-date={edition.start_date}>
       <div>
@@ -158,7 +159,7 @@ const year = startDate.getFullYear();
         <i>{seconds}</i>
       </div>
     </div>
-    <h2 class="title">Snowcamp <span class="year">{year}</span></h2>
+    <h2 class="title">Snowcamp <span class="year">{year}</span></h2>
     <h3 class="date"><span class="dates">{start} - {end}</span>, Grenoble</h3>
   </div>
 </div>
