@@ -56,18 +56,18 @@ sponsorship:
         speakers_dinner: 0
   display: current
   meetgreet: []
-  etoile: []
-#    - cgi2022
-#    - abylsen2023
+  etoile:
+    - cgi2022
+    - abylsen2023
+    - open2024
+    - moodys2025
+    - criteo2023
 #    - kaizen
-#    - open2024
-#    - moodys2025
 #    - viseo2022
-#    - criteo2023
 #    - elastic2025
 #    - clevercloud
-  flocon: []
-#    - avisto2020
+  flocon:
+    - avisto2020
 #    - kls2020
 #    - soprasteria2018
 #    - bonita2024
