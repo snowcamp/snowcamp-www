@@ -14,7 +14,7 @@ import current from '../../data/current.yaml';
 It was started in 2016 on the initiative of [AlpesJug](https://alpesjug.fr).
 All organizers are enthusiast geeky volonteers.
 
-<div style="display: grid; grid-template-columns: repeat(3, minmax(200px, 1fr)); justify-items: center; align-items: center">
+<div style="display: grid; grid-template-columns: repeat(3, minmax(200px, 1fr)); justify-items: center; align-items: center; row-gap: 10px;">
   { organisation.organizers.filter((orga) => current.organisers.includes(orga.id)).map(orga => (<Orga orga={orga}/>))}
 </div>
 
