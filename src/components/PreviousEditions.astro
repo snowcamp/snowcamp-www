@@ -97,7 +97,7 @@ import sponsors from '../data/sponsors.yaml';
       name.style['grid-column-start'] = 1;
       name.style['grid-column-end'] = 5;
       edition.appendChild(name);
-      const h4 = tag('h4', `${parseDate(ed.start_date).getFullYear()}(${trad['edition'][lang]} nº${previous_years.length - idxYear})`, null);
+      const h4 = tag('h4', `${parseDate(ed.start_date).getFullYear()} (${trad['edition'][lang]} nº${previous_years.length - idxYear})`, null);
       name.appendChild(h4);
 
       const p = tag('a', trad['program'][lang], null);
