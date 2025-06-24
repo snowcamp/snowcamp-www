@@ -32,7 +32,7 @@ In return, we offer you a large visibility, on the web and during the event. It'
 <SponsorFormula sponsor={edition.sponsorship.type.tenyears}/>
 </div>
 
-<Button href="https://drive.google.com/file/d/1hOHTGVXJfiQ0nJFJugivkNr3SwdEXuSF/view?usp=share_link" title="Plaquette Sponsors"/>
+<Button href={edition.sponsorship.prospectus} title="Plaquette Sponsors" type="ext"/>
 
 <a id="beers"></a>
 
@@ -69,7 +69,7 @@ After that delay, the snowcamp organisation has the right to cancel the contract
 <p className="sponsorBefore">Please return from this moment to register. We will send a reminder message to companies that have already been sponsors.</p>
 <p className="sponsorOpened">There are currently {remainEtoile} Star sponsor positions and {remainFlocon} Snowflake sponsor positions remaining.</p>
 
-<Button className="sponsorOpened" title="Formulaire d'inscription" href={edition.sponsorship.subscribe_link}></Button>
+<Button className="sponsorOpened" title="Formulaire d'inscription" href={edition.sponsorship.subscribe_link} type="ext"/>
 
 <p className="sponsorClosed">The SnowCamp {year} sponsorship campaign is currently closed. There are no more opportunities to become a sponsor for the conference. You can contact us by email to indicate that you would like to be on our contact list for next year's sponsorship campaign.</p>
 
