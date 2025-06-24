@@ -6,16 +6,16 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
-    "build2": "astro build",
+    "build_": "astro check && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "http-server": "npm run build && http-server dist",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/mdx": "^4.2.3",
-    "astro": "^5.6.1",
+    "@astrojs/mdx": "^4.3.0",
+    "astro": "^5.10.1",
     "astro-remote": "^0.3.4",
     "font-awesome": "~4.7.0",
     "luxon": "^3.6.1",
