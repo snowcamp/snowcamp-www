@@ -35,7 +35,7 @@ C'est l'occasion idéale pour rencontrer les développeurs grenoblois, montrer v
 <SponsorFormula sponsor={edition.sponsorship.type.tenyears}/>
 </div>
 
-<Button href="https://drive.google.com/file/d/1hOHTGVXJfiQ0nJFJugivkNr3SwdEXuSF/view?usp=share_link" title="Plaquette Sponsors"/>
+<Button href={edition.sponsorship.prospectus} title="Plaquette Sponsors" type="ext"/>
 
 <a id="beers"></a>
 
@@ -74,7 +74,7 @@ Si ce délai n'est pas respecté par un sponsor, l'organisation du Snowcamp se d
 <p className="sponsorBefore">Veuillez revenir à partir de ce moment pour vous enregistrer. Nous enverrons un message de rappel aux entreprises qui ont déjà été sponsors.</p>
 <p className="sponsorOpened">Il reste actuellement {remainEtoile} places de sponsor(s) Etoile et {remainFlocon} places de sponsor(s) Flocon.</p>
 
-<Button className="sponsorOpened" title="Formulaire d'inscription" href={edition.sponsorship.subscribe_link}></Button>
+<Button className="sponsorOpened" title="Formulaire d'inscription" href={edition.sponsorship.subscribe_link} type="ext"/>
 
 <p className="sponsorClosed">La campagne de sponsoring du snowcamp {year} est actuellement terminée. Il y a plus de possibilités de devenir sponsor pour la conférence. Vous pouvez nous contacter par email pour indiquer que vous souhaitez être parmi notre liste de contact pour la campagne de sponsoring de l'année suivante.</p>
 
