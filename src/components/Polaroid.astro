@@ -6,7 +6,8 @@ interface Props {
 }
 
 const { img, title, side } = Astro.props;
-const rotate = `transform: rotate(${((Math.random() * 60) + 10) - 35}deg)`;
+const orientation = Math.random() < 0.5 ? 1 : -1;
+const rotate = `transform: rotate(${orientation * 5}deg)`;
 const float = side ? `float: ${side}` : ``;
 const style = `${float}; ${rotate};`;
 

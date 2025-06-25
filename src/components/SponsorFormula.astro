@@ -96,8 +96,8 @@ const trad: {[key: string]: translation} = {
   </header>
   <ul class={lang} lang="fr">
     <li class={sponsor.id == 'tenyears' || 'hidden'}>Sponsor du goodies spécial des 10 ans: un T-shirt de qualité sur lequel sera affiché devant/derrière le logo du snowcamp et le logo des 10 ans. Votre logo sur la manche du t-shirt.</li>
-    <li>{`${sponsor.places.conferences} entrées offertes pour participer aux sessions`}</li>
-    <li class={sponsor.places.booth || 'hidden'}>{`${sponsor.places.booth} entrées offertes sur l'espace sponsor uniquement`}</li>
+    <li class={(sponsor?.places?.conferences ?? 0) > 0 || 'hidden'}>{`${sponsor.places.conferences} entrées offertes pour participer aux sessions`}</li>
+    <li class={(sponsor?.places?.booth ?? 0) > 0 || 'hidden'}>{`${sponsor.places.booth} entrées offertes sur l'espace sponsor uniquement`}</li>
     <li class={sponsor.booth_area || 'hidden'}>{`Stand dans le hall d'exposition (${sponsor.booth_area})`}</li>
     <li>Logo sur notre site web du SnowCamp</li>
     <li>Affichage de votre logo sur le lieu de la conférence</li>
@@ -106,9 +106,9 @@ const trad: {[key: string]: translation} = {
   </ul>
   <ul class={lang} lang="en">
     <li class={sponsor.id == 'tenyears' || 'hidden'}>Sponsor a special 10-year anniversary goodie: a high-quality T-shirt featuring the Snowcamp logo and the 10-year logo on the front and back. Placing your logo on the sleeve of the T-shirt.</li>
-    <li class={sponsor.places.booth || 'hidden'}>{`${sponsor.places.conferences} free tickets to attend the sessions`}</li>
-    <li class={sponsor.booth_area || 'hidden'}>{`${sponsor.places.booth} free tickets for the sponsors space only`}</li>
-    <li>{`Booth in the exhibition hall (${sponsor.booth_area})`}</li>
+    <li class={(sponsor?.places?.conferences ?? 0) > 0 || 'hidden'}>{`${sponsor.places.conferences} free tickets to attend the sessions`}</li>
+    <li class={(sponsor?.places?.booth ?? 0) > 0 || 'hidden'}>{`${sponsor.places.booth} free tickets for the sponsors space only`}</li>
+    <li class={sponsor.booth_area || 'hidden'}>{`Booth in the exhibition hall (${sponsor.booth_area})`}</li>
     <li>Your logo on the SnowCamp website</li>
     <li>Your logo visible on the location of the conference</li>
     <li>Authorisation to use the SnowCamp logo for your communications</li>
