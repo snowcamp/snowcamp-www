@@ -48,11 +48,10 @@ sponsorship:
       price: 5000 €
       number: 1
       description: 'Sponsor du goodies spécial des 10 ans: un T-shirt de qualité sur lequel sera affiché devant/derrière le logo du snowcamp et le logo des 10 ans. Votre logo sur la manche du t-shirt.'
-      booth_area: 3x3=9m²
       kakemono: false
       places:
-        conferences: 3
-        booth: 2
+        conferences: 0
+        booth: 0
         speakers_dinner: 0
   display: current
   meetgreet: []
