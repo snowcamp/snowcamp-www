@@ -2,6 +2,7 @@
 layout: ../layouts/main.astro
 title: Tremplin
 ---
+import Utils from '../utils';
 import Polaroid from '../components/Polaroid.astro';
 import Button from '../components/Button.astro';
 import TimelineCFP from '../components/TimelineCFP.astro';
@@ -28,6 +29,18 @@ export const tl = [
     "date": current.timeline.tremplin.event,
   }
 ];
+export const startFormat = Intl.DateTimeFormat('fr', {
+  month: 'long',
+  day: 'numeric',
+});
+export const endFormat = Intl.DateTimeFormat('fr', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+export const startDate = Utils.parseDate(current.start_date);
+export const start = startFormat.format(startDate);
+export const end = endFormat.format(Utils.parseDate(current.end_date));
 
 # Le Tremplin de Snowcamp
 
@@ -45,7 +58,7 @@ A l’issue d’un vote, 2 des participants seront sélectionnés pour rejouer l
 
 <TimelineCFP tl={tl}/>
 
-<Button href="https://conference-hall.io/tremplin-de-snowcamp-2025" title="Participer" type="ext"/>
+<Button className="tremplinOpened" href="https://conference-hall.io/tremplin-de-snowcamp-2025" title="Participer" type="ext"/>
 
 ## Participer
 
@@ -57,7 +70,7 @@ Alors le Tremplin de SnowCamp est fait pour toi !
 **But :**<br/>
 Offrir un accompagnement individuel gratuit aux personnes désireuses de se lancer en tant que speaker. Notre équipe bénévole de coachs expérimentés t’aidera durant toutes les étapes de préparation de ta première conférence de 20 minutes, jusqu'à ta prise de parole devant un public lors de la soirée du Tremplin sur Grenoble.
 
-Et ce n’est pas tout ! Le public du Tremplin choisira lors de la soirée 2 talks, qui seront d'office sélectionnés au programme de la conférence SnowCamp qui aura lieu du 22 janvier - 25 janvier 2025.
+Et ce n’est pas tout ! Le public du Tremplin choisira lors de la soirée 2 talks, qui seront d'office sélectionnés au programme de la conférence SnowCamp qui aura lieu du {start} - {end}.
 
 **Principe du Tremplin :**<br/>
 Parmi les propositions reçues, nous sélectionnerons 6 personnes pour les accompagner dans la définition de l’idée de leur talk, la structuration, la réalisation et les répétitions jusqu’au Jour-J de la conférence. Chaque participant⋅e bénéficiera d'un coaching personnel pour l'accompagner dans la réalisation de son talk de 20 minutes, sur les mêmes catégories que Snowcamp.

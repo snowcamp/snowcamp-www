@@ -2,6 +2,7 @@
 layout: ../../layouts/main.astro
 title: Tremplin
 ---
+import Utils from '../../utils';
 import Polaroid from '../../components/Polaroid.astro';
 import Button from '../../components/Button.astro';
 import TimelineCFP from '../../components/TimelineCFP.astro';
@@ -28,6 +29,18 @@ export const tl = [
     "date": current.timeline.tremplin.event,
   }
 ];
+export const startFormat = Intl.DateTimeFormat('en', {
+  month: 'long',
+  day: 'numeric',
+});
+export const endFormat = Intl.DateTimeFormat('en', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+export const startDate = Utils.parseDate(current.start_date);
+export const start = startFormat.format(startDate);
+export const end = endFormat.format(Utils.parseDate(current.end_date));
 
 # Le Tremplin de Snowcamp
 
@@ -43,7 +56,9 @@ Following a vote, 2 of the participants will be selected to replay their session
 - Mid-September 2025: Start of coaching/mentoring
 - Mid-November 2025: Tremplin (Springboard) evening and selection of 2 talks to be scheduled for SnowCamp 2026
 
-<Button href="https://conference-hall.io/tremplin-de-snowcamp-2025" title="Participate" type="ext"/>
+<TimelineCFP tl={tl}/>
+
+<Button className="tremplinOpened" href="https://conference-hall.io/tremplin-de-snowcamp-2025" title="Participate" type="ext"/>
 
 ## Participate
 
@@ -57,7 +72,7 @@ To offer free individual support to people wishing to start as a speaker.
 Our volunteer team of experienced coaches will help you during all the stages of preparing your first 20-minute conference, up to your speech in front of an audience during the Tremplin evening in Grenoble.
 
 And that's not all!
-The Tremplin audience will choose 2 talks during the evening, which will be automatically selected for the SnowCamp conference program that will take place from 22nd of Jan - 25th of Jan 2025.
+The Tremplin audience will choose 2 talks during the evening, which will be automatically selected for the SnowCamp conference program that will take place from {start} - {end}.
 
 **Principle of the Tremplin:**<br/>
 Among the proposals received, we will select 6 people to accompany them in defining the idea of their talk, structuring, realization and rehearsals until the D-Day of the conference.
