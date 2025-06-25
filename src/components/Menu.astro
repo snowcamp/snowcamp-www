@@ -80,16 +80,8 @@ const trad: {[key: string]: translation} = {
     "en": "Editorial line",
   },
   "venue_link": {
-    "fr": "/fr/#venue",
+    "fr": "/#venue",
     "en": "/en/#venue"
-  },
-  "sponsor_plan_link": {
-    "fr": "/fr/#plan",
-    "en": "/en/#plan"
-  },
-  "sponsor_beer_link": {
-    "fr": "/fr/#beers",
-    "en": "/en/#beers"
   }
 }
 ---
@@ -165,7 +157,7 @@ const trad: {[key: string]: translation} = {
     <ul>
       <li><a href={Utils.url(['cfp'], {lang})}>{trad.conference[lang]}</a></li>
       <li><a href={Utils.url(['tremplin'], {lang})}>{trad.tremplin[lang]}</a></li>
-      <li><a href={Utils.url(['snowcamp'], {lang})}>{trad.editorialLine[lang]}</a></li>
+      <li><a href={Utils.url(['editorial-line'], {lang})}>{trad.editorialLine[lang]}</a></li>
     </ul>
   </li>
   <li>
