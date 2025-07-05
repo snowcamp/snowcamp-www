@@ -21,7 +21,7 @@ timeline:
     open: '2025-11-17T11:00:00.000[Europe/Paris]'
 sponsorship:
   prospectus: https://drive.google.com/file/d/1hOHTGVXJfiQ0nJFJugivkNr3SwdEXuSF/view?usp=share_link
-  subscribe_link: https://docs.google.com/forms/d/e/1FAIpQLSf8fpWvTQTFy0tJnFcCCkQEttTUAnfM3GJ0ksNwG9tnX7FubQ/viewform?usp=sf_link
+  subscribe_link: https://docs.google.com/forms/d/e/1FAIpQLScZDdAWonmZZYfV3khF5QJMIx7sx33MP8g3kzMUbLgGCFmbpQ/viewform?usp=dialog
   type:
     flocon:
       id: flocon
