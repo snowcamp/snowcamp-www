@@ -75,20 +75,13 @@ export function init() {
     i18n.venue_title = 'Venue';
     i18n.venue_desc = 'The schedule can be found here: ';
     i18n.venue_location = `Universities and conferences will take place at
-      <a href="http://www.congres-wtcgrenoble.com/en target="_blank"><strong>"WTC World Trade Center Grenoble"</strong></a>,
-      a conference center in Grenoble center.`;
+       <a href="https://alpexpo.com/" target="_blank"><strong>"Alpexpo, espace 1968"</strong></a>.`;
     i18n.venue_access=`You can access:
       <ul>
-        <li>by tramway line B (towards Grenoble Presqu'île), stop "Palais De Justice - Gare"</li>
-        <li>by car (you can park at the parking Doyen Weil or Europole Gare)
-          <ul>
-            <li>when arriving from Lyon or Valence, take the Europole-Gares exit and follow signs to Europole.</li>
-            <li>when arriving from Chambéry, Gap or Sisteron,  take "the rocade Sud", follow signs to Lyon by highway, take the Europole exit and follow signs to Europole</li>
-          </ul>
-        </li>
-        <li>by train or bus: use the underground passage between the railway station and Europole</li>
-        <li>by plane: there are airport shuttles: from Lyon Saint-Exupéry (17 round trips per day) and from Genève Cointrin (6 round trips per day)</li>
-        <li>by <a href="http://www.metromobilite.fr/velo.html" target="_blank">bike</a></li>
+        <li>Car road Rocade Sud, Exit 6 Alpexpo, free parking</li>
+        <li>Train or bus : Tram A (stop Pôle Sud - Alpexpo), Bus C3 (stop Alpexpo), Bus C6, C8, 12, 65, 67 (stop Grand Place)</li>
+        <li>Avion : il y a des navettes d'aéroports : depuis Lyon Saint-Exupéry (17 rotations 7j/7) et depuis Genève Cointrin (3 rotations, 7j/7)</li>
+        <li><a href="http://www.metromobilite.fr/velo.html" target="_blank">Vélo</a></li>
       </ul>`;
 
     i18n.sponsor_chamois = 'Sponsor Chamois &#129351;';
@@ -223,29 +216,27 @@ export function init() {
     </ol>`;
 
     i18n.sponsor_guide_booth_etoile_material_title=`Rent material`;
-    i18n.sponsor_guide_booth_etoile_material_content=`It is possible to order additional equipment through the
-      WTC, but it must be done through the Snowcamp organization. The catalog is available
-      <a target="_" href="https://www.calameo.com/read/0052859110d5d2f7cc04d">here</a>. The request for equipment should be addressed to the Snowcamp
-      organizing team, who will provide you with the pricing. An invoice will be issued and must be settled no later
+    i18n.sponsor_guide_booth_etoile_material_content=`It is possible to order additional equipment by contacting
+      Snowcamp organisation team. equipment: TV, Table, chair.
+      <br>An invoice will be issued and must be settled no later
       than 7 days BEFORE the start of the conference. Failure to make the payment within the specified period will
       result in the non-provision of the requested equipment.`;
 
     i18n.sponsor_guide_booth_etoile_install_title=`(Un)Installation of the booth`;
     i18n.sponsor_guide_booth_etoile_install_content=`The booth setup can take place on Wednesday afternoon
       (2:00 PM to 5:30 PM) starting from the beginning of Snowcamp. The booths must be dismantled no later than Friday
-      at 6:00 PM. The WTC has a freight elevator and a regular elevator. Access to the freight elevator is through Rue
-      de la Frise, between the World Trade Center Grenoble and Grenoble Ecole Management.`;
+      at 6:00 PM. The venue has a freight elevator and a regular elevator.`;
 
     i18n.sponsor_guide_booth_etoile_delivery_title=`Delivery of equipment`;
     i18n.sponsor_guide_booth_etoile_delivery_content=`<p>Delivery of parcels and equipment must take place starting from Tuesday,
       the day before the beginning of the conference, between 8:30 AM and 4:30 PM, and no later than Wednesday before 4:30 PM, the
        first day of the conference (university part). All delivered parcels must bear the following address:</p>
-      <p style="margin-left: 50px;">SNOWCAMP <br>Exhibitor company name + contact
-        <br>WTC Grenoble Conference Center, 1st Floor
-        <br>5 - 7, Place Robert Schuman <br>38000 GRENOBLE</p>
-      <p>Delivery personnel must drop off parcels at the exhibition area located on the 1st floor of the building, accessible by
-      freight elevator and regular elevator. Otherwise, the parcels will be refused. Delivery personnel must be SELF-SUFFICIENT
-      to perform their tasks:</p>
+          <p style="margin-left:  50px;">SNOWCAMP
+          <br>Exhibitor company name + contact
+          <br>Alpexpo, Espace 1968
+          <br>Avenue d’Innsbruck
+          <br>CS 52408
+          <br>38034 Grenoble Cedex 2</p>
       <ul>
         <li>Either have adequate equipment (tailgate lift, specific pallet jack, elevator, etc.)</li>
         <li>Or have sufficient personnel</li>
@@ -260,15 +251,12 @@ export function init() {
       display your complete contact details to avoid losses.</p>`;
 
     i18n.sponsor_guide_booth_etoile_wifi_title=`Wifi`;
-    i18n.sponsor_guide_booth_etoile_wifi_content=`<p>The entire congress center is equipped with WiFi access points.
-      Compatible devices include computers, personal digital assistants (PDAs), and any equipment certified for
-      WiFi 802.11a/b/g:
-      <p style="margin-left:  50px;">Network Name: ESPACE-CONGRES
-      <br>The access code will be provided to you later.
-      </p>`;
+    i18n.sponsor_guide_booth_etoile_wifi_content=`<p>The venue is equipped with WiFi access points.
+      Compatible devices include computers, smartphone, and any equipment certified for
+      WiFi 802.11a/b/g. Connexion information has to been requested to the Snowcamp organisation team during the installation.`;
 
     i18n.sponsor_guide_media_kit_title='Kit de communication';
-    i18n.sponsor_guide_media_kit_content=`A <a href="/media_kit.pdf">communication kit</a> is available to assist you in promoting Snowcamp.
+    i18n.sponsor_guide_media_kit_content=`A <a href="/pdf/media_kit.pdf">communication kit</a> is available to assist you in promoting Snowcamp.
     <br>You can use our logo: <a href="/img/logo/snowcamp.svg">vector format</a>, <a href="/img/logo/SnowCampLogo500x500.png">PNG format</a>.`;
 
     i18n.sponsor_tenyears_title="10 years";
@@ -334,7 +322,9 @@ export function init() {
       </ul>
       The first edition back in 2016 gathered ~200 attendees and speakers in Grenoble university
         building, and grow with your support to be hosted in Grenoble's
-        World Trade Center to gather ~600 attendees and ~70 speakers since 2020.`;
+        World Trade Center to gather ~600 attendees and ~70 speakers between 2020 and 2025.
+        Since 2026 the snowcamp is hosted in the Alpexpo, espace 1968 and is able to welcome
+        more than 600 attendees.`;
     i18n.snowcamp_unconf_title='The unconference';
     i18n.snowcamp_unconf_desc=`<p>A conference is more than just attending presentations, it's
       also the discussions with the other participants, meeting the speakers...

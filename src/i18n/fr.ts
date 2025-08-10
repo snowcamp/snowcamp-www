@@ -76,24 +76,15 @@ export function init() {
     i18n.schedule_desc = 'L\'agenda de SnowCamp peut être consulté à ce lien : ';
 
     i18n.venue_title = 'Venir';
-    i18n.venue_desc = 'SnowCamp se déroulera au Centre de Congrès du WTC (World Trade Center) de Grenoble à la fois pour les Universités et les Conférences.';
-    i18n.venue_location = `Les Universités et les Conférences auront toutes lieux au
-      <a href="http://www.congres-wtcgrenoble.com/fr" target="_blank"><strong>"WTC World Trade Center Grenoble"</strong></a>,
-      un Centre de Conférences au cœur de Grenoble.`;
+    i18n.venue_desc = "SnowCamp se déroulera à <strong>Alpexpo, dans l'espace 1968</strong><br>à la fois pour les Universités et les Conférences.";
+    i18n.venue_location = `Les Universités et les Conférences auront toutes lieux à<br>
+      <a href="https://alpexpo.com/" target="_blank"><strong>"Alpexpo, espace 1968"</strong></a>.`;
     i18n.venue_access=`Vous pouvez y accéder :
       <ul>
-        <li>par la ligne B du Tram (direction Grenoble Presqu'île), arrêt "Palais De Justice - Gare"</li>
-        <li>en voiture (vous pouvez vous garer aux parkings Doyen Weil ou d'Europole Gare)
-        <ul>
-          <li>en arrivant de Lyon ou de Valence, prenez la sortie d'autoroute "Europole - Gares" et suivre la direction Europole</li>
-          <li>en arrivant de Chambéry, Gap ou Sisteron, prenez la rocade sud, suivre la direction Lyon par l'autoroute, puis la
-          sortie "Europole - Gares" et suivre la direction Europole</li>
-        </ul>
-        </li>
-        <li>en train ou bus : utilisez le passage souterrain depuis la gare vers Europole</li>
-        <li>par avion : il y a des navettes d'aéroports : depuis Lyon Saint-Exupéry (17 rotations
-        7j/7) et depuis Genève Cointrin (3 rotations, 7j/7)</li>
-        <li>en <a href="http://www.metromobilite.fr/velo.html" target="_blank">vélo</a></li>
+        <li>Voiture par Rocade Sud, Sortie 6 Alpexpo, parking gratuit</li>
+        <li>Train ou bus : Tram A (arrêt Pôle Sud - Alpexpo), Bus C3 (Arret Alpexpo), C6, C8, 12, 65, 67 (Arret Grand Place)</li>
+        <li>Avion : il y a des navettes d'aéroports : depuis Lyon Saint-Exupéry (17 rotations 7j/7) et depuis Genève Cointrin (3 rotations, 7j/7)</li>
+        <li><a href="http://www.metromobilite.fr/velo.html" target="_blank">Vélo</a></li>
       </ul>`;
     i18n.sponsor_chamois = 'Sponsor Chamois &#129351;';
     i18n.sponsor_etoile = 'Sponsors Étoile ⭐';
@@ -192,14 +183,14 @@ contrat avec ce sponsoring pour laisser la place à un autre sponsor.`;
 
     i18n.sponsor_guide_add_booth_ticket_title='Place stand supplémentaire';
     i18n.sponsor_guide_add_booth_ticket_content=`Sur demande il est possible d\'acheter des places stands supplémentaire.
-      Le prix est de 60€ pour les 2 jours de conférence. Contactez <a mailto:team@snowcamp.io>team@snowcamp.io</a> pour demander la place.`;
+      Le prix est de 65€ pour les 2 jours de conférence. Contactez <a mailto:team@snowcamp.io>team@snowcamp.io</a> pour demander la place.`;
 
     i18n.sponsor_guide_booth_etoile_title='Le stand ETOILE';
     i18n.sponsor_guide_booth_etoile_content=`Le stand Etoile fait 9m² (3m x 3m). Il est tracé au sol. Il contient par
-      défault: 1 table, 2 chaises, une arrivée électrique et 1 claustra métallique d'affichage (163 cmH x 83 cm L).
+      défault: 1 table, 2 chaises, une arrivée électrique.
       La hauteur maximal du stand ne doit pas dépasser 2m40. La charge au sol des produits ne doit pas excéder 500kg / m2.
-      <br>Aucun affichage direct sur les murs, cloisons et piliers du centre de congrès n'est autorisé, prévoir
-      obligatoirement un support si besoin, en plus du claustra fourni.`;
+      <br>Aucun affichage direct sur les murs, cloisons et piliers de l'espace de la conférence n'est autorisé, prévoir
+      obligatoirement un support si besoin.`;
 
     i18n.sponsor_guide_booth_etoile_what_title=`Ce qu'il est possible de faire sur le stand`;
     i18n.sponsor_guide_booth_etoile_what_content=`Il n'y a pas de liste définissant ce qui est interdit ou ce qui
@@ -215,17 +206,15 @@ contrat avec ce sponsoring pour laisser la place à un autre sponsor.`;
       </ol>`;
 
     i18n.sponsor_guide_booth_etoile_material_title=`Matériel à louer`;
-    i18n.sponsor_guide_booth_etoile_material_content=`Il est possible de commander du matériel supplémentaire auprès du
-      WTC mais via l'organisation du Snowcamp. Le catalogue est disponible <a target="_" href="https://www.calameo.com/read/0052859110d5d2f7cc04d">ici</a>. Le demande de
-      matériel doit être adressée à l'équipe d'organisation du Snowcamp qui vous transmettra les tarifs.
+    i18n.sponsor_guide_booth_etoile_material_content=`<p>Il est possible de commander du matériel supplémentaire auprès
+      de l'organisation du Snowcamp: TV, Table, chaise. <br>
       Une facture sera émise qui devra être réglée au plus tard 7j AVANT le début de la conférence. L'absence
-      de paiement dans le délais fixé impliquera la non fourniture du matériel demandé.`;
+      de paiement dans le délais fixé impliquera la non fourniture du matériel demandé.</p>`;
 
     i18n.sponsor_guide_booth_etoile_install_title=`(De)Installation du stand`;
     i18n.sponsor_guide_booth_etoile_install_content=`L'installation du stand peut s'opérer le mercredi après-midi (14h-17h30)
-      du démarrage du Snowcamp. Les stands devront être démontés pour le vendredi 18h au plus tard. Le WTC comporte un monte
-      charge et un ascenseur. L'accès au monte-charge se fait par la rue de la Frise, entre le World Trade Center
-      Grenoble et l'Ecole Supérieure de Commerce.`;
+      du démarrage du Snowcamp. Les stands devront être démontés pour le vendredi 18h au plus tard. Le lieu de la conférence
+      comporte un monte charge et un ascenseur.`;
 
     i18n.sponsor_guide_booth_etoile_delivery_title=`Livraison de matériel`;
     i18n.sponsor_guide_booth_etoile_delivery_content=`<p>La livraison des colis et matériels devra se faire à partir du mardi veille du début de la conférence, de 8h30 à 16h30
@@ -234,9 +223,10 @@ contrat avec ce sponsoring pour laisser la place à un autre sponsor.`;
       </p>
           <p style="margin-left:  50px;">SNOWCAMP
           <br>Nom de la société exposante + contact
-          <br>Centre de congrès du WTC Grenoble 1er étage
-          <br>5 - 7, place Robert Schuman
-          <br>38000 GRENOBLE</p>
+          <br>Alpexpo, Espace 1968
+          <br>Avenue d’Innsbruck
+          <br>CS 52408
+          <br>38034 Grenoble Cedex 2</p>
       <p>Les livreurs devront déposer les colis sur le lieu de l'exposition, qui se trouve au 1er étage
           du bâtiment, accessible par monte-charge et ascenseur, sinon, les colis seront refusés. Les livreurs
           doivent être AUTONOMES pour assurer leurs prestations :</p>
@@ -244,30 +234,24 @@ contrat avec ce sponsoring pour laisser la place à un autre sponsor.`;
           <li>soit disposer du matériel adéquat (hayon, transpalette spécifique, élévateur, ...)</li>
           <li>soit disposer d'un effectif suffisant</li>
           </ul>
-      <p>Aucune manutention ne sera apportée par l'équipe du Centre de congrès.
-          Un transpalette Jungheinrich, modèle AM 22, est à disposition libre le temps de la livraison.
-          Toute livraison ne pouvant être assurée en totale autonomie devra être solutionnée
-          indépendamment du Centre de congrès.
+      <p>Aucune manutention ne sera apportée par l'équipe d'Alpexpo
           Les colis devront tous être repris à l'issue du démontage.
           Les horaires de livraison et d'enlèvement des colis se font entre 8h30 et 16h30
           uniquement.</p>
-      <p>Pour les colis ne pouvant être repris le jour du démontage, ils pourront être conservés sur
-          le centre de congrès jusqu'au lundi à 16h30 suivant la conférence. Il devront être bien emballés et
+      <p>Pour les colis ne pouvant être repris le jour du démontage, ils pourront être conservés jusqu'au
+          lundi à 16h30 suivant la conférence. Il devront être bien emballés et
           porter une adresse de retour lisible afin d'être repris par votre transporteur. La
-          responsabilité du centre de congrès ne peut être engagée sur leur destruction ou
+          responsabilité d'Alpexpo ne peut être engagée sur leur destruction ou
           disparition. Merci de bien indiquer sur vos colis lisiblement vos coordonnées complètes
           pour éviter des pertes.</p>`;
 
     i18n.sponsor_guide_booth_etoile_wifi_title=`Connexion wifi`;
-    i18n.sponsor_guide_booth_etoile_wifi_content=`<p>L'ensemble des espaces du centre de congrès est équipée de bornes Wifi.
-          Matériel compatible : ordinateur, assistant personnel (PDA) et tout matériel certifié wifi 802.11a/b/g :</p>
-          < style="margin-left:  50px;">
-              Nom du réseau : ESPACE-CONGRES
-              <br>Le code d'accès vous sera communiqué ultérieurement
-          </p>`;
+    i18n.sponsor_guide_booth_etoile_wifi_content=`<p>L'ensemble des espaces de la conférence sont équipés de bornes Wifi.
+          Matériel compatible : ordinateur, smartphone et tout matériel certifié wifi 802.11a/b/g. Les informations sont
+          à récupérer auprès des organisateurs lors de votre installation.</p>`;
 
     i18n.sponsor_guide_media_kit_title='Kit de communication';
-    i18n.sponsor_guide_media_kit_content=`Un <a href="/media_kit.pdf">kit de communication</a> est disponible pour vous aider dans la communication à propos du Snowcamp.
+    i18n.sponsor_guide_media_kit_content=`Un <a href="/pdf/media_kit.pdf">kit de communication</a> est disponible pour vous aider dans la communication à propos du Snowcamp.
     <br>Vous pouvez utiliser notre logo: <a href="/img/logo/snowcamp.svg">format vectoriel</a>, <a href="/img/logo/SnowCampLogo500x500.png">format PNG</a>`;
     i18n.sponsor_tenyears_title="10 ans";
     i18n.sponsor_tenyears_description="Sponsor du goodies spécial des 10 ans: un T-shirt de qualité sur lequel sera affiché devant/derrière le logo du snowcamp et le logo des 10 ans. Votre logo sur la manche du t-shirt."

@@ -13,6 +13,9 @@ if (sponsors.etoile.length < sponsors.sponsorship.type.etoile.number
   }  else {
     msg_inscription = t('sponsoring_closed');
   }
+const lang = (Astro.locals as any).lang;
+const prospectus_link = sponsors.sponsorship.prospectus[lang];
+
 ---
 <style>
   .two-columns {
@@ -58,7 +61,7 @@ if (sponsors.etoile.length < sponsors.sponsorship.type.etoile.number
     <SponsorFormula sponsor={sponsors.sponsorship.type.tenyears} cssClass=""></SponsorFormula>
   </div>
   <div class="center">
-    <a class="snc-btn" href={sponsors.sponsorship.prospectus} target="_blank">{t('sponsorship_prospectus')}</a>
+    <a class="snc-btn" href={prospectus_link} target="_blank">{t('sponsorship_prospectus')}</a>
   </div>
 
   <div id="beers"></div>

@@ -1,6 +1,9 @@
 {
   "sponsorship": {
-    "prospectus": "https://drive.google.com/file/d/1hOHTGVXJfiQ0nJFJugivkNr3SwdEXuSF/view?usp=share_link",
+    "prospectus": {
+      "fr": "/pdf/sponsorship-prospectus-2026-fr.pdf",
+      "en": "/pdf/sponsorship-prospectus-2026-en.pdf"
+    },
     "open_datetime" : {
       "date": "2025-06-09T00:00:00.000",
       "fr": "9 juin 2025 à 11h00",

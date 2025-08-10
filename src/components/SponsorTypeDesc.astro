@@ -8,6 +8,8 @@ interface Props {
 }
 
 const { sponsor } = Astro.props;
+const lang = (Astro.locals as any).lang;
+const prospectus_link = sponsors.sponsorship.prospectus[lang];
 ---
 <div class="single {{ $class }}">
   <div class="single-top">
@@ -37,7 +39,7 @@ const { sponsor } = Astro.props;
       <li><i class="fa fa-check" aria-hidden="true"></i> {t('snowcamp_logo_usage')}</li>
     </ul>
     <div class="sponsors-form">
-      <a href={sponsors.sponsorship.prospectus} target="_blank">{t('sponsorship_prospectus')}</a>
+      <a href={prospectus_link} target="_blank">{t('sponsorship_prospectus')}</a>
     </div>
     <a class="snc-btn" href="mailto:team@snowcamp.io"><span>{t('contact_us')}</span></a>
   </div>
