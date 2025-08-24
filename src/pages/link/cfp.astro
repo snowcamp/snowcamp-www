@@ -1,4 +1,5 @@
 ---
 import Redirect from '../../layouts/Redirect.astro';
+import current from '../../data/current.yaml';
 ---
-<Redirect target="https://conference-hall.io/snowcamp-2026"></Redirect>
+<Redirect target={current.conference.cfp_link}></Redirect>
