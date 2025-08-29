@@ -43,7 +43,7 @@ const {frontmatter, title} = Astro.props;
     padding: 0;
 
     /* keep header sticky */
-    z-index: 1000;
+    z-index: 100;
     position: sticky;
     top: 0;
     left: 0;
@@ -54,6 +54,7 @@ const {frontmatter, title} = Astro.props;
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    height: 3.5em;
   }
 
   main {
@@ -63,6 +64,65 @@ const {frontmatter, title} = Astro.props;
       grid-column: 3;
     }
   }
+
+
+    /* Conteneur sticky */
+    .announce {
+      position: sticky; /* reste collée en haut lors du scroll */
+    top: 3em;
+      z-index: 99;
+      background: var(--orange);         /* personnalisable */
+      color: var(--background2);
+      /*font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;*/
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+      transform: translateY(0);
+      opacity: 1;
+      transition: transform .25s ease, opacity .25s ease;
+    }
+
+    /* Contenu interne (layout) */
+    .announce__inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: .6rem 1rem;
+      display: flex;
+      gap: .75rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .announce a { color: #7dd3fc; text-decoration: underline; }
+    .announce a:focus { outline: 2px solid currentColor; outline-offset: 2px; }
+
+    /* Bouton de fermeture */
+    .announce__close {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      padding: .35rem;
+      border-radius: .5rem;
+      cursor: pointer;
+      justify-self: end;
+    }
+    .announce__close:hover,
+    .announce__close:focus-visible {
+      background: rgba(255,255,255,.12);
+      outline: none;
+    }
+
+    /* État masqué (utilisé par JS pour l’animation de sortie) */
+    .announce--hidden {
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Respecte la réduction d’animations */
+    @media (prefers-reduced-motion: reduce) {
+      .announce { transition: none; }
+    }
 </style>
 <!DOCTYPE html>
 <html class="no-js" lang={lang} prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
@@ -86,6 +146,21 @@ const {frontmatter, title} = Astro.props;
     </a>
     <Menu></Menu>
   </header>
+
+    <div id="announce" class="announce" role="region" aria-label="Annonce importante" hidden>
+    <div class="announce__inner">
+      <div style="margin-left: 10em; margin-right: 10em; text-align: center;">
+        ❄️ La 10ᵉ édition du Snowcamp.io arrive<br>
+        <b>Grenoble – Alpexpo (Espace 1968) du 14 au 17 janvier 2026</b> !<br>
+ Nouveau lieu, plus grand, mieux configuré… et des surprises 🎉<br>
+👉️ <a href="https://snowcamp.io/sponsors/">Devenez sponsor</a>
+      </div>
+      <button class="announce__close" type="button" aria-label="Fermer l’annonce" title="Fermer">
+        ✕
+      </button>
+    </div>
+  </div>
+
   <main>
 	<slot />
   </main>
@@ -148,4 +223,33 @@ const {frontmatter, title} = Astro.props;
 
   style.textContent = computeStyle();
   setInterval(() => style.textContent = computeStyle(), 10000);
+
+
+    (function () {
+      const STORAGE_KEY = "announce:dismissed:v1"; // change 'v1' si tu veux réafficher une nouvelle annonce
+      const banner = document.getElementById("announce");
+      const closeBtn = banner?.querySelector(".announce__close");
+
+      // Si pas déjà fermée, montrer la bannière
+      const dismissed = localStorage.getItem(STORAGE_KEY) === "1";
+      if (!dismissed && banner) {
+        // on retire 'hidden' pour éviter un "flash" si JS charge lentement
+        banner.hidden = false;
+        // petite astuce pour forcer le recalcul avant d’éventuels changements de classe
+        banner.getBoundingClientRect();
+        banner.classList.remove("announce--hidden");
+      }
+
+      // Gestion du clic sur "fermer"
+      closeBtn?.addEventListener("click", () => {
+        // animation de sortie
+        banner.classList.add("announce--hidden");
+        // mémorise
+        localStorage.setItem(STORAGE_KEY, "1");
+        // enlève du flux après la transition
+        banner.addEventListener("transitionend", () => {
+          banner.hidden = true;
+        }, { once: true });
+      }, { passive: true });
+    })();
 </script>
