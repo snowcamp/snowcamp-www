@@ -957,6 +957,15 @@ sponsors:
     description:
       fr: ''
       en: ''
+  - name: PeriScop
+    id: periscop2026
+    logo: /img/sponsors/periscop.2026.png
+    link:
+      fr: https://www.periscop.tech
+      en: https://www.periscop.tech
+    description:
+      fr: "PeriScop est une SCOP, une ESN coopérative où chaque collaborateur est associé et engagé. Experts passionnés, nous offrons une expertise technique de haut niveau, portée par une équipe stable et investie dans la réussite collective. Nos prestations vont de l'ingénierie logicielle au cloud-native, DevOps/SRE, gestion de projet, innovation et conduite du changement. Plus qu’un prestataire, nous sommes un équipage coopératif, rigoureux et audacieux, au service de vos projets critiques."
+      en: "PeriScop is a SCOP, a cooperative IT services company where every member is an associate and fully committed. Passionate experts, we deliver high-level technical expertise supported by a stable team dedicated to collective success. Our services span software engineering, cloud-native, DevOps/SRE, project management, innovation, and change management. More than a provider, we are a cooperative, bold, and rigorous crew, serving your most critical projects."
   - name: Qim info
     id: quiminfo2020
     logo: /img/sponsors/quiminfo.2020.png
