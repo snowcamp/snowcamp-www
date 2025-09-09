@@ -27,7 +27,7 @@ sponsorship:
       id: flocon
       title: Flocon
       price: 1000 €
-      number: 6
+      number: 12
       kakemono: true
       places:
         conferences: 2
@@ -62,7 +62,6 @@ sponsorship:
     - moodys2025
     - criteo2023
     - kaizen
-#    - viseo2022
 #    - elastic2025
 #    - clevercloud
   flocon:
@@ -72,6 +71,7 @@ sponsorship:
     - soprasteria2018
     - kls2020
     - kelkoo2019
+    - viseo2022
 #    - bonita2024
 #    - salesforce2018
 #    - bpifrance2025
