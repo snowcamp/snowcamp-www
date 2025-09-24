@@ -44,6 +44,15 @@ sponsors:
       et à l'origine du Snowcamp."
       en: "<b>AlpesJug</b> is the Java User Group of the Grenoble area, and the initiator
       of the Snowcamp conference."
+  - name: ALMA
+    id: alma2026
+    logo: /img/sponsors/alma.2026.png
+    link:
+      fr: https://www.alma.fr
+      en: https://www.alma.fr
+    description:
+      fr: 'Éditeur de logiciels métier (industrie, santé, qualité, collaboratif), facilitateur numérique… et une Scop bouillonnante, très attachée à ses valeurs coopératives ! '
+      en: 'Business software publisher (industry, healthcare, quality, collaborative), digital facilitator... and a vibrant cooperative, deeply committed to its cooperative values! '
   - name: Abylsen
     id: abylsen2023
     logo: /img/sponsors/abylsen.2023.png
