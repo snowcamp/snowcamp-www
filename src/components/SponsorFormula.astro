@@ -1,31 +1,32 @@
 ---
-import { type SponsorType } from './sponsor';
+import { type SponsorType } from "./sponsor";
 import Utils from "../utils";
 
 interface Props {
-	sponsor: SponsorType;
+  sponsor: SponsorType;
   active: boolean;
 }
 const { sponsor, active } = Astro.props;
-type translation = {fr: string, en: string};
+type translation = { fr: string; en: string };
 type language = keyof translation;
 const lang = Utils.getLang(Astro.url) as language;
 
-const trad: {[key: string]: translation} = {
+const trad: { [key: string]: translation } = {
   "title-tenyears": {
     fr: "10 ans",
-    en: "10 years"
+    en: "10 years",
   },
   "title-etoile": {
     fr: "Étoile",
-    en: "Étoile"
+    en: "Étoile",
   },
   "title-flocon": {
     fr: "Flocon",
-    en: "Flocon"
-  }
-}
+    en: "Flocon",
+  },
+};
 ---
+
 <style>
   section {
     flex: 1 1 0;
@@ -89,29 +90,53 @@ const trad: {[key: string]: translation} = {
 </style>
 <section class={active ? "active" : ""}>
   <header>
-    <h2>{trad['title-' + sponsor.id][lang]}</h2>
+    <h2>{trad["title-" + sponsor.id][lang]}</h2>
     <h4>{sponsor.price}</h4>
     <p class={lang} lang="en">{`Limited to ${sponsor.number} sponsors`}</p>
     <p class={lang} lang="fr">{`Limité à ${sponsor.number} sponsors`}</p>
   </header>
   <ul class={lang} lang="fr">
-    <li class={sponsor.id == 'tenyears' || 'hidden'}>Sponsor du goodies spécial des 10 ans: un T-shirt de qualité sur lequel sera affiché devant/derrière le logo du snowcamp et le logo des 10 ans. Votre logo sur la manche du t-shirt.</li>
-    <li class={(sponsor?.places?.conferences ?? 0) > 0 || 'hidden'}>{`${sponsor.places.conferences} entrées offertes pour participer aux sessions`}</li>
-    <li class={(sponsor?.places?.booth ?? 0) > 0 || 'hidden'}>{`${sponsor.places.booth} entrées offertes sur l'espace sponsor uniquement`}</li>
-    <li class={sponsor.booth_area || 'hidden'}>{`Stand dans le hall d'exposition (${sponsor.booth_area})`}</li>
+    <li class={sponsor.id == "tenyears" || "hidden"}>
+      Sponsor du goodies spécial des 10 ans: un T-shirt de qualité sur lequel
+      sera affiché devant/derrière le logo du snowcamp et le logo des 10 ans.
+      Votre logo sur la manche du t-shirt.
+    </li>
+    <li class={(sponsor?.places?.conferences ?? 0) > 0 || "hidden"}>
+      {
+        `${sponsor.places.conferences} entrées offertes pour participer aux sessions`
+      }
+    </li>
+    <li class={(sponsor?.places?.booth ?? 0) > 0 || "hidden"}>
+      {
+        `${sponsor.places.booth} entrées offertes sur l'espace sponsor uniquement`
+      }
+    </li>
+    <li class={sponsor.booth_area || "hidden"}>
+      {`Stand dans le hall d'exposition (${sponsor.booth_area})`}
+    </li>
     <li>Logo sur notre site web du SnowCamp</li>
     <li>Affichage de votre logo sur le lieu de la conférence</li>
     <li>Autorisation d'exploiter le logo SnowCamp pour votre communication</li>
-    <li class={sponsor.kakemono || 'hidden'}>Un kakémono (max 1m x 2m50)</li>
+    <li class={sponsor.kakemono || "hidden"}>Un kakémono (max 1m x 2m50)</li>
   </ul>
   <ul class={lang} lang="en">
-    <li class={sponsor.id == 'tenyears' || 'hidden'}>Sponsor a special 10-year anniversary goodie: a high-quality T-shirt featuring the Snowcamp logo and the 10-year logo on the front and back. Placing your logo on the sleeve of the T-shirt.</li>
-    <li class={(sponsor?.places?.conferences ?? 0) > 0 || 'hidden'}>{`${sponsor.places.conferences} free tickets to attend the sessions`}</li>
-    <li class={(sponsor?.places?.booth ?? 0) > 0 || 'hidden'}>{`${sponsor.places.booth} free tickets for the sponsors space only`}</li>
-    <li class={sponsor.booth_area || 'hidden'}>{`Booth in the exhibition hall (${sponsor.booth_area})`}</li>
+    <li class={sponsor.id == "tenyears" || "hidden"}>
+      Sponsor a special 10-year anniversary goodie: a high-quality T-shirt
+      featuring the Snowcamp logo and the 10-year logo on the front and back.
+      Placing your logo on the sleeve of the T-shirt.
+    </li>
+    <li class={(sponsor?.places?.conferences ?? 0) > 0 || "hidden"}>
+      {`${sponsor.places.conferences} free tickets to attend the sessions`}
+    </li>
+    <li class={(sponsor?.places?.booth ?? 0) > 0 || "hidden"}>
+      {`${sponsor.places.booth} free tickets for the sponsors space only`}
+    </li>
+    <li class={sponsor.booth_area || "hidden"}>
+      {`Booth in the exhibition hall (${sponsor.booth_area})`}
+    </li>
     <li>Your logo on the SnowCamp website</li>
     <li>Your logo visible on the location of the conference</li>
     <li>Authorisation to use the SnowCamp logo for your communications</li>
-    <li class={sponsor.kakemono || 'hidden'}>1 kakémono (max 1m x 2m50)</li>
+    <li class={sponsor.kakemono || "hidden"}>1 kakémono (max 1m x 2m50)</li>
   </ul>
 </section>

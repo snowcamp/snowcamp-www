@@ -1,5 +1,5 @@
 ---
-import Utils from '../utils';
+import Utils from "../utils";
 interface Props {
   orga: Orga;
 }
@@ -14,12 +14,12 @@ interface Orga {
 
 const { orga } = Astro.props;
 ---
-<style>
 
+<style>
   .profile-card {
     background: white;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
     width: 300px;
@@ -56,11 +56,45 @@ const { orga } = Astro.props;
 </style>
 
 <div class="profile-card">
-<img src={Utils.url(`/img/orga/${orga.img}`)} alt={orga.name} class="avatar">
-<div class="name">{orga.name}</div>
-<div class="social-links">
-{orga.twitter && <a class="sp-tw" href={`https://twitter.com/${orga.twitter}`} target="_blank"><i class="fa fa-twitter"></i></a>}
-  {orga.linkedin && <a class="sp-in" href={`https://www.linkedin.com/in/${orga.linkedin}`} target="_blank"><i class="fa fa-linkedin"></i></a>}
-  {orga.github && <a class="sp-gh" href={`https://github.com/${orga.github}`} target="_blank"><i class="fa fa-github"></i></a>}
-</div>
+  <img
+    src={Utils.url(`/img/orga/${orga.img}`)}
+    alt={orga.name}
+    class="avatar"
+  />
+  <div class="name">{orga.name}</div>
+  <div class="social-links">
+    {
+      orga.twitter && (
+        <a
+          class="sp-tw"
+          href={`https://twitter.com/${orga.twitter}`}
+          target="_blank"
+        >
+          <i class="fa fa-twitter" />
+        </a>
+      )
+    }
+    {
+      orga.linkedin && (
+        <a
+          class="sp-in"
+          href={`https://www.linkedin.com/in/${orga.linkedin}`}
+          target="_blank"
+        >
+          <i class="fa fa-linkedin" />
+        </a>
+      )
+    }
+    {
+      orga.github && (
+        <a
+          class="sp-gh"
+          href={`https://github.com/${orga.github}`}
+          target="_blank"
+        >
+          <i class="fa fa-github" />
+        </a>
+      )
+    }
+  </div>
 </div>

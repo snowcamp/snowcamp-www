@@ -1,24 +1,24 @@
 program_link:
 flickr_embed_link: https://flickrembed.com/cms_embed.php?source=flickr&layout=responsive&input=www.flickr.com/photos/162459903@N02/albums/72177720305519001&sort=0&by=album&theme=default&scale=fill&speed=3000&limit=10&skin=default&autoplay=true
 album_link:
-start_date: '2026-01-14T08:00:00.000[Europe/Paris]'
-end_date: '2026-01-17T18:00:00.000[Europe/Paris]'
+start_date: "2026-01-14T08:00:00.000[Europe/Paris]"
+end_date: "2026-01-17T18:00:00.000[Europe/Paris]"
 timeline:
   tremplin:
-    open: '2025-04-01T00:00:00.000[Europe/Paris]'
-    close: '2025-06-01T00:00:00.000[Europe/Paris]'
-    notification: '2025-06-15T00:00:00.000[Europe/Paris]'
-    start: '2025-09-15T00:00:00.000[Europe/Paris]'
-    event: '2025-11-15T00:00:00.000[Europe/Paris]'
+    open: "2025-04-01T00:00:00.000[Europe/Paris]"
+    close: "2025-06-01T00:00:00.000[Europe/Paris]"
+    notification: "2025-06-15T00:00:00.000[Europe/Paris]"
+    start: "2025-09-15T00:00:00.000[Europe/Paris]"
+    event: "2025-11-15T00:00:00.000[Europe/Paris]"
   cfp:
-    open: '2025-09-01T00:00:00.000[Europe/Paris]'
-    close: '2025-10-15T00:00:00.000[Europe/Paris]'
-    notification: '2025-11-01T00:00:00.000[Europe/Paris]'
-    publish: '2025-11-15T00:00:00.000[Europe/Paris]'
+    open: "2025-09-01T00:00:00.000[Europe/Paris]"
+    close: "2025-10-15T00:00:00.000[Europe/Paris]"
+    notification: "2025-11-01T00:00:00.000[Europe/Paris]"
+    publish: "2025-11-15T00:00:00.000[Europe/Paris]"
   sponsor:
-    open: '2025-06-09T11:00:00.000[Europe/Paris]'
+    open: "2025-06-09T11:00:00.000[Europe/Paris]"
   tickets:
-    open: '2025-11-17T11:00:00.000[Europe/Paris]'
+    open: "2025-11-17T11:00:00.000[Europe/Paris]"
 sponsorship:
   prospectus: https://drive.google.com/file/d/1hOHTGVXJfiQ0nJFJugivkNr3SwdEXuSF/view?usp=share_link
   subscribe_link: https://docs.google.com/forms/d/e/1FAIpQLScZDdAWonmZZYfV3khF5QJMIx7sx33MP8g3kzMUbLgGCFmbpQ/viewform?usp=dialog
@@ -47,7 +47,7 @@ sponsorship:
       title: 10 ans
       price: 5000 €
       number: 1
-      description: 'Sponsor du goodies spécial des 10 ans: un T-shirt de qualité sur lequel sera affiché devant/derrière le logo du snowcamp et le logo des 10 ans. Votre logo sur la manche du t-shirt.'
+      description: "Sponsor du goodies spécial des 10 ans: un T-shirt de qualité sur lequel sera affiché devant/derrière le logo du snowcamp et le logo des 10 ans. Votre logo sur la manche du t-shirt."
       kakemono: false
       places:
         conferences: 0
@@ -62,8 +62,8 @@ sponsorship:
     - criteo2023
     - kaizen
     - clevercloud
-#    - elastic2025
-#    - abylsen2023
+  #    - elastic2025
+  #    - abylsen2023
   flocon:
     - avisto2020
     - zenika2023
@@ -74,9 +74,9 @@ sponsorship:
     - viseo2022
     - salesforce2018
     - alma2026
-#    - bonita2024
-#    - bpifrance2025
-#    - havanait
+  #    - bonita2024
+  #    - bpifrance2025
+  #    - havanait
   partners:
     - alpesjug
 ticketing:

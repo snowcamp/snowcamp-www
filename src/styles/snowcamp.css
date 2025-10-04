@@ -1,7 +1,7 @@
 main {
   display: grid;
   grid-template-columns: 1fr 1fr repeat(3, min(33ch, 33%)) 1fr 1fr;
-  & > :not(header,footer) {
+  & > :not(header, footer) {
     grid-column: 3 / 6;
   }
 }

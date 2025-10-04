@@ -1,25 +1,26 @@
 ---
 export interface Props {
-	title: string;
+  title: string;
 }
 
-import Footer from '../components/Footer.astro';
-import Menu from '../components/Menu.astro';
-import '../styles/reset.css';
-import '../styles/style.css';
-import '../styles/main.css';
-import 'font-awesome/css/font-awesome.css';
+import Footer from "../components/Footer.astro";
+import Menu from "../components/Menu.astro";
+import "../styles/reset.css";
+import "../styles/style.css";
+import "../styles/main.css";
+import "font-awesome/css/font-awesome.css";
 
-import Utils from '../utils.js';
+import Utils from "../utils.js";
 
-import current from '../data/current.yaml';
+import current from "../data/current.yaml";
 const lang = Utils.getLang(Astro.url);
 
 const sponsors = current.sponsorship;
 const timeline = current.timeline;
 
-const {frontmatter, title} = Astro.props;
+const { frontmatter, title } = Astro.props;
 ---
+
 <style>
   body {
     display: flex;
@@ -59,183 +60,216 @@ const {frontmatter, title} = Astro.props;
   main {
     display: grid;
     grid-template-columns: 1fr 1fr min(100ch, 100%) 1fr 1fr;
-    & > :not(header,footer) {
+    & > :not(header, footer) {
       grid-column: 3;
     }
   }
 
-    .announce {
-      width: 100%;
-      background: var(--orange);
-      color: var(--background2);
-      margin: 0 auto;
-      padding: .6rem 1rem;
-      display: flex;
-      gap: .75rem;
-      align-items: center;
-      justify-content: center;
+  .announce {
+    width: 100%;
+    background: var(--orange);
+    color: var(--background2);
+    margin: 0 auto;
+    padding: 0.6rem 1rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: center;
 
-      a {
-        color: #7dd3fc;
-        text-decoration: underline;
-        &:focus { outline: 2px solid currentColor; outline-offset: 2px; }
+    a {
+      color: #7dd3fc;
+      text-decoration: underline;
+      &:focus {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
       }
     }
+  }
 
-    /* Bouton de fermeture */
-    .announce__close {
-      appearance: none;
-      border: 0;
-      background: transparent;
-      color: inherit;
-      font: inherit;
-      padding: .35rem;
-      border-radius: .5rem;
-      cursor: pointer;
-      justify-self: end;
-    }
-    .announce__close:hover,
-    .announce__close:focus-visible {
-      background: rgba(255,255,255,.12);
-      outline: none;
-    }
+  .announce__close {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    padding: 0.35rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    justify-self: end;
+  }
+  .announce__close:hover,
+  .announce__close:focus-visible {
+    background: rgba(255, 255, 255, 0.12);
+    outline: none;
+  }
 
-    /* État masqué (utilisé par JS pour l’animation de sortie) */
-    .announce--hidden {
-      transform: translateY(-100%);
-      opacity: 0;
-      pointer-events: none;
-    }
+  .announce--hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+  }
 
-    /* Respecte la réduction d’animations */
-    @media (prefers-reduced-motion: reduce) {
-      .announce { transition: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .announce {
+      transition: none;
     }
+  }
 </style>
-<!DOCTYPE html>
-<html class="no-js" lang={lang} prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link href="/js/semantic/step.css" rel="stylesheet" type="text/css" />
-	<link rel="shortcut icon" type="image/png" href="/img/favicon/favicon.png">
-	<link rel="canonical" href="">
-	<title>{title ?? frontmatter.title}</title>
-  <script src="https://kit.fontawesome.com/18c258c58c.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/luxon@3.6.1/build/global/luxon.min.js" integrity="sha256-UA/r5Oi3pNGYgJlnmZuqXkeXYQRLqyHxFGrFuUDZUXA=" crossorigin="anonymous"></script>
-</head>
-<body lang={lang}>
-  <header class="full-bleed">
-    <a href={Utils.url( '', {lang})}>
-      <img style="max-width: 170px" src={Utils.url('/img/alpes-snow-full-illustration.webp')} alt="Logo">
-    </a>
-    <Menu></Menu>
 
-    <div class="announce">
-      <p style="text-align: center; margin: 0">
-        ❄️ La 10ᵉ édition du Snowcamp.io arrive<br>
-        <b>Grenoble – Alpexpo (Espace 1968) du 14 au 17 janvier 2026</b> !<br>
- Nouveau lieu, plus grand, mieux configuré… et des surprises 🎉<br>
-👉️ <a href="https://snowcamp.io/sponsors/">Devenez sponsor</a>
-      </p>
-      <button class="announce__close" type="button" aria-label="Fermer l’annonce" title="Fermer">
-        ✕
-      </button>
-    </div>
-  </header>
+<html
+  class="no-js"
+  lang={lang}
+  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link href="/js/semantic/step.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="/img/favicon/favicon.png"
+    />
+    <link rel="canonical" href="" />
+    <title>{title ?? frontmatter.title}</title>
+    <script
+      src="https://kit.fontawesome.com/18c258c58c.js"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/luxon@3.6.1/build/global/luxon.min.js"
+      integrity="sha256-UA/r5Oi3pNGYgJlnmZuqXkeXYQRLqyHxFGrFuUDZUXA="
+      crossorigin="anonymous"></script>
+  </head>
+  <body lang={lang}>
+    <header class="full-bleed">
+      <a href={Utils.url("", { lang })}>
+        <img
+          style="max-width: 170px"
+          src={Utils.url("/img/alpes-snow-full-illustration.webp")}
+          alt="Logo"
+        />
+      </a>
+      <Menu />
 
-  <main>
-	<slot />
-  </main>
-  <Footer></Footer>
-</body>
+      <div class="announce">
+        <p style="text-align: center; margin: 0">
+          ❄️ La 10ᵉ édition du Snowcamp.io arrive<br />
+          <b>Grenoble – Alpexpo (Espace 1968) du 14 au 17 janvier 2026</b> !<br
+          />
+          Nouveau lieu, plus grand, mieux configuré… et des surprises 🎉<br />
+          👉️ <a href="https://snowcamp.io/sponsors/">Devenez sponsor</a>
+        </p>
+        <button
+          class="announce__close"
+          type="button"
+          aria-label="Fermer l’annonce"
+          title="Fermer"
+        >
+          ✕
+        </button>
+      </div>
+    </header>
 
-<script define:vars={{ sponsors, timeline }}>
-  var DateTime = luxon.DateTime;
-  function parseDate(input) {
-    const match = input.match(/^(.+)\[(.+)\]$/);
-    if (match) {
-      const dateStr = match[1];
-      const zone = match[2];
-      const dt = DateTime.fromISO(dateStr, { zone });
-      return new Date(dt.toString());
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+
+  <script define:vars={{ sponsors, timeline }}>
+    var DateTime = luxon.DateTime;
+    function parseDate(input) {
+      const match = input.match(/^(.+)\[(.+)\]$/);
+      if (match) {
+        const dateStr = match[1];
+        const zone = match[2];
+        const dt = DateTime.fromISO(dateStr, { zone });
+        return new Date(dt.toString());
+      }
+      return new Date(input);
     }
-    return new Date(input);
-  }
-  const hideTimeline = (timelineEvent, name) => {
-    const openingTime = parseDate(timelineEvent.open);
-    const closingTime = timelineEvent.close ? parseDate(timelineEvent.close) : parseDate('2050-01-01');
-    const now = new Date().getTime();
-    if (now < openingTime) {
-      return [`${name}Opened`, `${name}Closed`];
-    } else if (now < closingTime) {
-      return [`${name}Closed`, `${name}Before`];
-    } else {
-      return [`${name}Opened`, `${name}Before`];
-    }
-  }
-  const sponsoring = (sponsors, timeline) => {
-    const openingTime = parseDate(timeline.open);
-    const remainEtoile = sponsors.type.etoile.number - sponsors.etoile.length;
-    const remainFlocon = sponsors.type.flocon.number - sponsors.flocon.length;
-    const now = new Date().getTime();
-    if (now < openingTime) {
-      return ['sponsorOpened', 'sponsorClosed'];
-    } else if (remainEtoile > 0 || remainFlocon > 0) {
-      return ['sponsorClosed', 'sponsorBefore'];
-    } else {
-      return ['sponsorOpened', 'sponsorBefore'];
-    }
-  }
-  const computeStyle = () => {
-    const classToHide = [
-      ...sponsoring(sponsors, timeline.sponsor),
-      ...Object.keys(timeline).filter((timel) => timel !== 'sponsor').flatMap((timel) => hideTimeline(timeline[timel], timel)),
-    ];
+    const hideTimeline = (timelineEvent, name) => {
+      const openingTime = parseDate(timelineEvent.open);
+      const closingTime = timelineEvent.close
+        ? parseDate(timelineEvent.close)
+        : parseDate("2050-01-01");
+      const now = new Date().getTime();
+      if (now < openingTime) {
+        return [`${name}Opened`, `${name}Closed`];
+      } else if (now < closingTime) {
+        return [`${name}Closed`, `${name}Before`];
+      } else {
+        return [`${name}Opened`, `${name}Before`];
+      }
+    };
+    const sponsoring = (sponsors, timeline) => {
+      const openingTime = parseDate(timeline.open);
+      const remainEtoile = sponsors.type.etoile.number - sponsors.etoile.length;
+      const remainFlocon = sponsors.type.flocon.number - sponsors.flocon.length;
+      const now = new Date().getTime();
+      if (now < openingTime) {
+        return ["sponsorOpened", "sponsorClosed"];
+      } else if (remainEtoile > 0 || remainFlocon > 0) {
+        return ["sponsorClosed", "sponsorBefore"];
+      } else {
+        return ["sponsorOpened", "sponsorBefore"];
+      }
+    };
+    const computeStyle = () => {
+      const classToHide = [
+        ...sponsoring(sponsors, timeline.sponsor),
+        ...Object.keys(timeline)
+          .filter((timel) => timel !== "sponsor")
+          .flatMap((timel) => hideTimeline(timeline[timel], timel)),
+      ];
 
-    classToHide.sort();
+      classToHide.sort();
 
-    return classToHide
-      .map((name) => `.${name} {display:none !important;}`)
-      .join('\n');
-  }
+      return classToHide
+        .map((name) => `.${name} {display:none !important;}`)
+        .join("\n");
+    };
 
-  const style = document.createElement('style');
-  style.id = 'conditional';
-  document.head.appendChild(style);
+    const style = document.createElement("style");
+    style.id = "conditional";
+    document.head.appendChild(style);
 
-  style.textContent = computeStyle();
-  setInterval(() => style.textContent = computeStyle(), 10000);
-
+    style.textContent = computeStyle();
+    setInterval(() => (style.textContent = computeStyle()), 10000);
 
     (function () {
-      const STORAGE_KEY = "announce:dismissed:v1"; // change 'v1' si tu veux réafficher une nouvelle annonce
+      const STORAGE_KEY = "announce:dismissed:v1";
       const banner = document.getElementById("announce");
       const closeBtn = banner?.querySelector(".announce__close");
 
-      // Si pas déjà fermée, montrer la bannière
       const dismissed = localStorage.getItem(STORAGE_KEY) === "1";
       if (!dismissed && banner) {
-        // on retire 'hidden' pour éviter un "flash" si JS charge lentement
         banner.hidden = false;
-        // petite astuce pour forcer le recalcul avant d’éventuels changements de classe
         banner.getBoundingClientRect();
         banner.classList.remove("announce--hidden");
       }
 
-      // Gestion du clic sur "fermer"
-      closeBtn?.addEventListener("click", () => {
-        // animation de sortie
-        banner.classList.add("announce--hidden");
-        // mémorise
-        localStorage.setItem(STORAGE_KEY, "1");
-        // enlève du flux après la transition
-        banner.addEventListener("transitionend", () => {
-          banner.hidden = true;
-        }, { once: true });
-      }, { passive: true });
+      closeBtn?.addEventListener(
+        "click",
+        () => {
+          banner.classList.add("announce--hidden");
+          localStorage.setItem(STORAGE_KEY, "1");
+          banner.addEventListener(
+            "transitionend",
+            () => {
+              banner.hidden = true;
+            },
+            { once: true },
+          );
+        },
+        { passive: true },
+      );
     })();
-</script>
+  </script>
+</html>

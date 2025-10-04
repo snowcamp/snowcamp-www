@@ -1,5 +1,5 @@
 ---
-import Utils from '../utils';
+import Utils from "../utils";
 const lang = Utils.getLang(Astro.url);
 interface ShortStep {
   title: string;
@@ -21,19 +21,19 @@ interface Props {
 const { tl } = Astro.props;
 
 const instantFormat = Intl.DateTimeFormat(lang, {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
+  year: "numeric",
+  month: "long",
+  day: "numeric",
 });
 
 const startFormatSnowcamp = Intl.DateTimeFormat(lang, {
-  month: 'short',
-  day: 'numeric',
+  month: "short",
+  day: "numeric",
 });
 const endFormatSnowcamp = Intl.DateTimeFormat(lang, {
-  year: 'numeric',
-  month: 'short',
-  day: 'numeric',
+  year: "numeric",
+  month: "short",
+  day: "numeric",
 });
 
 function instant(step: any): step is ShortStep {
@@ -45,7 +45,7 @@ function long(step: any): step is LongStep {
 }
 
 function prepare(step: Step) {
-  let formatedDate = '';
+  let formatedDate = "";
   let end = 0;
   if (instant(step)) {
     formatedDate = instantFormat.format(Utils.parseDate(step.date));
@@ -63,6 +63,7 @@ function prepare(step: Step) {
 }
 const timeline = tl.map((step) => prepare(step));
 ---
+
 <style>
   :root {
     --tl-border-size: 1px;
@@ -129,34 +130,36 @@ const timeline = tl.map((step) => prepare(step));
     border-left: 10px solid #333;
   }
   @media (max-width: 860px) {
-  .step:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 100%; /* commence juste après l'élément */
-    margin-top: 10px; /* moitié de l'espace entre les éléments */
-    transform: translateX(-50%);
+    .step:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 100%; /* commence juste après l'élément */
+      margin-top: 10px; /* moitié de l'espace entre les éléments */
+      transform: translateX(-50%);
 
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid #333;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid #333;
+    }
   }
-}
   .title {
     color: var(--orange);
     margin: 0;
   }
 </style>
 <div style="display: flex; flex-direction: row; align-items: center">
-<div class="timeline">
-  { timeline.map((step) => (
-    <div class={step.finished ? 'step finished' : 'step'}>
-      <p class="title">{step.title}</p>
-      <p>{step.date}</p>
-      <p>{step.description}</p>
-    </div>
-  )) }
-</div>
+  <div class="timeline">
+    {
+      timeline.map((step) => (
+        <div class={step.finished ? "step finished" : "step"}>
+          <p class="title">{step.title}</p>
+          <p>{step.date}</p>
+          <p>{step.description}</p>
+        </div>
+      ))
+    }
+  </div>
 </div>

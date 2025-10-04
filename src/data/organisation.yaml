@@ -6,7 +6,7 @@ roles:
   - name: CFP
     description: Definition des tracks, organisation votes, planning
   - name: Tremplin
-    description: ''
+    description: ""
   - name: Speakers et des keynoters
     description: Communication, remboursement frais keynoters, demandes
   - name: Billets
@@ -119,4 +119,3 @@ organizers:
   - name: Cédric Tran-Xuan
     id: cedric
     honor: true
-
