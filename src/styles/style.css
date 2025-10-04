@@ -8,27 +8,27 @@
 }
 
 @font-face {
-  font-family: 'Luciole-Regular';
-  src: url('../../public/fonts/Luciole-Regular.ttf');
+  font-family: "Luciole-Regular";
+  src: url("../../public/fonts/Luciole-Regular.ttf");
 }
 
 @font-face {
-  font-family: 'Luciole-Regular-Italic';
-  src: url('../../public/fonts/Luciole-Regular-Italic.ttf');
+  font-family: "Luciole-Regular-Italic";
+  src: url("../../public/fonts/Luciole-Regular-Italic.ttf");
 }
 
 @font-face {
-  font-family: 'Luciole-Bold-Italic';
-  src: url('../../public/fonts/Luciole-Bold-Italic.ttf');
+  font-family: "Luciole-Bold-Italic";
+  src: url("../../public/fonts/Luciole-Bold-Italic.ttf");
 }
 
 @font-face {
-  font-family: 'Luciole-Bold';
-  src: url('../../public/fonts/Luciole-Bold.ttf');
+  font-family: "Luciole-Bold";
+  src: url("../../public/fonts/Luciole-Bold.ttf");
 }
 
 html {
-  font-family: 'Luciole-Regular', sans-serif;
+  font-family: "Luciole-Regular", sans-serif;
   color: var(--main);
   background-color: var(--background);
 }
@@ -38,7 +38,8 @@ a {
   text-decoration: none;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   display: flex;
@@ -60,7 +61,7 @@ footer {
 .text-big-italic {
   font-size: 2.6rem;
   line-height: 3.9rem;
-  font-family: 'Luciole-Regular-Italic', sans-serif;
+  font-family: "Luciole-Regular-Italic", sans-serif;
   font-weight: 400;
   opacity: 0.7;
   font-style: italic;
@@ -90,14 +91,19 @@ blockquote > p {
   line-height: 3rem;
   padding: 0 10%;
   margin: 0;
-  font-family: 'Luciole-Regular-Italic', sans-serif;
+  font-family: "Luciole-Regular-Italic", sans-serif;
   font-weight: 200;
-  opacity: .7;
+  opacity: 0.7;
   font-style: italic;
   text-align: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--main);
   text-transform: uppercase;
 }
@@ -109,7 +115,7 @@ h1 {
 
 h2 {
   justify-self: center;
-  margin: 30px 0 20px 0
+  margin: 30px 0 20px 0;
 }
 
 h3 {
@@ -121,5 +127,5 @@ p {
 }
 
 strong {
-  font-family: 'Luciole-Bold', sans-serif;
+  font-family: "Luciole-Bold", sans-serif;
 }

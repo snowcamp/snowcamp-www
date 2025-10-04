@@ -3,12 +3,13 @@ interface Props {
   title: string;
   href: string;
   className?: string;
-  type: 'download' | 'ext';
+  type: "download" | "ext";
   fileName?: string;
 }
 
 const { href, title, className, type, fileName } = Astro.props;
 ---
+
 <style>
   a {
     display: flex;
@@ -27,5 +28,17 @@ const { href, title, className, type, fileName } = Astro.props;
     background-color: var(--orange);
   }
 </style>
-{type === 'download' && <a href={href} class={className} download={fileName}>{title}</a>}
-{type === 'ext' && <a href={href} class={className} target="_blank" rel="noopener noreferrer">{title}</a>}
+{
+  type === "download" && (
+    <a href={href} class={className} download={fileName}>
+      {title}
+    </a>
+  )
+}
+{
+  type === "ext" && (
+    <a href={href} class={className} target="_blank" rel="noopener noreferrer">
+      {title}
+    </a>
+  )
+}

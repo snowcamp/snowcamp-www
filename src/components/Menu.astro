@@ -1,90 +1,91 @@
 ---
-import current from '../data/current.yaml';
-import Utils from '../utils';
+import current from "../data/current.yaml";
+import Utils from "../utils";
 
-type translation = {fr: string, en: string};
+type translation = { fr: string; en: string };
 type language = keyof translation;
 
 const lang = Utils.getLang(Astro.url) as language;
 const path = (Astro.locals as any).path;
-const changeLang = lang === 'fr' ? '/en/' : '/';
-const targetLang = lang === 'en' ? 'fr' : 'en';
+const changeLang = lang === "fr" ? "/en/" : "/";
+const targetLang = lang === "en" ? "fr" : "en";
 
-const trad: {[key: string]: translation} = {
-  "what": {
-    "fr": "C'est quoi ?",
-    "en": "What is this?",
+const trad: { [key: string]: translation } = {
+  what: {
+    fr: "C'est quoi ?",
+    en: "What is this?",
   },
-  "organisation": {
-    "fr": "Organisation",
-    "en": "Organisation",
+  organisation: {
+    fr: "Organisation",
+    en: "Organisation",
   },
-  "association": {
-    "fr": "Association",
-    "en": "Association",
+  association: {
+    fr: "Association",
+    en: "Association",
   },
-  "past_editions": {
-    "fr": "Éditions précédentes",
-    "en": "Past Edition",
+  past_editions: {
+    fr: "Éditions précédentes",
+    en: "Past Edition",
   },
-  "our_sponsors": {
-    "fr": "Nos sponsors",
-    "en": "Our sponsors",
+  our_sponsors: {
+    fr: "Nos sponsors",
+    en: "Our sponsors",
   },
-  "become_sponsor": {
-    "fr": "Devenir sponsors",
-    "en": "Become sponsors",
+  become_sponsor: {
+    fr: "Devenir sponsors",
+    en: "Become sponsors",
   },
-  "sponsor_plan_title": {
-    "fr": "Plan des stands",
-    "en": "Plan of booths",
+  sponsor_plan_title: {
+    fr: "Plan des stands",
+    en: "Plan of booths",
   },
-  "sponsor_meetgreet_title": {
-    "fr": "Meet & Greet",
-    "en": "Meet & Greet",
+  sponsor_meetgreet_title: {
+    fr: "Meet & Greet",
+    en: "Meet & Greet",
   },
-  "sponsor_guide_title": {
-    "fr": "Guide du sponsor",
-    "en": "Sponsor guide",
+  sponsor_guide_title: {
+    fr: "Guide du sponsor",
+    en: "Sponsor guide",
   },
-  "venue": {
-    "fr": "Venir",
-    "en": "Venue",
+  venue: {
+    fr: "Venir",
+    en: "Venue",
   },
-  "ticket": {
-    "fr": "Billeterie",
-    "en": "Tickets",
+  ticket: {
+    fr: "Billeterie",
+    en: "Tickets",
   },
-  "videos": {
-    "fr": "Vidéos",
-    "en": "Videos",
+  videos: {
+    fr: "Vidéos",
+    en: "Videos",
   },
-  "coc": {
-    "fr": "CDC",
-    "en": "COC",
+  coc: {
+    fr: "CDC",
+    en: "COC",
   },
-  "program": {
-    "fr": "Programme",
-    "en": "Program",
+  program: {
+    fr: "Programme",
+    en: "Program",
   },
-  "conference": {
-    "fr": "Conférence",
-    "en": "Conference",
+  conference: {
+    fr: "Conférence",
+    en: "Conference",
   },
-  "tremplin": {
-    "fr": "le Tremplin",
-    "en": "Tremplin",
+  tremplin: {
+    fr: "le Tremplin",
+    en: "Tremplin",
   },
-  "editorialLine": {
-    "fr": "Ligne éditoriale",
-    "en": "Editorial line",
+  editorialLine: {
+    fr: "Ligne éditoriale",
+    en: "Editorial line",
   },
-  "venue_link": {
-    "fr": "/#venue",
-    "en": "/en/#venue"
-  }
-}
+  venue_link: {
+    fr: "/#venue",
+    en: "/en/#venue",
+  },
+};
 ---
+
 <style>
   .menu {
     align-items: center;
@@ -146,34 +147,96 @@ const trad: {[key: string]: translation} = {
   <li>
     <a>Snowcamp</a>
     <ul>
-      <li><a href={Utils.url(['snowcamp'], {lang})}>{trad.what[lang]}</a></li>
-      <li><a href={Utils.url(['organisation'], {lang})}>{trad.organisation[lang]}</a></li>
-      <li><a href={Utils.url(['association'], {lang})}>{trad.association[lang]}</a></li>
-      <li><a href={Utils.url(['previous-editions'], {lang})}>{trad.past_editions[lang]}</a></li>
+      <li><a href={Utils.url(["snowcamp"], { lang })}>{trad.what[lang]}</a></li>
+      <li>
+        <a href={Utils.url(["organisation"], { lang })}
+          >{trad.organisation[lang]}</a
+        >
+      </li>
+      <li>
+        <a href={Utils.url(["association"], { lang })}
+          >{trad.association[lang]}</a
+        >
+      </li>
+      <li>
+        <a href={Utils.url(["previous-editions"], { lang })}
+          >{trad.past_editions[lang]}</a
+        >
+      </li>
     </ul>
   </li>
-  {current.program_link && <li><a href={current.program_link}>{trad.program[lang]}</a></li>}
+  {
+    current.program_link && (
+      <li>
+        <a href={current.program_link}>{trad.program[lang]}</a>
+      </li>
+    )
+  }
   <li>
     <a>CFP</a>
     <ul>
-      <li><a href={Utils.url(['cfp'], {lang})}>{trad.conference[lang]}</a></li>
-      <li><a href={Utils.url(['tremplin'], {lang})}>{trad.tremplin[lang]}</a></li>
-      <li><a href={Utils.url(['editorial-line'], {lang})}>{trad.editorialLine[lang]}</a></li>
+      <li>
+        <a href={Utils.url(["cfp"], { lang })}>{trad.conference[lang]}</a>
+      </li>
+      <li>
+        <a href={Utils.url(["tremplin"], { lang })}>{trad.tremplin[lang]}</a>
+      </li>
+      <li>
+        <a href={Utils.url(["editorial-line"], { lang })}
+          >{trad.editorialLine[lang]}</a
+        >
+      </li>
     </ul>
   </li>
   <li>
     <a>Sponsors</a>
     <ul>
-      <li><a href={Utils.url([], {anchor: '#sponsors', lang})}>{trad.our_sponsors[lang]}</a></li>
-      <li><a href={Utils.url(['sponsors'], {lang})}>{trad.become_sponsor[lang]}</a></li>
-      <li><a href={Utils.url(['sponsors'], {anchor: '#plan', lang})}>{trad.sponsor_plan_title[lang]}</a></li>
-      <li><a href={Utils.url(['sponsors'], {anchor: '#beers', lang})}>{trad.sponsor_meetgreet_title[lang]}</a></li>
-      <li><a href={Utils.url(['sponsors_guide'], {lang})}>{trad.sponsor_guide_title[lang]}</a></li>
+      <li>
+        <a href={Utils.url([], { anchor: "#sponsors", lang })}
+          >{trad.our_sponsors[lang]}</a
+        >
+      </li>
+      <li>
+        <a href={Utils.url(["sponsors"], { lang })}
+          >{trad.become_sponsor[lang]}</a
+        >
+      </li>
+      <li>
+        <a href={Utils.url(["sponsors"], { anchor: "#plan", lang })}
+          >{trad.sponsor_plan_title[lang]}</a
+        >
+      </li>
+      <li>
+        <a href={Utils.url(["sponsors"], { anchor: "#beers", lang })}
+          >{trad.sponsor_meetgreet_title[lang]}</a
+        >
+      </li>
+      <li>
+        <a href={Utils.url(["sponsors_guide"], { lang })}
+          >{trad.sponsor_guide_title[lang]}</a
+        >
+      </li>
     </ul>
   </li>
-  <li><a href={Utils.url([], {anchor: '#venue', lang})}>{trad.venue[lang]}</a></li>
-  <li><a href={Utils.url(['tickets'])}>{trad.ticket[lang]}</a></li>
-  <li><a href="https://www.youtube.com/channel/UCvRA5NSOfGOPet90fdV7uuw/videos" target="_blank" rel="noopener noreferrer">{trad.videos[lang]}</a></li>
-  <li><a href={Utils.url( ['coc'], {lang})}>{trad.coc[lang]}</a></li>
-  <li class="center"><a href={changeLang}><img class="snc-flag" src=`/img/${targetLang}.svg` alt="Switch to French"></a></li>
+  <li>
+    <a href={Utils.url([], { anchor: "#venue", lang })}>{trad.venue[lang]}</a>
+  </li>
+  <li><a href={Utils.url(["tickets"])}>{trad.ticket[lang]}</a></li>
+  <li>
+    <a
+      href="https://www.youtube.com/channel/UCvRA5NSOfGOPet90fdV7uuw/videos"
+      target="_blank"
+      rel="noopener noreferrer">{trad.videos[lang]}</a
+    >
+  </li>
+  <li><a href={Utils.url(["coc"], { lang })}>{trad.coc[lang]}</a></li>
+  <li class="center">
+    <a href={changeLang}
+      ><img
+        class="snc-flag"
+        src=`/img/${targetLang}.svg`
+        alt="Switch to French"
+      /></a
+    >
+  </li>
 </ul>

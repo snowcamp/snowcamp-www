@@ -1,25 +1,25 @@
-import { defineConfig } from 'astro/config';
-import mdx from '@astrojs/mdx';
-import yaml from '@rollup/plugin-yaml';
+import { defineConfig } from "astro/config";
+import mdx from "@astrojs/mdx";
+import yaml from "@rollup/plugin-yaml";
 
-const defaultLocale = 'fr';
-const locales = ['en', 'fr'];
+const defaultLocale = "fr";
+const locales = ["en", "fr"];
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://snowcamp.io',
+  site: "https://snowcamp.io",
   build: {
-    format: 'directory'
+    format: "directory",
   },
   i18n: {
     defaultLocale,
     locales,
     routing: {
-      prefixDefaultLocale: false
-    }
+      prefixDefaultLocale: false,
+    },
   },
   integrations: [mdx()],
   vite: {
-    plugins: [yaml()]
-  }
+    plugins: [yaml()],
+  },
 });

@@ -1,26 +1,28 @@
 ---
-import Utils from '../utils';
-import edition from '../data/current.yaml';
+import Utils from "../utils";
+import edition from "../data/current.yaml";
 const lang = Utils.getLang(Astro.url);
 
-const [days, hours, minutes, seconds] = lang === 'fr'
-  ? ['Jours', 'Heures', 'Minutes', 'Secondes']
-  : ['Days', 'Hours', 'Minutes', 'Seconds'];
+const [days, hours, minutes, seconds] =
+  lang === "fr"
+    ? ["Jours", "Heures", "Minutes", "Secondes"]
+    : ["Days", "Hours", "Minutes", "Seconds"];
 
 const startFormat = Intl.DateTimeFormat(lang, {
-  month: 'long',
-  day: 'numeric',
+  month: "long",
+  day: "numeric",
 });
 const endFormat = Intl.DateTimeFormat(lang, {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
+  year: "numeric",
+  month: "long",
+  day: "numeric",
 });
 const startDate = Utils.parseDate(edition.start_date);
 const start = startFormat.format(startDate);
 const end = endFormat.format(Utils.parseDate(edition.end_date));
 const year = startDate.getFullYear();
 ---
+
 <style>
   .full-bleed {
     display: grid;
@@ -74,14 +76,14 @@ const year = startDate.getFullYear();
   }
 
   .title {
-    font-family: 'Luciole-Bold', sans-serif;
+    font-family: "Luciole-Bold", sans-serif;
     font-weight: 700;
     font-size: 2rem;
     text-transform: uppercase;
   }
 
   .dates {
-    font-family: 'Luciole-Bold', sans-serif;
+    font-family: "Luciole-Bold", sans-serif;
     font-weight: 700;
     font-size: 1rem;
   }
@@ -99,7 +101,6 @@ const year = startDate.getFullYear();
 
     border-radius: 12px;
   }
-
 </style>
 <script>
   var DateTime = luxon.DateTime;
@@ -110,9 +111,9 @@ const year = startDate.getFullYear();
       const zone = match[2];
       const dt = DateTime.fromISO(dateStr, { zone });
       return new Date(dt.toString());
-      }
-    return new Date(input);
     }
+    return new Date(input);
+  }
   const second = 1000;
   const minute = second * 60;
   const hour = minute * 60;
@@ -139,7 +140,10 @@ const year = startDate.getFullYear();
   }, 0);
 </script>
 
-<div class="full-bleed" style="background: url(/img/banner-blue.webp) center/cover no-repeat; height: 400px">
+<div
+  class="full-bleed"
+  style="background: url(/img/banner-blue.webp) center/cover no-repeat; height: 400px"
+>
   <div class="countdown-box">
     <div id="countdown" data-date={edition.start_date}>
       <div>

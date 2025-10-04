@@ -1,6 +1,6 @@
 export interface SponsorType {
   title: string;
-  id: string
+  id: string;
   price: string;
   number: number;
   booth_area?: string;
@@ -9,7 +9,7 @@ export interface SponsorType {
     conferences?: number;
     booth?: number;
     speakers_dinner?: number;
-  }
+  };
 }
 export interface Sponsor {
   name: string;
@@ -17,9 +17,9 @@ export interface Sponsor {
   url: {
     fr: string;
     en: string;
-  },
+  };
   description: {
     fr: string;
     en: string;
-  }
+  };
 }

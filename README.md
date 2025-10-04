@@ -24,17 +24,17 @@ Then open the web page [ http://localhost:4321/](http://localhost:4321/)
 
 ## Project Structure
 
-| Directory          | Description                                              |
-|--------------------|----------------------------------------------------------|
-| dist               | Output directory                                         |
-| public             | Static content of the web site. Copied strictly.         |
-| src                | Dynamic sources of the web site                          |
-| src/pages          | The web pages of the web site                            |
-| src/layouts        | The layouts of the web pages                             |
-| src/components     | The components used in the web pages                     |
-| src/data           | The data of the web site                                 |
-| src/i18n           | The text translation in 'en' and 'fr' of the text        |
-| src/styles         | The style of the web site based on LESS                  |
+| Directory      | Description                                       |
+| -------------- | ------------------------------------------------- |
+| dist           | Output directory                                  |
+| public         | Static content of the web site. Copied strictly.  |
+| src            | Dynamic sources of the web site                   |
+| src/pages      | The web pages of the web site                     |
+| src/layouts    | The layouts of the web pages                      |
+| src/components | The components used in the web pages              |
+| src/data       | The data of the web site                          |
+| src/i18n       | The text translation in 'en' and 'fr' of the text |
+| src/styles     | The style of the web site based on LESS           |
 
 ## 🧞 Commands
 
@@ -60,4 +60,3 @@ To update Voxxrin schedule
 ```sh
 VOXXRIN_TOKEN='url encoded voxxrin token' voxxrin/voxxrin.sh update
 ```
-
