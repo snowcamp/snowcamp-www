@@ -80,6 +80,11 @@ const timeline = tl.map((step) => prepare(step));
     margin-bottom: 2rem;
     padding: 0 1fr;
   }
+  @media (max-width: 860px) {
+    .timeline {
+      flex-direction: column;
+    }
+  }
 
   h2 {
     font-size: 24px;
@@ -123,6 +128,22 @@ const timeline = tl.map((step) => prepare(step));
     border-bottom: 10px solid transparent;
     border-left: 10px solid #333;
   }
+  @media (max-width: 860px) {
+  .step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%; /* commence juste après l'élément */
+    margin-top: 10px; /* moitié de l'espace entre les éléments */
+    transform: translateX(-50%);
+
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #333;
+  }
+}
   .title {
     color: var(--orange);
     margin: 0;
