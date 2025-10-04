@@ -54,7 +54,6 @@ const {frontmatter, title} = Astro.props;
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    height: 3.5em;
   }
 
   main {
@@ -65,34 +64,23 @@ const {frontmatter, title} = Astro.props;
     }
   }
 
-
-    /* Conteneur sticky */
     .announce {
-      position: sticky; /* reste collée en haut lors du scroll */
-    top: 3em;
-      z-index: 99;
-      background: var(--orange);         /* personnalisable */
+      width: 100%;
+      background: var(--orange);
       color: var(--background2);
-      /*font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;*/
-      box-shadow: 0 2px 8px rgba(0,0,0,.25);
-      transform: translateY(0);
-      opacity: 1;
-      transition: transform .25s ease, opacity .25s ease;
-    }
-
-    /* Contenu interne (layout) */
-    .announce__inner {
-      max-width: 1100px;
       margin: 0 auto;
       padding: .6rem 1rem;
       display: flex;
       gap: .75rem;
       align-items: center;
       justify-content: center;
-    }
 
-    .announce a { color: #7dd3fc; text-decoration: underline; }
-    .announce a:focus { outline: 2px solid currentColor; outline-offset: 2px; }
+      a {
+        color: #7dd3fc;
+        text-decoration: underline;
+        &:focus { outline: 2px solid currentColor; outline-offset: 2px; }
+      }
+    }
 
     /* Bouton de fermeture */
     .announce__close {
@@ -145,11 +133,9 @@ const {frontmatter, title} = Astro.props;
       <img style="max-width: 170px" src={Utils.url('/img/alpes-snow-full-illustration.webp')} alt="Logo">
     </a>
     <Menu></Menu>
-  </header>
 
-    <div id="announce" class="announce" role="region" aria-label="Annonce importante" hidden>
-    <div class="announce__inner">
-      <p style="text-align: center;">
+    <div class="announce">
+      <p style="text-align: center; margin: 0">
         ❄️ La 10ᵉ édition du Snowcamp.io arrive<br>
         <b>Grenoble – Alpexpo (Espace 1968) du 14 au 17 janvier 2026</b> !<br>
  Nouveau lieu, plus grand, mieux configuré… et des surprises 🎉<br>
@@ -159,7 +145,7 @@ const {frontmatter, title} = Astro.props;
         ✕
       </button>
     </div>
-  </div>
+  </header>
 
   <main>
 	<slot />
