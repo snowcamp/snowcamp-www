@@ -83,8 +83,8 @@ ticketing:
   link: https://www.billetweb.fr/shop.php?event=snowcamp-2026
   sold_out: false
   price:
-    conference: 90
-    university: 160
+    conference: 120
+    university: 180
 tremplin:
   cfp_link: https://conference-hall.io/tremplin-de-snowcamp-2025
 conference:
