@@ -62,8 +62,6 @@ sponsorship:
     - criteo2023
     - kaizen
     - clevercloud
-  #    - elastic2025
-  #    - abylsen2023
   flocon:
     - avisto2020
     - zenika2023
@@ -74,9 +72,7 @@ sponsorship:
     - viseo2022
     - salesforce2018
     - alma2026
-  #    - bonita2024
-  #    - bpifrance2025
-  #    - havanait
+    - enalean2026
   partners:
     - alpesjug
 ticketing:
