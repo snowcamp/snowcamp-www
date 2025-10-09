@@ -521,6 +521,27 @@ sponsors:
         grande échelle et sur une seule et unique plateforme. Des résultats disponibles
         où que se trouvent vos données, dans un seul cloud, sur plusieurs clouds ou
         bien sur site. La puissance d'Elastic.
+  - name: enalean
+    id: enalean2026
+    logo: /img/sponsors/enalean.2026.png
+    link:
+      fr: https://www.tuleap.org
+      en: https://www.tuleap.org
+    description:
+      fr: >
+        Tuleap est une solution collaborative tout-en-un pour piloter le cycle de vie logiciel,
+        tout en garantissant conformité et traçabilité. Disponible on-premises ou dans le cloud,
+        elle soutient la transformation agile d’industries exigeantes. Depuis 15 ans, Enalean,
+        éditeur de Tuleap, incarne avant tout une aventure humaine. Basés entre Grenoble et
+        Chambéry, nous accompagnons nos clients afin qu’ils gardent le contrôle de leurs outils
+        et innovent en toute confiance.
+      en: >
+        Tuleap is an all-in-one collaborative solution to manage the entire software lifecycle
+        while ensuring compliance and traceability. Available on-premises or in the cloud,
+        it supports the agile transformation of demanding industries.
+        For 15 years, Enalean, the publisher of Tuleap, has been above all a human adventure.
+        Based between Grenoble and Chambéry, we help our clients stay in control of their tools
+        and innovate with confidence.
   - name: Exoscale
     id: exoscale2019
     logo: /img/sponsors/exoscale.2019.png
