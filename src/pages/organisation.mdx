@@ -14,7 +14,7 @@ import current from '../data/current.yaml';
 Elle a été créée en 2016 à l'initiative de l'[AlpesJug](https://alpesjug.fr).
 Tous les organisateurs sont des geeks bénévoles passionnés.
 
-<div style="display: grid; grid-template-columns: repeat(3, minmax(200px, 1fr)); justify-items: center; align-items: center; row-gap: 10px;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); justify-items: center; align-items: center; row-gap: 20px;column-gap: 35px;">
 { organisation.organizers.filter((orga) => current.organisers.includes(orga.id)).map(orga => (<Orga orga={orga}/>))}
 </div>
 
@@ -26,7 +26,7 @@ Tous les organisateurs sont des geeks bénévoles passionnés.
 
 Les différents rôles de l'organisation du snowcamp sont :
 
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1ex">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, 1fr); gap: 1ex">
 {organisation.roles.map((role) => (<Role title={role.name} description={role.description}/>))}
 </div>
 
