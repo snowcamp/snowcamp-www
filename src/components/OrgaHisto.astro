@@ -7,18 +7,6 @@ import organisation from "../data/organisation.yaml";
   td {
     text-align: center;
   }
-  @media (max-width: 600px) {
-    #orga-histo-tr > th {
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-    }
-    #orga-histo-tr {
-      background-color: red;
-    }
-  }
-    #orga-histo-tr {
-      background-color: green;
-    }
 </style>
 <table>
   <thead>
@@ -64,6 +52,7 @@ import organisation from "../data/organisation.yaml";
     editions.forEach((edition) => {
       const ed = document.createElement("th");
       ed.innerText = edition;
+      ed.className = "orga-histo-edition-year";
       trEditions.appendChild(ed);
     });
     const tot = document.createElement("th");

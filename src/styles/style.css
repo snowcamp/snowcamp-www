@@ -130,3 +130,11 @@ p {
 strong {
   font-family: "Luciole-Bold", sans-serif;
 }
+
+/* failed when it’s include in component it’s only link to OrgaHisto component*/
+@media (max-width: 600px) {
+  .orga-histo-edition-year {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+}
