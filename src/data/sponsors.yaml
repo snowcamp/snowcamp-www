@@ -665,6 +665,15 @@ sponsors:
         providing industry-leading development tools. Gravitee.io provides support,
         hosting, training and consultancy to ensure businesses can succeed on their
         API journey.
+  - name: HackYourJob
+    id: hackyourjob2025
+    logo: /img/sponsors/hardis_group.2023.webp
+    link:
+      fr: https://www.hackyourjob.org
+      en: https://www.hackyourjob.org
+    description:
+      fr: "HackYourJob est une communauté de développeurs passionnés qui veulent travailler autrement"
+      en: "HackYourJob est une communauté de développeurs passionnés qui veulent travailler autrement"
   - name: Hardis
     id: hardis2023
     logo: /img/sponsors/hardis_group.2023.webp
