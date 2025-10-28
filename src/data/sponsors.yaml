@@ -186,6 +186,15 @@ sponsors:
         Nous sommes ainsi heureux de soutenir cette initiative 100% bénévole qui vise
         à promouvoir les dernières technologies au sein de la communauté des tech de
         Grenoble.
+  - name: AWS
+    id: aws2026
+    logo: /img/sponsors/aws.2025.png
+    link:
+      fr: https://builder.aws.com/
+      en: https://builder.aws.com/
+    description:
+      fr: ""
+      en: ""
   - name: BeeBuzziness
     id: beebuzziness2017
     logo: /img/sponsors/beebuzziness.2017.png
