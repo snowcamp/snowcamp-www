@@ -10,6 +10,7 @@ const { sponsor, active } = Astro.props;
 type translation = { fr: string; en: string };
 type language = keyof translation;
 const lang = Utils.getLang(Astro.url) as language;
+const sponsors = sponsor.number > 1 ? 'sponsors' : 'sponsor';
 
 const trad: { [key: string]: translation } = {
   "title-tenyears": {
@@ -92,8 +93,8 @@ const trad: { [key: string]: translation } = {
   <header>
     <h2>{trad["title-" + sponsor.id][lang]}</h2>
     <h4>{sponsor.price}</h4>
-    <p class={lang} lang="en">{`Limited to ${sponsor.number} sponsors`}</p>
-    <p class={lang} lang="fr">{`Limité à ${sponsor.number} sponsors`}</p>
+    <p class={lang} lang="en">{`Limited to ${sponsor.number} ${sponsors}`}</p>
+    <p class={lang} lang="fr">{`Limité à ${sponsor.number} ${sponsors}`}</p>
   </header>
   <ul class={lang} lang="fr">
     <li class={sponsor.id == "tenyears" || "hidden"}>
