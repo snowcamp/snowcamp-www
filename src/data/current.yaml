@@ -89,6 +89,8 @@ tremplin:
   cfp_link: https://conference-hall.io/tremplin-de-snowcamp-2025
 conference:
   cfp_link: https://conference-hall.io/snowcamp-2026
+speakers_dinner:
+  link: https://docs.google.com/forms/d/e/1FAIpQLScZDdAWonmZZYfV3khF5QJMIx7sx33MP8g3kzMUbLgGCFmbpQ/viewform?usp=dialog
 organisers:
   - miguel
   - ludovic
