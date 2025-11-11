@@ -29,6 +29,7 @@ sponsorship:
       price: 1000 €
       number: 12
       kakemono: true
+      ticket_link: https://www.billetweb.fr/snowcamp-2026&ticket=6527583
       places:
         conferences: 2
     etoile:
@@ -38,6 +39,7 @@ sponsorship:
       number: 12
       booth_area: 3x3=9m²
       kakemono: false
+      ticket_link: https://www.billetweb.fr/snowcamp-2026&ticket=6527584
       places:
         conferences: 3
         booth: 2
