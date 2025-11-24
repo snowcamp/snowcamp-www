@@ -79,6 +79,10 @@ const trad: { [key: string]: translation } = {
     fr: "Ligne éditoriale",
     en: "Editorial line",
   },
+  speakersGuide: {
+    fr: "Guide de l'orateur",
+    en: "Speakers guide"
+  },
   venue_link: {
     fr: "/#venue",
     en: "/en/#venue",
@@ -184,6 +188,11 @@ const trad: { [key: string]: translation } = {
       <li>
         <a href={Utils.url(["editorial-line"], { lang })}
           >{trad.editorialLine[lang]}</a
+        >
+      </li>
+      <li>
+        <a href={Utils.url(["speakers-guide"], { lang })}
+          >{trad.speakersGuide[lang]}</a
         >
       </li>
     </ul>
