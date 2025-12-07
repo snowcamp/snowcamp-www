@@ -170,9 +170,16 @@ const trad: { [key: string]: translation } = {
     </ul>
   </li>
   {
-    current.program_link && (
+    current.program_link && !current.program_show && (
       <li>
-        <a href={current.program_link}>{trad.program[lang]}</a>
+        <a href={Utils.url(["schedule-wait"], { lang })}>{trad.program[lang]}</a>
+      </li>
+    )
+  }
+  {
+    current.program_link && current.program_show && (
+      <li>
+        <a href={Utils.url(["schedule"], { lang })}>{trad.program[lang]}</a>
       </li>
     )
   }
