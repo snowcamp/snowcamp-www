@@ -1,0 +1,44 @@
+---
+const { lang = 'fr' } = Astro.props;
+---
+
+<style>
+  .search {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    position: relative;
+  }
+  .search input {
+    padding: .4rem .6rem;
+    border-radius: .35rem;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: transparent;
+    color: white;
+    min-width: 200px;
+  }
+  .search-results {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: white;
+    color: black;
+    max-width: 70ch;
+    box-shadow: 0 6px 18px rgba(0,0,0,.12);
+    border-radius: .5rem;
+    overflow: auto;
+    z-index: 200;
+  }
+  .search-results a { display:block; padding: .5rem; border-bottom: 1px solid #eee; }
+  .search-results a:last-child{border-bottom: none}
+</style>
+
+<div id="search-root" class="search" data-lang={lang}>
+  <input id="search-input" placeholder={lang === 'fr' ? 'Rechercher…' : 'Search…'} aria-label="Recherche" />
+  <div id="search-results" class="search-results" hidden aria-live="polite"></div>
+
+  <!-- load Fuse via CDN then our client script -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+  <script type="module" src="/js/search-client.js"></script>
+</div>

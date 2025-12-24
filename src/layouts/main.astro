@@ -1,10 +1,12 @@
 ---
 export interface Props {
   title: string;
+  frontmatter?: Record<string, any>;
 }
 
 import Footer from "../components/Footer.astro";
 import Menu from "../components/Menu.astro";
+import Search from "../components/Search.astro";
 import "../styles/reset.css";
 import "../styles/style.css";
 import "../styles/main.css";
@@ -137,7 +139,7 @@ const { frontmatter, title } = Astro.props;
       href="/img/favicon/favicon.png"
     />
     <link rel="canonical" href="" />
-    <title>{title ?? frontmatter.title}</title>
+    <title>{title ?? frontmatter?.title}</title>
     <script
       src="https://kit.fontawesome.com/18c258c58c.js"
       crossorigin="anonymous"></script>
@@ -156,6 +158,7 @@ const { frontmatter, title } = Astro.props;
         />
       </a>
       <Menu />
+      <Search lang={lang} />
 
       <div class="announce">
         <p style="text-align: center; margin: 0">
