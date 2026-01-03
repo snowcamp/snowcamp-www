@@ -1,7 +1,7 @@
 sponsors:
   - name: Manning
     id: manning2019
-    logo: /img/partners/2019/manning.png
+    logo: /img/partners/2019/manning.avif
     link:
       fr: https://www.manning.com/
       en: https://www.manning.com/
@@ -20,7 +20,7 @@ sponsors:
         and frameworks, to best practices for team leaders.
   - name: Sticker Mule
     id: stickermule
-    logo: /img/partners/2019/stickermule.png
+    logo: /img/partners/2019/stickermule.avif
     link:
       fr: https://www.stickermule.com/fr/stickers-personnalises
       en: https://www.stickermule.com/fr/stickers-personnalises
@@ -39,7 +39,7 @@ sponsors:
         free shipping, and super fast turnaround.
   - name: AlpesJUG
     id: alpesjug
-    logo: /img/partners/alpesjug.png
+    logo: /img/partners/alpesjug.avif
     link:
       fr: http://alpesjug.fr/
       en: http://alpesjug.fr/
@@ -52,7 +52,7 @@ sponsors:
         of the Snowcamp conference.
   - name: ALMA
     id: alma2026
-    logo: /img/sponsors/alma.2026.png
+    logo: /img/sponsors/alma.2026.avif
     link:
       fr: https://www.alma.fr
       en: https://www.alma.fr
@@ -61,7 +61,7 @@ sponsors:
       en: "Business software publisher (industry, healthcare, quality, collaborative), digital facilitator... and a vibrant cooperative, deeply committed to its cooperative values! "
   - name: Abylsen
     id: abylsen2023
-    logo: /img/sponsors/abylsen.2023.png
+    logo: /img/sponsors/abylsen.2023.avif
     link:
       fr: https://abylsen.com
       en: https://abylsen.com
@@ -100,7 +100,7 @@ sponsors:
         projets.
   - name: Adobe
     id: adobe2016
-    logo: /img/sponsors/adobe.2016.png
+    logo: /img/sponsors/adobe.2016.avif
     link:
       fr: http://www.adobe.com/
       en: http://www.adobe.com/
@@ -109,7 +109,7 @@ sponsors:
       en: ""
   - name: Algoo
     id: algoo2017
-    logo: /img/sponsors/algoo.2017.png
+    logo: /img/sponsors/algoo.2017.avif
     link:
       fr: https://www.algoo.fr/
       en: https://www.algoo.fr/
@@ -126,7 +126,7 @@ sponsors:
         MongoDB, ElasticSearch...
   - name: ATOS
     id: atos2024
-    logo: /img/sponsors/atos.2024.png
+    logo: /img/sponsors/atos.2024.avif
     link:
       fr: https://atos.net/fr/
       en: https://atos.net/
@@ -159,7 +159,7 @@ sponsors:
         avenir.Chez Atos, nos choix façonnent le futur.
   - name: AViSTO
     id: avisto2020
-    logo: /img/sponsors/avisto.2020.png
+    logo: /img/sponsors/avisto.2020.avif
     link:
       fr: https://www.avisto.com
       en: https://www.avisto.com
@@ -188,7 +188,7 @@ sponsors:
         Grenoble.
   - name: AWS
     id: aws2026
-    logo: /img/sponsors/aws.2025.png
+    logo: /img/sponsors/aws.2025.avif
     link:
       fr: https://builder.aws.com/
       en: https://builder.aws.com/
@@ -197,7 +197,7 @@ sponsors:
       en: ""
   - name: BeeBuzziness
     id: beebuzziness2017
-    logo: /img/sponsors/beebuzziness.2017.png
+    logo: /img/sponsors/beebuzziness.2017.avif
     link:
       fr: http://beebuzziness.com/
       en: http://beebuzziness.com/
@@ -230,7 +230,7 @@ sponsors:
         analysis and protection of your data in any situation.
   - name: BonitaSoft
     id: bonita2024
-    logo: /img/sponsors/bonita.2024.png
+    logo: /img/sponsors/bonita.2024.avif
     link:
       fr: https://www.bonitasoft.com/
       en: https://www.bonitasoft.com/
@@ -257,7 +257,7 @@ sponsors:
         plus utilisée.
   - name: BonitaSoft
     id: bonita2019
-    logo: /img/sponsors/bonitasoft.2019.png
+    logo: /img/sponsors/bonitasoft.2019.avif
     link:
       fr: https://www.bonitasoft.com/
       en: https://www.bonitasoft.com/
@@ -284,7 +284,7 @@ sponsors:
         plus utilisée.
   - name: BPI France IO
     id: bpifrance2025
-    logo: /img/sponsors/bpifrance.2025.png
+    logo: /img/sponsors/bpifrance.2025.avif
     link:
       fr: https://io.bpifrance.fr/
       en: https://io.bpifrance.fr/
@@ -301,7 +301,7 @@ sponsors:
         offers can be found at Bpifrance.io.
   - name: Collaboration Better The World
     id: cbtw2024
-    logo: /img/sponsors/cbtw.2024.png
+    logo: /img/sponsors/cbtw.2024.avif
     link:
       fr: https://positivethinking.tech/fr/
       en: https://positivethinking.tech/
@@ -354,7 +354,7 @@ sponsors:
         technology expertise to help you meet the needs of your customers and citizens.
   - name: Clever Cloud
     id: clevercloud
-    logo: /img/sponsors/clever_cloud.png
+    logo: /img/sponsors/clever_cloud.avif
     link:
       fr: https://www.clever-cloud.com/fr/home/
       en: https://www.clever-cloud.com
@@ -363,7 +363,7 @@ sponsors:
       en: ""
   - name: Criteo
     id: criteo2019
-    logo: /img/sponsors/crite.2019.png
+    logo: /img/sponsors/crite.2019.avif
     link:
       fr: https://www.criteo.com/
       en: https://www.criteo.com/
@@ -384,7 +384,7 @@ sponsors:
         Marketing Ecosystem sees over $550 billion in annual commerce sales data.
   - name: Criteo
     id: criteo2023
-    logo: /img/sponsors/crite.2023.png
+    logo: /img/sponsors/crite.2023.avif
     link:
       fr: https://www.criteo.com/
       en: https://www.criteo.com/
@@ -405,7 +405,7 @@ sponsors:
         Marketing Ecosystem sees over $550 billion in annual commerce sales data.
   - name: Datastax
     id: datastax2016
-    logo: /img/sponsors/datastax.2016.png
+    logo: /img/sponsors/datastax.2016.avif
     link:
       fr: http://www.datastax.com/
       en: http://www.datastax.com/
@@ -414,7 +414,7 @@ sponsors:
       en: ""
   - name: Deolan
     id: deolan2016
-    logo: /img/sponsors/deolan.2016.png
+    logo: /img/sponsors/deolan.2016.avif
     link:
       fr: http://www.deolan.com/
       en: http://www.deolan.com/
@@ -423,7 +423,7 @@ sponsors:
       en: ""
   - name: Diabeloop
     id: diabeloop2023
-    logo: /img/sponsors/diabeloop.2023.webp
+    logo: /img/sponsors/diabeloop.2023.avif
     link:
       fr: https://www.diabeloop.fr/
       en: https://www.diabeloop.fr/
@@ -466,7 +466,7 @@ sponsors:
         internationale.
   - name: Elastic
     id: elastic2016
-    logo: /img/sponsors/elastic.2016.png
+    logo: /img/sponsors/elastic.2016.avif
     link:
       fr: https://www.elastic.co/fr/
       en: https://www.elastic.co
@@ -499,7 +499,7 @@ sponsors:
         bien sur site. La puissance d'Elastic.
   - name: Elastic
     id: elastic2025
-    logo: /img/sponsors/elastic.2025.png
+    logo: /img/sponsors/elastic.2025.avif
     link:
       fr: https://www.elastic.co/fr/
       en: https://www.elastic.co
@@ -532,7 +532,7 @@ sponsors:
         bien sur site. La puissance d'Elastic.
   - name: enalean
     id: enalean2026
-    logo: /img/sponsors/tuleap.2026.avif
+    logo: /img/sponsors/enalean.2026.avif
     link:
       fr: https://www.tuleap.org
       en: https://www.tuleap.org
@@ -553,7 +553,7 @@ sponsors:
         and innovate with confidence.
   - name: Exoscale
     id: exoscale2019
-    logo: /img/sponsors/exoscale.2019.png
+    logo: /img/sponsors/exoscale.2019.avif
     link:
       fr: https://www.exoscale.com
       en: https://www.exoscale.com
@@ -562,7 +562,7 @@ sponsors:
       en: ""
   - name: ForgeRock
     id: forgerock2017
-    logo: /img/sponsors/forgerock.2017.png
+    logo: /img/sponsors/forgerock.2017.avif
     link:
       fr: https://www.forgerock.com/
       en: https://www.forgerock.com/
@@ -592,7 +592,7 @@ sponsors:
         Paris, Oslo, Singapore, Sydney and Vancouver, Washington.
   - name: Forgerock
     id: forgerock2022
-    logo: /img/sponsors/forgerock.2022.png
+    logo: /img/sponsors/forgerock.2022.avif
     link:
       fr: https://www.forgerock.com/
       en: https://www.forgerock.com/
@@ -622,7 +622,7 @@ sponsors:
         Paris, Oslo, Singapore, Sydney and Vancouver, Washington.
   - name: GitHub
     id: github2017
-    logo: /img/sponsors/github.2017.png
+    logo: /img/sponsors/github.2017.avif
     link:
       fr: https://github.com/
       en: https://github.com/
@@ -676,7 +676,7 @@ sponsors:
         API journey.
   - name: HackYourJob
     id: hackyourjob2025
-    logo: /img/sponsors/hackyourjob.2025.png
+    logo: /img/sponsors/hackyourjob.2025.avif
     link:
       fr: https://www.hackyourjob.org
       en: https://www.hackyourjob.org
@@ -685,7 +685,7 @@ sponsors:
       en: "HackYourJob est une communauté de développeurs passionnés qui veulent travailler autrement"
   - name: Hardis
     id: hardis2023
-    logo: /img/sponsors/hardis_group.2023.webp
+    logo: /img/sponsors/hardis_group.2023.avif
     link:
       fr: https://www.hardis-group.com
       en: https://www.hardis-group.com
@@ -694,7 +694,7 @@ sponsors:
       en: ""
   - name: Havana IT
     id: havanait
-    logo: /img/sponsors/havanaIT.png
+    logo: /img/sponsors/havanaIT.avif
     link:
       fr: https://www.havana-it.com/
       en: https://www.havana-it.com/
@@ -716,7 +716,7 @@ sponsors:
         and evolve</li><li>Well-being of our consultants</li><li>Eco-responsibility</li></ul>
   - name: Jahia
     id: jahia2016
-    logo: /img/sponsors/jahia.2016.png
+    logo: /img/sponsors/jahia.2016.avif
     link:
       fr: https://www.jahia.com/home.html
       en: https://www.jahia.com/home.html
@@ -725,7 +725,7 @@ sponsors:
       en: ""
   - name: Kaizen
     id: kaizen2018
-    logo: /img/sponsors/kaizen.2018.png
+    logo: /img/sponsors/kaizen.2018.avif
     link:
       fr: https://kaizen-solutions.net/
       en: https://kaizen-solutions.net/
@@ -746,7 +746,7 @@ sponsors:
         de l amélioration continue de ses équipes.
   - name: Kelkoo Group
     id: kelkoo2019
-    logo: /img/sponsors/kelkoogroup.2019.png
+    logo: /img/sponsors/kelkoogroup.2019.avif
     link:
       fr: https://www.kelkoogroup.com/fr/
       en: https://www.kelkoogroup.com/
@@ -802,7 +802,7 @@ sponsors:
         Nous sommes éditeurs et uniques intégrateurs de nos solutions.
   - name: Kaizen
     id: kaizen
-    logo: /img/sponsors/KZS_solutions.png
+    logo: /img/sponsors/KZS_solutions.avif
     link:
       fr: https://kaizen-solutions.net/
       en: https://kaizen-solutions.net/
@@ -823,7 +823,7 @@ sponsors:
         de l amélioration continue de ses équipes.
   - name: Lunatech
     id: lunatech2018
-    logo: /img/sponsors/lunatech-logo.2018.png
+    logo: /img/sponsors/lunatech-logo.2018.avif
     link:
       fr: http://lunatech.com/fr/
       en: http://lunatech.com/
@@ -849,7 +849,7 @@ sponsors:
         17 employees.
   - name: mgm
     id: mgm2017
-    logo: /img/sponsors/mgm.2017.png
+    logo: /img/sponsors/mgm.2017.avif
     link:
       fr: https://live.mgm-tp.com/en/
       en: https://live.mgm-tp.com/en/
@@ -882,7 +882,7 @@ sponsors:
         dependably integrate innovative solutions into existing IT environments.
   - name: Michelin
     id: michelin2017
-    logo: /img/sponsors/michelin.2017.png
+    logo: /img/sponsors/michelin.2017.avif
     link:
       fr: http://www.michelin.com/
       en: http://www.michelin.com/
@@ -911,7 +911,7 @@ sponsors:
         in Europe, North America and Asia.
   - name: Microsoft
     id: microsoft2020
-    logo: /img/sponsors/microsoft.2020.png
+    logo: /img/sponsors/microsoft.2020.avif
     link:
       fr: https://www.microsoft.com/fr-fr/
       en: https://www.microsoft.com/en-us/
@@ -938,7 +938,7 @@ sponsors:
         Azure and Windows with WSL (Windows Subsystem for Linux).
   - name: Moodys
     id: moodys2025
-    logo: /img/sponsors/MOODYS_2025.png
+    logo: /img/sponsors/MOODYS_2025.avif
     link:
       fr: https://www.moodys.com
       en: https://www.moodys.com
@@ -966,7 +966,7 @@ sponsors:
         environment with colleagues all around the globe.
   - name: Moodys
     id: moodys2023
-    logo: /img/sponsors/moodys.2023.webp
+    logo: /img/sponsors/moodys.2023.avif
     link:
       fr: https://www.moodysanalytics.com
       en: https://www.moodysanalytics.com
@@ -993,7 +993,7 @@ sponsors:
         environment with colleagues all around the globe.
   - name: Norsys
     id: norsys2018
-    logo: /img/sponsors/norsys.2018.png
+    logo: /img/sponsors/norsys.2018.avif
     link:
       fr: https://www.norsys.fr/
       en: https://www.norsys.fr/
@@ -1018,7 +1018,7 @@ sponsors:
         viable pour un monde vivable"
   - name: Open
     id: open2019
-    logo: /img/sponsors/open.2019.png
+    logo: /img/sponsors/open.2019.avif
     link:
       fr: https://www.open.global/
       en: https://www.open.global/
@@ -1035,7 +1035,7 @@ sponsors:
         in support of their IT and digital transformation (3800 employees  • 16 cities)
   - name: Open
     id: open2024
-    logo: /img/sponsors/open.2024.png
+    logo: /img/sponsors/open.2024.avif
     link:
       fr: https://www.open.global/
       en: https://www.open.global/
@@ -1052,7 +1052,7 @@ sponsors:
         in support of their IT and digital transformation (3800 employees  • 16 cities)
   - name: Orange
     id: orange2019
-    logo: /img/sponsors/orange.2019.png
+    logo: /img/sponsors/orange.2019.avif
     link:
       fr: https://www.orange.fr/
       en: https://www.orange.com/
@@ -1071,7 +1071,7 @@ sponsors:
         in France and in many countries in Europe, Africa and the Middle East.
   - name: OVH Cloud
     id: ovh2023
-    logo: /img/sponsors/ovh.2023.png
+    logo: /img/sponsors/ovh.2023.avif
     link:
       fr: https://ovhcloud.com
       en: https://ovhcloud.com
@@ -1080,7 +1080,7 @@ sponsors:
       en: ""
   - name: PeriScop
     id: periscop2026
-    logo: /img/sponsors/periscop.2026.png
+    logo: /img/sponsors/periscop.2026.avif
     link:
       fr: https://www.periscop.tech
       en: https://www.periscop.tech
@@ -1089,7 +1089,7 @@ sponsors:
       en: "PeriScop is a SCOP, a cooperative IT services company where every member is an associate and fully committed. Passionate experts, we deliver high-level technical expertise supported by a stable team dedicated to collective success. Our services span software engineering, cloud-native, DevOps/SRE, project management, innovation, and change management. More than a provider, we are a cooperative, bold, and rigorous crew, serving your most critical projects."
   - name: Ping Identity
     id: pingid2026
-    logo: /img/sponsors/pingidentity.2026.png
+    logo: /img/sponsors/pingidentity.2026.avif
     link:
       fr: https://www.pingidentity.com/fr.html
       en: https://www.pingidentity.com
@@ -1098,7 +1098,7 @@ sponsors:
       en: "Ping Identity is a leader in IAM (Identity and Access Management). The company provides a comprehensive security platform for Single Sign-On (SSO), Multi-Factor Authentication (MFA), and managing customer and employee identities. Their goal is to secure digital access, ensure compliance, and deliver a seamless user experience for thousands of global organizations."
   - name: Qim info
     id: quiminfo2020
-    logo: /img/sponsors/quiminfo.2020.png
+    logo: /img/sponsors/quiminfo.2020.avif
     link:
       fr: https://www.qiminfo.ch/
       en: https://www.qiminfo.ch/language/en/
@@ -1121,7 +1121,7 @@ sponsors:
         of our values.
   - name: Red Hat
     id: redhat2016
-    logo: /img/sponsors/redhat.2016.png
+    logo: /img/sponsors/redhat.2016.avif
     link:
       fr: https://www.redhat.com/fr
       en: https://www.redhat.com/en
@@ -1130,7 +1130,7 @@ sponsors:
       en: ""
   - name: Salesforce
     id: salesforce2018
-    logo: /img/sponsors/salesforce.2018.png
+    logo: /img/sponsors/salesforce.2018.avif
     link:
       fr: https://engineering.salesforce.com/
       en: https://engineering.salesforce.com/
@@ -1153,7 +1153,7 @@ sponsors:
         their customers.
   - name: Slate Digital
     id: slate2024
-    logo: /img/sponsors/slatedigital.2024.png
+    logo: /img/sponsors/slatedigital.2024.avif
     link:
       fr: https://slatedigital.com
       en: https://slatedigital.com
@@ -1178,7 +1178,7 @@ sponsors:
         corporate culture that encourages creativity and initiative.
   - name: SOAT
     id: soat2020
-    logo: /img/sponsors/soat.2020.png
+    logo: /img/sponsors/soat.2020.avif
     link:
       fr: https://www.soat.fr/
       en: https://www.soat.fr/
@@ -1211,7 +1211,7 @@ sponsors:
         projets de nos clients etde nos consultants.
   - name: SOAT
     id: soat2022
-    logo: /img/sponsors/soat.2022.png
+    logo: /img/sponsors/soat.2022.avif
     link:
       fr: https://www.soat.fr/
       en: https://www.soat.fr/
@@ -1244,7 +1244,7 @@ sponsors:
         et Soatiennes !
   - name: Sogilis
     id: sogilis2022
-    logo: /img/sponsors/sogilis.2022.png
+    logo: /img/sponsors/sogilis.2022.avif
     link:
       fr: https://www.sogilis.com/
       en: https://www.sogilis.com/
@@ -1267,7 +1267,7 @@ sponsors:
         - complements your team until you’re fully proficient with the technology.<br/>
   - name: SonarQube
     id: sonarqube2016
-    logo: /img/sponsors/sonarqube.2016.png
+    logo: /img/sponsors/sonarqube.2016.avif
     link:
       fr: http://www.sonarqube.org/
       en: http://www.sonarqube.org/
@@ -1276,7 +1276,7 @@ sponsors:
       en: ""
   - name: Sopra Steria
     id: soprasteria2018
-    logo: /img/sponsors/sopra-steria.2018.png
+    logo: /img/sponsors/sopra-steria.2018.avif
     link:
       fr: https://www.soprasteria.com/fr/
       en: https://www.soprasteria.com/en/
@@ -1301,7 +1301,7 @@ sponsors:
         digital pour construire un avenir positif.
   - name: Sogilis
     id: sogilis2017
-    logo: /img/sponsors/squarescale.2017.png
+    logo: /img/sponsors/squarescale.2017.avif
     link:
       fr: http://sogilis.com/
       en: http://sogilis.com/
@@ -1324,7 +1324,7 @@ sponsors:
         - complements your team until you’re fully proficient with the technology.<br/>
   - name: StackLabs
     id: stacklabs2019
-    logo: /img/sponsors/stacklabs.2019.png
+    logo: /img/sponsors/stacklabs.2019.avif
     link:
       fr: http://www.stack-labs.com
       en: http://www.stack-labs.com
@@ -1337,7 +1337,7 @@ sponsors:
         services.
   - name: Streamdata.io
     id: streamdataio2016
-    logo: /img/sponsors/streamdataio.2016.png
+    logo: /img/sponsors/streamdataio.2016.avif
     link:
       fr: https://streamdata.io/
       en: https://streamdata.io/
@@ -1360,7 +1360,7 @@ sponsors:
         ofyour success.
   - name: Thales
     id: thales2019
-    logo: /img/sponsors/thales.2019.png
+    logo: /img/sponsors/thales.2019.avif
     link:
       fr: https://www.thalesgroup.com/
       en: https://www.thalesgroup.com/en
@@ -1388,7 +1388,7 @@ sponsors:
         them safe from the cyber threat.
   - name: Tuleap
     id: tuleap2018
-    logo: /img/sponsors/tuleap.2018.png
+    logo: /img/sponsors/tuleap.2018.avif
     link:
       fr: https://www.tuleap.org/
       en: https://www.tuleap.org/
@@ -1397,7 +1397,7 @@ sponsors:
       en: ""
   - name: Tuleap
     id: tuleap2020
-    logo: /img/sponsors/tuleap.2020.png
+    logo: /img/sponsors/tuleap.2020.avif
     link:
       fr: https://www.tuleap.org/
       en: https://www.tuleap.org/
@@ -1428,7 +1428,7 @@ sponsors:
         et automatisés, Gestionnaire de documents,… https://www.tuleap.org/
   - name: Viseo
     id: viseo2018
-    logo: /img/sponsors/viseo.2018.png
+    logo: /img/sponsors/viseo.2018.avif
     link:
       fr: http://www.viseo.com/fr
       en: http://www.viseo.com/en
@@ -1477,7 +1477,7 @@ sponsors:
         rejoignez-nous ! http://www.viseo.com/fr/communique-de-presse/viseo-grenoble-ouvre-ses-meetups-technologiques-la-communaute
   - name: Viseo
     id: viseo2022
-    logo: /img/sponsors/viseo.2022.png
+    logo: /img/sponsors/viseo.2022.avif
     link:
       fr: http://www.viseo.com/fr
       en: http://www.viseo.com/en
@@ -1515,7 +1515,7 @@ sponsors:
         sharing experiences and knowledge, then come and meet us.
   - name: Zenika
     id: zenika2018
-    logo: /img/sponsors/zenika.2018.png
+    logo: /img/sponsors/zenika.2018.avif
     link:
       fr: https://www.zenika.com/
       en: https://www.zenika.com/
@@ -1529,7 +1529,7 @@ sponsors:
         together a simpler, more open, freer and accessible world. &lt;coding the world&gt;
   - name: Zenika
     id: zenika2023
-    logo: /img/sponsors/zenika.2023.png
+    logo: /img/sponsors/zenika.2023.avif
     link:
       fr: https://www.zenika.com/
       en: https://www.zenika.com/

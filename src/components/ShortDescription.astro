@@ -1,11 +1,13 @@
 ---
-const { title, description, img } = Astro.props;
+const { title, description, img, offset } = Astro.props;
 ---
 
 <style>
-  img {
+  .img {
     width: 100px;
     height: 100px;
+    background-size: 600px 100px;
+    background-position: var(--offset) 0;
   }
   div {
     display: flex;
@@ -22,7 +24,7 @@ const { title, description, img } = Astro.props;
   }
 </style>
 <div>
-  <img src={img} alt={title} />
+  <div class="img" style={`background-image: url(${img}); --offset: ${offset}`}></div>
   <h3>{title}</h3>
   <p>{description}</p>
 </div>
