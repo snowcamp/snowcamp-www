@@ -33,6 +33,14 @@ const year = startDate.getFullYear();
       grid-row: 2;
     }
   }
+  .background {
+    background: image-set(
+        url("/img/banner-blue.avif") type("image/avif"),
+        url("/img/banner-blue.webp") type("image/webp")
+      )
+      center/cover no-repeat;
+    height: 400px
+  }
   #cd-days {
     color: #fff200;
   }
@@ -141,8 +149,7 @@ const year = startDate.getFullYear();
 </script>
 
 <div
-  class="full-bleed"
-  style="background: url(/img/banner-blue.webp) center/cover no-repeat; height: 400px"
+  class="full-bleed background"
 >
   <div class="countdown-box">
     <div id="countdown" data-date={edition.start_date}>
