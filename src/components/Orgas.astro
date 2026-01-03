@@ -60,6 +60,7 @@ const { orga } = Astro.props;
     src={Utils.url(`/img/orga/${orga.img}`)}
     alt={orga.name}
     class="avatar"
+    loading="lazy"
   />
   <div class="name">{orga.name}</div>
   <div class="social-links">

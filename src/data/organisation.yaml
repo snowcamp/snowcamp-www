@@ -25,26 +25,26 @@ roles:
     description: Photographe le jour J
 organizers:
   - name: Charles Curtit
-    img: charles.jpg
+    img: charles.avif
     linkedin: charles-curtit-9a8451194
     id: charles
   - name: Ludovic Poitou
-    img: ludovic.jpg
+    img: ludovic.avif
     twitter: LudoMP
     linkedin: ludovicp
     github: ludomp
     id: ludovic
   - name: Jade Crotto-Miglietti
-    img: jade.jpg
+    img: jade.avif
     linkedin: jadecrottomiglietti
     id: jade
   - name: Michel Barret
-    img: michel.jpg
+    img: michel.avif
     linkedin: michel-barret-23a39a27
     github: barmic
     id: michel
   - name: Miguel Moquillon
-    img: miguel.jpg
+    img: miguel.avif
     twitter: migmoq
     linkedin: miguel-moquillon-b8a1aa3
     github: mmoqui
@@ -54,18 +54,18 @@ organizers:
     linkedin: ouiame-talbi
     id: ouiame
   - name: Pierrick Rassat
-    img: pierrick.jpg
+    img: pierrick.avif
     linkedin: pierrick-rassat-7002b691
     github: kraiss
     id: pierrick
   - name: Sébastien Chassande-Barrioz
-    img: sebastien.jpg
+    img: sebastien.avif
     twitter: SnowCampIO
     linkedin: sébastien-chassande-barrioz-aa6a623
     github: schassande
     id: sebastien
   - name: Virginie Pageaud
-    img: virginie.jpg
+    img: virginie.avif
     twitter: La_Fee_Dragee
     linkedin: virginiecasavecchia
     github: Fairy-wen
@@ -77,13 +77,13 @@ organizers:
     github: vlamy
     id: willy
   - name: Yannick Chiron
-    img: yannick.jpg
+    img: yannick.avif
     twitter: Ldoppea
     linkedin: yannickchiron
     github: Ldoppea
     id: yannick
   - name: Yohan Lasorsa
-    img: yohan.jpeg
+    img: yohan.avif
     twitter: sinedied
     linkedin: yohanlasorsa
     github: sinedied

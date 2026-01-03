@@ -36,6 +36,6 @@ const { href, title, img } = Astro.props;
 </style>
 <div>
   <a href={href}>
-    <img src={img} alt={title} />
+    <img src={img} loading="lazy" alt={title} />
   </a>
 </div>

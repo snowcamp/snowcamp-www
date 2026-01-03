@@ -133,8 +133,8 @@ const { frontmatter, title } = Astro.props;
     <link href="/js/semantic/step.css" rel="stylesheet" type="text/css" />
     <link
       rel="shortcut icon"
-      type="image/png"
-      href="/img/favicon/favicon.png"
+      type="image/avif"
+      href="/img/favicon/favicon.avif"
     />
     <link rel="canonical" href="" />
     <title>{title ?? frontmatter.title}</title>
@@ -151,7 +151,7 @@ const { frontmatter, title } = Astro.props;
       <a href={Utils.url("", { lang })}>
         <img
           style="max-width: 170px"
-          src={Utils.url("/img/alpes-snow-full-illustration.webp")}
+          src={Utils.url("/img/alpes-snow-full-illustration.avif")}
           alt="Logo"
         />
       </a>
