@@ -4,6 +4,7 @@ title: Planning
 ---
 import Utils from '../../utils.js';
 import current from '../../data/current.yaml';
+import Redirect from "../../layouts/Redirect.astro";
 
 export const endFormat = Intl.DateTimeFormat('enn', {
   year: 'numeric',
@@ -15,3 +16,5 @@ export const end = endFormat.format(Utils.parseDate(current.timeline.cfp.publish
 
 
 The program will be available the {end}.
+
+<Redirect target={current.program_link} />
