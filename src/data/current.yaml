@@ -1,25 +1,25 @@
-program_link: https://app.voxxr.in/events/snowcamp26/schedule
-program_show: true
+#program_link: https://app.voxxr.in/events/snowcamp26/schedule
+program_show: false
 flickr_embed_link: https://flickrembed.com/cms_embed.php?source=flickr&layout=responsive&input=www.flickr.com/photos/162459903@N02/albums/72177720305519001&sort=0&by=album&theme=default&scale=fill&speed=3000&limit=10&skin=default&autoplay=true
 album_link:
-start_date: "2026-01-14T08:00:00.000[Europe/Paris]"
-end_date: "2026-01-17T18:00:00.000[Europe/Paris]"
+start_date: "2027-01-13T08:00:00.000[Europe/Paris]"
+end_date: "2027-01-16T18:00:00.000[Europe/Paris]"
 timeline:
   tremplin:
-    open: "2025-04-01T00:00:00.000[Europe/Paris]"
-    close: "2025-06-01T00:00:00.000[Europe/Paris]"
-    notification: "2025-06-15T00:00:00.000[Europe/Paris]"
-    start: "2025-09-15T00:00:00.000[Europe/Paris]"
-    event: "2025-11-20T00:00:00.000[Europe/Paris]"
+    open: "2026-04-01T00:00:00.000[Europe/Paris]"
+    close: "2026-06-01T00:00:00.000[Europe/Paris]"
+    notification: "2026-06-15T00:00:00.000[Europe/Paris]"
+    start: "2026-09-15T00:00:00.000[Europe/Paris]"
+    event: "2026-11-20T00:00:00.000[Europe/Paris]"
   cfp:
-    open: "2025-09-01T00:00:00.000[Europe/Paris]"
-    close: "2025-10-15T00:00:00.000[Europe/Paris]"
-    notification: "2025-11-01T00:00:00.000[Europe/Paris]"
-    publish: "2025-11-15T00:00:00.000[Europe/Paris]"
+    open: "2026-09-01T00:00:00.000[Europe/Paris]"
+    close: "2026-10-15T00:00:00.000[Europe/Paris]"
+    notification: "2026-11-01T00:00:00.000[Europe/Paris]"
+    publish: "2026-11-15T00:00:00.000[Europe/Paris]"
   sponsor:
-    open: "2025-06-09T11:00:00.000[Europe/Paris]"
+    open: "2026-06-09T11:00:00.000[Europe/Paris]"
   tickets:
-    open: "2025-11-17T11:00:00.000[Europe/Paris]"
+    open: "2026-11-17T11:00:00.000[Europe/Paris]"
 sponsorship:
   prospectus: https://drive.google.com/file/d/1hOHTGVXJfiQ0nJFJugivkNr3SwdEXuSF/view?usp=share_link
   subscribe_link: https://docs.google.com/forms/d/e/1FAIpQLScZDdAWonmZZYfV3khF5QJMIx7sx33MP8g3kzMUbLgGCFmbpQ/viewform?usp=dialog
@@ -58,41 +58,44 @@ sponsorship:
         speakers_dinner: 0
   display: current
   meetgreet: []
-  etoile:
-    - cgi2022
-    - open2024
-    - moodys2025
-    - criteo2023
-    - kaizen
-    - clevercloud
-    - aws2026
-  flocon:
-    - avisto2020
-    - zenika2023
-    - periscop2026
-    - soprasteria2018
-    - kls2020
-    - kelkoo2019
-    - viseo2022
-    - alma2026
-    - enalean2026
-    - hackyourjob2025
-    - pingid2026
+  etoile: []
+#    - cgi2022
+#    - open2024
+#    - moodys2025
+#    - criteo2023
+#    - kaizen
+#    - clevercloud
+#    - aws2026
+  flocon: []
+#    - avisto2020
+#    - zenika2023
+#    - periscop2026
+#    - soprasteria2018
+#    - kls2020
+#    - kelkoo2019
+#    - viseo2022
+#    - alma2026
+#    - enalean2026
+#    - hackyourjob2025
+#    - pingid2026
   partners:
     - alpesjug
     - stickermule
 ticketing:
-  link: https://www.billetweb.fr/shop.php?event=snowcamp-2026
+  #link: https://www.billetweb.fr/shop.php?event=snowcamp-2026
   sold_out: false
   price:
     conference: 110
     university: 165
 tremplin:
-  cfp_link: https://conference-hall.io/tremplin-de-snowcamp-2025
+  cfp_link: ''
+  #cfp_link: https://conference-hall.io/tremplin-de-snowcamp-2025
 conference:
-  cfp_link: https://conference-hall.io/snowcamp-2026
+  cfp_link: ''
+  #cfp_link: https://conference-hall.io/snowcamp-2026
 speakers_dinner:
-  link: https://docs.google.com/forms/d/e/1FAIpQLSew5LabymKk3183bqOsuZhbTNN8Vyr-eJG8OGptSml1HaERIw/viewform?usp=publish-editor
+  link: ''
+  #link: https://docs.google.com/forms/d/e/1FAIpQLSew5LabymKk3183bqOsuZhbTNN8Vyr-eJG8OGptSml1HaERIw/viewform?usp=publish-editor
 organisers:
   - miguel
   - ludovic
@@ -106,4 +109,5 @@ organisers:
   - ouiame
   - virginie
   - jade
+# satisfaction_link for 2026
 satisfaction_link: https://forms.gle/CQuCZymH7TZFSDKHA
