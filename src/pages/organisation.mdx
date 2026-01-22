@@ -7,12 +7,16 @@ import Orga from '../components/Orgas.astro';
 import OrgaHisto from '../components/OrgaHisto.astro';
 import organisation from '../data/organisation.yaml';
 import current from '../data/current.yaml';
+import Polaroid from '../components/Polaroid.astro';
 
 # Organisation
 
-> Le Snowcamp est une conférence faite par des développeurs de la région grenobloise.
+<div>
+<Polaroid img="/img/orga/team_orga_2026.jpg" title="L'équipe d'orga"side="left" />
+
+> Le Snowcamp est une conférence construite par une équipe bénévole et passionnée du secteur informatique de la région grenobloise.  
 Elle a été créée en 2016 à l'initiative de l'[AlpesJug](https://alpesjug.fr).
-Tous les organisateurs sont des geeks bénévoles passionnés.
+</div>
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); justify-items: center; align-items: center; row-gap: 20px;column-gap: 35px;">
 { organisation.organizers.filter((orga) => current.organisers.includes(orga.id)).map(orga => (<Orga orga={orga}/>))}
@@ -24,7 +28,7 @@ Tous les organisateurs sont des geeks bénévoles passionnés.
 
 # Les différents rôles
 
-Les différents rôles de l'organisation du snowcamp sont :
+Les différents rôles de l'organisation du Snowcamp sont :
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, 1fr); gap: 1ex">
 {organisation.roles.map((role) => (<Role title={role.name} description={role.description}/>))}

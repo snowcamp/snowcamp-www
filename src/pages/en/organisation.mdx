@@ -7,12 +7,16 @@ import Orga from '../../components/Orgas.astro';
 import OrgaHisto from '../../components/OrgaHisto.astro';
 import organisation from '../../data/organisation.yaml';
 import current from '../../data/current.yaml';
+import Polaroid from '../../components/Polaroid.astro';
 
 # Organisation
 
-> Snowcamp is a conference crafted by developers from the Grenoble area.
+<div>
+<Polaroid img="/img/orga/team_orga_2026.jpg" title="L'équipe d'orga"side="left" />
+
+> Snowcamp is a conference built by a volunteer and passionate team from the Grenoble IT community.  
 It was started in 2016 on the initiative of [AlpesJug](https://alpesjug.fr).
-All organizers are enthusiast geeky volonteers.
+</div>
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); justify-items: center; align-items: center; row-gap: 20px;column-gap: 35px;">
   { organisation.organizers.filter((orga) => current.organisers.includes(orga.id)).map(orga => (<Orga orga={orga}/>))}
