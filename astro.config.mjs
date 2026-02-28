@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, passthroughImageService } from "astro/config";
 import mdx from "@astrojs/mdx";
 import yaml from "@rollup/plugin-yaml";
 
@@ -21,5 +21,9 @@ export default defineConfig({
   integrations: [mdx()],
   vite: {
     plugins: [yaml()],
+  },
+  image: {
+    formats: ['avif', 'webp'],
+    service: passthroughImageService(),
   },
 });

@@ -20,7 +20,7 @@ In dev mode, simply run the server by the following command:
 npm run dev
 ```
 
-Then open the web page [ http://localhost:4321/](http://localhost:4321/)
+Then open the web page [http://localhost:4321/](http://localhost:4321/)
 
 ## Project Structure
 
