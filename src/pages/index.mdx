@@ -57,34 +57,45 @@ export const tlCFP = [
   }
 ];
 
-<Spotlight/>
+<Spotlight>
+  <div data-start="2026-02-01T00:00:00.000[Europe/Paris]" data-end={current.timeline.tremplin.open}>
+  ### CFP du tremplin
 
-# Snowcamp
+  Le CFP du tremplin démarre dès le 1er avril.
+  </div>
+  <div data-start={current.timeline.tremplin.open} data-end={current.timeline.tremplin.close}>
+  ### CFP du tremplin
 
-> 2 jours de conférences avec des présentations de 45 minutes.
+  Le CFP du tremplin est ouvert !
+  </div>
+  <div data-start="2026-02-01T00:00:00.000[Europe/Paris]" data-end={current.timeline.sponsor.open}>
+  ### Sponsoring
+  
+  La campagne de sponsoring ouvrira en juin.
+  </div>
+  <div data-start={current.timeline.sponsor.open} data-end={current.start_date}>
+  ### Sponsoring
+  
+  La campagne de sponsoring a démarrée !
+  </div>
+  <div data-start={current.timeline.cfp.open} data-end={current.timeline.cfp.close}>
+  ### Call for Paper
 
-<Columns3>
-  <ShortDescription title="Universités" description="Une journée de formation en profondeur (2 formations de 3 heures au choix)." img={Utils.url("/img/icons.avif")} offset="-500px"/>
-  <ShortDescription title="Conférences" description="2 jours de conférences avec des présentations de 45 minutes." img={Utils.url("/img/icons.avif")} offset="-200px"/>
-  <ShortDescription title="Unconference" description="Une journée d'échange sur les pistes mêlant orateurs et participants." img={Utils.url("/img/icons.avif")} offset="-400px"/>
-</Columns3>
+  Le CFP est ouvert !
+  </div>
+  <div data-start={current.timeline.cfp.publish} data-end={current.end_date}>
+  ### Programme
 
-# Innovation & Recherche
+  Le programme est disponible !
+  </div>
+</Spotlight>
 
-> Une conférence à haut niveau technique réunissant des ingénieurs et des académiques
-
-<Columns3>
-  <ShortDescription title="Innovation" description="Découvrez les outils, frameworks et technologies d'aujourd'hui et de demain." img={Utils.url("/img/icons.avif")} offset="-300px"/>
-  <ShortDescription title="Échange" description="Rencontrez et échangez avec d'autres devs, ops, archis et orateurs." img={Utils.url("/img/icons.avif")} offset="-100px"/>
-  <ShortDescription title="Recherche" description="Découvrez les travaux des chercheurs sur les tendances et sujets du moment." img={Utils.url("/img/icons.avif")} offset="0"/>
-</Columns3>
-
-# Call For Proposals
+# Call For Papers
 
 <TimelineCFP tl={tlCFP}/>
 
 <div style="display: flex; flex-flow: row wrap; align-items: center; gap: 2rem; justify-content: space-evenly">
-Vous pouvez trouver tous les [détails ici](/cfp).
+Vous pouvez trouver tous les  [détails ici](/cfp).
 </div>
 
 <a id="sponsors"></a>
@@ -113,29 +124,8 @@ Vous pouvez trouver tous les [détails ici](/cfp).
 
 ## Partenaires
 
-<div style="display: flex; flex-flow: row wrap; align-items: center; gap: 2rem; justify-content: space-evenly">
+<div style="display: flex; flex-flow: row wrap; align-items: center; gap: 2rem; justify-content: space-evenly; margin-bottom: 20px">
 { partners.map((partner) => <Sponsor title={partner.name} img={partner.logo} href={partner.link.fr} />)
 }
-</div>
-
-<a id="venue"></a>
-
-# Venir
-
-> SnowCamp se déroulera à *Alpexpo, dans l'espace 1968*<br/>à la fois pour les Universités et les Conférences.
-
-<p>Les Universités et les Conférences auront toutes lieux à *["Alpexpo, espace 1968"](https://alpexpo.com/)*.</p>
-
-Av. d'Innsbruck<br/>
-38100 Grenoble
-
-<div>
-  <Polaroid img="/img/alpexpo/alpexpo-espace-1968-300.avif" title="Alpexpo - Espace 1968 (Crédit photo Alpexpo)" side="left" />
-Vous pouvez y accéder :
-
-- Voiture par Rocade Sud, Sortie 6 Alpexpo, parking gratuit
-- Train ou bus : Tram A (arrêt Pôle Sud - Alpexpo), Bus C3 (Arret Alpexpo), C6, C8, 12, 65, 67 (Arret Grand Place)
-- Avion : il y a des navettes d'aéroports : depuis Lyon Saint-Exupéry (17 rotations 7j/7) et depuis Genève Cointrin (3 rotations, 7j/7)
-- [Vélo](https://pass.mobilites-m.fr/accueil/velo)
 </div>
 

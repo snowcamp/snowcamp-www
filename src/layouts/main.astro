@@ -35,11 +35,11 @@ const { frontmatter, title } = Astro.props;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    background-color: #2e2841;
+    background-color: var(--main);
     gap: 15px;
   }
   header {
-    background-color: #2e2841;
+    background-color: var(--main);
     color: white;
     padding: 0;
 
@@ -48,18 +48,12 @@ const { frontmatter, title } = Astro.props;
     position: sticky;
     top: 0;
     left: 0;
-
-    /* organize content */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    display: grid;
   }
 
   main {
     display: grid;
-    grid-template-columns: 1fr 1fr min(100ch, 100%) 1fr 1fr;
+    grid-template-columns: 1fr 1fr min(100ch, calc(100% - 2rem)) 1fr 1fr;
     & > :not(header, footer) {
       grid-column: 3;
     }
@@ -126,10 +120,6 @@ const { frontmatter, title } = Astro.props;
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
     <link href="/js/semantic/step.css" rel="stylesheet" type="text/css" />
     <link
       rel="shortcut icon"
@@ -139,41 +129,15 @@ const { frontmatter, title } = Astro.props;
     <link rel="canonical" href="" />
     <title>{title ?? frontmatter.title}</title>
     <script
-      src="https://kit.fontawesome.com/18c258c58c.js"
-      crossorigin="anonymous"></script>
-    <script
       src="https://cdn.jsdelivr.net/npm/luxon@3.6.1/build/global/luxon.min.js"
       integrity="sha256-UA/r5Oi3pNGYgJlnmZuqXkeXYQRLqyHxFGrFuUDZUXA="
       crossorigin="anonymous"></script>
   </head>
   <body lang={lang}>
-    <header class="full-bleed">
-      <a href={Utils.url("", { lang })}>
-        <img
-          style="max-width: 170px"
-          src={Utils.url("/img/alpes-snow-full-illustration.avif")}
-          alt="Logo"
-        />
-      </a>
-      <Menu />
-
-      <!--div class="announce">
-        <p style="text-align: center; margin: 0">
-          ❄️ La 10ᵉ édition du Snowcamp.io arrive<br />
-          <b>Grenoble – Alpexpo (Espace 1968) du 14 au 17 janvier 2026</b> !<br
-          />
-          Nouveau lieu, plus grand, mieux configuré… et des surprises 🎉<br />
-          👉️ <a href="https://snowcamp.io/sponsors/">Devenez sponsor</a>
-        </p>
-        <button
-          class="announce__close"
-          type="button"
-          aria-label="Fermer l’annonce"
-          title="Fermer"
-        >
-          ✕
-        </button>
-      </div-->
+    <header>
+      <div>
+        <Menu />
+      </div>
     </header>
 
     <main>

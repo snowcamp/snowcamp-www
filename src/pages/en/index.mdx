@@ -57,29 +57,38 @@ export const tlCFP = [
   }
 ];
 
-<Spotlight/>
+<Spotlight>
+  <div data-start="2026-02-01T00:00:00.000[Europe/Paris]" data-end={current.timeline.tremplin.open}>
+  ### CFP of tremplin
 
-# Snowcamp
+  The Tremplin CFP opens on April 1.
+  </div>
+  <div data-start={current.timeline.tremplin.open} data-end={current.timeline.tremplin.close}>
+  ### CFP of tremplin
 
-> 2 days of conferences with 45mn talks.
+  The Tremplin CFP is now open!
+  </div>
+  <div data-start="2026-02-01T00:00:00.000[Europe/Paris]" data-end={current.timeline.sponsor.open}>
+  ### Sponsoring
+  
+  The sponsorship campaign will open in June.
+  </div>
+  <div data-start={current.timeline.sponsor.open} data-end={current.start_date}>
+  ### Sponsoring
+  
+  The sponsorship campaign is now open!
+  </div>
+  <div data-start={current.timeline.cfp.open} data-end={current.timeline.cfp.close}>
+  ### Call for Paper
 
-<Columns3>
-  <ShortDescription title="Universities" description="A day of training (choice of 2 trainings of 3 hours long)." img={Utils.url("/img/icons.avif")} offset="-500px"/>
-  <ShortDescription title="Conferences" description="2 days of conferences with 45mn talks." img={Utils.url("/img/icons.avif")} offset="-200px"/>
-  <ShortDescription title="Unconference" description="A day of exchange on the skiing slopes gathering speakers and attendees." img={Utils.url("/img/icons.avif")} offset="-400px"/>
-</Columns3>
+  Call for Paper is now open!
+  </div>
+  <div data-start={current.timeline.cfp.publish} data-end={current.end_date}>
+  ### Program
 
-# Innovation and research
-
-> A high-level technical conference gathering engineers and researchers
-
-<Columns3>
-  <ShortDescription title="Innovation" description="Learn about today's and tomorrow's tools, frameworks and technologies." img={Utils.url("/img/icons.avif")} offset="-300px"/>
-  <ShortDescription title="Exchange" description="Meet and exchange with other devs, ops, architects and speakers." img={Utils.url("/img/icons.avif")} offset="-100px"/>
-  <ShortDescription title="Research" description="Discover trending works of researchers." img="/img/icon-academic.png" img={Utils.url("/img/icons.avif")} offset="0"/>
-</Columns3>
-
-# Call For Proposals
+  The program is now available.
+  </div>
+</Spotlight>
 
 <TimelineCFP tl={tlCFP}/>
 
@@ -113,30 +122,8 @@ You can find more [details here](/en/cfp).
 
 ## Parteners
 
-<div style="display: flex; flex-flow: row wrap; align-items: center; gap: 2rem; justify-content: space-evenly">
+<div style="display: flex; flex-flow: row wrap; align-items: center; gap: 2rem; justify-content: space-evenly; margin-bottom: 20px">
 { partners.map((partner) => <Sponsor title={partner.name} img={partner.logo} href={partner.link.en} />)
 }
 </div>
 
-<a id="venue"></a>
-
-# Venue
-
-<Polaroid img="/img/alpexpo/alpexpo.jpg" title="Alpexpo Grenoble" side="left" />
-
-> The schedule can be found here:
-
-Universities and conferences will take place at *["Alpexpo, espace 1968"](https://alpexpo.com/)*.
-
-5 - 7 , place Robert Schuman<br/>
-38025 Grenoble
-
-<div>
-  <Polaroid img="/img/alpexpo/alpexpo-espace-1968-300.avif" title="Alpexpo - Espace 1968 (Crédit photo Alpexpo)" side="left" />
-You can access:
-
-- Car road Rocade Sud, Exit 6 Alpexpo, free parking
-- Train or bus: Tram A (stop Pôle Sud - Alpexpo), Bus C3 (stop Alpexpo), Bus C6, C8, 12, 65, 67 (stop Grand Place)
-- Avion: il y a des navettes d'aéroports : depuis Lyon Saint-Exupéry (17 rotations 7j/7) et depuis Genève Cointrin (3 rotations, 7j/7)
-- by [bike](https://pass.mobilites-m.fr/accueil/velo)
-</div>
