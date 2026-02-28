@@ -63,25 +63,25 @@ sponsorship:
   display: current
   meetgreet: []
   etoile: []
-#    - cgi2022
-#    - open2024
-#    - moodys2025
-#    - criteo2023
-#    - kaizen
-#    - clevercloud
-#    - aws2026
+  #    - cgi2022
+  #    - open2024
+  #    - moodys2025
+  #    - criteo2023
+  #    - kaizen
+  #    - clevercloud
+  #    - aws2026
   flocon: []
-#    - avisto2020
-#    - zenika2023
-#    - periscop2026
-#    - soprasteria2018
-#    - kls2020
-#    - kelkoo2019
-#    - viseo2022
-#    - alma2026
-#    - enalean2026
-#    - hackyourjob2025
-#    - pingid2026
+ #    - avisto2020
+ #    - zenika2023
+ #    - periscop2026
+ #    - soprasteria2018
+ #    - kls2020
+ #    - kelkoo2019
+ #    - viseo2022
+ #    - alma2026
+ #    - enalean2026
+ #    - hackyourjob2025
+ #    - pingid2026
   chamois: []
   partners:
     - alpesjug
@@ -96,10 +96,10 @@ tremplin:
   cfp_link: https://conference-hall.io/tremplin-snowcamp-2027
   flyer_link: "https://drive.google.com/file/d/1lfwf_yoPhDJbzvbZkIjnkA5kb3q7AIWT/view?usp=sharing"
 conference:
-  cfp_link: ''
+  cfp_link: ""
   #cfp_link: https://conference-hall.io/snowcamp-2026
 speakers_dinner:
-  link: ''
+  link: ""
   #link: https://docs.google.com/forms/d/e/1FAIpQLSew5LabymKk3183bqOsuZhbTNN8Vyr-eJG8OGptSml1HaERIw/viewform?usp=publish-editor
 organisers:
   - miguel

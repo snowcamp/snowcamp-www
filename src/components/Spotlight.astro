@@ -3,11 +3,46 @@ import Utils from "../utils";
 import edition from "../data/current.yaml";
 const lang = Utils.getLang(Astro.url);
 
-const [days, hours, minutes, seconds] =
-  lang === "fr"
-    ? ["Jours", "Heures", "Minutes", "Secondes"]
-    : ["Days", "Hours", "Minutes", "Seconds"];
+type translation = { fr: string; en: string };
 
+const trad: { [key: string]: translation } = {
+  desc: {
+    fr: "Une conférence grenobloise sur les nouvelles technologies. Pendant 4 jours plus de 600 personnes se réunissent pour partager et apprendre autour du développement logiciel.",
+    en: "A Grenoble conference on new technologies. For 4 days, more than 600 people gather to share and learn about software development.",
+  },
+  univ: {
+    fr: "Université",
+    en: "University",
+  },
+  univ_desc: {
+    fr: "1 journée de formation en profondeur",
+    en: "1 day of training",
+  },
+  conf: {
+    fr: "Conférence",
+    en: "Conference",
+  },
+  conf_desc: {
+    fr: "2 journées de conférences",
+    en: "2 days of conferences",
+  },
+  unconf: {
+    fr: "Unconférence",
+    en: "Unconference",
+  },
+  unconf_desc: {
+    fr: "1 journée d'échange sur les pistes",
+    en: "1 day of exchange on the skiing slopes",
+  },
+  news: {
+    fr: "Actualités",
+    en: "News",
+  },
+  eta: {
+    fr: "Prévu dans",
+    en: "ETA",
+  },
+};
 const startFormat = Intl.DateTimeFormat(lang, {
   month: "long",
   day: "numeric",
@@ -26,74 +61,96 @@ const year = startDate.getFullYear();
 <style>
   .full-bleed {
     display: grid;
-    grid-template-columns: 1fr minmax(90vw, 1fr) 1fr;
-
-    & > * {
-      grid-column: 2;
-      grid-row: 2;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      "haut-g haut-g haut-g . petit petit"
+      "haut-g haut-g haut-g . . ."
+      ". . . bas-d bas-d bas-d"
+      ". . . bas-d bas-d bas-d";
+    gap: 0;
+    height: fit-content;
+  }
+  @media (max-width: 768px) {
+    .full-bleed {
+      grid-template-areas:
+        "petit"
+        "bas-d"
+        "haut-g";
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    .overlay-img {
+      display: none; /* Souvent mieux de la cacher sur petit écran */
     }
   }
+  .block {
+    margin: 1em;
+    padding: 1em;
+    height: fit-content;
+    width: fit-content;
+    background: rgba(46, 40, 65, 0.7);
+    border-radius: 12px;
+    & > * {
+      color: aliceblue;
+    }
+
+    & > h2 {
+      color: #fff200;
+      text-align: center;
+    }
+
+    & > h1 {
+      color: #ff8a00;
+      text-align: center;
+      margin: 0;
+    }
+  }
+  dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5em;
+  }
   .background {
-    background: image-set(
-        url("/img/banner-blue.avif") type("image/avif"),
-        url("/img/banner-blue.webp") type("image/webp")
-      )
+    background: image-set(url("/img/fond/fond_2.avif") type("image/avif"))
       center/cover no-repeat;
-    height: 400px
+    min-height: 600px;
+    background-attachment: fixed;
   }
-  #cd-days {
-    color: #fff200;
+  .description {
+    grid-area: haut-g;
+    justify-self: center;
+    align-self: center;
+  }
+  .news {
+    grid-area: bas-d;
+    width: auto;
+    align-self: center;
+  }
+  .title {
+    grid-area: petit;
+    justify-self: center;
+  }
+  .bruno {
+    grid-column: 1;
+    grid-row: 4;
+    max-width: 4em;
+    justify-self: start;
+    align-self: end;
+    background: rgba(46, 40, 65, 0.7);
+    border-radius: 12px;
   }
 
-  #cd-hours {
-    color: #ff8a00;
-  }
-
-  #cd-min {
+  .block :global(h3) {
     color: #00b9ff;
   }
 
-  #cd-sec {
+  .block :global(p) {
+    color: aliceblue;
+  }
+
+  .highlight {
     color: #8dc63f;
-  }
-
-  .year {
-    color: #8dc63f;
-  }
-
-  .dates {
-    color: #ff8a00;
-  }
-
-  #countdown {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-    column-gap: 15px;
-    justify-items: center;
-
-    & > div {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      & > b {
-        font-weight: 700;
-        font-size: 1.5rem;
-      }
-    }
-  }
-
-  .title {
-    font-family: "Luciole-Bold", sans-serif;
-    font-weight: 700;
-    font-size: 2rem;
-    text-transform: uppercase;
-  }
-
-  .dates {
-    font-family: "Luciole-Bold", sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
   }
 
   .countdown-box {
@@ -109,6 +166,17 @@ const year = startDate.getFullYear();
 
     border-radius: 12px;
   }
+  dl {
+    & > dt:nth-child(3n) {
+      color: #8dc63f;
+    }
+    & > dt:nth-child(3n + 1) {
+      color: #ff8a00;
+    }
+    & > dt:nth-child(3n + 2) {
+      color: #00b9ff;
+    }
+  }
 </style>
 <script>
   var DateTime = luxon.DateTime;
@@ -122,55 +190,88 @@ const year = startDate.getFullYear();
     }
     return new Date(input);
   }
-  const second = 1000;
-  const minute = second * 60;
-  const hour = minute * 60;
-  const day = hour * 24;
-  const daysElem = document.getElementById("cd-days");
-  const hoursElem = document.getElementById("cd-hours");
-  const minElem = document.getElementById("cd-min");
-  const secElem = document.getElementById("cd-sec");
+  function formatDurartion(seconds, usrLang) {
+    let lang = usrLang;
+    if (seconds <= 0) return lang == "fr" ? "0 seconde" : "0 second";
+
+    const unites = [
+      { value: 30 * 24 * 3600, en: "month", fr: "mois" },
+      { value: 24 * 3600, en: "day", fr: "jour" },
+      { value: 3600, en: "hour", fr: "heure" },
+      { value: 60, en: "minute", fr: "minute" },
+      { value: 1, en: "second", fr: "seconde" },
+    ];
+
+    let resultat = [];
+    let rest = seconds;
+
+    for (const unite of unites) {
+      if (rest >= unite.value) {
+        const quantity = Math.floor(rest / unite.value);
+        rest %= unite.value;
+
+        const displayName =
+          quantity > 1 && unite[lang] !== "mois"
+            ? unite[lang] + "s"
+            : unite[lang];
+
+        resultat.push(`${quantity} ${displayName}`);
+      }
+
+      if (resultat.length === 2) break;
+    }
+
+    return resultat.join(lang == "fr" ? " et " : " and ");
+  }
+  const etaElem = document.getElementById("eta");
   const countdown = document.getElementById("countdown");
   const deadline = parseDate(countdown.dataset.date);
+  const lang = countdown.dataset.lang;
 
   const timer = setInterval(() => {
-    const distance = deadline - new Date().getTime();
-    if (distance > 0) {
-      daysElem.innerText = `${Math.floor(distance / day)}`;
-      hoursElem.innerText = `${Math.floor((distance % day) / hour)}`;
-      minElem.innerText = `${Math.floor((distance % hour) / minute)}`;
-      secElem.innerText = `${Math.floor((distance % minute) / second)}`;
-      countdown.hidden = false;
-    } else {
-      countdown.hidden = true;
-      clearInterval(timer);
-    }
+    const distance = (deadline - new Date().getTime()) / 1000;
+    etaElem.innerText = formatDurartion(distance, lang);
   }, 0);
+  const now = new Date();
+  for (const elem of document.querySelectorAll<HTMLElement>(
+    "div[data-start]",
+  )) {
+    const start = parseDate(elem.getAttribute("data-start"));
+    const end = parseDate(elem.getAttribute("data-end"));
+    if (now.getTime() < start.getTime() || end.getTime() < now.getTime()) {
+      elem.style = "display: none";
+    }
+  }
 </script>
 
 <div
   class="full-bleed background"
+  id="countdown"
+  data-date={edition.start_date}
+  data-lang={lang}
 >
-  <div class="countdown-box">
-    <div id="countdown" data-date={edition.start_date}>
-      <div>
-        <b id="cd-days"></b>
-        <i>{days}</i>
-      </div>
-      <div>
-        <b id="cd-hours"></b>
-        <i>{hours}</i>
-      </div>
-      <div>
-        <b id="cd-min"></b>
-        <i>{minutes}</i>
-      </div>
-      <div>
-        <b id="cd-sec"></b>
-        <i>{seconds}</i>
-      </div>
-    </div>
-    <h2 class="title">Snowcamp <span class="year">{year}</span></h2>
-    <h3 class="date"><span class="dates">{start} - {end}</span>, Grenoble</h3>
+  <div class="block description">
+    <p>{trad.desc[lang]}</p>
+    <dl>
+      <dt>📖 {trad.univ[lang]}</dt>
+      <dd>{trad.univ_desc[lang]}</dd>
+      <dt>🎙️ {trad.conf[lang]}</dt>
+      <dd>{trad.conf_desc[lang]}</dd>
+      <dt>🏔️ {trad.unconf[lang]}</dt>
+      <dd>{trad.unconf_desc[lang]}</dd>
+    </dl>
   </div>
+  <div class="block news">
+    <h2>{trad.news[lang]}</h2>
+    <slot />
+  </div>
+  <div class="block title">
+    <h1>Snowcamp {year}</h1>
+    <p style="margin: 0;">
+      <span class="highlight">{start} - {end}</span>, Grenoble<br />
+      {trad.eta[lang]}
+      <span id="eta"></span>
+    </p>
+  </div>
+  <img class="bruno" src="/img/fond/Logo Bruno Lavit blanc.png" />
 </div>

@@ -5,6 +5,7 @@
   --orange: hsl(355.54 50.959% 42.657%);
   --orange-on-main: hsl(25.262 92.02% 69.731%);
   --green: #1c784d;
+  --main2: #544a78;
 }
 
 @font-face {
@@ -46,18 +47,6 @@ body {
   flex-direction: column;
 }
 
-footer {
-  width: 100%;
-  height: 100%;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  background-color: var(--main);
-  gap: 15px;
-}
-
 .text-big-italic {
   font-size: 2.6rem;
   line-height: 3.9rem;
@@ -66,18 +55,6 @@ footer {
   opacity: 0.7;
   font-style: italic;
   text-align: center;
-}
-
-button.round {
-  height: 70px;
-  width: 70px;
-  border-radius: 50%;
-  border: 5px solid grey;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  color: var(--orange);
 }
 
 blockquote {
@@ -109,8 +86,8 @@ h6 {
 }
 
 h1 {
-  margin-top: 6rem;
-  margin-bottom: 6rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
   justify-self: center;
 }
 
@@ -123,7 +100,9 @@ h3 {
   justify-self: center;
 }
 
-p, ul, ol {
+p,
+ul,
+ol {
   margin-bottom: 2rem;
 }
 
