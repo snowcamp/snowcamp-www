@@ -59,25 +59,25 @@ sponsorship:
   display: current
   meetgreet: []
   etoile: []
-#    - cgi2022
-#    - open2024
-#    - moodys2025
-#    - criteo2023
-#    - kaizen
-#    - clevercloud
-#    - aws2026
+  #    - cgi2022
+  #    - open2024
+  #    - moodys2025
+  #    - criteo2023
+  #    - kaizen
+  #    - clevercloud
+  #    - aws2026
   flocon: []
-#    - avisto2020
-#    - zenika2023
-#    - periscop2026
-#    - soprasteria2018
-#    - kls2020
-#    - kelkoo2019
-#    - viseo2022
-#    - alma2026
-#    - enalean2026
-#    - hackyourjob2025
-#    - pingid2026
+  #    - avisto2020
+  #    - zenika2023
+  #    - periscop2026
+  #    - soprasteria2018
+  #    - kls2020
+  #    - kelkoo2019
+  #    - viseo2022
+  #    - alma2026
+  #    - enalean2026
+  #    - hackyourjob2025
+  #    - pingid2026
   partners:
     - alpesjug
     - stickermule
@@ -88,13 +88,13 @@ ticketing:
     conference: 110
     university: 165
 tremplin:
-  cfp_link: ''
+  cfp_link: ""
   #cfp_link: https://conference-hall.io/tremplin-de-snowcamp-2025
 conference:
-  cfp_link: ''
+  cfp_link: ""
   #cfp_link: https://conference-hall.io/snowcamp-2026
 speakers_dinner:
-  link: ''
+  link: ""
   #link: https://docs.google.com/forms/d/e/1FAIpQLSew5LabymKk3183bqOsuZhbTNN8Vyr-eJG8OGptSml1HaERIw/viewform?usp=publish-editor
 organisers:
   - miguel

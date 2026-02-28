@@ -123,7 +123,9 @@ h3 {
   justify-self: center;
 }
 
-p, ul, ol {
+p,
+ul,
+ol {
   margin-bottom: 2rem;
 }
 

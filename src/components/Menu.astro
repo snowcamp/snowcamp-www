@@ -81,7 +81,7 @@ const trad: { [key: string]: translation } = {
   },
   speakersGuide: {
     fr: "Guide de l'orateur",
-    en: "Speakers guide"
+    en: "Speakers guide",
   },
   venue_link: {
     fr: "/#venue",
@@ -172,7 +172,9 @@ const trad: { [key: string]: translation } = {
   {
     current.program_link && !current.program_show && (
       <li>
-        <a href={Utils.url(["schedule-wait"], { lang })}>{trad.program[lang]}</a>
+        <a href={Utils.url(["schedule-wait"], { lang })}>
+          {trad.program[lang]}
+        </a>
       </li>
     )
   }
