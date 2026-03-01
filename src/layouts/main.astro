@@ -35,11 +35,11 @@ const { frontmatter, title } = Astro.props;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    background-color: #2e2841;
+    background-color: var(--main);
     gap: 15px;
   }
   header {
-    background-color: #2e2841;
+    background-color: var(--main);
     color: white;
     padding: 0;
 
@@ -48,13 +48,7 @@ const { frontmatter, title } = Astro.props;
     position: sticky;
     top: 0;
     left: 0;
-
-    /* organize content */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    display: grid;
   }
 
   main {
@@ -147,15 +141,10 @@ const { frontmatter, title } = Astro.props;
       crossorigin="anonymous"></script>
   </head>
   <body lang={lang}>
-    <header class="full-bleed">
-      <a href={Utils.url("", { lang })}>
-        <img
-          style="max-width: 170px"
-          src={Utils.url("/img/alpes-snow-full-illustration.webp")}
-          alt="Logo"
-        />
-      </a>
-      <Menu />
+    <header>
+      <div>
+        <Menu />
+      </div>
 
       <!--div class="announce">
         <p style="text-align: center; margin: 0">
