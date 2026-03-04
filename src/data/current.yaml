@@ -10,7 +10,7 @@ timeline:
     close: "2026-06-01T00:00:00.000[Europe/Paris]"
     notification: "2026-06-15T00:00:00.000[Europe/Paris]"
     start: "2026-09-15T00:00:00.000[Europe/Paris]"
-    event: "2026-11-20T00:00:00.000[Europe/Paris]"
+    event: "2026-11-26T00:00:00.000[Europe/Paris]"
   cfp:
     open: "2026-09-01T00:00:00.000[Europe/Paris]"
     close: "2026-10-15T00:00:00.000[Europe/Paris]"
