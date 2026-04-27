@@ -88,8 +88,7 @@ ticketing:
     conference: 110
     university: 165
 tremplin:
-  cfp_link: ''
-  #cfp_link: https://conference-hall.io/tremplin-de-snowcamp-2025
+  cfp_link: https://conference-hall.io/tremplin-snowcamp-2027
 conference:
   cfp_link: ''
   #cfp_link: https://conference-hall.io/snowcamp-2026
