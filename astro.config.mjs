@@ -23,7 +23,7 @@ export default defineConfig({
     plugins: [yaml()],
   },
   image: {
-    formats: ['avif', 'webp'],
+    formats: ["avif", "webp"],
     service: passthroughImageService(),
   },
 });

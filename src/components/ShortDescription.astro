@@ -24,7 +24,8 @@ const { title, description, img, offset } = Astro.props;
   }
 </style>
 <div>
-  <div class="img" style={`background-image: url(${img}); --offset: ${offset}`}></div>
+  <div class="img" style={`background-image: url(${img}); --offset: ${offset}`}>
+  </div>
   <h3>{title}</h3>
   <p>{description}</p>
 </div>

@@ -33,17 +33,9 @@ const trad: { [key: string]: translation } = {
     fr: "Public",
     en: "Audience",
   },
-  our_sponsors: {
-    fr: "Nos sponsors",
-    en: "Our sponsors",
-  },
   become_sponsor: {
     fr: "Devenir sponsors",
     en: "Become sponsors",
-  },
-  sponsor_plan_title: {
-    fr: "Plan des stands",
-    en: "Plan of booths",
   },
   sponsor_meetgreet_title: {
     fr: "Meet & Greet",
@@ -95,8 +87,8 @@ const trad: { [key: string]: translation } = {
   },
   about: {
     fr: "À propos",
-    en: "About"
-  }
+    en: "About",
+  },
 };
 ---
 
@@ -132,21 +124,6 @@ const trad: { [key: string]: translation } = {
       justify-content: center;
     }
   }
-  .margin {
-    display: none;
-    background-color: var(--main2);
-    grid-row: 2;
-    &.left {
-      grid-column: 1;
-    }
-    &.left {
-      grid-column: 3;
-    }
-    &.is-open {
-      display: block;
-    }
-  }
-
   a {
     color: inherit;
     display: flex;
@@ -188,11 +165,36 @@ const trad: { [key: string]: translation } = {
     color: var(--orange-on-main);
   }
 
-  ul.line.menu {
-    display: none;
+  .menu > li.has-submenu {
+    position: relative;
   }
-  ul.line.menu.is-open {
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+    align-items: stretch;
+    width: max-content;
+    max-width: calc(100vw - 1rem);
+    background-color: var(--main);
+    z-index: 200;
+    padding: 0.25rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+  .submenu.is-open {
     display: flex;
+  }
+  .submenu.is-flipped {
+    left: auto;
+    right: 0;
+  }
+  .submenu > li {
+    text-align: left;
+  }
+  .submenu a {
+    padding: 0.5rem 1rem;
+    justify-content: flex-start;
   }
 
   a:hover {
@@ -210,7 +212,7 @@ const trad: { [key: string]: translation } = {
       />
     </a>
     <ul class="menu">
-      <li>
+      <li class="has-submenu">
         <button
           aria-expanded="false"
           aria-haspopup="true"
@@ -218,8 +220,36 @@ const trad: { [key: string]: translation } = {
         >
           {trad.about[lang]}
         </button>
+        <ul class="submenu" id="menu-snowcamp">
+          <li>
+            <a href={Utils.url(["snowcamp"], { lang })}>{trad.what[lang]}</a>
+          </li>
+          <li>
+            <a href={Utils.url(["organisation"], { lang })}
+              >{trad.organisation[lang]}</a
+            >
+          </li>
+          <li>
+            <a href={Utils.url(["association"], { lang })}
+              >{trad.association[lang]}</a
+            >
+          </li>
+          <li>
+            <a href={Utils.url(["previous-editions"], { lang })}
+              >{trad.past_editions[lang]}</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/channel/UCvRA5NSOfGOPet90fdV7uuw/videos"
+              target="_blank"
+              rel="noopener noreferrer">{trad.videos[lang]}</a
+            >
+          </li>
+          <li><a href={Utils.url(["coc"], { lang })}>{trad.coc[lang]}</a></li>
+        </ul>
       </li>
-      <li>
+      <li class="has-submenu">
         <button
           aria-expanded="false"
           aria-haspopup="true"
@@ -227,8 +257,25 @@ const trad: { [key: string]: translation } = {
         >
           Sponsors
         </button>
+        <ul class="submenu" id="menu-sponsors">
+          <li>
+            <a href={Utils.url(["sponsors"], { lang })}
+              >{trad.become_sponsor[lang]}</a
+            >
+          </li>
+          <li>
+            <a href={Utils.url(["sponsors"], { anchor: "#beers", lang })}
+              >{trad.sponsor_meetgreet_title[lang]}</a
+            >
+          </li>
+          <li>
+            <a href={Utils.url(["sponsors_guide"], { lang })}
+              >{trad.sponsor_guide_title[lang]}</a
+            >
+          </li>
+        </ul>
       </li>
-      <li>
+      <li class="has-submenu">
         <button
           aria-expanded="false"
           aria-haspopup="true"
@@ -236,15 +283,28 @@ const trad: { [key: string]: translation } = {
         >
           {trad.speaker[lang]}
         </button>
+        <ul class="submenu" id="menu-speaker">
+          <li>
+            <a href={Utils.url(["cfp"], { lang })}>{trad.conference[lang]}</a>
+          </li>
+          <li>
+            <a href={Utils.url(["tremplin"], { lang })}>{trad.tremplin[lang]}</a
+            >
+          </li>
+          <li>
+            <a href={Utils.url(["editorial-line"], { lang })}
+              >{trad.editorialLine[lang]}</a
+            >
+          </li>
+          <li>
+            <a href={Utils.url(["speakers-guide"], { lang })}
+              >{trad.speakersGuide[lang]}</a
+            >
+          </li>
+        </ul>
       </li>
       <li>
-        <button
-          aria-expanded="false"
-          aria-haspopup="true"
-          aria-controls="menu-attendee"
-        >
-          {trad.attendee[lang]}
-        </button>
+        <a href={Utils.url(["tickets"])}>{trad.ticket[lang]}</a>
       </li>
       <li>
         <a href={Utils.url(["alpexpo"], { lang })}>{trad.venue[lang]}</a>
@@ -261,101 +321,23 @@ const trad: { [key: string]: translation } = {
       </li>
     </ul>
   </div>
-  <div class="margin left"></div>
-  <ul class="line menu" id="menu-sponsors">
-    <li>
-      <a href={Utils.url([], { anchor: "#sponsors", lang })}
-        >{trad.our_sponsors[lang]}</a
-      >
-    </li>
-    <li>
-      <a href={Utils.url(["sponsors"], { lang })}>{trad.become_sponsor[lang]}</a
-      >
-    </li>
-    <li>
-      <a href={Utils.url(["sponsors"], { anchor: "#plan", lang })}
-        >{trad.sponsor_plan_title[lang]}</a
-      >
-    </li>
-    <li>
-      <a href={Utils.url(["sponsors"], { anchor: "#beers", lang })}
-        >{trad.sponsor_meetgreet_title[lang]}</a
-      >
-    </li>
-    <li>
-      <a href={Utils.url(["sponsors_guide"], { lang })}
-        >{trad.sponsor_guide_title[lang]}</a
-      >
-    </li>
-  </ul>
-  <ul class="line menu" id="menu-speaker">
-    <li>
-      <a href={Utils.url(["cfp"], { lang })}>{trad.conference[lang]}</a>
-    </li>
-    <li>
-      <a href={Utils.url(["tremplin"], { lang })}>{trad.tremplin[lang]}</a>
-    </li>
-    <li>
-      <a href={Utils.url(["editorial-line"], { lang })}
-        >{trad.editorialLine[lang]}</a
-      >
-    </li>
-    <li>
-      <a href={Utils.url(["speakers-guide"], { lang })}
-        >{trad.speakersGuide[lang]}</a
-      >
-    </li>
-  </ul>
-  <ul class="line menu" id="menu-attendee">
-    <li><a href={Utils.url(["tickets"])}>{trad.ticket[lang]}</a></li>
-  </ul>
-  <ul class="line menu" id="menu-snowcamp">
-    <li><a href={Utils.url(["snowcamp"], { lang })}>{trad.what[lang]}</a></li>
-    <li>
-      <a href={Utils.url(["organisation"], { lang })}
-        >{trad.organisation[lang]}</a
-      >
-    </li>
-    <li>
-      <a href={Utils.url(["association"], { lang })}>{trad.association[lang]}</a
-      >
-    </li>
-    <li>
-      <a href={Utils.url(["previous-editions"], { lang })}
-        >{trad.past_editions[lang]}</a
-      >
-    </li>
-    <li>
-      <a
-        href="https://www.youtube.com/channel/UCvRA5NSOfGOPet90fdV7uuw/videos"
-        target="_blank"
-        rel="noopener noreferrer">{trad.videos[lang]}</a
-      >
-    </li>
-    <li><a href={Utils.url(["coc"], { lang })}>{trad.coc[lang]}</a></li>
-  </ul>
-  <div class="margin right"></div>
 </nav>
 
 <script>
   const topLevel = document.querySelectorAll<HTMLButtonElement>(
     'button[aria-haspopup="true"]',
   );
-  const margin = document.querySelectorAll<HTMLElement>(".margin");
 
   function closeAll(except: HTMLElement | null = null) {
-    document.querySelectorAll("ul.line.menu").forEach((item) => {
+    document.querySelectorAll("ul.submenu").forEach((item) => {
       if (item !== except) {
         item.classList.remove("is-open");
-        const btn = item.querySelector("button");
+        item.classList.remove("is-flipped");
+        const id = item.id;
+        const btn = document.querySelector(`button[aria-controls="${id}"]`);
         if (btn) btn.setAttribute("aria-expanded", "false");
       }
     });
-    if (except == null) {
-      margin.forEach((elem) => {
-        elem.classList.remove("is-open");
-      });
-    }
   }
 
   topLevel.forEach((btn) => {
@@ -369,11 +351,13 @@ const trad: { [key: string]: translation } = {
       const isOpen = submenu.classList.contains("is-open");
       closeAll();
       if (!isOpen) {
+        submenu.classList.remove("is-flipped");
         submenu.classList.add("is-open");
         btn.setAttribute("aria-expanded", "true");
-        margin.forEach((elem) => {
-          elem.classList.add("is-open");
-        });
+        const rect = submenu.getBoundingClientRect();
+        if (rect.right > window.innerWidth - 8) {
+          submenu.classList.add("is-flipped");
+        }
       }
     });
 
@@ -396,5 +380,12 @@ const trad: { [key: string]: translation } = {
         }
       });
     });
+  });
+
+  document.addEventListener("click", (e) => {
+    const target = e.target as HTMLElement;
+    if (!target.closest('button[aria-haspopup="true"], .submenu')) {
+      closeAll();
+    }
   });
 </script>
