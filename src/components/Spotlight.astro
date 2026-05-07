@@ -78,15 +78,15 @@ const year = startDate.getFullYear();
         "bas-d"
         "haut-g";
       grid-template-columns: 1fr;
-      grid-template-rows: auto;
+      grid-template-rows: repeat(4, min-content);
     }
     .overlay-img {
       display: none; /* Souvent mieux de la cacher sur petit écran */
     }
   }
   .block {
-    margin: 1em;
-    padding: 1em;
+    margin: clamp(0.5em, 3.125vw - 1em, 1em);
+    padding: clamp(0.5em, 3.125vw - 1em, 1em);
     height: fit-content;
     width: fit-content;
     background: rgba(46, 40, 65, 0.7);
@@ -95,7 +95,8 @@ const year = startDate.getFullYear();
       color: aliceblue;
     }
 
-    & > h2 {
+    & > h2,
+    & > summary > h2 {
       color: #fff200;
       text-align: center;
     }
@@ -106,6 +107,43 @@ const year = startDate.getFullYear();
       margin: 0;
     }
   }
+
+  .news > summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5em;
+  }
+  .news > summary::-webkit-details-marker {
+    display: none;
+  }
+  .news > summary > h2 {
+    margin-block: 0;
+    flex: 1;
+  }
+  .news .chevron {
+    width: 1.25em;
+    height: 1.25em;
+    color: #fff200;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+  .news[open]:not([data-locked]) .chevron {
+    transform: rotate(180deg);
+  }
+
+  .news[data-locked] > summary {
+    cursor: default;
+    pointer-events: none;
+  }
+  .news[data-locked] .chevron {
+    display: none;
+  }
+  .news[data-locked] > summary > h2 {
+    margin-block: revert;
+  }
   dl {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -114,7 +152,7 @@ const year = startDate.getFullYear();
   .background {
     background: image-set(url("/img/fond/fond_2.avif") type("image/avif"))
       center/cover no-repeat;
-    min-height: 600px;
+    min-height: 550px;
     background-attachment: fixed;
   }
   .description {
@@ -242,6 +280,19 @@ const year = startDate.getFullYear();
       elem.style = "display: none";
     }
   }
+
+  const newsDetails = document.getElementById(
+    "news-details",
+  ) as HTMLDetailsElement | null;
+  if (newsDetails) {
+    const desktop = window.matchMedia("(min-width: 769px)");
+    const sync = () => {
+      newsDetails.open = desktop.matches;
+      newsDetails.toggleAttribute("data-locked", desktop.matches);
+    };
+    desktop.addEventListener("change", sync);
+    sync();
+  }
 </script>
 
 <div
@@ -261,10 +312,36 @@ const year = startDate.getFullYear();
       <dd>{trad.unconf_desc[lang]}</dd>
     </dl>
   </div>
-  <div class="block news">
-    <h2>{trad.news[lang]}</h2>
+  <details class="block news" id="news-details">
+    <summary>
+      <h2>{trad.news[lang]}</h2>
+      <!--?xml version="1.0" encoding="UTF-8"?-->
+      <svg
+        class="chevron"
+        aria-hidden="true"
+        focusable="false"
+        width="24px"
+        height="24px"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        color="#ffffff"
+        ><path
+          d="M12 8V16M12 16L15.5 12.5M12 16L8.5 12.5"
+          stroke="#ffffff"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path><path
+          d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+          stroke="#ffffff"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path></svg
+      >
+    </summary>
     <slot />
-  </div>
+  </details>
   <div class="block title">
     <h1>Snowcamp {year}</h1>
     <p style="margin: 0;">
