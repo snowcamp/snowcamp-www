@@ -21,16 +21,19 @@ timeline:
   tickets:
     open: "2026-11-17T11:00:00.000[Europe/Paris]"
 sponsorship:
-  prospectus: https://drive.google.com/file/d/1hOHTGVXJfiQ0nJFJugivkNr3SwdEXuSF/view?usp=share_link
-  subscribe_link: https://docs.google.com/forms/d/e/1FAIpQLScZDdAWonmZZYfV3khF5QJMIx7sx33MP8g3kzMUbLgGCFmbpQ/viewform?usp=dialog
+  prospectus: {
+    fr: "/pdf/sponsorship-prospectus-2027-fr.pdf",
+    en: "/pdf/sponsorship-prospectus-2027-en.pdf"
+  }
+  subscribe_link: https://conf.snowcamp.org
   type:
     flocon:
       id: flocon
       title: Flocon
-      price: 1000 €
+      price: 1500 €
       number: 12
       kakemono: true
-      ticket_link: https://www.billetweb.fr/snowcamp-2026&ticket=6527583
+      ticket_link: https://www.billetweb.fr/snowcamp-2026&ticket=
       places:
         conferences: 2
     etoile:
@@ -40,21 +43,22 @@ sponsorship:
       number: 12
       booth_area: 3x3=9m²
       kakemono: false
-      ticket_link: https://www.billetweb.fr/snowcamp-2026&ticket=6527584
+      ticket_link: https://www.billetweb.fr/snowcamp-2026&ticket=
       places:
         conferences: 3
         booth: 2
         speakers_dinner: 0
-    tenyears:
-      id: tenyears
-      title: 10 ans
-      price: 5000 €
-      number: 1
-      description: "Sponsor du goodies spécial des 10 ans: un T-shirt de qualité sur lequel sera affiché devant/derrière le logo du snowcamp et le logo des 10 ans. Votre logo sur la manche du t-shirt."
+    chamois:
+      id: chamois
+      title: Chamois
+      price: 5500 €
+      number: 2
+      description: "Sponsor etoile avec le logo du sponsor sur le badge de chaque participant."
       kakemono: false
+      ticket_link: https://www.billetweb.fr/snowcamp-2026&ticket=
       places:
-        conferences: 0
-        booth: 0
+        conferences: 5
+        booth: 2
         speakers_dinner: 0
   display: current
   meetgreet: []
@@ -78,6 +82,7 @@ sponsorship:
 #    - enalean2026
 #    - hackyourjob2025
 #    - pingid2026
+  chamois: []
   partners:
     - alpesjug
     - stickermule

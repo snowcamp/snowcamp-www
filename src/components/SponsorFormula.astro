@@ -13,9 +13,9 @@ const lang = Utils.getLang(Astro.url) as language;
 const sponsors = sponsor.number > 1 ? 'sponsors' : 'sponsor';
 
 const trad: { [key: string]: translation } = {
-  "title-tenyears": {
-    fr: "10 ans",
-    en: "10 years",
+  "title-chamois": {
+    fr: "Chamois",
+    en: "Chamois",
   },
   "title-etoile": {
     fr: "Étoile",
@@ -97,10 +97,8 @@ const trad: { [key: string]: translation } = {
     <p class={lang} lang="fr">{`Limité à ${sponsor.number} ${sponsors}`}</p>
   </header>
   <ul class={lang} lang="fr">
-    <li class={sponsor.id == "tenyears" || "hidden"}>
-      Sponsor du goodies spécial des 10 ans: un T-shirt de qualité sur lequel
-      sera affiché devant/derrière le logo du snowcamp et le logo des 10 ans.
-      Votre logo sur la manche du t-shirt.
+    <li class={sponsor.id == "chamois" || "hidden"}>
+      Votre logo sur le badge de chacun des participants de la conférence.
     </li>
     <li class={(sponsor?.places?.conferences ?? 0) > 0 || "hidden"}>
       {
@@ -121,10 +119,8 @@ const trad: { [key: string]: translation } = {
     <li class={sponsor.kakemono || "hidden"}>Un kakémono (max 1m x 2m50)</li>
   </ul>
   <ul class={lang} lang="en">
-    <li class={sponsor.id == "tenyears" || "hidden"}>
-      Sponsor a special 10-year anniversary goodie: a high-quality T-shirt
-      featuring the Snowcamp logo and the 10-year logo on the front and back.
-      Placing your logo on the sleeve of the T-shirt.
+    <li class={sponsor.id == "chamois" || "hidden"}>
+      Your logo on the badge of each participant of the conference.
     </li>
     <li class={(sponsor?.places?.conferences ?? 0) > 0 || "hidden"}>
       {`${sponsor.places.conferences} free tickets to attend the sessions`}
