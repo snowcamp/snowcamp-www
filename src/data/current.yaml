@@ -17,7 +17,7 @@ timeline:
     notification: "2026-11-01T00:00:00.000[Europe/Paris]"
     publish: "2026-11-15T00:00:00.000[Europe/Paris]"
   sponsor:
-    open: "2026-06-09T11:00:00.000[Europe/Paris]"
+    open: "2026-06-15T11:00:00.000[Europe/Paris]"
   tickets:
     open: "2026-11-17T11:00:00.000[Europe/Paris]"
 sponsorship:
