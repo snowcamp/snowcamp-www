@@ -1,4 +1,5 @@
 ---
+import { Markdown } from "astro-remote";
 import Utils from "../utils";
 import edition from "../data/current.yaml";
 const lang = Utils.getLang(Astro.url);
@@ -7,8 +8,8 @@ type translation = { fr: string; en: string };
 
 const trad: { [key: string]: translation } = {
   desc: {
-    fr: "Une conférence grenobloise sur les nouvelles technologies. Pendant 4 jours plus de 600 personnes se réunissent pour partager et apprendre autour du développement logiciel.",
-    en: "A Grenoble conference on new technologies. For 4 days, more than 600 people gather to share and learn about software development.",
+    fr: "La conférence Grenobloise sur les technologies et les innovations logicielles. Pendant 4 jours près de 700 personnes se réunissent pour partager et apprendre autour du développement logiciel.",
+    en: "Grenoble's conference on software technologies and innovation. Over 4 days, nearly 700 people come together to share knowledge and learn about software development.",
   },
   univ: {
     fr: "Université",
@@ -31,8 +32,8 @@ const trad: { [key: string]: translation } = {
     en: "Unconference",
   },
   unconf_desc: {
-    fr: "1 journée d'échange sur les pistes",
-    en: "1 day of exchange on the skiing slopes",
+    fr: "1 journée d’échanges sur la neige en montagne",
+    en: "1 day of socialising in the snow in the mountains",
   },
   news: {
     fr: "Actualités",
@@ -148,6 +149,9 @@ const year = startDate.getFullYear();
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 0.5em;
+  }
+  .news dd > p {
+    margin-block: 0;
   }
   .background {
     background: image-set(url("/img/fond/fond_2.avif") type("image/avif"))
@@ -271,9 +275,7 @@ const year = startDate.getFullYear();
     etaElem.innerText = formatDurartion(distance, lang);
   }, 0);
   const now = new Date();
-  for (const elem of document.querySelectorAll<HTMLElement>(
-    "div[data-start]",
-  )) {
+  for (const elem of document.querySelectorAll<HTMLElement>("[data-start]")) {
     const start = parseDate(elem.getAttribute("data-start"));
     const end = parseDate(elem.getAttribute("data-end"));
     if (now.getTime() < start.getTime() || end.getTime() < now.getTime()) {
@@ -340,7 +342,20 @@ const year = startDate.getFullYear();
           stroke-linejoin="round"></path></svg
       >
     </summary>
-    <slot />
+    <dl>
+      {
+        edition.news.map((item) => (
+          <Fragment>
+            <dt data-start={item.start} data-end={item.end}>
+              {item[`title_${lang}`]}
+            </dt>
+            <dd data-start={item.start} data-end={item.end}>
+              <Markdown content={item[`description_${lang}`]} />
+            </dd>
+          </Fragment>
+        ))
+      }
+    </dl>
   </details>
   <div class="block title">
     <h1>Snowcamp {year}</h1>

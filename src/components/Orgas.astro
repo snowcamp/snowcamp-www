@@ -10,6 +10,9 @@ interface Orga {
   twitter?: string;
   linkedin?: string;
   github?: string;
+  web?: string;
+  instagram?: string;
+  facebook?: string;
 }
 
 const { orga } = Astro.props;
@@ -42,6 +45,10 @@ const { orga } = Astro.props;
     margin-bottom: 10px;
   }
 
+  .social-links {
+    display: flex;
+  }
+
   .social-links a {
     margin: 0 10px;
     text-decoration: none;
@@ -66,34 +73,46 @@ const { orga } = Astro.props;
   <div class="social-links">
     {
       orga.twitter && (
-        <a
-          class="sp-tw"
-          href={`https://twitter.com/${orga.twitter}`}
-          target="_blank"
-        >
-          <i class="fa fa-twitter" />
+        <a href={`https://x.com/${orga.twitter}`} target="_blank">
+          <img width="24px" height="24px" src="/img/icon/x.svg" />
         </a>
       )
     }
     {
       orga.linkedin && (
         <a
-          class="sp-in"
           href={`https://www.linkedin.com/in/${orga.linkedin}`}
           target="_blank"
         >
-          <i class="fa fa-linkedin" />
+          <img width="24px" height="24px" src="/img/icon/linkedin.svg" />
         </a>
       )
     }
     {
       orga.github && (
-        <a
-          class="sp-gh"
-          href={`https://github.com/${orga.github}`}
-          target="_blank"
-        >
-          <i class="fa fa-github" />
+        <a href={`https://github.com/${orga.github}`} target="_blank">
+          <img width="24px" height="24px" src="/img/icon/github.svg" />
+        </a>
+      )
+    }
+    {
+      orga.web && (
+        <a href={`${orga.web}`} target="_blank">
+          <img width="24px" height="24px" src="/img/icon/www.svg" />
+        </a>
+      )
+    }
+    {
+      orga.instagram && (
+        <a href={`https://www.instagram.com/${orga.instagram}`} target="_blank">
+          <img width="24px" height="24px" src="/img/icon/instagram.svg" />
+        </a>
+      )
+    }
+    {
+      orga.facebook && (
+        <a href={`https://www.facebook.com/${orga.facebook}`} target="_blank">
+          <img width="24px" height="24px" src="/img/icon/facebook.svg" />
         </a>
       )
     }

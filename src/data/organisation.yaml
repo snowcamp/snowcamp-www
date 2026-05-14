@@ -34,10 +34,6 @@ organizers:
     linkedin: ludovicp
     github: ludomp
     id: ludovic
-  - name: Jade Crotto-Miglietti
-    img: jade.avif
-    linkedin: jadecrottomiglietti
-    id: jade
   - name: Michel Barret
     img: michel.avif
     linkedin: michel-barret-23a39a27
@@ -50,7 +46,7 @@ organizers:
     github: mmoqui
     id: miguel
   - name: Ouiame Talbi
-    img: ouiame.png
+    img: ouiame.avif
     linkedin: ouiame-talbi
     id: ouiame
   - name: Pierrick Rassat
@@ -71,7 +67,7 @@ organizers:
     github: Fairy-wen
     id: virginie
   - name: Willy Malvault
-    img: willy.png
+    img: willy.avif
     twitter: malvaultw
     linkedin: willy-malvault-aa584814
     github: vlamy
@@ -88,6 +84,20 @@ organizers:
     linkedin: yohanlasorsa
     github: sinedied
     id: yohan
+  - name: Léo Gatellier
+    img: leo.avif
+    id: leo
+    linkedin: leogatellier
+  - name: Alexis Martinier
+    id: alexis
+    img: alexis.avif
+    linkedin: alexismtr
+  - name: Bruno Lavit
+    id: bruno
+    img: bruno.avif
+    web: https://www.brunolavitphotography.com
+    facebook: BrunoLavitPhotography
+    instagram: brunolavit
   # Former
   - name: Aurore Allibe
     id: aurore
@@ -119,3 +129,5 @@ organizers:
   - name: Cédric Tran-Xuan
     id: cedric
     honor: true
+  - name: Jade Crotto-Miglietti
+    id: jade

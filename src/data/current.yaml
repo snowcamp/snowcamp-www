@@ -21,10 +21,11 @@ timeline:
   tickets:
     open: "2026-11-17T11:00:00.000[Europe/Paris]"
 sponsorship:
-  prospectus: {
-    fr: "/pdf/sponsorship-prospectus-2027-fr.pdf",
-    en: "/pdf/sponsorship-prospectus-2027-en.pdf"
-  }
+  prospectus:
+    {
+      fr: "/pdf/sponsorship-prospectus-2027-fr.pdf",
+      en: "/pdf/sponsorship-prospectus-2027-en.pdf",
+    }
   subscribe_link: https://conf.snowcamp.org
   type:
     flocon:
@@ -71,21 +72,21 @@ sponsorship:
   #    - clevercloud
   #    - aws2026
   flocon: []
- #    - avisto2020
- #    - zenika2023
- #    - periscop2026
- #    - soprasteria2018
- #    - kls2020
- #    - kelkoo2019
- #    - viseo2022
- #    - alma2026
- #    - enalean2026
- #    - hackyourjob2025
- #    - pingid2026
+  #    - avisto2020
+  #    - zenika2023
+  #    - periscop2026
+  #    - soprasteria2018
+  #    - kls2020
+  #    - kelkoo2019
+  #    - viseo2022
+  #    - alma2026
+  #    - enalean2026
+  #    - hackyourjob2025
+  #    - pingid2026
   chamois: []
   partners:
     - alpesjug
-    - stickermule
+    #- stickermule
 ticketing:
   #link: https://www.billetweb.fr/shop.php?event=snowcamp-2026
   sold_out: false
@@ -113,6 +114,54 @@ organisers:
   - charles
   - ouiame
   - virginie
-  - jade
+  - alexis
+  - bruno
+  - leo
 # satisfaction_link for 2026
 satisfaction_link: https://forms.gle/CQuCZymH7TZFSDKHA
+news:
+  # Tremplin
+  - start: 2026-02-01T00:00:00.000[Europe/Paris]
+    end: 2026-04-01T00:00:00.000[Europe/Paris]
+    title_fr: Tremplin
+    title_en: Tremplin
+    description_fr: Le CFP du [tremplin](/tremplin) démarre dès le 1er avril.
+    description_en: The [Tremplin](/en/tremplin) CFP opens on April 1.
+  - start: 2026-04-01T00:00:00.000[Europe/Paris]
+    end: 2026-06-01T00:00:00.000[Europe/Paris]
+    title_fr: Tremplin
+    title_en: Tremplin
+    description_fr: Le CFP du [tremplin](/tremplin) est ouvert !
+    description_en: The [Tremplin](/en/tremplin) CFP is now open!
+  # Sponsor
+  - start: 2026-02-01T00:00:00.000[Europe/Paris]
+    end: 2026-06-09T11:00:00.000[Europe/Paris]
+    title_fr: Sponsoring
+    title_en: Sponsoring
+    description_fr: La campagne de [sponsoring](/sponsors) ouvrira en juin.
+    description_en: The [sponsorship](/en/sponsors) campaign will open in June.
+  - start: 2026-06-09T11:00:00.000[Europe/Paris]
+    end: 2027-01-13T08:00:00.000[Europe/Paris]
+    title_fr: Sponsoring
+    title_en: Sponsoring
+    description_fr: La campagne de [sponsoring](/sponsors) a démarrée !
+    description_en: The [sponsorship](/en/sponsors) campaign is now open!
+  # Main event
+  - start: 2026-09-01T00:00:00.000[Europe/Paris]
+    end: 2026-10-15T00:00:00.000[Europe/Paris]
+    title_fr: Call for Paper
+    title_en: Call for Paper
+    description_fr: Le [CFP](/cfp) est ouvert !
+    description_en: The [CFP](/en/cfp) is now open!
+  - start: 2026-11-15T00:00:00.000[Europe/Paris]
+    end: 2027-01-16T18:00:00.000[Europe/Paris]
+    title_fr: Programme
+    title_en: Program
+    description_fr: Le programme est disponible !
+    description_en: The program is available!
+  - start: 2026-11-17T11:00:00.000[Europe/Paris]
+    end: 2027-01-13T18:00:00.000[Europe/Paris]
+    title_fr: Billeterie
+    title_en: Ticketing
+    description_fr: La [billeterie](/tickets) est ouverte !
+    description_en: The [ticketing](/tickets) is now open!
