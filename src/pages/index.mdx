@@ -34,6 +34,7 @@ export const start = startFormat.format(startDate);
 export const end = endFormat.format(Utils.parseDate(current.end_date));
 export const year = startDate.getFullYear();
 
+export const chamois = current.sponsorship.chamois.map((id) => sponsorsTable[id]);
 export const etoiles = current.sponsorship.etoile.map((id) => sponsorsTable[id]);
 export const flocons = current.sponsorship.flocon.map((id) => sponsorsTable[id]);
 export const partners = current.sponsorship.partners.map((id) => sponsorsTable[id]);
@@ -57,42 +58,18 @@ export const tlCFP = [
   }
 ];
 
-<Spotlight>
-  <div data-start="2026-02-01T00:00:00.000[Europe/Paris]" data-end={current.timeline.tremplin.open}>
-  ### CFP du tremplin
-
-  Le CFP du tremplin démarre dès le 1er avril.
-  </div>
-  <div data-start={current.timeline.tremplin.open} data-end={current.timeline.tremplin.close}>
-  ### CFP du tremplin
-
-  Le CFP du tremplin est ouvert !
-  </div>
-  <div data-start="2026-02-01T00:00:00.000[Europe/Paris]" data-end={current.timeline.sponsor.open}>
-  ### Sponsoring
-  
-  La campagne de sponsoring ouvrira en juin.
-  </div>
-  <div data-start={current.timeline.sponsor.open} data-end={current.start_date}>
-  ### Sponsoring
-  
-  La campagne de sponsoring a démarrée !
-  </div>
-  <div data-start={current.timeline.cfp.open} data-end={current.timeline.cfp.close}>
-  ### Call for Paper
-
-  Le CFP est ouvert !
-  </div>
-  <div data-start={current.timeline.cfp.publish} data-end={current.end_date}>
-  ### Programme
-
-  Le programme est disponible !
-  </div>
-</Spotlight>
+<Spotlight/>
 
 # Sponsors { year }
 
 Ils nous ont déjà accordé leur confiance pour préparer ensemble l'édition { year }.
+
+## Chamois
+
+<div style="display: flex; flex-flow: row wrap; align-items: center; gap: 2rem; justify-content: space-evenly">
+{ chamois.map((chamois) => <Sponsor title={chamois.name} img={chamois.logo} href={chamois.link.fr} />)
+}
+</div>
 
 ## Étoile
 
@@ -111,14 +88,6 @@ Ils nous ont déjà accordé leur confiance pour préparer ensemble l'édition {
 Un grand merci à nos sponsors !
 
 <Button className="sponsorOpened" title="Devenez sponsor !" href={current.sponsorship.subscribe_link} type="ext"/>
-
-# Call For Papers
-
-<TimelineCFP tl={tlCFP}/>
-
-<div style="display: flex; flex-flow: row wrap; align-items: center; gap: 2rem; justify-content: space-evenly">
-Vous pouvez trouver tous les  [détails ici](/cfp).
-</div>
 
 <a id="sponsors"></a>
 

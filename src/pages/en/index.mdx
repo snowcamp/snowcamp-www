@@ -34,6 +34,7 @@ export const start = startFormat.format(startDate);
 export const end = endFormat.format(Utils.parseDate(current.end_date));
 export const year = startDate.getFullYear();
 
+export const chamois = current.sponsorship.chamois.map((id) => sponsorsTable[id]);
 export const etoiles = current.sponsorship.etoile.map((id) => sponsorsTable[id]);
 export const flocons = current.sponsorship.flocon.map((id) => sponsorsTable[id]);
 export const partners = current.sponsorship.partners.map((id) => sponsorsTable[id]);
@@ -57,50 +58,20 @@ export const tlCFP = [
   }
 ];
 
-<Spotlight>
-  <div data-start="2026-02-01T00:00:00.000[Europe/Paris]" data-end={current.timeline.tremplin.open}>
-  ### CFP of tremplin
-
-  The Tremplin CFP opens on April 1.
-  </div>
-  <div data-start={current.timeline.tremplin.open} data-end={current.timeline.tremplin.close}>
-  ### CFP of tremplin
-
-  The Tremplin CFP is now open!
-  </div>
-  <div data-start="2026-02-01T00:00:00.000[Europe/Paris]" data-end={current.timeline.sponsor.open}>
-  ### Sponsoring
-  
-  The sponsorship campaign will open in June.
-  </div>
-  <div data-start={current.timeline.sponsor.open} data-end={current.start_date}>
-  ### Sponsoring
-  
-  The sponsorship campaign is now open!
-  </div>
-  <div data-start={current.timeline.cfp.open} data-end={current.timeline.cfp.close}>
-  ### Call for Paper
-
-  Call for Paper is now open!
-  </div>
-  <div data-start={current.timeline.cfp.publish} data-end={current.end_date}>
-  ### Program
-
-  The program is now available.
-  </div>
-</Spotlight>
-
-<TimelineCFP tl={tlCFP}/>
-
-<div style="display: flex; flex-flow: row wrap; align-items: center; gap: 2rem; justify-content: space-evenly">
-You can find more [details here](/en/cfp).
-</div>
+<Spotlight/>
 
 <a id="sponsors"></a>
 
 # Sponsors { year }
 
-> They have already placed their trust to prepare the edition { year } together.
+They have already placed their trust to prepare the edition { year } together.
+
+## Chamois
+
+<div style="display: flex; flex-flow: row wrap; align-items: center; gap: 2rem; justify-content: space-evenly">
+{ chamois.map((chamois) => <Sponsor title={chamois.name} img={chamois.logo} href={chamois.link.fr} />)
+}
+</div>
 
 ## Étoile
 
@@ -116,9 +87,7 @@ You can find more [details here](/en/cfp).
 }
 </div>
 
-> Many thanks to our sponsors!
-
-<Button title="Become sponsor !" href={current.sponsorship.subscribe_link} type="ext"/>
+Many thanks to our sponsors!
 
 ## Parteners
 
