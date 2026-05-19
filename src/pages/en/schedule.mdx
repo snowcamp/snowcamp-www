@@ -6,7 +6,7 @@ import Utils from '../../utils.js';
 import current from '../../data/current.yaml';
 import Redirect from "../../layouts/Redirect.astro";
 
-export const endFormat = Intl.DateTimeFormat('enn', {
+export const endFormat = Intl.DateTimeFormat('en', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
@@ -15,6 +15,6 @@ export const end = endFormat.format(Utils.parseDate(current.timeline.cfp.publish
 
 
 
-The program will be available the {end}.
+The program will be available on {end}.
 
 <Redirect target={current.program_link} />
