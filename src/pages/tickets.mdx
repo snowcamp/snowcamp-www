@@ -16,7 +16,7 @@ export const openDate = endFormat.format(Utils.parseDate(edition.timeline.ticket
 
 # Billetterie
 
-Vous pouvez acheter le pack 3 jours (Universités + Conférences) ou 2 jours (Conférences seulement).
+Les billets donnent accès aux 2 jours de la conférence.
 L'achat du ticket est délégué à notre prestataire BilletWeb.
 Attention, le nombre de billets est limité !
 
@@ -31,44 +31,28 @@ Attention, le nombre de billets est limité !
 <tr>
   <th></th>
   <th scope="col">Pack 2 jours</th>
-  <th scope="col">Pack 3 jours</th>
 </tr>
 </thead>
   <tbody>
   <tr>
-    <th scope="row">Universités (mercredi)</th>
-    <td>❌</td>
-    <td>✅</td>
-  </tr>
-  <tr>
-    <th scope="row">Conférences (jeudi&nbsp;&&nbsp;vendredi)</th>
-    <td>✅</td>
-    <td>✅</td>
-  </tr>
-  <tr>
-    <th scope="row">Keynotes (jeudi&nbsp;&&nbsp;vendredi)</th>
-    <td>✅</td>
+    <th scope="row">Conférences&nbsp;&&nbsp;Keynotes</th>
     <td>✅</td>
   </tr>
   <tr>
     <th scope="row">Petit déjeuner tous&nbsp;les&nbsp;jours</th>
     <td>✅</td>
-    <td>✅</td>
   </tr>
   <tr>
     <th scope="row">Repas tous&nbsp;les&nbsp;midi</th>
-    <td>✅</td>
     <td>✅</td>
   </tr>
   <tr>
     <th scope="row">Meet & Greet le Jeudi&nbsp;soir</th>
     <td>✅</td>
-    <td>✅</td>
   </tr>
   <tr>
     <th scope="row">Prix</th>
     <td>{edition.ticketing.price.conference} €</td>
-    <td>{edition.ticketing.price.university} €</td>
   </tr>
   </tbody>
 </table>
