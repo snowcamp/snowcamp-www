@@ -8,16 +8,8 @@ type translation = { fr: string; en: string };
 
 const trad: { [key: string]: translation } = {
   desc: {
-    fr: "La conférence Grenobloise sur les technologies et les innovations logicielles. Pendant 4 jours près de 700 personnes se réunissent pour partager et apprendre autour du développement logiciel.",
-    en: "Grenoble's conference on software technologies and innovation. Over 4 days, nearly 700 people come together to share knowledge and learn about software development.",
-  },
-  univ: {
-    fr: "Université",
-    en: "University",
-  },
-  univ_desc: {
-    fr: "1 journée de formation en profondeur",
-    en: "1 day of training",
+    fr: "La conférence Grenobloise sur les technologies et les innovations logicielles. Pendant 3 jours près de 700 personnes se réunissent pour partager et apprendre autour du développement logiciel.",
+    en: "Grenoble's conference on software technologies and innovation. Over 3 days, nearly 700 people come together to share knowledge and learn about software development.",
   },
   conf: {
     fr: "Conférence",
@@ -306,8 +298,6 @@ const year = startDate.getFullYear();
   <div class="block description">
     <p>{trad.desc[lang]}</p>
     <dl>
-      <dt>📖 {trad.univ[lang]}</dt>
-      <dd>{trad.univ_desc[lang]}</dd>
       <dt>🎙️ {trad.conf[lang]}</dt>
       <dd>{trad.conf_desc[lang]}</dd>
       <dt>🏔️ {trad.unconf[lang]}</dt>
