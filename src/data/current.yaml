@@ -144,7 +144,7 @@ news:
     end: 2027-01-13T08:00:00.000[Europe/Paris]
     title_fr: Sponsoring
     title_en: Sponsoring
-    description_fr: La campagne de [sponsoring](/sponsors) a démarrée !
+    description_fr: La campagne de [sponsoring](/sponsors) a démarré !
     description_en: The [sponsorship](/en/sponsors) campaign is now open!
   # Main event
   - start: 2026-09-01T00:00:00.000[Europe/Paris]
@@ -169,5 +169,5 @@ news:
     end: 2027-01-13T18:00:00.000[Europe/Paris]
     title_fr: 2 jours
     title_en: 2 days
-    description_fr: "Le format du snowcamp évolue : il est dorénavent sur 2 jours et accueille des formats 2h les jeudis et vendredi"
-    description_en: "SnowCamp's format is evolving: it now runs over two days and features 2-hour sessions on both Thursday and Friday."
+    description_fr: "Le format du SnowCamp évolue ! L'événement se déroulera dorénavant sur 2 jours et accueillera des ateliers de 2h, dans deux salles supplémentaires, les jeudis et vendredis."
+    description_en: "SnowCamp's format is evolving ! The event will now take place over 2 days and will host 2-hour workshops on Thursdays and Fridays in two additional rooms."
