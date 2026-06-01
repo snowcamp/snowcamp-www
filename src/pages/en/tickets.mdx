@@ -17,47 +17,15 @@ export const openDate = endFormat.format(Utils.parseDate(edition.timeline.ticket
 
 # Tickets
 
-The tickets give you access during the 2 days of the event.
-The tickets can be bought through our partner BilletWeb.
-Beware, the number of attendees is limited and we were sold out last year!
+Tickets grant access to both Thursday and Friday and include pass to keynotes, talks, workshops, breakfasts and lunches, as well as the Meet & Greet.
+
+The tickets can be bought through our partner BilletWeb. Beware, the number of attendees is limited and we were sold out last year!
 
 <p className="ticketsBefore">The store opens on {openDate} !</p>
 <p className="ticketsOpened">The store is open!</p>
 <p className="ticketsClosed">The store is sold out!</p>
 
 <Button href={edition.ticketing.link} title="Tickets" type="ext"/>
-
-
-<table style="text-align: center">
-<thead>
-<tr>
-  <th></th>
-  <th scope="col">2 days pack</th>
-</tr>
-</thead>
-  <tbody>
-  <tr>
-    <th scope="row">Conferences&nbsp;&&nbsp;Keynotes</th>
-    <td>✅</td>
-  </tr>
-  <tr>
-    <th scope="row">Breakfast (every day)</th>
-    <td>✅</td>
-  </tr>
-  <tr>
-    <th scope="row">Lunch (every day)</th>
-    <td>✅</td>
-  </tr>
-  <tr>
-    <th scope="row">Meet & Greet on Thursday&nbsp;evening</th>
-    <td>✅</td>
-  </tr>
-  <tr>
-    <th scope="row">Price</th>
-    <td>{edition.ticketing.price.conference} €</td>
-  </tr>
-  </tbody>
-</table>
 
 ## Buy several tickets
 

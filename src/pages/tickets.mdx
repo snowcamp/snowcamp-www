@@ -16,46 +16,15 @@ export const openDate = endFormat.format(Utils.parseDate(edition.timeline.ticket
 
 # Billetterie
 
-Les billets donnent accès aux 2 jours de la conférence.
-L'achat du ticket est délégué à notre prestataire BilletWeb.
-Attention, le nombre de billets est limité !
+Les billets donnent accès aux 2 jours de la conférence et incluent l'accès aux keynotes, conférences, ateliers, les petits déjeuners et repas de midi, ainsi qu'au Meet & Greet.
+
+L'achat du ticket est délégué à notre prestataire BilletWeb. Attention, le nombre de billets est limité !
 
 <p className="ticketsBefore">La billetterie ouvre le {openDate} !</p>
 <p className="ticketsOpened">La billetterie est ouverte !</p>
 <p className="ticketsClosed">La billetterie est épuisée !</p>
 
 <Button href={edition.ticketing.link} title="Billetterie" type="ext"/>
-
-<table style="text-align: center">
-<thead>
-<tr>
-  <th></th>
-  <th scope="col">Pack 2 jours</th>
-</tr>
-</thead>
-  <tbody>
-  <tr>
-    <th scope="row">Conférences&nbsp;&&nbsp;Keynotes</th>
-    <td>✅</td>
-  </tr>
-  <tr>
-    <th scope="row">Petit déjeuner tous&nbsp;les&nbsp;jours</th>
-    <td>✅</td>
-  </tr>
-  <tr>
-    <th scope="row">Repas tous&nbsp;les&nbsp;midi</th>
-    <td>✅</td>
-  </tr>
-  <tr>
-    <th scope="row">Meet & Greet le Jeudi&nbsp;soir</th>
-    <td>✅</td>
-  </tr>
-  <tr>
-    <th scope="row">Prix</th>
-    <td>{edition.ticketing.price.conference} €</td>
-  </tr>
-  </tbody>
-</table>
 
 ## Achat de plusieurs places
 
