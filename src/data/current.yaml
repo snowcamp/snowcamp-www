@@ -54,6 +54,7 @@ sponsorship:
       title: Chamois
       price: 5500 €
       number: 2
+      booth_area: 3x3=9m²
       description: "Sponsor etoile avec le logo du sponsor sur le badge de chaque participant."
       kakemono: false
       ticket_link: https://www.billetweb.fr/snowcamp-2026&ticket=

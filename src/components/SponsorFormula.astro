@@ -68,6 +68,7 @@ const trad: { [key: string]: translation } = {
     margin: 1ex;
     list-style-type: none;
     padding: 1ex 1rem;
+    gap: 1ex;
   }
   li {
     text-align: center;
@@ -81,6 +82,13 @@ const trad: { [key: string]: translation } = {
   }
   p {
     display: none;
+  }
+  .highlight {
+    background: var(--green);
+    padding: 4px 4px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    color: var(--background);
   }
   .en:lang(en) {
     display: flex;
@@ -97,43 +105,65 @@ const trad: { [key: string]: translation } = {
     <p class={lang} lang="fr">{`Limité à ${sponsor.number} ${sponsors}`}</p>
   </header>
   <ul class={lang} lang="fr">
-    <li class={sponsor.id == "chamois" || "hidden"}>
-      Votre logo sur le badge de chacun des participants de la conférence.
-    </li>
     <li class={(sponsor?.places?.conferences ?? 0) > 0 || "hidden"}>
-      {
-        `${sponsor.places.conferences} entrées offertes pour participer aux sessions`
-      }
+      <span class="highlight">{`${sponsor.places.conferences}`} entrées</span> conférences
+      offertes
     </li>
-    <li class={(sponsor?.places?.booth ?? 0) > 0 || "hidden"}>
-      {
-        `${sponsor.places.booth} entrées offertes sur l'espace sponsor uniquement`
-      }
-    </li>
-    <li class={sponsor.booth_area || "hidden"}>
-      {`Stand dans le hall d'exposition (${sponsor.booth_area})`}
-    </li>
-    <li>Logo sur notre site web du SnowCamp</li>
+    <li>Logo dans toutes nos communications</li>
     <li>Affichage de votre logo sur le lieu de la conférence</li>
-    <li>Autorisation d'exploiter le logo SnowCamp pour votre communication</li>
+    <li>Autorisation d'exploitatione du logo SnowCamp</li>
     <li class={sponsor.kakemono || "hidden"}>Un kakémono (max 1m x 2m50)</li>
+    <li class={(sponsor.booth_area && sponsor.id !== "chamois") || "hidden"}>
+      <b>{`Stand sponsor (${sponsor.booth_area})`}</b>
+    </li>
+    <li class={(sponsor.booth_area && sponsor.id === "chamois") || "hidden"}>
+      {`Stand sponsor (${sponsor.booth_area})`}
+    </li>
+    <li
+      class={((sponsor?.places?.booth ?? 0) > 0 && sponsor.id !== "chamois") ||
+        "hidden"}
+    >
+      <b>{`${sponsor.places.booth} entrées sur l'espace sponsor uniquement`}</b>
+    </li>
+    <li
+      class={((sponsor?.places?.booth ?? 0) > 0 && sponsor.id === "chamois") ||
+        "hidden"}
+    >
+      {`${sponsor.places.booth} entrées sur l'espace sponsor uniquement`}
+    </li>
+    <li class={sponsor.id == "chamois" || "hidden"}>
+      <b>Votre logo sur le badge des participants.</b>
+    </li>
   </ul>
   <ul class={lang} lang="en">
-    <li class={sponsor.id == "chamois" || "hidden"}>
-      Your logo on the badge of each participant of the conference.
-    </li>
     <li class={(sponsor?.places?.conferences ?? 0) > 0 || "hidden"}>
-      {`${sponsor.places.conferences} free tickets to attend the sessions`}
+      <span class="highlight">{`${sponsor.places.conferences} tickets`}</span> to
+      attend the sessions
     </li>
-    <li class={(sponsor?.places?.booth ?? 0) > 0 || "hidden"}>
-      {`${sponsor.places.booth} free tickets for the sponsors space only`}
+    <li>Your logo on all our communications</li>
+    <li>Your logo visible on the location of the conference</li>
+    <li>Authorisation to use the SnowCamp logo</li>
+    <li class={sponsor.kakemono || "hidden"}>1 kakémono (max 1m x 2m50)</li>
+    <li class={(sponsor.booth_area && sponsor.id !== "chamois") || "hidden"}>
+      <b>{`Booth in the exhibition hall (${sponsor.booth_area})`}</b>
     </li>
-    <li class={sponsor.booth_area || "hidden"}>
+    <li class={(sponsor.booth_area && sponsor.id === "chamois") || "hidden"}>
       {`Booth in the exhibition hall (${sponsor.booth_area})`}
     </li>
-    <li>Your logo on the SnowCamp website</li>
-    <li>Your logo visible on the location of the conference</li>
-    <li>Authorisation to use the SnowCamp logo for your communications</li>
-    <li class={sponsor.kakemono || "hidden"}>1 kakémono (max 1m x 2m50)</li>
+    <li
+      class={((sponsor?.places?.booth ?? 0) > 0 && sponsor.id !== "chamois") ||
+        "hidden"}
+    >
+      <b>{`${sponsor.places.booth} tickets for the sponsors space only`}</b>
+    </li>
+    <li
+      class={((sponsor?.places?.booth ?? 0) > 0 && sponsor.id === "chamois") ||
+        "hidden"}
+    >
+      {`${sponsor.places.booth} tickets for the sponsors space only`}
+    </li>
+    <li class={sponsor.id == "chamois" || "hidden"}>
+      <b>Your logo on the badge of each participant of the conference.</b>
+    </li>
   </ul>
 </section>
