@@ -5,26 +5,93 @@ import Utils from "../utils";
 interface Props {
   sponsor: SponsorType;
   active: boolean;
+  previousSponsor?: SponsorType | null;
 }
-const { sponsor, active } = Astro.props;
-type translation = { fr: string; en: string };
-type language = keyof translation;
-const lang = Utils.getLang(Astro.url) as language;
-const sponsors = sponsor.number > 1 ? "sponsors" : "sponsor";
+const { sponsor, active, previousSponsor = null } = Astro.props;
+type Language = "fr" | "en";
+const lang = Utils.getLang(Astro.url) as Language;
+const sponsorWord = sponsor.number > 1 ? "sponsors" : "sponsor";
 
-const trad: { [key: string]: translation } = {
-  "title-chamois": {
-    fr: "Chamois",
-    en: "Chamois",
+type LangStr = { fr: string; en: string };
+type LangFn<T extends unknown[]> = {
+  fr: (...args: T) => string;
+  en: (...args: T) => string;
+};
+
+const trad: {
+  titles: Record<string, LangStr>;
+  limited: LangFn<[number, string]>;
+  "item-conferences-count": LangFn<[number]>;
+  "item-conferences-label": LangStr;
+  "item-logo-comms": LangStr;
+  "item-logo-venue": LangStr;
+  "item-logo-snowcamp": LangStr;
+  "item-kakemono": LangStr;
+  "item-booth": LangFn<[string]>;
+  "item-booth-tickets": LangFn<[number]>;
+  "item-badge-logo": LangStr;
+} = {
+  titles: {
+    chamois: { fr: "Chamois", en: "Chamois" },
+    etoile: { fr: "Étoile", en: "Étoile" },
+    flocon: { fr: "Flocon", en: "Flocon" },
   },
-  "title-etoile": {
-    fr: "Étoile",
-    en: "Étoile",
+  limited: {
+    fr: (n, s) => `Limité à ${n} ${s}`,
+    en: (n, s) => `Limited to ${n} ${s}`,
   },
-  "title-flocon": {
-    fr: "Flocon",
-    en: "Flocon",
+  "item-conferences-count": {
+    fr: (n) => `${n} entrées`,
+    en: (n) => `${n} tickets`,
   },
+  "item-conferences-label": {
+    fr: "conférences offertes",
+    en: "to attend the sessions",
+  },
+  "item-logo-comms": {
+    fr: "Logo dans toutes nos communications",
+    en: "Your logo on all our communications",
+  },
+  "item-logo-venue": {
+    fr: "Affichage de votre logo sur le lieu de la conférence",
+    en: "Your logo visible on the location of the conference",
+  },
+  "item-logo-snowcamp": {
+    fr: "Autorisation d'exploitation du logo SnowCamp",
+    en: "Authorisation to use the SnowCamp logo",
+  },
+  "item-kakemono": {
+    fr: "Un kakémono (max 1m x 2m50)",
+    en: "1 kakémono (max 1m x 2m50)",
+  },
+  "item-booth": {
+    fr: (area) => `Stand sponsor (${area})`,
+    en: (area) => `Booth in the exhibition hall (${area})`,
+  },
+  "item-booth-tickets": {
+    fr: (n) => `${n} entrées sur l'espace sponsor uniquement`,
+    en: (n) => `${n} tickets for the sponsors space only`,
+  },
+  "item-badge-logo": {
+    fr: "Votre logo sur le badge des participants.",
+    en: "Your logo on the badge of each participant of the conference.",
+  },
+};
+
+const show = {
+  conferences: (sponsor?.places?.conferences ?? 0) > 0,
+  kakemono: !!sponsor.kakemono,
+  booth: !!sponsor.booth_area,
+  boothTickets: (sponsor?.places?.booth ?? 0) > 0,
+  badgeLogo: !!sponsor.badge_logo,
+};
+
+const isNew = {
+  kakemono: show.kakemono && !previousSponsor?.kakemono,
+  booth: show.booth && !previousSponsor?.booth_area,
+  boothTickets:
+    show.boothTickets && !((previousSponsor?.places?.booth ?? 0) > 0),
+  badgeLogo: show.badgeLogo && !previousSponsor?.badge_logo,
 };
 ---
 
@@ -61,7 +128,7 @@ const trad: { [key: string]: translation } = {
     margin-top: 1rem;
   }
   ul {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     background-color: var(--background);
@@ -73,15 +140,12 @@ const trad: { [key: string]: translation } = {
   li {
     text-align: center;
     &::before {
-      content: "✔  ";
+      content: "✔  ";
       color: var(--green);
     }
     &.hidden {
       display: none;
     }
-  }
-  p {
-    display: none;
   }
   .highlight {
     background: var(--green);
@@ -90,80 +154,61 @@ const trad: { [key: string]: translation } = {
     box-decoration-break: clone;
     color: var(--background);
   }
-  .en:lang(en) {
-    display: flex;
-  }
-  .fr:lang(fr) {
-    display: flex;
-  }
 </style>
+
 <section class={active ? "active" : ""}>
   <header>
-    <h2>{trad["title-" + sponsor.id][lang]}</h2>
+    <h2>{trad.titles[sponsor.id]?.[lang] ?? sponsor.id}</h2>
     <h4>{sponsor.price}</h4>
-    <p class={lang} lang="en">{`Limited to ${sponsor.number} ${sponsors}`}</p>
-    <p class={lang} lang="fr">{`Limité à ${sponsor.number} ${sponsors}`}</p>
+    <p>{trad.limited[lang](sponsor.number, sponsorWord)}</p>
   </header>
-  <ul class={lang} lang="fr">
-    <li class={(sponsor?.places?.conferences ?? 0) > 0 || "hidden"}>
-      <span class="highlight">{`${sponsor.places.conferences}`} entrées</span> conférences
-      offertes
+  <ul>
+    <li class={show.conferences ? undefined : "hidden"}>
+      <span class="highlight"
+        >{
+          trad["item-conferences-count"][lang](sponsor.places.conferences!)
+        }</span
+      >
+      {trad["item-conferences-label"][lang]}
     </li>
-    <li>Logo dans toutes nos communications</li>
-    <li>Affichage de votre logo sur le lieu de la conférence</li>
-    <li>Autorisation d'exploitatione du logo SnowCamp</li>
-    <li class={sponsor.kakemono || "hidden"}>Un kakémono (max 1m x 2m50)</li>
-    <li class={(sponsor.booth_area && sponsor.id !== "chamois") || "hidden"}>
-      <b>{`Stand sponsor (${sponsor.booth_area})`}</b>
+    <li>{trad["item-logo-comms"][lang]}</li>
+    <li>{trad["item-logo-venue"][lang]}</li>
+    <li>{trad["item-logo-snowcamp"][lang]}</li>
+    <li class={show.kakemono ? undefined : "hidden"}>
+      {
+        isNew.kakemono ? (
+          <b>{trad["item-kakemono"][lang]}</b>
+        ) : (
+          trad["item-kakemono"][lang]
+        )
+      }
     </li>
-    <li class={(sponsor.booth_area && sponsor.id === "chamois") || "hidden"}>
-      {`Stand sponsor (${sponsor.booth_area})`}
+    <li class={show.booth ? undefined : "hidden"}>
+      {
+        isNew.booth ? (
+          <b>{trad["item-booth"][lang](sponsor.booth_area!)}</b>
+        ) : (
+          trad["item-booth"][lang](sponsor.booth_area!)
+        )
+      }
     </li>
-    <li
-      class={((sponsor?.places?.booth ?? 0) > 0 && sponsor.id !== "chamois") ||
-        "hidden"}
-    >
-      <b>{`${sponsor.places.booth} entrées sur l'espace sponsor uniquement`}</b>
+    <li class={show.boothTickets ? undefined : "hidden"}>
+      {
+        isNew.boothTickets ? (
+          <b>{trad["item-booth-tickets"][lang](sponsor.places.booth!)}</b>
+        ) : (
+          trad["item-booth-tickets"][lang](sponsor.places.booth!)
+        )
+      }
     </li>
-    <li
-      class={((sponsor?.places?.booth ?? 0) > 0 && sponsor.id === "chamois") ||
-        "hidden"}
-    >
-      {`${sponsor.places.booth} entrées sur l'espace sponsor uniquement`}
-    </li>
-    <li class={sponsor.id == "chamois" || "hidden"}>
-      <b>Votre logo sur le badge des participants.</b>
-    </li>
-  </ul>
-  <ul class={lang} lang="en">
-    <li class={(sponsor?.places?.conferences ?? 0) > 0 || "hidden"}>
-      <span class="highlight">{`${sponsor.places.conferences} tickets`}</span> to
-      attend the sessions
-    </li>
-    <li>Your logo on all our communications</li>
-    <li>Your logo visible on the location of the conference</li>
-    <li>Authorisation to use the SnowCamp logo</li>
-    <li class={sponsor.kakemono || "hidden"}>1 kakémono (max 1m x 2m50)</li>
-    <li class={(sponsor.booth_area && sponsor.id !== "chamois") || "hidden"}>
-      <b>{`Booth in the exhibition hall (${sponsor.booth_area})`}</b>
-    </li>
-    <li class={(sponsor.booth_area && sponsor.id === "chamois") || "hidden"}>
-      {`Booth in the exhibition hall (${sponsor.booth_area})`}
-    </li>
-    <li
-      class={((sponsor?.places?.booth ?? 0) > 0 && sponsor.id !== "chamois") ||
-        "hidden"}
-    >
-      <b>{`${sponsor.places.booth} tickets for the sponsors space only`}</b>
-    </li>
-    <li
-      class={((sponsor?.places?.booth ?? 0) > 0 && sponsor.id === "chamois") ||
-        "hidden"}
-    >
-      {`${sponsor.places.booth} tickets for the sponsors space only`}
-    </li>
-    <li class={sponsor.id == "chamois" || "hidden"}>
-      <b>Your logo on the badge of each participant of the conference.</b>
+    <li class={show.badgeLogo ? undefined : "hidden"}>
+      {
+        isNew.badgeLogo ? (
+          <b>{trad["item-badge-logo"][lang]}</b>
+        ) : (
+          trad["item-badge-logo"][lang]
+        )
+      }
     </li>
   </ul>
 </section>

@@ -34,6 +34,7 @@ sponsorship:
       price: 1500 €
       number: 12
       kakemono: true
+      badge_logo: false
       ticket_link: https://www.billetweb.fr/snowcamp-2026&ticket=
       places:
         conferences: 2
@@ -44,6 +45,7 @@ sponsorship:
       number: 12
       booth_area: 3x3=9m²
       kakemono: false
+      badge_logo: false
       ticket_link: https://www.billetweb.fr/snowcamp-2026&ticket=
       places:
         conferences: 3
@@ -55,8 +57,8 @@ sponsorship:
       price: 5500 €
       number: 2
       booth_area: 3x3=9m²
-      description: "Sponsor etoile avec le logo du sponsor sur le badge de chaque participant."
       kakemono: false
+      badge_logo: true
       ticket_link: https://www.billetweb.fr/snowcamp-2026&ticket=
       places:
         conferences: 5

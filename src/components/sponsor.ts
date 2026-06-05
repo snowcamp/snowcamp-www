@@ -5,6 +5,7 @@ export interface SponsorType {
   number: number;
   booth_area?: string;
   kakemono: boolean;
+  badge_logo?: boolean;
   places: {
     conferences?: number;
     booth?: number;

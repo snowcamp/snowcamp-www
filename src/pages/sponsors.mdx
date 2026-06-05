@@ -31,8 +31,8 @@ C'est l'occasion idéale pour rencontrer les développeurs grenoblois, montrer v
 
 <div style="display: flex; flex-direction: row; flex-wrap: wrap-reverse">
 <SponsorFormula sponsor={edition.sponsorship.type.flocon}/>
-<SponsorFormula sponsor={edition.sponsorship.type.etoile} active={true}/>
-<SponsorFormula sponsor={edition.sponsorship.type.chamois}/>
+<SponsorFormula sponsor={edition.sponsorship.type.etoile} active={true} previousSponsor={edition.sponsorship.type.flocon}/>
+<SponsorFormula sponsor={edition.sponsorship.type.chamois} previousSponsor={edition.sponsorship.type.etoile}/>
 </div>
 
 <Button href="/pdf/sponsorship-prospectus-2027-fr.pdf" title="Plaquette Sponsors" type="ext"/>
