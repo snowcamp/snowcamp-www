@@ -18,7 +18,6 @@
     "@astrojs/mdx": "^4.3.13",
     "astro": "^5.18.0",
     "astro-remote": "^0.3.4",
-    "font-awesome": "~4.7.0",
     "marked": "^12.0.2",
     "snowcamp-www": "file:",
     "typescript": "^5.8.3"
