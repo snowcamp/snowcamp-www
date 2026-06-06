@@ -73,7 +73,11 @@ const { orga } = Astro.props;
   <div class="social-links">
     {
       orga.twitter && (
-        <a href={`https://x.com/${orga.twitter}`} target="_blank">
+        <a
+          href={`https://x.com/${orga.twitter}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img width="24px" height="24px" src="/img/icon/x.svg" />
         </a>
       )
@@ -83,6 +87,7 @@ const { orga } = Astro.props;
         <a
           href={`https://www.linkedin.com/in/${orga.linkedin}`}
           target="_blank"
+          rel="noopener noreferrer"
         >
           <img width="24px" height="24px" src="/img/icon/linkedin.svg" />
         </a>
@@ -90,28 +95,40 @@ const { orga } = Astro.props;
     }
     {
       orga.github && (
-        <a href={`https://github.com/${orga.github}`} target="_blank">
+        <a
+          href={`https://github.com/${orga.github}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img width="24px" height="24px" src="/img/icon/github.svg" />
         </a>
       )
     }
     {
       orga.web && (
-        <a href={`${orga.web}`} target="_blank">
+        <a href={`${orga.web}`} target="_blank" rel="noopener noreferrer">
           <img width="24px" height="24px" src="/img/icon/www.svg" />
         </a>
       )
     }
     {
       orga.instagram && (
-        <a href={`https://www.instagram.com/${orga.instagram}`} target="_blank">
+        <a
+          href={`https://www.instagram.com/${orga.instagram}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img width="24px" height="24px" src="/img/icon/instagram.svg" />
         </a>
       )
     }
     {
       orga.facebook && (
-        <a href={`https://www.facebook.com/${orga.facebook}`} target="_blank">
+        <a
+          href={`https://www.facebook.com/${orga.facebook}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img width="24px" height="24px" src="/img/icon/facebook.svg" />
         </a>
       )
