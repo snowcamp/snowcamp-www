@@ -216,8 +216,8 @@ const year = ey;
   }
 </style>
 <script>
-  function formatDurartion(seconds, usrLang) {
-    let lang = usrLang;
+  function formatDurartion(seconds: number, usrLang: string) {
+    const lang = usrLang as "fr" | "en";
     if (seconds <= 0) return lang == "fr" ? "0 seconde" : "0 second";
 
     const unites = [
@@ -249,10 +249,10 @@ const year = ey;
 
     return resultat.join(lang == "fr" ? " et " : " and ");
   }
-  const etaElem = document.getElementById("eta");
-  const countdown = document.getElementById("countdown");
+  const etaElem = document.getElementById("eta")!;
+  const countdown = document.getElementById("countdown")!;
   const deadline = Number(countdown.dataset.date);
-  const lang = countdown.dataset.lang;
+  const lang = countdown.dataset.lang ?? "fr";
 
   const updateEta = () => {
     const distance = (deadline - new Date().getTime()) / 1000;
@@ -331,7 +331,7 @@ const year = ey;
     </summary>
     <dl>
       {
-        edition.news.map((item) => (
+        edition.news.map((item: any) => (
           <Fragment>
             <dt
               data-start={Utils.resolveEpoch(item.start, ey)}
