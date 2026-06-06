@@ -14,7 +14,7 @@ import organisation from "../data/organisation.yaml";
   </thead>
   <tbody id="orga-histo-tbody"> </tbody>
 </table>
-<script define:vars={{ edition, organisation }}>
+<script is:inline define:vars={{ edition, organisation }}>
   // Les dates des éditions ne servent qu'à extraire l'année : un simple slice
   // des 4 premiers caractères ISO suffit (aucun parsing de fuseau requis).
   const yearOf = (iso) => Number(iso.slice(0, 4));
