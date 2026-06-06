@@ -262,16 +262,21 @@ const year = startDate.getFullYear();
   const deadline = parseDate(countdown.dataset.date);
   const lang = countdown.dataset.lang;
 
-  const timer = setInterval(() => {
+  const updateEta = () => {
     const distance = (deadline - new Date().getTime()) / 1000;
     etaElem.innerText = formatDurartion(distance, lang);
-  }, 0);
+    return distance;
+  };
+  updateEta();
+  const timer = setInterval(() => {
+    if (updateEta() <= 0) clearInterval(timer);
+  }, 1000);
   const now = new Date();
   for (const elem of document.querySelectorAll<HTMLElement>("[data-start]")) {
     const start = parseDate(elem.getAttribute("data-start"));
     const end = parseDate(elem.getAttribute("data-end"));
     if (now.getTime() < start.getTime() || end.getTime() < now.getTime()) {
-      elem.style = "display: none";
+      elem.style.display = "none";
     }
   }
 

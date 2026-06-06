@@ -7,6 +7,8 @@ type language = keyof translation;
 const lang = Utils.getLang(Astro.url) as language;
 const changeLang = lang === "fr" ? "/en/" : "/";
 const targetLang = lang === "en" ? "fr" : "en";
+const switchLangLabel =
+  targetLang === "en" ? "Switch to English" : "Passer en français";
 
 const trad: { [key: string]: translation } = {
   what: {
@@ -310,12 +312,12 @@ const trad: { [key: string]: translation } = {
         <a href={Utils.url(["alpexpo"], { lang })}>{trad.venue[lang]}</a>
       </li>
       <li class="center">
-        <a href={changeLang}
+        <a href={changeLang} aria-label={switchLangLabel}
           ><img
             style="max-height: 1em;"
             class="snc-flag"
             src=`/img/${targetLang}.svg`
-            alt="Switch to French"
+            alt={switchLangLabel}
           /></a
         >
       </li>
