@@ -8,12 +8,14 @@ import current from '../data/current.yaml';
 import TimelineCFP from '../components/TimelineCFP.astro';
 import Button from '../components/Button.astro';
 
+export const ey = Utils.editionYear(current.start_date);
 export const endFormat = Intl.DateTimeFormat('fr', {
+  timeZone: 'Europe/Paris',
   year: 'numeric',
   month: 'long',
   day: 'numeric',
 });
-export const opencfp = endFormat.format(Utils.parseDate(current.timeline.cfp.open));
+export const opencfp = endFormat.format(Utils.resolveDate(current.timeline.cfp.open, ey));
 export const tlCFP = [
   {
     "title": "Ouverture",
@@ -36,7 +38,7 @@ export const tlCFP = [
 
 # Call For Proposals
 
-<TimelineCFP tl={tlCFP}/>
+<TimelineCFP tl={tlCFP} editionYear={ey}/>
 
 <Button href={current.conference.cfp_link} title="Acceder au CFP" type="ext"/>
 

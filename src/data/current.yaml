@@ -2,24 +2,28 @@
 program_show: false
 flickr_embed_link: https://flickrembed.com/cms_embed.php?source=flickr&layout=responsive&input=www.flickr.com/photos/162459903@N02/albums/72177720305519001&sort=0&by=album&theme=default&scale=fill&speed=3000&limit=10&skin=default&autoplay=true
 album_link:
-start_date: "2027-01-14T08:00:00.000[Europe/Paris]"
-end_date: "2027-01-16T18:00:00.000[Europe/Paris]"
+# Toutes les dates sont en heure de Paris. start_date/end_date portent l'année
+# (= année d'édition). Les autres dates s'écrivent "MM-DD" ou "MM-DDTHH:mm"
+# (entre guillemets, sinon le plugin YAML les convertirait en objets Date) :
+# janvier => année d'édition, tout autre mois => année d'édition - 1.
+start_date: "2027-01-14T08:00"
+end_date: "2027-01-16T18:00"
 timeline:
   tremplin:
-    open: "2026-04-01T00:00:00.000[Europe/Paris]"
-    close: "2026-06-01T00:00:00.000[Europe/Paris]"
-    notification: "2026-06-15T00:00:00.000[Europe/Paris]"
-    start: "2026-09-15T00:00:00.000[Europe/Paris]"
-    event: "2026-11-26T00:00:00.000[Europe/Paris]"
+    open: "04-01"
+    close: "06-01"
+    notification: "06-15"
+    start: "09-15"
+    event: "11-26"
   cfp:
-    open: "2026-09-01T00:00:00.000[Europe/Paris]"
-    close: "2026-10-15T00:00:00.000[Europe/Paris]"
-    notification: "2026-11-01T00:00:00.000[Europe/Paris]"
-    publish: "2026-11-15T00:00:00.000[Europe/Paris]"
+    open: "09-01"
+    close: "10-15"
+    notification: "11-01"
+    publish: "11-15"
   sponsor:
-    open: "2026-06-15T11:00:00.000[Europe/Paris]"
+    open: "06-15T11:00"
   tickets:
-    open: "2026-11-17T11:00:00.000[Europe/Paris]"
+    open: "11-17T11:00"
 sponsorship:
   prospectus:
     {
@@ -124,52 +128,52 @@ organisers:
 satisfaction_link: https://forms.gle/CQuCZymH7TZFSDKHA
 news:
   # Tremplin
-  - start: 2026-02-01T00:00:00.000[Europe/Paris]
-    end: 2026-04-01T00:00:00.000[Europe/Paris]
+  - start: "02-01"
+    end: "04-01"
     title_fr: Tremplin
     title_en: Tremplin
     description_fr: Le CFP du [tremplin](/tremplin) démarre dès le 1er avril.
     description_en: The [Tremplin](/en/tremplin) CFP opens on April 1.
-  - start: 2026-04-01T00:00:00.000[Europe/Paris]
-    end: 2026-06-01T00:00:00.000[Europe/Paris]
+  - start: "04-01"
+    end: "06-01"
     title_fr: Tremplin
     title_en: Tremplin
     description_fr: Le CFP du [tremplin](/tremplin) est ouvert !
     description_en: The [Tremplin](/en/tremplin) CFP is now open!
   # Sponsor
-  - start: 2026-02-01T00:00:00.000[Europe/Paris]
-    end: 2026-06-09T11:00:00.000[Europe/Paris]
+  - start: "02-01"
+    end: "06-09T11:00"
     title_fr: Sponsoring
     title_en: Sponsoring
     description_fr: La campagne de [sponsoring](/sponsors) ouvrira en juin.
     description_en: The [sponsorship](/en/sponsors) campaign will open in June.
-  - start: 2026-06-09T11:00:00.000[Europe/Paris]
-    end: 2027-01-13T08:00:00.000[Europe/Paris]
+  - start: "06-09T11:00"
+    end: "01-13T08:00"
     title_fr: Sponsoring
     title_en: Sponsoring
     description_fr: La campagne de [sponsoring](/sponsors) a démarré !
     description_en: The [sponsorship](/en/sponsors) campaign is now open!
   # Main event
-  - start: 2026-09-01T00:00:00.000[Europe/Paris]
-    end: 2026-10-15T00:00:00.000[Europe/Paris]
+  - start: "09-01"
+    end: "10-15"
     title_fr: Call for Paper
     title_en: Call for Paper
     description_fr: Le [CFP](/cfp) est ouvert !
     description_en: The [CFP](/en/cfp) is now open!
-  - start: 2026-11-15T00:00:00.000[Europe/Paris]
-    end: 2027-01-16T18:00:00.000[Europe/Paris]
+  - start: "11-15"
+    end: "01-16T18:00"
     title_fr: Programme
     title_en: Program
     description_fr: Le programme est disponible !
     description_en: The program is available!
-  - start: 2026-11-17T11:00:00.000[Europe/Paris]
-    end: 2027-01-13T18:00:00.000[Europe/Paris]
+  - start: "11-17T11:00"
+    end: "01-13T18:00"
     title_fr: Billeterie
     title_en: Ticketing
     description_fr: La [billeterie](/tickets) est ouverte !
     description_en: The [ticketing](/tickets) is now open!
-  - start: 2026-06-01T00:00:00.000[Europe/Paris]
-    end: 2027-01-13T18:00:00.000[Europe/Paris]
+  - start: "06-01"
+    end: "01-13T18:00"
     title_fr: 2 jours
     title_en: 2 days
     description_fr: "[Le format du SnowCamp évolue](/news/2jours) ! L'événement se déroulera dorénavant sur 2 jours et accueillera des ateliers de 2h, dans deux salles supplémentaires, les jeudi et vendredi."

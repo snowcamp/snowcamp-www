@@ -36,19 +36,22 @@ const trad: { [key: string]: translation } = {
     en: "ETA",
   },
 };
+const ey = Utils.editionYear(edition.start_date);
 const startFormat = Intl.DateTimeFormat(lang, {
+  timeZone: "Europe/Paris",
   month: "long",
   day: "numeric",
 });
 const endFormat = Intl.DateTimeFormat(lang, {
+  timeZone: "Europe/Paris",
   year: "numeric",
   month: "long",
   day: "numeric",
 });
-const startDate = Utils.parseDate(edition.start_date);
+const startDate = Utils.resolveDate(edition.start_date, ey);
 const start = startFormat.format(startDate);
-const end = endFormat.format(Utils.parseDate(edition.end_date));
-const year = startDate.getFullYear();
+const end = endFormat.format(Utils.resolveDate(edition.end_date, ey));
+const year = ey;
 ---
 
 <style>
@@ -213,17 +216,6 @@ const year = startDate.getFullYear();
   }
 </style>
 <script>
-  var DateTime = luxon.DateTime;
-  function parseDate(input) {
-    const match = input.match(/^(.+)\[(.+)\]$/);
-    if (match) {
-      const dateStr = match[1];
-      const zone = match[2];
-      const dt = DateTime.fromISO(dateStr, { zone });
-      return new Date(dt.toString());
-    }
-    return new Date(input);
-  }
   function formatDurartion(seconds, usrLang) {
     let lang = usrLang;
     if (seconds <= 0) return lang == "fr" ? "0 seconde" : "0 second";
@@ -259,7 +251,7 @@ const year = startDate.getFullYear();
   }
   const etaElem = document.getElementById("eta");
   const countdown = document.getElementById("countdown");
-  const deadline = parseDate(countdown.dataset.date);
+  const deadline = Number(countdown.dataset.date);
   const lang = countdown.dataset.lang;
 
   const updateEta = () => {
@@ -271,11 +263,11 @@ const year = startDate.getFullYear();
   const timer = setInterval(() => {
     if (updateEta() <= 0) clearInterval(timer);
   }, 1000);
-  const now = new Date();
+  const now = new Date().getTime();
   for (const elem of document.querySelectorAll<HTMLElement>("[data-start]")) {
-    const start = parseDate(elem.getAttribute("data-start"));
-    const end = parseDate(elem.getAttribute("data-end"));
-    if (now.getTime() < start.getTime() || end.getTime() < now.getTime()) {
+    const start = Number(elem.getAttribute("data-start"));
+    const end = Number(elem.getAttribute("data-end"));
+    if (now < start || end < now) {
       elem.style.display = "none";
     }
   }
@@ -297,7 +289,7 @@ const year = startDate.getFullYear();
 <div
   class="full-bleed background"
   id="countdown"
-  data-date={edition.start_date}
+  data-date={Utils.resolveEpoch(edition.start_date, ey)}
   data-lang={lang}
 >
   <div class="block description">
@@ -341,10 +333,16 @@ const year = startDate.getFullYear();
       {
         edition.news.map((item) => (
           <Fragment>
-            <dt data-start={item.start} data-end={item.end}>
+            <dt
+              data-start={Utils.resolveEpoch(item.start, ey)}
+              data-end={Utils.resolveEpoch(item.end, ey)}
+            >
               {item[`title_${lang}`]}
             </dt>
-            <dd data-start={item.start} data-end={item.end}>
+            <dd
+              data-start={Utils.resolveEpoch(item.start, ey)}
+              data-end={Utils.resolveEpoch(item.end, ey)}
+            >
               <Markdown content={item[`description_${lang}`]} />
             </dd>
           </Fragment>

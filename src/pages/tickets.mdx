@@ -6,13 +6,15 @@ import Utils from '../utils';
 import Button from '../components/Button.astro';
 import edition from '../data/current.yaml';
 
+export const ey = Utils.editionYear(edition.start_date);
 export const endFormat = Intl.DateTimeFormat('fr', {
+  timeZone: 'Europe/Paris',
   year: 'numeric',
   month: 'long',
   day: 'numeric',
   hour: 'numeric',
 });
-export const openDate = endFormat.format(Utils.parseDate(edition.timeline.tickets.open));
+export const openDate = endFormat.format(Utils.resolveDate(edition.timeline.tickets.open, ey));
 
 # Billetterie
 

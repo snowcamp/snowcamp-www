@@ -7,14 +7,16 @@ import SponsorFormula from '../components/SponsorFormula.astro';
 import Button from '../components/Button.astro';
 import edition from '../data/current.yaml';
 
+export const ey = Utils.editionYear(edition.start_date);
 export const endFormat = Intl.DateTimeFormat('fr', {
+  timeZone: 'Europe/Paris',
   year: 'numeric',
   month: 'long',
   day: 'numeric',
   hour: 'numeric',
 });
-export const openDate = endFormat.format(Utils.parseDate(edition.timeline.sponsor.open));
-export const year = Utils.parseDate(edition.start_date).getFullYear();
+export const openDate = endFormat.format(Utils.resolveDate(edition.timeline.sponsor.open, ey));
+export const year = ey;
 export const remainEtoile = edition.sponsorship.type.etoile.number - edition.sponsorship.etoile.length;
 export const remainFlocon = edition.sponsorship.type.flocon.number - edition.sponsorship.flocon.length;
 

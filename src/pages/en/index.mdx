@@ -19,20 +19,23 @@ export const sponsorsTable = sponsors.sponsors.reduce((a, b) => {
   return a;
 }, {});
 
+export const ey = Utils.editionYear(current.start_date);
 export const startFormat = Intl.DateTimeFormat('en', {
+  timeZone: 'Europe/Paris',
   month: 'long',
   day: 'numeric',
 });
 export const endFormat = Intl.DateTimeFormat('en', {
+  timeZone: 'Europe/Paris',
   year: 'numeric',
   month: 'long',
   day: 'numeric',
 });
-export const opencfp = endFormat.format(Utils.parseDate(current.timeline.cfp.open));
-export const startDate = Utils.parseDate(current.start_date);
+export const opencfp = endFormat.format(Utils.resolveDate(current.timeline.cfp.open, ey));
+export const startDate = Utils.resolveDate(current.start_date, ey);
 export const start = startFormat.format(startDate);
-export const end = endFormat.format(Utils.parseDate(current.end_date));
-export const year = startDate.getFullYear();
+export const end = endFormat.format(Utils.resolveDate(current.end_date, ey));
+export const year = ey;
 
 export const chamois = current.sponsorship.chamois.map((id) => sponsorsTable[id]);
 export const etoiles = current.sponsorship.etoile.map((id) => sponsorsTable[id]);

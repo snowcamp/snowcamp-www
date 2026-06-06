@@ -29,18 +29,21 @@ export const tl = [
     "date": current.timeline.tremplin.event,
   }
 ];
+export const ey = Utils.editionYear(current.start_date);
 export const startFormat = Intl.DateTimeFormat('en', {
+  timeZone: 'Europe/Paris',
   month: 'long',
   day: 'numeric',
 });
 export const endFormat = Intl.DateTimeFormat('en', {
+  timeZone: 'Europe/Paris',
   year: 'numeric',
   month: 'long',
   day: 'numeric',
 });
-export const startDate = Utils.parseDate(current.start_date);
+export const startDate = Utils.resolveDate(current.start_date, ey);
 export const start = startFormat.format(startDate);
-export const end = endFormat.format(Utils.parseDate(current.end_date));
+export const end = endFormat.format(Utils.resolveDate(current.end_date, ey));
 
 # Le Tremplin de SnowCamp
 
@@ -51,7 +54,7 @@ Its purpose is to support local first-time speakers for their first conference t
 Candidates are coached from ideation to the final 20-minutes session, that will take place at a dedicated mini-conference where the talks will be recorded.
 Following a vote, up to 2 of the participants will be selected to replay their session at the SnowCamp conference.
 
-<TimelineCFP tl={tl}/>
+<TimelineCFP tl={tl} editionYear={ey}/>
 
 <Button className="tremplinOpened" href="https://conference-hall.io/tremplin-de-snowcamp-2025" title="Participate" type="ext"/>
 
