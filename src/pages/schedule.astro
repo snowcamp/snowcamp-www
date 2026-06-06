@@ -1,6 +1,12 @@
 ---
 import Redirect from "../layouts/Redirect.astro";
 import current from "../data/current.yaml";
+import Utils from "../utils";
+
+const target =
+  current.program_show && current.program_link
+    ? current.program_link
+    : Utils.url(["schedule-wait"]);
 ---
 
-<Redirect target={current.program_link} />
+<Redirect target={target} />

@@ -51,11 +51,13 @@ import organisation from "../data/organisation.yaml";
     trEditions.appendChild(document.createElement("th"));
     editions.forEach((edition) => {
       const ed = document.createElement("th");
+      ed.scope = "col";
       ed.innerText = edition;
       ed.className = "orga-histo-edition-year";
       trEditions.appendChild(ed);
     });
     const tot = document.createElement("th");
+    tot.scope = "col";
     tot.innerText = "Total";
     trEditions.appendChild(tot);
 
@@ -68,7 +70,6 @@ import organisation from "../data/organisation.yaml";
     }
 
     const tbodyOrga = document.getElementById("orga-histo-tbody");
-    console.table(previous_years);
     organisation.organizers
       .map((o) => ({
         name: o.name,
@@ -81,16 +82,17 @@ import organisation from "../data/organisation.yaml";
       .forEach((organiser) => {
         const tr = document.createElement("tr");
         const o = document.createElement("th");
+        o.scope = "row";
         o.innerText = organiser.name;
         tr.appendChild(o);
         organiser.editions.forEach((ed) => {
-          const e = document.createElement("th");
+          const e = document.createElement("td");
           if (ed) {
             e.innerText = "✔";
           }
           tr.appendChild(e);
         });
-        const e = document.createElement("th");
+        const e = document.createElement("td");
         e.innerText = organiser.total;
         tr.appendChild(e);
         tbodyOrga.appendChild(tr);

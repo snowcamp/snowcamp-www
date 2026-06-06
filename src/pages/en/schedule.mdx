@@ -15,6 +15,8 @@ export const end = endFormat.format(Utils.parseDate(current.timeline.cfp.publish
 
 
 
-The program will be available on {end}.
-
-<Redirect target={current.program_link} />
+{current.program_show && current.program_link ? (
+  <Redirect target={current.program_link} />
+) : (
+  <p>The program will be available on {end}.</p>
+)}
