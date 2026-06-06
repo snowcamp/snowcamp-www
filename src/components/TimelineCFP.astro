@@ -16,21 +16,25 @@ type Step = ShortStep | LongStep;
 
 interface Props {
   tl: Step[];
+  editionYear: number;
 }
 
-const { tl } = Astro.props;
+const { tl, editionYear } = Astro.props;
 
 const instantFormat = Intl.DateTimeFormat(lang, {
+  timeZone: "Europe/Paris",
   year: "numeric",
   month: "long",
   day: "numeric",
 });
 
 const startFormatSnowcamp = Intl.DateTimeFormat(lang, {
+  timeZone: "Europe/Paris",
   month: "short",
   day: "numeric",
 });
 const endFormatSnowcamp = Intl.DateTimeFormat(lang, {
+  timeZone: "Europe/Paris",
   year: "numeric",
   month: "short",
   day: "numeric",
@@ -48,11 +52,12 @@ function prepare(step: Step) {
   let formatedDate = "";
   let end = 0;
   if (instant(step)) {
-    formatedDate = instantFormat.format(Utils.parseDate(step.date));
-    end = Utils.parseDate(step.date).getTime();
+    const date = Utils.resolveDate(step.date, editionYear);
+    formatedDate = instantFormat.format(date);
+    end = date.getTime();
   } else if (long(step)) {
-    formatedDate = `${startFormatSnowcamp.format(Utils.parseDate(step.begin))} - ${endFormatSnowcamp.format(Utils.parseDate(step.end))}`;
-    end = Utils.parseDate(step.end).getTime();
+    formatedDate = `${startFormatSnowcamp.format(Utils.resolveDate(step.begin, editionYear))} - ${endFormatSnowcamp.format(Utils.resolveDate(step.end, editionYear))}`;
+    end = Utils.resolveDate(step.end, editionYear).getTime();
   }
   return {
     title: step.title,

@@ -6,12 +6,14 @@ import Utils from '../../utils.js';
 import current from '../../data/current.yaml';
 import Redirect from "../../layouts/Redirect.astro";
 
+export const ey = Utils.editionYear(current.start_date);
 export const endFormat = Intl.DateTimeFormat('en', {
+  timeZone: 'Europe/Paris',
   year: 'numeric',
   month: 'long',
   day: 'numeric',
 });
-export const end = endFormat.format(Utils.parseDate(current.timeline.cfp.publish));
+export const end = endFormat.format(Utils.resolveDate(current.timeline.cfp.publish, ey));
 
 
 

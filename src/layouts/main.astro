@@ -15,8 +15,25 @@ import current from "../data/current.yaml";
 const lang = Utils.getLang(Astro.url);
 const canonical = new URL(Astro.url.pathname, Astro.site);
 
+const ey = Utils.editionYear(current.start_date);
 const sponsors = current.sponsorship;
-const timeline = current.timeline;
+// Pré-calcul des instants (epoch ms) au build : le script client ne fait
+// plus que des comparaisons numériques (aucun parsing ni fuseau côté navigateur).
+const timelineEntries = current.timeline as Record<
+  string,
+  Record<string, string>
+>;
+const timeline = Object.fromEntries(
+  Object.entries(timelineEntries).map(([name, event]) => [
+    name,
+    Object.fromEntries(
+      Object.entries(event).map(([key, value]) => [
+        key,
+        Utils.resolveEpoch(value, ey),
+      ]),
+    ),
+  ]),
+);
 
 const { frontmatter, title } = Astro.props;
 ---
@@ -117,10 +134,6 @@ const { frontmatter, title } = Astro.props;
     />
     <link rel="canonical" href={canonical} />
     <title>{title ?? frontmatter.title}</title>
-    <script
-      src="https://cdn.jsdelivr.net/npm/luxon@3.6.1/build/global/luxon.min.js"
-      integrity="sha256-UA/r5Oi3pNGYgJlnmZuqXkeXYQRLqyHxFGrFuUDZUXA="
-      crossorigin="anonymous"></script>
   </head>
   <body lang={lang}>
     <header>
@@ -136,22 +149,9 @@ const { frontmatter, title } = Astro.props;
   </body>
 
   <script define:vars={{ sponsors, timeline }}>
-    var DateTime = luxon.DateTime;
-    function parseDate(input) {
-      const match = input.match(/^(.+)\[(.+)\]$/);
-      if (match) {
-        const dateStr = match[1];
-        const zone = match[2];
-        const dt = DateTime.fromISO(dateStr, { zone });
-        return new Date(dt.toString());
-      }
-      return new Date(input);
-    }
     const hideTimeline = (timelineEvent, name) => {
-      const openingTime = parseDate(timelineEvent.open);
-      const closingTime = timelineEvent.close
-        ? parseDate(timelineEvent.close)
-        : parseDate("2050-01-01");
+      const openingTime = timelineEvent.open;
+      const closingTime = timelineEvent.close ?? Infinity;
       const now = new Date().getTime();
       if (now < openingTime) {
         return [`${name}Opened`, `${name}Closed`];
@@ -162,7 +162,7 @@ const { frontmatter, title } = Astro.props;
       }
     };
     const sponsoring = (sponsors, timeline) => {
-      const openingTime = parseDate(timeline.open);
+      const openingTime = timeline.open;
       const remainEtoile = sponsors.type.etoile.number - sponsors.etoile.length;
       const remainFlocon = sponsors.type.flocon.number - sponsors.flocon.length;
       const now = new Date().getTime();

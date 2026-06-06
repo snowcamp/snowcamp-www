@@ -5,17 +5,8 @@ import sponsors from "../data/sponsors.yaml";
 
 <h2 id="prev-editions-title"></h2>
 <script define:vars={{ edition, sponsors }}>
-  const DateTime = luxon.DateTime;
-  function parseDate(input) {
-    const match = input.match(/^(.+)\[(.+)\]$/);
-    if (match) {
-      const dateStr = match[1];
-      const zone = match[2];
-      const dt = DateTime.fromISO(dateStr, { zone });
-      return new Date(dt.toString());
-    }
-    return new Date(input);
-  }
+  // Les dates des éditions ne servent qu'à extraire l'année : slice ISO suffit.
+  const yearOf = (iso) => Number(iso.slice(0, 4));
   function getLang(url) {
     return url.pathname.includes("/en/") || url.pathname.endsWith("/en")
       ? "en"
@@ -41,7 +32,7 @@ import sponsors from "../data/sponsors.yaml";
   const lang = getLang(location);
 
   const first = 2016;
-  const currentYear = parseDate(edition.start_date).getFullYear();
+  const currentYear = yearOf(edition.start_date);
   const editions = [...Array(currentYear - first).keys()]
     .map((offset) => offset + 2016)
     .reverse();
@@ -106,7 +97,7 @@ import sponsors from "../data/sponsors.yaml";
       edition.appendChild(name);
       const h4 = tag(
         "h4",
-        `${parseDate(ed.start_date).getFullYear()} (${trad["edition"][lang]} nº${previous_years.length - idxYear})`,
+        `${yearOf(ed.start_date)} (${trad["edition"][lang]} nº${previous_years.length - idxYear})`,
         null,
       );
       name.appendChild(h4);

@@ -15,20 +15,12 @@ import organisation from "../data/organisation.yaml";
   <tbody id="orga-histo-tbody"> </tbody>
 </table>
 <script define:vars={{ edition, organisation }}>
-  const DateTime = luxon.DateTime;
-  function parseDate(input) {
-    const match = input.match(/^(.+)\[(.+)\]$/);
-    if (match) {
-      const dateStr = match[1];
-      const zone = match[2];
-      const dt = DateTime.fromISO(dateStr, { zone });
-      return new Date(dt.toString());
-    }
-    return new Date(input);
-  }
+  // Les dates des éditions ne servent qu'à extraire l'année : un simple slice
+  // des 4 premiers caractères ISO suffit (aucun parsing de fuseau requis).
+  const yearOf = (iso) => Number(iso.slice(0, 4));
 
   const first = 2016;
-  const currentYear = parseDate(edition.start_date).getFullYear();
+  const currentYear = yearOf(edition.start_date);
   const years = [...Array(currentYear - first).keys()].map(
     (offset) => offset + 2016,
   );
@@ -43,9 +35,7 @@ import organisation from "../data/organisation.yaml";
 
   Promise.all(years.map((year) => loadYear(year))).then((previous_years) => {
     previous_years = previous_years.filter((ed) => ed.start_date);
-    const editions = previous_years.map((year) =>
-      parseDate(year.start_date).getFullYear(),
-    );
+    const editions = previous_years.map((year) => yearOf(year.start_date));
     const trEditions = document.getElementById("orga-histo-tr");
 
     trEditions.appendChild(document.createElement("th"));
