@@ -4,7 +4,7 @@ import sponsors from "../data/sponsors.yaml";
 ---
 
 <h2 id="prev-editions-title"></h2>
-<script define:vars={{ edition, sponsors }}>
+<script is:inline define:vars={{ edition, sponsors }}>
   // Les dates des éditions ne servent qu'à extraire l'année : slice ISO suffit.
   const yearOf = (iso) => Number(iso.slice(0, 4));
   function getLang(url) {
@@ -19,21 +19,21 @@ import sponsors from "../data/sponsors.yaml";
   }, {});
 
   function tag(name, text, clazz) {
-    const edition = document.createElement(name);
+    const el = document.createElement(name);
     if (clazz) {
-      edition.classList.add(clazz);
+      el.classList.add(clazz);
     }
     if (text) {
-      edition.innerText = text;
+      el.innerText = text;
     }
-    return edition;
+    return el;
   }
 
   const lang = getLang(location);
 
   const first = 2016;
   const currentYear = yearOf(edition.start_date);
-  const editions = [...Array(currentYear - first).keys()]
+  const years = [...Array(currentYear - first).keys()]
     .map((offset) => offset + 2016)
     .reverse();
 
@@ -82,19 +82,19 @@ import sponsors from "../data/sponsors.yaml";
   const title = document.getElementById("prev-editions-title");
   title.innerText = trad["title"][lang];
   const parent = title.parentElement;
-  Promise.all(editions.map((year) => loadYear(year))).then((previous_years) => {
+  Promise.all(years.map((year) => loadYear(year))).then((previous_years) => {
     previous_years = previous_years.filter((ed) => ed.start_date);
 
     let idxYear = 0;
     for (let ed of previous_years) {
-      const edition = tag("div", null, "prevEdition");
-      edition.style.display = "grid";
-      edition.style["grid-template-columns"] = "1fr 1fr 1fr [sponsor] 1fr";
-      edition.style["place-items"] = "center";
+      const row = tag("div", null, "prevEdition");
+      row.style.display = "grid";
+      row.style["grid-template-columns"] = "1fr 1fr 1fr [sponsor] 1fr";
+      row.style["place-items"] = "center";
       const name = tag("p", null, "edName");
       name.style["grid-column-start"] = 1;
       name.style["grid-column-end"] = 5;
-      edition.appendChild(name);
+      row.appendChild(name);
       const h4 = tag(
         "h4",
         `${yearOf(ed.start_date)} (${trad["edition"][lang]} nº${previous_years.length - idxYear})`,
@@ -107,7 +107,7 @@ import sponsors from "../data/sponsors.yaml";
       p.target = "program";
       const c2 = tag("p", null, null);
       c2.appendChild(p);
-      edition.appendChild(c2);
+      row.appendChild(c2);
 
       if (ed.album_link) {
         const p = tag("a", trad["photo"][lang], null);
@@ -115,7 +115,7 @@ import sponsors from "../data/sponsors.yaml";
         p.target = "album";
         const c3 = tag("p", null, null);
         c3.appendChild(p);
-        edition.appendChild(c3);
+        row.appendChild(c3);
       }
 
       if (ed.support_link) {
@@ -124,7 +124,7 @@ import sponsors from "../data/sponsors.yaml";
         p.target = "support";
         const c4 = tag("p", null, null);
         c4.appendChild(p);
-        edition.appendChild(c4);
+        row.appendChild(c4);
       }
 
       const sponso = tag("div", null, "sponsorCol");
@@ -142,7 +142,7 @@ import sponsors from "../data/sponsors.yaml";
           sl.appendChild(node);
           ed.sponsorship?.[level]
             ?.map((id) => sponsorsTable[id])
-            .map((sponsor, idx) => {
+            .forEach((sponsor) => {
               const span = tag("span", null, null);
               sl.appendChild(span);
               const a = tag("a", sponsor.name, null);
@@ -152,9 +152,9 @@ import sponsors from "../data/sponsors.yaml";
 
           sponso.appendChild(sl);
         });
-      edition.appendChild(sponso);
+      row.appendChild(sponso);
 
-      parent.appendChild(edition);
+      parent.appendChild(row);
       idxYear += 1;
     }
   });

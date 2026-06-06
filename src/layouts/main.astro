@@ -149,7 +149,7 @@ const { frontmatter, title } = Astro.props;
     <Footer />
   </body>
 
-  <script define:vars={{ sponsors, timeline }}>
+  <script is:inline define:vars={{ sponsors, timeline }}>
     const hideTimeline = (timelineEvent, name) => {
       const openingTime = timelineEvent.open;
       const closingTime = timelineEvent.close ?? Infinity;
