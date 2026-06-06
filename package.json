@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build_": "astro check && astro build",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
     "http-server": "npm run build && http-server dist",
     "fmt": "prettier . --write",
