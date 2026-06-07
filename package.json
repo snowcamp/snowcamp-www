@@ -12,6 +12,7 @@
     "test:watch": "vitest",
     "http-server": "npm run build && http-server dist",
     "fmt": "prettier . --write",
+    "fmt:check": "prettier . --check",
     "astro": "astro"
   },
   "dependencies": {
