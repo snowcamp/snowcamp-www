@@ -4,7 +4,6 @@ title: Planning
 ---
 import Utils from '../../utils.js';
 import current from '../../data/current.yaml';
-import Redirect from "../../layouts/Redirect.astro";
 
 export const ey = Utils.editionYear(current.start_date);
 export const endFormat = Intl.DateTimeFormat('en', {
@@ -17,8 +16,4 @@ export const end = endFormat.format(Utils.resolveDate(current.timeline.cfp.publi
 
 
 
-{current.program_show && current.program_link ? (
-  <Redirect target={current.program_link} />
-) : (
-  <p>The program will be available on {end}.</p>
-)}
+The program will be available on {end}.
