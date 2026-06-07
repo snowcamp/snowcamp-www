@@ -2,11 +2,10 @@
 import { Markdown } from "astro-remote";
 import Utils from "../utils";
 import edition from "../data/current.yaml";
+import type { Translation } from "../lib/types";
 const lang = Utils.getLang(Astro.url);
 
-type translation = { fr: string; en: string };
-
-const trad: { [key: string]: translation } = {
+const trad: { [key: string]: Translation } = {
   desc: {
     fr: "La conférence Grenobloise sur les technologies et les innovations logicielles. Pendant 2 jours près de 700 personnes se réunissent pour partager et apprendre autour du développement logiciel.",
     en: "Grenoble's conference on software technologies and innovation. Over 2 days, nearly 700 people come together to share knowledge and learn about software development.",
