@@ -216,47 +216,16 @@ const year = ey;
   }
 </style>
 <script>
-  function formatDurartion(seconds: number, usrLang: string) {
-    const lang = usrLang as "fr" | "en";
-    if (seconds <= 0) return lang == "fr" ? "0 seconde" : "0 second";
+  import { formatDuration } from "../lib/duration";
 
-    const unites = [
-      { value: 30 * 24 * 3600, en: "month", fr: "mois" },
-      { value: 24 * 3600, en: "day", fr: "jour" },
-      { value: 3600, en: "hour", fr: "heure" },
-      { value: 60, en: "minute", fr: "minute" },
-      { value: 1, en: "second", fr: "seconde" },
-    ];
-
-    let resultat = [];
-    let rest = seconds;
-
-    for (const unite of unites) {
-      if (rest >= unite.value) {
-        const quantity = Math.floor(rest / unite.value);
-        rest %= unite.value;
-
-        const displayName =
-          quantity > 1 && unite[lang] !== "mois"
-            ? unite[lang] + "s"
-            : unite[lang];
-
-        resultat.push(`${quantity} ${displayName}`);
-      }
-
-      if (resultat.length === 2) break;
-    }
-
-    return resultat.join(lang == "fr" ? " et " : " and ");
-  }
   const etaElem = document.getElementById("eta")!;
   const countdown = document.getElementById("countdown")!;
   const deadline = Number(countdown.dataset.date);
-  const lang = countdown.dataset.lang ?? "fr";
+  const lang = (countdown.dataset.lang ?? "fr") as "fr" | "en";
 
   const updateEta = () => {
     const distance = (deadline - new Date().getTime()) / 1000;
-    etaElem.innerText = formatDurartion(distance, lang);
+    etaElem.innerText = formatDuration(distance, lang);
     return distance;
   };
   updateEta();

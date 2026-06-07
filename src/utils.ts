@@ -25,7 +25,7 @@ function parisToEpoch(wallClock: string): number {
 }
 
 // Année d'édition portée par l'ancre start_date (ex. "2027-01-14T08:00").
-function editionYear(anchor: string): number {
+export function editionYear(anchor: string): number {
   return Number(anchor.slice(0, 4));
 }
 
@@ -61,7 +61,7 @@ function url(
     : result.slice(0, -1);
 }
 
-function getLang(url: URL): "fr" | "en" {
+export function getLang(url: URL): "fr" | "en" {
   return url.pathname.includes("/en/") || url.pathname.endsWith("/en")
     ? "en"
     : "fr";
