@@ -1,6 +1,4 @@
 export type Language = "fr" | "en";
-export type Translation = { fr: string; en: string };
-export type LangFn<T extends unknown[]> = {
-  fr: (...args: T) => string;
-  en: (...args: T) => string;
-};
+export type Translation = Record<Language, string>;
+export type TranslationFn<T extends unknown[]> = (...args: T) => string;
+export type LangFn<T extends unknown[]> = Record<Language, TranslationFn<T>>;
