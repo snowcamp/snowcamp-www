@@ -1,3 +1,5 @@
+import type { Translation } from "../lib/types";
+
 export interface SponsorType {
   title: string;
   id: string;
@@ -12,15 +14,10 @@ export interface SponsorType {
     speakers_dinner?: number;
   };
 }
+
 export interface Sponsor {
   name: string;
   logo: string;
-  url: {
-    fr: string;
-    en: string;
-  };
-  description: {
-    fr: string;
-    en: string;
-  };
+  url: Translation;
+  description: Translation;
 }

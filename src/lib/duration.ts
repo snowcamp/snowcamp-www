@@ -1,6 +1,8 @@
+import type { Language } from "./types";
+
 // Formate une durée (en secondes) en français/anglais, en ne gardant que les
 // deux plus grosses unités significatives (ex. "2 jours et 3 heures").
-export function formatDuration(seconds: number, lang: "fr" | "en"): string {
+export function formatDuration(seconds: number, lang: Language): string {
   if (seconds <= 0) return lang == "fr" ? "0 seconde" : "0 second";
 
   const unites = [

@@ -1,6 +1,7 @@
 ---
 import { type SponsorType } from "./sponsor";
 import Utils from "../utils";
+import type { Language, Translation, LangFn } from "../lib/types";
 
 interface Props {
   sponsor: SponsorType;
@@ -8,28 +9,21 @@ interface Props {
   previousSponsor?: SponsorType | null;
 }
 const { sponsor, active, previousSponsor = null } = Astro.props;
-type Language = "fr" | "en";
 const lang = Utils.getLang(Astro.url) as Language;
 const sponsorWord = sponsor.number > 1 ? "sponsors" : "sponsor";
 
-type LangStr = { fr: string; en: string };
-type LangFn<T extends unknown[]> = {
-  fr: (...args: T) => string;
-  en: (...args: T) => string;
-};
-
 const trad: {
-  titles: Record<string, LangStr>;
+  titles: Record<string, Translation>;
   limited: LangFn<[number, string]>;
   "item-conferences-count": LangFn<[number]>;
-  "item-conferences-label": LangStr;
-  "item-logo-comms": LangStr;
-  "item-logo-venue": LangStr;
-  "item-logo-snowcamp": LangStr;
-  "item-kakemono": LangStr;
+  "item-conferences-label": Translation;
+  "item-logo-comms": Translation;
+  "item-logo-venue": Translation;
+  "item-logo-snowcamp": Translation;
+  "item-kakemono": Translation;
   "item-booth": LangFn<[string]>;
   "item-booth-tickets": LangFn<[number]>;
-  "item-badge-logo": LangStr;
+  "item-badge-logo": Translation;
 } = {
   titles: {
     chamois: { fr: "Chamois", en: "Chamois" },

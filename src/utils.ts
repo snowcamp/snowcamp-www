@@ -1,5 +1,4 @@
-type translation = { fr: string; en: string };
-type language = keyof translation;
+import type { Language } from "./lib/types";
 
 // Offset (ms) de Europe/Paris applicable à l'instant donné, calculé via Intl (gère automatiquement l'heure d'été/hiver).
 function parisOffsetMs(instant: number): number {
@@ -45,7 +44,7 @@ function resolveDate(value: string, year: number): Date {
 
 function url(
   path: string[] | string,
-  opts: { anchor?: string; lang?: language } = {},
+  opts: { anchor?: string; lang?: Language } = {},
 ) {
   const lang = opts.lang ?? "fr";
   const langPart = lang === "en" ? ["en"] : [];
@@ -61,7 +60,7 @@ function url(
     : result.slice(0, -1);
 }
 
-export function getLang(url: URL): "fr" | "en" {
+export function getLang(url: URL): Language {
   return url.pathname.includes("/en/") || url.pathname.endsWith("/en")
     ? "en"
     : "fr";
