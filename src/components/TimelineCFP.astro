@@ -1,18 +1,7 @@
 ---
 import Utils from "../utils";
+import { instant, long, type Step } from "../lib/timeline";
 const lang = Utils.getLang(Astro.url);
-interface ShortStep {
-  title: string;
-  date: string;
-  description?: string;
-}
-interface LongStep {
-  title: string;
-  begin: string;
-  end: string;
-  description?: string;
-}
-type Step = ShortStep | LongStep;
 
 interface Props {
   tl: Step[];
@@ -39,14 +28,6 @@ const endFormatSnowcamp = Intl.DateTimeFormat(lang, {
   month: "short",
   day: "numeric",
 });
-
-function instant(step: any): step is ShortStep {
-  return (step as ShortStep).date !== undefined;
-}
-
-function long(step: any): step is LongStep {
-  return (step as LongStep).begin !== undefined;
-}
 
 function prepare(step: Step) {
   let formatedDate = "";
