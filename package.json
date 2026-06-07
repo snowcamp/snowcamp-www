@@ -10,6 +10,7 @@
     "preview": "astro preview",
     "test": "vitest run",
     "test:watch": "vitest",
+    "check:i18n": "node scripts/check-i18n-pages.mjs",
     "http-server": "npm run build && http-server dist",
     "fmt": "prettier . --write",
     "fmt:check": "prettier . --check",
