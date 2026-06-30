@@ -71,14 +71,14 @@ sponsorship:
   display: current
   meetgreet: []
   etoile:
-      - kaizen
+    - kaizen
   #    - open2024
   #    - moodys2025
   #    - criteo2023
   #    - clevercloud
   #    - aws2026
   flocon:
-      - cgi2022
+    - cgi2022
   #    - avisto2020
   #    - zenika2023
   #    - periscop2026
@@ -92,7 +92,38 @@ sponsorship:
   #    - pingid2026
   chamois: []
   partners:
-    - alpesjug
+    - name: AlpesJUG
+      id: alpesjug
+      logo: /img/partners/alpesjug.avif
+      link:
+        fr: http://alpesjug.fr/
+        en: http://alpesjug.fr/
+      description:
+        fr: >
+          <b>AlpesJug</b> est le groupe des utilisateurs Java de la région grenobloise,
+          et à l'origine du Snowcamp.
+        en: >
+          <b>AlpesJug</b> is the Java User Group of the Grenoble area, and the initiator
+          of the Snowcamp conference.
+    - name: Sticker Mule
+      id: stickermule
+      logo: /img/partners/2019/stickermule.avif
+      link:
+        fr: https://www.stickermule.com/fr/stickers-personnalises
+        en: https://www.stickermule.com/fr/stickers-personnalises
+      description:
+        fr: >
+          Avec <b>Sticker Mule</b>, achetez rapidement et facilement des produits imprimés
+          personnalisés. Il suffit de 60 secondes pour passer votre commande. Il nous
+          faudra ensuite quelques jours pour transformer vos modèles et images en stickers,
+          magnets, badges, étiquettes autocollantes ou emballages personnalisés. Nous
+          offrons des épreuves en ligne gratuites, un délai de production extrêmement
+          court et la livraison à l'international est gratuite.
+        en: >
+          <b>Sticker Mule</b> is the fastest and easiest way to buy custom printed
+          products. Thousands of people in the EU trust us to make kick-ass stickers,
+          labels, magnets, badges & more. Order in seconds and get free online proofs,
+          free shipping, and super fast turnaround.
     #- stickermule
 ticketing:
   #link: https://www.billetweb.fr/shop.php?event=snowcamp-2026
