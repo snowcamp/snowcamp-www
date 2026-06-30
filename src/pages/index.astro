@@ -1,0 +1,159 @@
+---
+import Main from "../layouts/main.astro";
+import Utils from "../utils";
+import current from "../data/current.yaml";
+import Spotlight from "../components/Spotlight.astro";
+import Button from "../components/Button.astro";
+import Sponsor from "../components/Sponsor.astro";
+
+type sponsorTypeName = "Flocon" | "Etoile" | "Chamois" | "Meet&Greet";
+
+interface Sponsor {
+  description: {
+    en: string;
+    fr: string;
+  };
+  logo: string;
+  name: string;
+  registrationDate: string;
+  sponsorTypeName: sponsorTypeName;
+  website: {
+    en: string;
+    fr: string;
+  };
+}
+
+export const ey = Utils.editionYear(current.start_date);
+export const startFormat = Intl.DateTimeFormat("fr", {
+  timeZone: "Europe/Paris",
+  month: "long",
+  day: "numeric",
+});
+export const endFormat = Intl.DateTimeFormat("fr", {
+  timeZone: "Europe/Paris",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+export const opencfp = endFormat.format(
+  Utils.resolveDate(current.timeline.cfp.open, ey),
+);
+export const startDate = Utils.resolveDate(current.start_date, ey);
+export const start = startFormat.format(startDate);
+export const end = endFormat.format(Utils.resolveDate(current.end_date, ey));
+export const year = ey;
+export const response = await fetch("https://conf.snowcamp.io/api/sponsors");
+export const sponso: Sponsor[] = await response.json();
+
+export const chamois = sponso.filter((s) => s.sponsorTypeName === "Chamois");
+export const etoiles = sponso.filter((s) => s.sponsorTypeName === "Etoile");
+export const flocons = sponso.filter((s) => s.sponsorTypeName === "Flocon");
+console.log(current.sponsorship.partners);
+export const partners = current.sponsorship.partners.map((id: any) => id);
+export const tlCFP = [
+  {
+    title: "Ouverture",
+    date: current.timeline.cfp.open,
+  },
+  {
+    title: "Fermeture",
+    date: current.timeline.cfp.close,
+  },
+  {
+    title: "Notification",
+    date: current.timeline.cfp.notification,
+  },
+  {
+    title: "Conférence",
+    begin: current.start_date,
+    end: current.end_date,
+  },
+];
+---
+
+<Main title="Snowcamp">
+  <Spotlight />
+
+  <h1>Sponsors {year}</h1>
+
+  <p>
+    Ils nous ont déjà accordé leur confiance pour préparer ensemble l'édition {
+      year
+    }.
+  </p>
+
+  <h2>Chamois</h2>
+
+  <div
+    style="display: flex; flex-flow: row wrap; align-items: center; gap: 2rem; justify-content: space-evenly"
+  >
+    {
+      chamois.map((chamois) => (
+        <Sponsor
+          title={chamois?.name}
+          img={chamois?.logo}
+          href={chamois?.website.fr}
+        />
+      ))
+    }
+  </div>
+
+  <h2>Étoile</h2>
+
+  <div
+    style="display: flex; flex-flow: row wrap; align-items: center; gap: 2rem; justify-content: space-evenly"
+  >
+    {
+      etoiles.map((etoile) => (
+        <Sponsor
+          title={etoile?.name}
+          img={etoile?.logo}
+          href={etoile?.website.fr}
+        />
+      ))
+    }
+  </div>
+
+  <h2>Flocon</h2>
+
+  <div
+    style="display: flex; flex-flow: row wrap; align-items: center; gap: 2rem; justify-content: space-evenly"
+  >
+    {
+      flocons.map((flocon) => (
+        <Sponsor
+          title={flocon?.name}
+          img={flocon?.logo}
+          href={flocon?.website.fr}
+        />
+      ))
+    }
+  </div>
+
+  <p>Un grand merci à nos sponsors !</p>
+
+  <Button
+    className="sponsorOpened"
+    title="Devenez sponsor !"
+    href={current.sponsorship.subscribe_link}
+    type="ext"
+  />
+
+  <a id="sponsors"></a>
+
+  <h2>Partenaires</h2>
+
+  <div
+    style="display: flex; flex-flow: row wrap; align-items: center; gap: 2rem; justify-content: space-evenly; margin-bottom: 20px"
+  >
+    {
+      partners.map((partner: any) => (
+        <Sponsor
+          title={partner.name}
+          img={partner.logo}
+          href={partner.link.fr}
+        />
+      ))
+    }
+  </div>
+</Main>
