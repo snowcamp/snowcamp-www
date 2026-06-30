@@ -98,6 +98,10 @@ organizers:
     web: https://www.brunolavitphotography.com
     facebook: BrunoLavitPhotography
     instagram: brunolavit
+  - name: Jade Crotto-Miglietti
+    id: jade
+    linkedin: jadecrottomiglietti
+    img: jade.avif
   # Former
   - name: Aurore Allibe
     id: aurore
@@ -129,5 +133,3 @@ organizers:
   - name: Cédric Tran-Xuan
     id: cedric
     honor: true
-  - name: Jade Crotto-Miglietti
-    id: jade
