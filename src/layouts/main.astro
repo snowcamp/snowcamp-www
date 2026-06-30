@@ -1,7 +1,7 @@
 ---
 export interface Props {
   title?: string;
-  frontmatter: { title: string };
+  frontmatter?: { title: string };
 }
 
 import Footer from "../components/Footer.astro";
@@ -134,7 +134,7 @@ const { frontmatter, title } = Astro.props;
       href="/img/favicon/favicon.avif"
     />
     <link rel="canonical" href={canonical} />
-    <title>{title ?? frontmatter.title}</title>
+    <title>{title ?? frontmatter?.title}</title>
   </head>
   <body lang={lang}>
     <header>
