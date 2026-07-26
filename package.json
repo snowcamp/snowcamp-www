@@ -30,6 +30,8 @@
     "js-yaml": "^5.2.2",
     "prettier": "3.8.3",
     "prettier-plugin-astro": "0.14.1",
-    "vitest": "^4.1.8"
+    "sharp": "^0.35.3",
+    "vitest": "^4.1.8",
+    "yaml": "^2.9.0"
   }
 }
