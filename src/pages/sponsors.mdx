@@ -6,7 +6,9 @@ import Utils from '../utils';
 import SponsorFormula from '../components/SponsorFormula.astro';
 import Button from '../components/Button.astro';
 import edition from '../data/current.yaml';
+import { currentSponsorCounts } from '../data/current-sponsors';
 
+export const counts = currentSponsorCounts();
 export const ey = Utils.editionYear(edition.start_date);
 export const endFormat = Intl.DateTimeFormat('fr', {
   timeZone: 'Europe/Paris',
@@ -17,8 +19,8 @@ export const endFormat = Intl.DateTimeFormat('fr', {
 });
 export const openDate = endFormat.format(Utils.resolveDate(edition.timeline.sponsor.open, ey));
 export const year = ey;
-export const remainEtoile = edition.sponsorship.type.etoile.number - edition.sponsorship.etoile.length;
-export const remainFlocon = edition.sponsorship.type.flocon.number - edition.sponsorship.flocon.length;
+export const remainEtoile = edition.sponsorship.type.etoile.number - counts.etoile;
+export const remainFlocon = edition.sponsorship.type.flocon.number - counts.flocon;
 
 # Pourquoi devenir sponsor ?
 

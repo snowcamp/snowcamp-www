@@ -5,23 +5,7 @@ import current from "../../data/current.yaml";
 import Spotlight from "../../components/Spotlight.astro";
 import Button from "../../components/Button.astro";
 import Sponsor from "../../components/Sponsor.astro";
-
-type sponsorTypeName = "Flocon" | "Etoile" | "Chamois" | "Meet&Greet";
-
-interface Sponsor {
-  description: {
-    en: string;
-    fr: string;
-  };
-  logo: string;
-  name: string;
-  registrationDate: string;
-  sponsorTypeName: sponsorTypeName;
-  website: {
-    en: string;
-    fr: string;
-  };
-}
+import { currentSponsorsByType } from "../../data/current-sponsors";
 
 export const ey = Utils.editionYear(current.start_date);
 export const startFormat = Intl.DateTimeFormat("fr", {
@@ -42,13 +26,7 @@ export const startDate = Utils.resolveDate(current.start_date, ey);
 export const start = startFormat.format(startDate);
 export const end = endFormat.format(Utils.resolveDate(current.end_date, ey));
 export const year = ey;
-export const response = await fetch("https://conf.snowcamp.io/api/sponsors");
-export const sponso: Sponsor[] = await response.json();
-
-export const chamois = sponso.filter((s) => s.sponsorTypeName === "Chamois");
-export const etoiles = sponso.filter((s) => s.sponsorTypeName === "Etoile");
-export const flocons = sponso.filter((s) => s.sponsorTypeName === "Flocon");
-console.log(current.sponsorship.partners);
+export const { chamois, etoiles, flocons } = currentSponsorsByType("en");
 export const partners = current.sponsorship.partners.map((id: any) => id);
 export const tlCFP = [
   {
@@ -90,7 +68,7 @@ export const tlCFP = [
         <Sponsor
           title={chamois?.name}
           img={chamois?.logo}
-          href={chamois?.website.en}
+          href={chamois.link}
         />
       ))
     }
@@ -103,11 +81,7 @@ export const tlCFP = [
   >
     {
       etoiles.map((etoile) => (
-        <Sponsor
-          title={etoile?.name}
-          img={etoile?.logo}
-          href={etoile?.website.en}
-        />
+        <Sponsor title={etoile?.name} img={etoile?.logo} href={etoile.link} />
       ))
     }
   </div>
@@ -119,11 +93,7 @@ export const tlCFP = [
   >
     {
       flocons.map((flocon) => (
-        <Sponsor
-          title={flocon?.name}
-          img={flocon?.logo}
-          href={flocon?.website.en}
-        />
+        <Sponsor title={flocon?.name} img={flocon?.logo} href={flocon.link} />
       ))
     }
   </div>
