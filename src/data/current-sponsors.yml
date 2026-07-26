@@ -1,12 +1,15 @@
 # Présence des sponsors de l'édition courante.
-# Fichier généré/mis à jour par le workflow de synchro (scripts/sync-sponsors.mjs) :
-# ne pas éditer à la main sans savoir qu'un run pourra le réécrire.
-#   - id: référence une entrée de sponsors.yaml (le logo/lien y vivent).
-#   - type: flocon | etoile | chamois.
-#   - meetgreet: true => option Meet&Greet (un seul sponsor étoile), absent sinon.
+# Fichier généré par scripts/sync-sponsors.mjs — ne pas éditer à la main (un run le réécrit).
+# Seuls les id (référence vers sponsors.yaml) sont éventuellement retouchés dans la PR.
 sponsors:
-  - id: kaizen
+  - id: kaizen-solutions2027
     type: etoile
     meetgreet: true
   - id: cgi2022
     type: flocon
+  - id: kls-group2027
+    type: flocon
+  - id: sopra-steria-group-grenoble2027
+    type: flocon
+  - id: criteo2027
+    type: etoile
