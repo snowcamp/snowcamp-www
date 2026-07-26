@@ -1,0 +1,48 @@
+name: Sync sponsors
+
+on:
+  # Chaque nuit (~4 h Paris) ; lançable aussi manuellement.
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: sync-sponsors
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      # Réconcilie confhouse -> current-sponsors.yml + sponsors.yaml (+ logos avif),
+      # et écrit le corps de PR (ajouts, retraits, ⚠️ à traiter).
+      - name: Synchronise sponsors
+        run: node scripts/sync-sponsors.mjs --apply --report "${{ runner.temp }}/pr-body.md"
+
+      - name: Format generated data
+        run: npx prettier --write src/data/sponsors.yaml src/data/current-sponsors.yml
+
+      # PR ouverte uniquement s'il y a un diff (sinon run vert, pas de PR).
+      # Le PAT permet à ci.yml de se déclencher sur la PR du bot.
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.SPONSORS_SYNC_TOKEN }}
+          branch: bot/sponsors-sync
+          base: main
+          commit-message: "chore(sponsor): sync sponsors from confhouse"
+          title: "chore(sponsor): sync sponsors from confhouse"
+          body-path: ${{ runner.temp }}/pr-body.md
+          labels: sponsors, automated
+          delete-branch: true

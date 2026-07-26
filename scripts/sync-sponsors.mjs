@@ -26,6 +26,7 @@ import {
   logoFilename,
   patchEntry,
 } from "./lib/catalog.mjs";
+import { buildReport } from "./lib/report.mjs";
 
 const API_URL =
   process.env.SPONSORS_API_URL ?? "https://conf.snowcamp.io/api/sponsors";
@@ -169,6 +170,13 @@ const applyPlan = async (
     "⚠️  À traiter manuellement",
     problems.map((p) => JSON.stringify(p)),
   );
+
+  return {
+    problems,
+    additions: creates.map((c) => ({ id: c.id, name: c.name })),
+    patched: patches.map((p) => p.id),
+    removals: plan.removals,
+  };
 };
 
 const main = async () => {
@@ -196,13 +204,15 @@ const main = async () => {
   });
 
   if (hasFlag("--apply")) {
-    await applyPlan(plan, {
+    const result = await applyPlan(plan, {
       catalogById,
       editionYear,
       sponsorsPath,
       presencePath,
       imgDir,
     });
+    const reportPath = argValue("--report");
+    if (reportPath) writeFileSync(reportPath, buildReport(result));
   } else {
     printPlan(plan, editionYear, apiSponsors.length);
   }
