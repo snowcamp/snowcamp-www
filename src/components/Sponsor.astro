@@ -12,6 +12,8 @@ const { href, title, img } = Astro.props;
   div {
     justify-self: center;
 
+    display: flex;
+    justify-content: center;
     width: 23%;
 
     border-radius: 5px;
@@ -35,7 +37,13 @@ const { href, title, img } = Astro.props;
   }
 </style>
 <div>
-  <a href={href}>
-    <img src={img} loading="lazy" alt={title} />
-  </a>
+  {
+    href ? (
+      <a href={href}>
+        <img src={img} loading="lazy" alt={title} />
+      </a>
+    ) : (
+      <img src={img} loading="lazy" alt={title} />
+    )
+  }
 </div>

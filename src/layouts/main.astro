@@ -13,11 +13,15 @@ import "../styles/main.css";
 import Utils from "../utils.js";
 
 import current from "../data/current.yaml";
+import { currentSponsorCounts } from "../data/current-sponsors";
 const lang = Utils.getLang(Astro.url);
 const canonical = new URL(Astro.url.pathname, Astro.site);
 
 const ey = Utils.editionYear(current.start_date);
 const sponsors = current.sponsorship;
+const sponsorCounts = currentSponsorCounts();
+const remainEtoile = sponsors.type.etoile.number - sponsorCounts.etoile;
+const remainFlocon = sponsors.type.flocon.number - sponsorCounts.flocon;
 // Pré-calcul des instants (epoch ms) au build : le script client ne fait
 // plus que des comparaisons numériques (aucun parsing ni fuseau côté navigateur).
 const timelineEntries = current.timeline as Record<
@@ -149,7 +153,7 @@ const { frontmatter, title } = Astro.props;
     <Footer />
   </body>
 
-  <script is:inline define:vars={{ sponsors, timeline }}>
+  <script is:inline define:vars={{ timeline, remainEtoile, remainFlocon }}>
     const hideTimeline = (timelineEvent, name) => {
       const openingTime = timelineEvent.open;
       const closingTime = timelineEvent.close ?? Infinity;
@@ -162,10 +166,8 @@ const { frontmatter, title } = Astro.props;
         return [`${name}Opened`, `${name}Before`];
       }
     };
-    const sponsoring = (sponsors, timeline) => {
-      const openingTime = timeline.open;
-      const remainEtoile = sponsors.type.etoile.number - sponsors.etoile.length;
-      const remainFlocon = sponsors.type.flocon.number - sponsors.flocon.length;
+    const sponsoring = (timelineSponsor, remainEtoile, remainFlocon) => {
+      const openingTime = timelineSponsor.open;
       const now = new Date().getTime();
       if (now < openingTime) {
         return ["sponsorOpened", "sponsorClosed"];
@@ -177,7 +179,7 @@ const { frontmatter, title } = Astro.props;
     };
     const computeStyle = () => {
       const classToHide = [
-        ...sponsoring(sponsors, timeline.sponsor),
+        ...sponsoring(timeline.sponsor, remainEtoile, remainFlocon),
         ...Object.keys(timeline)
           .filter((timel) => timel !== "sponsor")
           .flatMap((timel) => hideTimeline(timeline[timel], timel)),

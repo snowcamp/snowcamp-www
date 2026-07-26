@@ -68,29 +68,8 @@ sponsorship:
         conferences: 5
         booth: 2
         speakers_dinner: 0
-  display: current
-  meetgreet: []
-  etoile:
-    - kaizen
-  #    - open2024
-  #    - moodys2025
-  #    - criteo2023
-  #    - clevercloud
-  #    - aws2026
-  flocon:
-    - cgi2022
-  #    - avisto2020
-  #    - zenika2023
-  #    - periscop2026
-  #    - soprasteria2018
-  #    - kls2020
-  #    - kelkoo2019
-  #    - viseo2022
-  #    - alma2026
-  #    - enalean2026
-  #    - hackyourjob2025
-  #    - pingid2026
-  chamois: []
+  # La présence des sponsors par niveau vit désormais dans current-sponsors.yml
+  # (synchronisé depuis confhouse). Ici ne restent que les partenaires manuels.
   partners:
     - name: AlpesJUG
       id: alpesjug
