@@ -1543,9 +1543,9 @@ sponsors:
         together a simpler, more open, freer and accessible world. &lt;coding the world&gt;
   - name: KLS GROUP
     id: kls-group2027
-    logo: /img/sponsors/kls-group.2027.avif
-    source_url: https://www.kls-group.fr/wp-content/uploads/2025/03/logo_kls_logistic_header.png
-    source_sha1: af2818213631b57eff6fb8510d33f1a4b7841df2
+    logo: "/img/sponsors/kls-group.2027.avif"
+    source_url: "https://www.kls-group.fr/wp-content/uploads/2025/03/logo_kls_logistic_header.png"
+    source_sha1: "af2818213631b57eff6fb8510d33f1a4b7841df2"
     link:
       fr: "https://www.kls-group.fr"
       en: "https://www.kls-group.fr"
@@ -1554,9 +1554,9 @@ sponsors:
       en: ""
   - name: Sopra Steria Group Grenoble
     id: sopra-steria-group-grenoble2027
-    logo: /img/sponsors/sopra-steria-group-grenoble.2027.avif
-    source_url: https://www.soprasteria.fr/ResourcePackages/Bootstrap4/assets/dist/logos/logo-soprasteria.svg
-    source_sha1: 8fd8dccf268944c353d3a797ec651e03cb2f5b0f
+    logo: "/img/sponsors/sopra-steria-group-grenoble.2027.avif"
+    source_url: "https://www.soprasteria.fr/ResourcePackages/Bootstrap4/assets/dist/logos/logo-soprasteria.svg"
+    source_sha1: "8fd8dccf268944c353d3a797ec651e03cb2f5b0f"
     link:
       fr: "https://www.soprasteria.com/fr/"
       en: "https://www.soprasteria.com/en/"
@@ -1565,9 +1565,9 @@ sponsors:
       en: ""
   - name: KAIZEN Solutions
     id: kaizen-solutions2027
-    logo: /img/sponsors/kaizen-solutions.2027.avif
-    source_url: https://kaizen-solutions.net/img/logo-kaizen-2x.webp
-    source_sha1: 4dd22855875915b94720a8ea02c0015969b2d667
+    logo: "/img/sponsors/kaizen-solutions.2027.avif"
+    source_url: "https://kaizen-solutions.net/img/logo-kaizen-2x.webp"
+    source_sha1: "4dd22855875915b94720a8ea02c0015969b2d667"
     link:
       fr: "https://kaizen-solutions.net/"
       en: "https://kaizen-solutions.net/"
