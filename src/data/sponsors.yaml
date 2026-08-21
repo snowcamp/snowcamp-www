@@ -1583,3 +1583,14 @@ sponsors:
     description:
       fr: ""
       en: ""
+  - name: Zenika
+    id: zenika2027
+    logo: /img/sponsors/zenika.2027.avif
+    source_url: https://zenika-website.cdn.prismic.io/zenika-website/031605ee-bdcf-4945-8e13-377abef45b9d_logo_dark.svg
+    source_sha1: 6ab3095191762217390e57d6640e997dac3c05e2
+    link:
+      fr: "https://www.zenika.com/"
+      en: "https://www.zenika.com/"
+    description:
+      fr: ""
+      en: ""
