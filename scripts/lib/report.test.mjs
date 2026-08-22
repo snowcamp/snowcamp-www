@@ -25,6 +25,36 @@ describe("buildReport", () => {
     );
   });
 
+  it("détaille les anomalies d'override", () => {
+    const md = buildReport({
+      problems: [
+        {
+          kind: "override-stale",
+          id: "zenika2027",
+          name: "Zenika",
+          ignoredSha1: "6ab3095191762217390e57d6640e997dac3c05e2",
+          upstreamSha1: "f0a22c67b3feaee26953d48d53ba0b0cac5e0b8c",
+        },
+        {
+          kind: "override-missing-file",
+          id: "criteo2027",
+          name: "Criteo",
+          logo: "/img/sponsors/criteo.2027.avif",
+        },
+        { kind: "override-invalid", id: "cgi2022", name: "CGI" },
+      ],
+    });
+
+    expect(md).toContain("[ ] Override périmé — `zenika2027` (Zenika)");
+    // les deux shas complets, pour repiquer le nouveau dans ignore_sha1
+    expect(md).toContain("`6ab3095191762217390e57d6640e997dac3c05e2`");
+    expect(md).toContain("`f0a22c67b3feaee26953d48d53ba0b0cac5e0b8c`");
+    expect(md).toContain(
+      "[ ] Override actif mais fichier absent — `criteo2027` (Criteo)",
+    );
+    expect(md).toContain("[ ] Override invalide — `cgi2022` (CGI)");
+  });
+
   it("omet les sections vides", () => {
     const md = buildReport({ additions: [{ id: "x2027", name: "X" }] });
 

@@ -7,6 +7,9 @@
 //   - avec --apply : télécharge chaque logo (une fois), calcule son sha1, le
 //     convertit en avif si besoin, et réécrit current-sponsors.yml + sponsors.yaml.
 //
+// Une entrée du catalogue portant un `logo_override.ignore_sha1` est laissée
+// intacte tant que le logo amont fait ce sha (voir lib/override.mjs).
+//
 // Usage :
 //   node scripts/sync-sponsors.mjs                       # plan en ligne
 //   node scripts/sync-sponsors.mjs --input f.json        # plan sur réponse locale
@@ -15,10 +18,11 @@
 
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { dirname, join } from "node:path";
+import { basename, dirname, join } from "node:path";
 import { load } from "js-yaml";
 import { stringify } from "yaml";
 import { reconcile } from "./lib/reconcile.mjs";
+import { decideLogo } from "./lib/override.mjs";
 import { fetchImage, toAvif } from "./lib/images.mjs";
 import {
   appendEntries,
@@ -57,7 +61,9 @@ const fetchApiSponsors = async () => {
 const printList = (title, items) => {
   if (items.length === 0) return;
   console.log(`\n${title}`);
-  for (const line of items) console.log(`  - ${line}`);
+  for (const line of items) {
+    console.log(`  - ${line}`);
+  }
 };
 
 const printPlan = (plan, editionYear, apiCount) => {
@@ -104,10 +110,20 @@ const applyPlan = async (
     try {
       const { buffer, sha1: hash } = await fetchImage(d.sourceUrl);
       const filename = avifFilename(existing?.logo, d.name, editionYear);
-      const unchanged =
-        existing?.source_sha1 === hash && existsSync(join(imgDir, filename));
-      if (!unchanged)
+      const { action, problem } = decideLogo({
+        existing,
+        downloadedSha: hash,
+        targetExists: existsSync(join(imgDir, filename)),
+        logoExists: existing?.logo
+          ? existsSync(join(imgDir, basename(existing.logo)))
+          : false,
+      });
+      if (problem) problems.push({ ...problem, id: d.id, name: d.name });
+      if (action === "skip") continue;
+
+      if (action === "write") {
         writeFileSync(join(imgDir, filename), await toAvif(buffer));
+      }
 
       const logo = `/img/sponsors/${filename}`;
       if (existing) {
@@ -151,8 +167,9 @@ const applyPlan = async (
   }
 
   let sponsorsYaml = readFileSync(sponsorsPath, "utf8");
-  for (const { id, patch } of patches)
+  for (const { id, patch } of patches) {
     sponsorsYaml = patchEntry(sponsorsYaml, id, patch);
+  }
   sponsorsYaml = appendEntries(sponsorsYaml, creates);
   writeFileSync(sponsorsPath, sponsorsYaml);
   writeFileSync(
