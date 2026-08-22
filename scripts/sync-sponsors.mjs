@@ -15,15 +15,15 @@
 
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { basename, dirname, join } from "node:path";
+import { dirname, join } from "node:path";
 import { load } from "js-yaml";
 import { stringify } from "yaml";
 import { reconcile } from "./lib/reconcile.mjs";
 import { fetchImage, toAvif } from "./lib/images.mjs";
 import {
   appendEntries,
+  avifFilename,
   buildEntry,
-  logoFilename,
   patchEntry,
 } from "./lib/catalog.mjs";
 import { buildReport } from "./lib/report.mjs";
@@ -103,9 +103,7 @@ const applyPlan = async (
     const existing = catalogById.get(d.id);
     try {
       const { buffer, sha1: hash } = await fetchImage(d.sourceUrl);
-      const filename = existing?.logo
-        ? basename(existing.logo)
-        : logoFilename(d.name, editionYear);
+      const filename = avifFilename(existing?.logo, d.name, editionYear);
       const unchanged =
         existing?.source_sha1 === hash && existsSync(join(imgDir, filename));
       if (!unchanged)
