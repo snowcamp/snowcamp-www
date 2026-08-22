@@ -1,5 +1,10 @@
 {
-  "plugins": ["prettier-plugin-astro"],
+  "plugins": [
+    "prettier-plugin-astro",
+    "prettier-plugin-brace-style",
+    "prettier-plugin-merge"
+  ],
+  "braceStyle": "1tbs",
   "overrides": [
     {
       "files": "*.astro",
