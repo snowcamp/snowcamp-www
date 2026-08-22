@@ -1588,6 +1588,9 @@ sponsors:
     logo: /img/sponsors/zenika.2027.svg
     source_url: https://zenika-website.cdn.prismic.io/zenika-website/4e73b102-9045-4cff-b098-a0625f7d10f8_logo_light.svg
     source_sha1: f0a22c67b3feaee26953d48d53ba0b0cac5e0b8c
+    logo_override:
+      ignore_sha1: 6ab3095191762217390e57d6640e997dac3c05e2
+      reason: "l'API sert le logo dark, illisible sur le fond clair du mur de sponsors"
     link:
       fr: "https://www.zenika.com/"
       en: "https://www.zenika.com/"
