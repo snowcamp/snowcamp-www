@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { parse } from "yaml";
 import {
   appendEntries,
+  avifFilename,
   buildEntry,
   logoFilename,
   patchEntry,
@@ -28,6 +29,32 @@ const base = `sponsors:
 describe("logoFilename", () => {
   it("suit la convention <slug>.<année>.avif", () => {
     expect(logoFilename("KLS GROUP", 2027)).toBe("kls-group.2027.avif");
+  });
+});
+
+describe("avifFilename", () => {
+  it("forge un nom depuis le sponsor quand aucun logo n'existe encore", () => {
+    expect(avifFilename(undefined, "KLS GROUP", 2027)).toBe(
+      "kls-group.2027.avif",
+    );
+  });
+
+  it("conserve le basename existant et force l'extension avif", () => {
+    expect(avifFilename("/img/sponsors/zenika.2027.svg", "Zenika", 2027)).toBe(
+      "zenika.2027.avif",
+    );
+  });
+
+  it("laisse intact un basename déjà en avif", () => {
+    expect(
+      avifFilename("/img/partners/2019/manning.avif", "Manning", 2027),
+    ).toBe("manning.avif");
+  });
+
+  it("ne prend pas un suffixe d'année pour une extension", () => {
+    expect(avifFilename("/img/sponsors/zenika.2027", "Zenika", 2027)).toBe(
+      "zenika.2027.avif",
+    );
   });
 });
 

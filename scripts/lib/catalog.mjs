@@ -3,12 +3,29 @@
 // précises des entrées gérées. Les entrées historiques (blocs `>` multi-lignes,
 // commentaires) restent intactes octet pour octet. Un `prettier --write` final
 // normalise le tout (il préserve les blocs pliés existants).
+import { basename } from "node:path";
 import { stringify } from "yaml";
 import { slugify } from "./reconcile.mjs";
 
 /** Nom de fichier logo suivant la convention du dépôt : `<slug>.<année>.avif`. */
 export const logoFilename = (name, editionYear) =>
   `${slugify(name)}.${editionYear}.avif`;
+
+/** Extensions image reconnues ; la convention `<slug>.<année>` interdit de couper au dernier point. */
+const IMAGE_EXTENSION = /\.(avif|svg|png|jpe?g|webp|gif)$/i;
+
+/**
+ * Nom du fichier avif à écrire pour un sponsor. Le basename existant est conservé
+ * (nom stable, insensible aux variations du nom côté API) mais l'extension est
+ * toujours ramenée à `.avif` : le pipeline ne produit que de l'avif.
+ */
+export const avifFilename = (existingLogo, name, editionYear) => {
+  if (!existingLogo) return logoFilename(name, editionYear);
+  const file = basename(existingLogo);
+  return IMAGE_EXTENSION.test(file)
+    ? file.replace(IMAGE_EXTENSION, ".avif")
+    : `${file}.avif`;
+};
 
 /** Construit une entrée catalogue complète pour un sponsor géré par l'Action. */
 export const buildEntry = ({ id, name, logo, sourceUrl, sourceSha1 }) => ({
