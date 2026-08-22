@@ -14,6 +14,16 @@ const PROBLEM_LABEL = {
   "conversion-failed": (p) =>
     `Échec de conversion du logo — \`${p.id}\` (${p.name}) : ${p.detail}`,
   "unknown-type": (p) => `Type inconnu ignoré — ${p.name} (${p.type})`,
+  "override-stale": (p) =>
+    `Override périmé — \`${p.id}\` (${p.name}) : le logo amont a changé ` +
+    `(\`${p.ignoredSha1}\` → \`${p.upstreamSha1}\`), le nouveau logo a été repris ; ` +
+    `vérifier qu'il convient, puis mettre à jour ou supprimer \`logo_override\``,
+  "override-missing-file": (p) =>
+    `Override actif mais fichier absent — \`${p.id}\` (${p.name}) : ` +
+    `\`${p.logo}\` est introuvable, aucun logo n'a été généré`,
+  "override-invalid": (p) =>
+    `Override invalide — \`${p.id}\` (${p.name}) : \`logo_override.ignore_sha1\` ` +
+    `absent ou mal formé, override ignoré`,
 };
 
 const describeProblem = (p) =>
