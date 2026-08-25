@@ -1597,3 +1597,14 @@ sponsors:
     description:
       fr: ""
       en: ""
+  - name: ALMA
+    id: alma2027
+    logo: /img/sponsors/alma.2027.avif
+    source_url: https://www.alma.fr/wp-content/uploads/2025/09/logo-alma-2019_RVB_300pix.png
+    source_sha1: 9d5ad5379c5be732a339a0d85017759b1db211af
+    link:
+      fr: https://www.alma.fr
+      en: https://www.alma.fr
+    description:
+      fr: "Éditeur de logiciels métier (industrie, santé, qualité, collaboratif), facilitateur numérique… et une Scop bouillonnante, très attachée à ses valeurs coopératives ! "
+      en: "Business software publisher (industry, healthcare, quality, collaborative), digital facilitator... and a vibrant cooperative, deeply committed to its cooperative values! "
