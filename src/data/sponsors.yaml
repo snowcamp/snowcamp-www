@@ -1610,9 +1610,9 @@ sponsors:
       en: "Business software publisher (industry, healthcare, quality, collaborative), digital facilitator... and a vibrant cooperative, deeply committed to its cooperative values! "
   - name: Moodys
     id: moodys2027
-    logo: /img/sponsors/moodys.2027.avif
-    source_url: https://upload.wikimedia.org/wikipedia/commons/4/47/Moody%27s_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
-    source_sha1: 31613b7eb29cac1cc0b78a987f930441e08e1396
+    logo: "/img/sponsors/moodys.2027.avif"
+    source_url: "https://upload.wikimedia.org/wikipedia/commons/4/47/Moody%27s_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+    source_sha1: "31613b7eb29cac1cc0b78a987f930441e08e1396"
     link:
       fr: "https://www.moodysanalytics.com"
       en: "https://www.moodysanalytics.com"
