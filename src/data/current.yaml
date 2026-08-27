@@ -114,8 +114,7 @@ tremplin:
   cfp_link: https://conference-hall.io/tremplin-snowcamp-2027
   flyer_link: "https://drive.google.com/file/d/1lfwf_yoPhDJbzvbZkIjnkA5kb3q7AIWT/view?usp=sharing"
 conference:
-  cfp_link: ""
-  #cfp_link: https://conference-hall.io/snowcamp-2026
+  cfp_link: "https://conference-hall.io/snowcamp-2027"
 speakers_dinner:
   link: ""
   #link: https://docs.google.com/forms/d/e/1FAIpQLSew5LabymKk3183bqOsuZhbTNN8Vyr-eJG8OGptSml1HaERIw/viewform?usp=publish-editor
