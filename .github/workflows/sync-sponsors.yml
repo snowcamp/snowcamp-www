@@ -36,7 +36,7 @@ jobs:
       # PR ouverte uniquement s'il y a un diff (sinon run vert, pas de PR).
       # Le PAT permet à ci.yml de se déclencher sur la PR du bot.
       - name: Open pull request
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.SPONSORS_SYNC_TOKEN }}
           branch: bot/sponsors-sync
