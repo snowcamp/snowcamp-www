@@ -1621,9 +1621,9 @@ sponsors:
       en: ""
   - name: OPEN
     id: open2027
-    logo: /img/sponsors/open.2027.avif
-    source_url: https://storiesout.com/wp-content/uploads/2024/06/logo-2.webp
-    source_sha1: 03e4c32aacbc1a8542d0a60df01e19acd50c2875
+    logo: "/img/sponsors/open.2027.avif"
+    source_url: "https://storiesout.com/wp-content/uploads/2024/06/logo-2.webp"
+    source_sha1: "03e4c32aacbc1a8542d0a60df01e19acd50c2875"
     link:
       fr: https://www.open.global/
       en: https://www.open.global/
