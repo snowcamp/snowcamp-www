@@ -1640,9 +1640,9 @@ sponsors:
         in support of their IT and digital transformation (3800 employees  • 16 cities)
   - name: Ping Identity
     id: ping-identity2027
-    logo: /img/sponsors/ping-identity.2027.avif
-    source_url: https://www.pingidentity.com/content/dam/picr/nav/Ping-Logo-2.svg
-    source_sha1: b9629ad0a2f363e528f939c0b4de94b113042b37
+    logo: "/img/sponsors/ping-identity.2027.avif"
+    source_url: "https://www.pingidentity.com/content/dam/picr/nav/Ping-Logo-2.svg"
+    source_sha1: "b9629ad0a2f363e528f939c0b4de94b113042b37"
     link:
       fr: "https://www.pingidentity.com/fr.html"
       en: "https://www.pingidentity.com/en.html"
