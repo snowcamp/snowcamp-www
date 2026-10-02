@@ -1649,3 +1649,14 @@ sponsors:
     description:
       fr: ""
       en: ""
+  - name: Clever Cloud
+    id: clever-cloud2027
+    logo: /img/sponsors/clever-cloud.2027.avif
+    source_url: https://www.clever.cloud/app/themes/Starter/assets/img/brand-assets/logo_on_white.png
+    source_sha1: f315ec7bc5875bf52d8e93827b32db81f986850f
+    link:
+      fr: "https://www.clever-cloud.com/fr/home/"
+      en: "https://www.clever-cloud.com"
+    description:
+      fr: ""
+      en: ""
