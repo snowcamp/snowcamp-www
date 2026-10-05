@@ -1,9 +1,9 @@
 name: Sync sponsors
 
 on:
-  # Chaque nuit (~4 h Paris) ; lançable aussi manuellement.
   schedule:
-    - cron: "0 3 * * *"
+    - cron: '0 5 * * 1-5'
+      timezone: "Europe/Paris"
   workflow_dispatch:
 
 permissions:
