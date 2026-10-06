@@ -1660,3 +1660,14 @@ sponsors:
     description:
       fr: ""
       en: ""
+  - name: Groupe SAMSE
+    id: groupe-samse2027
+    logo: "/img/sponsors/samse.2027.avif"
+    source_url: "https://www.samse.fr/media/logo/default/images_1.webp"
+    source_sha1: "e973ca9a582325af6e2d3443d0dd107e09806dc0"
+    link:
+      fr: "https://www.samse.fr/"
+      en: "https://www.samse.fr/"
+    description:
+      fr: ""
+      en: ""
