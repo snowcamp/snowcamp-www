@@ -1663,11 +1663,11 @@ sponsors:
   - name: Groupe SAMSE
     id: groupe-samse2027
     logo: "/img/sponsors/samse.2027.avif"
-    source_url: "https://www.samse.fr/media/logo/default/images_1.webp"
-    source_sha1: "e973ca9a582325af6e2d3443d0dd107e09806dc0"
+    source_url: "https://www.groupe-samse.fr/themes/custom/groupesamse/front-assets/dist/assets/images/logo.svg"
+    source_sha1: "a11c979f9dd6c95d74b0870f8dd4c447d9276f4c"
     link:
-      fr: "https://www.samse.fr/"
-      en: "https://www.samse.fr/"
+      fr: "https://www.groupe-samse.fr/"
+      en: "https://www.groupe-samse.fr/"
     description:
       fr: ""
       en: ""
