@@ -150,6 +150,12 @@ news:
     title_en: Tremplin
     description_fr: Le CFP du [tremplin](/tremplin) est ouvert !
     description_en: The [Tremplin](/en/tremplin) CFP is now open!
+  - start: "09-11"
+    end: "25-11"
+    title_fr: Tremplin
+    title_en: Tremplin
+    description_fr: Inscrivez-vous pour venir assister au tremplin [Meetup](https://www.meetup.com/fr-fr/craftsrecords/events/317272488/)
+    description_en: Sign up to come and watch the tremplin  [Meetup](https://www.meetup.com/fr-fr/craftsrecords/events/317272488/)
   # Sponsor
   - start: "02-01"
     end: "06-09T11:00"
