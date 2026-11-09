@@ -1,5 +1,6 @@
 ---
 import Utils from "../utils";
+import current from "../data/current.yaml";
 import type { Language, Translation } from "../lib/types";
 
 const lang = Utils.getLang(Astro.url) as Language;
@@ -212,9 +213,13 @@ const trad: { [key: string]: Translation } = {
       />
     </a>
     <ul class="menu">
-      <li>
-        <a href={Utils.url(["schedule"], { lang })}>{trad.program[lang]}</a>
-      </li>
+      {
+        current.program_show && (
+          <li>
+            <a href={Utils.url(["schedule"], { lang })}>{trad.program[lang]}</a>
+          </li>
+        )
+      }
       <li class="has-submenu">
         <button
           aria-expanded="false"
