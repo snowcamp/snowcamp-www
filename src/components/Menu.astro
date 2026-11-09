@@ -212,6 +212,9 @@ const trad: { [key: string]: Translation } = {
       />
     </a>
     <ul class="menu">
+      <li>
+        <a href={Utils.url(["schedule"], { lang })}>{trad.program[lang]}</a>
+      </li>
       <li class="has-submenu">
         <button
           aria-expanded="false"
