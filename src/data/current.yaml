@@ -176,18 +176,18 @@ news:
     title_en: Call for Paper
     description_fr: Le [CFP](/cfp) est ouvert !
     description_en: The [CFP](/en/cfp) is now open!
-  - start: "11-15"
-    end: "01-16T18:00"
+  - start: "11-09"
+    end: "11-16T11:00"
     title_fr: Programme
     title_en: Program
-    description_fr: Le programme est disponible !
-    description_en: The program is available!
-  - start: "11-17T11:00"
+    description_fr: Le [programme](/schedule) est disponible !
+    description_en: The [program](/en/schedule) is available!
+  - start: "11-16T11:00"
     end: "01-13T18:00"
     title_fr: Billeterie
     title_en: Ticketing
-    description_fr: La [billeterie](/tickets) est ouverte !
-    description_en: The [ticketing](/tickets) is now open!
+    description_fr: La [billetterie](/tickets) est ouverte ! Consultez le [programme](/schedule).
+    description_en: The [ticketing](/en/tickets) is now open! Check out the [program](/en/schedule).
   - start: "06-01"
     end: "01-13T18:00"
     title_fr: 2 jours
