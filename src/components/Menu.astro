@@ -110,6 +110,16 @@ const trad: { [key: string]: Translation } = {
     flex-direction: row;
     justify-content: space-between;
   }
+  .logo {
+    display: block;
+    width: 170px;
+    min-height: 1rem;
+  }
+  @media (max-width: 768px) {
+    .logo {
+      width: 52px;
+    }
+  }
   .menu {
     display: flex;
     flex-direction: row;
@@ -206,11 +216,17 @@ const trad: { [key: string]: Translation } = {
 <nav aria-label="Navigation principale">
   <div class="line">
     <a href={Utils.url("", { lang })}>
-      <img
-        style="max-width: 170px; min-height: 1rem;"
-        src={Utils.url("/img/alpes-snow-full-illustration.avif")}
-        alt="Logo"
-      />
+      <picture>
+        <source
+          media="(max-width: 768px)"
+          srcset={Utils.url("/img/logo/SnowCampLogo500x500.png")}
+        />
+        <img
+          class="logo"
+          src={Utils.url("/img/alpes-snow-full-illustration.avif")}
+          alt="SnowCamp"
+        />
+      </picture>
     </a>
     <ul class="menu">
       {
